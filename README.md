@@ -35,3 +35,9 @@
 ## 개인정보처리방침
 
 - [https://repeat-exam.web.app/etc/policy.html](https://repeat-exam.web.app/etc/policy.html)
+
+## 스크린샷
+
+![메인 화면](https://raw.githubusercontent.com/idlepoe/repeat_exam/main/screenshot/0x0ss.png)
+![출시회차 화면](https://raw.githubusercontent.com/idlepoe/repeat_exam/main/screenshot/0x0ss%20(2).png)
+![문제 풀이 화면](https://raw.githubusercontent.com/idlepoe/repeat_exam/main/screenshot/0x0ss%20(1).png)
