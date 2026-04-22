@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="repeat_exam"
+        android:label="광고없는제과제빵필기기출회독"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
