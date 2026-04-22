@@ -92,7 +92,18 @@ export function clearProgress(examType?: string, examSession?: string): void {
       localStorage.removeItem(progressKey(examType, examSession))
       return
     }
+    // 하위 호환 단일 키 + 세션별 progress 키를 모두 삭제
     localStorage.removeItem(KEY_PROGRESS)
+    const keysToDelete: string[] = []
+    for (let i = 0; i < localStorage.length; i += 1) {
+      const key = localStorage.key(i)
+      if (key && key.startsWith(`${KEY_PROGRESS}:`)) {
+        keysToDelete.push(key)
+      }
+    }
+    for (const key of keysToDelete) {
+      localStorage.removeItem(key)
+    }
   } catch {
     /* ignore */
   }
