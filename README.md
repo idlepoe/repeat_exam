@@ -26,7 +26,12 @@
 ## 다운로드
 
 - Android: [GitHub Releases](https://github.com/idlepoe/repeat_exam/releases)
+- iOS: [App Store](https://apps.apple.com/us/app/%EA%B4%91%EA%B3%A0%EC%97%86%EB%8A%94%EC%A0%9C%EA%B3%BC%EC%A0%9C%EB%B9%B5%ED%95%84%EA%B8%B0%EA%B8%B0%EC%B6%9C%ED%9A%8C%EB%8F%85/id6762967536)
 
 ## 웹 버전
 
 - [repeat-exam.web.app](https://repeat-exam.web.app)
+
+## 개인정보처리방침
+
+- [https://repeat-exam.web.app/etc/policy.html](https://repeat-exam.web.app/etc/policy.html)
