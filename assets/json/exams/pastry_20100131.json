@@ -470,7 +470,7 @@
     "exam_session": "2010-01-31",
     "subject": "제조이론",
     "question_number": 16,
-    "question_text": "제품이 오븐에 갑자기 팽창하는 오븐 스프링의 요인이 아 닌 것은?",
+    "question_text": "제품이 오븐에 갑자기 팽창하는 오븐 스프링의 요인이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -718,7 +718,7 @@
     "exam_session": "2010-01-31",
     "subject": "재료과학",
     "question_number": 24,
-    "question_text": "식빵 제조시 수돗물 온도 10℃, 실내온도 28℃, 밀가루 온 도 30℃, 마찰계수 23일 때 반죽온도를 27℃로 하려면 몇 ℃의 물을 사용해야 하는가?",
+    "question_text": "식빵 제조시 수돗물 온도 10℃, 실내온도 28℃, 밀가루 온도 30℃, 마찰계수 23일 때 반죽온도를 27℃로 하려면 몇 ℃의 물을 사용해야 하는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1183,7 +1183,7 @@
     "exam_session": "2010-01-31",
     "subject": "영양학",
     "question_number": 39,
-    "question_text": "퐁당 크림을 부드럽게 하고 수분보유력을 높이기 위해 일 반적으로 첨가하는 것은?",
+    "question_text": "퐁당 크림을 부드럽게 하고 수분보유력을 높이기 위해 일반적으로 첨가하는 것은?",
     "question_image_url": null,
     "choices": [
       {

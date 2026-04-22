@@ -284,7 +284,7 @@
     "exam_session": "2005-04-03",
     "subject": "제조이론",
     "question_number": 10,
-    "question_text": "옐로 레이어 케이크에서 설탕 120%, 유화쇼트닝 50%를 사 용한 경우 분유 사용량은?",
+    "question_text": "옐로 레이어 케이크에서 설탕 120%, 유화쇼트닝 50%를 사용한 경우 분유 사용량은?",
     "question_image_url": null,
     "choices": [
       {
@@ -594,7 +594,7 @@
     "exam_session": "2005-04-03",
     "subject": "제조이론",
     "question_number": 20,
-    "question_text": "빵의 관능적 평가법에서 내부적 특성을 평가하는 항목으로 틀린 것은? 1과목 : 제조이론 제과기능사               ◐2005년 04월 03일 필기 기출문제 ◑ 전자문제집 CBT : www.comcbt.com 최강 자격증 기출문제 전자문제집 CBT : www.comcbt.com",
+    "question_text": "빵의 관능적 평가법에서 내부적 특성을 평가하는 항목으로 틀린 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -625,7 +625,7 @@
     "exam_session": "2005-04-03",
     "subject": "재료과학",
     "question_number": 21,
-    "question_text": "식빵의 냉각법 중 자연 냉각시 소요되는 시간으로 가장 적 당한 것은?",
+    "question_text": "식빵의 냉각법 중 자연 냉각시 소요되는 시간으로 가장 적당한 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1121,7 +1121,7 @@
     "exam_session": "2005-04-03",
     "subject": "영양학",
     "question_number": 37,
-    "question_text": "밀가루의 표백과 숙성을 위해 사용되는 첨가물의 기능과 가 장 거리가 먼 것은?",
+    "question_text": "밀가루의 표백과 숙성을 위해 사용되는 첨가물의 기능과 가장 거리가 먼 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1338,7 +1338,7 @@
     "exam_session": "2005-04-03",
     "subject": "영양학",
     "question_number": 44,
-    "question_text": "자연계에 널리 분포되어 있는 다음의 지방산 중 융점이 가 장 낮은 것은?",
+    "question_text": "자연계에 널리 분포되어 있는 다음의 지방산 중 융점이 가장 낮은 것은?",
     "question_image_url": null,
     "choices": [
       {

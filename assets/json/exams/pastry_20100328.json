@@ -191,7 +191,7 @@
     "exam_session": "2010-03-28",
     "subject": "제조이론",
     "question_number": 7,
-    "question_text": "반죽의 희망온도가 27˚C이고, 물 사용량은 10kg, 밀가루의 온도가 20˚C, 실내온도가 26˚C, 수돗물 온도가 18˚C, 결과온 도가 30˚C일 때 얼음의 양은 약 얼마인가?",
+    "question_text": "반죽의 희망온도가 27˚C이고, 물 사용량은 10kg, 밀가루의 온도가 20˚C, 실내온도가 26˚C, 수돗물 온도가 18˚C, 결과온도가 30˚C일 때 얼음의 양은 약 얼마인가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1803,7 +1803,7 @@
     "exam_session": "2010-03-28",
     "subject": "식품위생학",
     "question_number": 59,
-    "question_text": "과자, 비스킷, 카스텔라 등을 부풀게 하기 위한 팽창제로 사 용되는 식품첨가물이 아닌 것은?",
+    "question_text": "과자, 비스킷, 카스텔라 등을 부풀게 하기 위한 팽창제로 사용되는 식품첨가물이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {

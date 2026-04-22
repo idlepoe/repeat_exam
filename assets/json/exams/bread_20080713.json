@@ -470,7 +470,7 @@
     "exam_session": "2008-07-13",
     "subject": "제조이론",
     "question_number": 16,
-    "question_text": "이스트를 2% 사용했을 때 최적 발효시간이 120분이라면 발 효시간을 90분으로 단축할 때 이스트를 약 몇 % 사용해야 하는가?",
+    "question_text": "이스트를 2% 사용했을 때 최적 발효시간이 120분이라면 발효시간을 90분으로 단축할 때 이스트를 약 몇 % 사용해야 하는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -625,7 +625,7 @@
     "exam_session": "2008-07-13",
     "subject": "재료과학",
     "question_number": 21,
-    "question_text": "빵 반죽(믹싱)시 반죽 온도가 높아지는 주 이유는? 1과목 : 제조이론 2과목 : 재료과학 제빵기능사               ◐2008년 07월 13일 필기 기출문제 ◑ 전자문제집 CBT : www.comcbt.com 최강 자격증 기출문제 전자문제집 CBT : www.comcbt.com",
+    "question_text": "빵 반죽(믹싱)시 반죽 온도가 높아지는 주 이유는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1834,7 +1834,7 @@
     "exam_session": "2008-07-13",
     "subject": "식품위생학",
     "question_number": 60,
-    "question_text": "탄수화물이 많이 든 식품을 고온에서 가열하거나 튀길 때 생성되는 발암성 물질은? 4과목 : 식품위생학 제빵기능사               ◐2008년 07월 13일 필기 기출문제 ◑ 전자문제집 CBT : www.comcbt.com 최강 자격증 기출문제 전자문제집 CBT : www.comcbt.com",
+    "question_text": "탄수화물이 많이 든 식품을 고온에서 가열하거나 튀길 때 생성되는 발암성 물질은?",
     "question_image_url": null,
     "choices": [
       {

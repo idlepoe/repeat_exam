@@ -594,7 +594,7 @@
     "exam_session": "2002-10-06",
     "subject": "제조이론",
     "question_number": 20,
-    "question_text": "제빵에 있어 2차 발효실의 습도가 너무 높을 때 일어날 수 있는 결점은? 1과목 : 제조이론 제빵기능사               ◐2002년 10월 06일 필기 기출문제 ◑ 전자문제집 CBT : www.comcbt.com 최강 자격증 기출문제 전자문제집 CBT : www.comcbt.com",
+    "question_text": "제빵에 있어 2차 발효실의 습도가 너무 높을 때 일어날 수 있는 결점은?",
     "question_image_url": null,
     "choices": [
       {
@@ -904,7 +904,7 @@
     "exam_session": "2002-10-06",
     "subject": "재료과학",
     "question_number": 30,
-    "question_text": "냉동 반죽법에서 1차 발효시간이 길어질 경우 일어나는 현 상은?",
+    "question_text": "냉동 반죽법에서 1차 발효시간이 길어질 경우 일어나는 현상은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1152,7 +1152,7 @@
     "exam_session": "2002-10-06",
     "subject": "영양학",
     "question_number": 38,
-    "question_text": "제빵에서 탈지분유를 밀가루 대비 4-6%를 사용할 때의 영 향이 아닌 것은?",
+    "question_text": "제빵에서 탈지분유를 밀가루 대비 4-6%를 사용할 때의 영향이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {

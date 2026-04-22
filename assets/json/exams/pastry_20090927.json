@@ -656,7 +656,7 @@
     "exam_session": "2009-09-27",
     "subject": "재료과학",
     "question_number": 22,
-    "question_text": "같은 크기의 틀에 넣어 같은 체적의 제품을 얻으려고 할 때 반죽의 분할량이 가장 적은 제품은? 1과목 : 제조이론 2과목 : 재료과학 제과기능사               ◐2009년 09월 27일 필기 기출문제 ◑ 전자문제집 CBT : www.comcbt.com 최강 자격증 기출문제 전자문제집 CBT : www.comcbt.com",
+    "question_text": "같은 크기의 틀에 넣어 같은 체적의 제품을 얻으려고 할 때 반죽의 분할량이 가장 적은 제품은?",
     "question_image_url": null,
     "choices": [
       {
@@ -842,7 +842,7 @@
     "exam_session": "2009-09-27",
     "subject": "재료과학",
     "question_number": 28,
-    "question_text": "스트레이트법으로 일반 식빵을 만들 때 믹싱 후 반죽의 온 도로 가장 이상적인 것은?",
+    "question_text": "스트레이트법으로 일반 식빵을 만들 때 믹싱 후 반죽의 온도로 가장 이상적인 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -904,7 +904,7 @@
     "exam_session": "2009-09-27",
     "subject": "재료과학",
     "question_number": 30,
-    "question_text": "다음 중 가스 발생량이 많아져 발효가 빨라지는 경우가 아 닌 것은?",
+    "question_text": "다음 중 가스 발생량이 많아져 발효가 빨라지는 경우가 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1307,7 +1307,7 @@
     "exam_session": "2009-09-27",
     "subject": "영양학",
     "question_number": 43,
-    "question_text": "다음 중 식물계에는 존재하지 않는 당은? 3과목 : 영양학 제과기능사               ◐2009년 09월 27일 필기 기출문제 ◑ 전자문제집 CBT : www.comcbt.com 최강 자격증 기출문제 전자문제집 CBT : www.comcbt.com",
+    "question_text": "다음 중 식물계에는 존재하지 않는 당은?",
     "question_image_url": null,
     "choices": [
       {

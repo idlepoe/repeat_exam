@@ -51,6 +51,47 @@ CIRCLED_TO_NUM = {
     "❹": 4,
 }
 
+RE_HEADER_NOISE_IN_QUESTION = re.compile(
+    r"\s(?:\d+과목\s*:|제과기능사\s+◐|제빵기능사\s+◐|전자문제집 CBT\s*:|최강 자격증 기출문제 전자문제집 CBT\s*:).*$"
+)
+
+SAFE_JOIN_REPLACEMENTS = (
+    ("아 닌", "아닌"),
+    ("가 장", "가장"),
+    ("알 맞", "알맞"),
+    ("온 도", "온도"),
+    ("습 도", "습도"),
+    ("발 효", "발효"),
+    ("완 료", "완료"),
+    ("재 료", "재료"),
+    ("반 죽", "반죽"),
+    ("제 품", "제품"),
+    ("원 인", "원인"),
+    ("관 계", "관계"),
+    ("옳 은", "옳은"),
+    ("틀 린", "틀린"),
+    ("적 당", "적당"),
+    ("유 지", "유지"),
+    ("사 용", "사용"),
+    ("비 율", "비율"),
+    ("부 피", "부피"),
+    ("현 상", "현상"),
+    ("기 준", "기준"),
+    ("중 간", "중간"),
+    ("수 분", "수분"),
+    ("영 향", "영향"),
+    ("일 반적으로", "일반적으로"),
+)
+
+
+def _clean_question_text(text: str) -> str:
+    s = text.strip()
+    s = RE_HEADER_NOISE_IN_QUESTION.sub("", s).strip()
+    for old, new in SAFE_JOIN_REPLACEMENTS:
+        s = s.replace(old, new)
+    s = re.sub(r"\s+", " ", s).strip()
+    return s
+
 
 def _split_inline_choice_segments(line: str) -> list[str]:
     """
@@ -265,6 +306,7 @@ def parse_questions_from_text(
             body_parts.append(lines[k])
 
         question_text = " ".join(p for p in body_parts if p).strip()
+        question_text = _clean_question_text(question_text)
         if not question_text:
             warnings.append(f"문항 {qnum}: 본문이 비어 있습니다.")
 
