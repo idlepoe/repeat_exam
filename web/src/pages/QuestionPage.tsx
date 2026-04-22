@@ -1,10 +1,19 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type CSSProperties } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { AppBar } from '../components/AppBar'
 import { examJsonUrl } from '../lib/examFiles'
 import { fetchExamSessionList, nextSession } from '../lib/examMeta'
 import { loadProgress, saveProgress } from '../lib/storage'
 import type { Question } from '../types/question'
+
+/** 본문 / 과목 라벨 글자 크기 단계 (버튼 클릭 시 순환) */
+const FONT_STEPS = [
+  { base: 16, title: 15 },
+  { base: 18, title: 16 },
+  { base: 20, title: 17 },
+  { base: 22, title: 18 },
+  { base: 24, title: 20 },
+] as const
 
 export function QuestionPage() {
   const { examType: et, examSession: es } = useParams<{
@@ -19,7 +28,7 @@ export function QuestionPage() {
   const [loadErr, setLoadErr] = useState<string | null>(null)
   const [index, setIndex] = useState(0)
   const [navReversed, setNavReversed] = useState(false)
-  const [largeFont, setLargeFont] = useState(false)
+  const [fontStep, setFontStep] = useState(0)
   const [showNextSessionDialog, setShowNextSessionDialog] = useState(false)
 
   useEffect(() => {
@@ -113,63 +122,31 @@ export function QuestionPage() {
     }
   }
 
-  const baseFont = largeFont ? 20 : 16
-  const titleFs = largeFont ? 18 : 15
+  const fontStepClamped = Math.min(fontStep, FONT_STEPS.length - 1)
+  const { base: baseFont, title: titleFs } = FONT_STEPS[fontStepClamped]
 
-  const navPrevBtn = (
-    <button
-      type="button"
-      onClick={goPrev}
-      disabled={index <= 0}
-      style={{
-        padding: '12px 16px',
-        fontSize: 16,
-        border: '1px solid #ccc',
-        borderRadius: 8,
-        background: index <= 0 ? '#eee' : '#fff',
-        cursor: index <= 0 ? 'not-allowed' : 'pointer',
-      }}
-    >
-      이전
-    </button>
-  )
-
-  const navNextBtn = (
-    <button
-      type="button"
-      onClick={goNext}
-      style={{
-        padding: '12px 16px',
-        fontSize: 16,
-        border: '1px solid #ccc',
-        borderRadius: 8,
-        background: '#fff',
-        cursor: 'pointer',
-      }}
-    >
-      다음
-    </button>
-  )
-
-  const swapBtn = (
-    <button
-      type="button"
-      onClick={() => setNavReversed((v) => !v)}
-      style={{
-        padding: '12px 16px',
-        fontSize: 16,
-        border: '1px solid #aaa',
-        borderRadius: 8,
-        background: '#f0f0f0',
-        cursor: 'pointer',
-      }}
-    >
-      변경
-    </button>
-  )
+  const btnThird = (extra: CSSProperties): CSSProperties => ({
+    flex: '1 1 0',
+    minWidth: 0,
+    boxSizing: 'border-box',
+    padding: '14px 8px',
+    fontSize: 16,
+    border: 'none',
+    borderRadius: 0,
+    cursor: 'pointer',
+    ...extra,
+  })
 
   return (
-    <div style={{ minHeight: '100svh', display: 'flex', flexDirection: 'column' }}>
+    <div
+      style={{
+        height: '100svh',
+        display: 'flex',
+        flexDirection: 'column',
+        overflow: 'hidden',
+        maxWidth: '100%',
+      }}
+    >
       <AppBar
         title={examType}
         showBack
@@ -179,7 +156,9 @@ export function QuestionPage() {
         right={
           <button
             type="button"
-            onClick={() => setLargeFont((v) => !v)}
+            onClick={() =>
+              setFontStep((s) => (s + 1) % FONT_STEPS.length)
+            }
             style={{
               padding: '6px 10px',
               fontSize: 14,
@@ -188,7 +167,7 @@ export function QuestionPage() {
               background: '#fff',
               cursor: 'pointer',
             }}
-            title="글자 크기"
+            title={`글자 크기 (${fontStepClamped + 1}/${FONT_STEPS.length})`}
           >
             aA
           </button>
@@ -198,7 +177,11 @@ export function QuestionPage() {
       <main
         style={{
           flex: 1,
+          minHeight: 0,
+          overflowY: 'auto',
+          WebkitOverflowScrolling: 'touch',
           padding: 16,
+          paddingBottom: 8,
           fontSize: baseFont,
           lineHeight: 1.5,
           textAlign: 'left',
@@ -240,7 +223,7 @@ export function QuestionPage() {
               style={{
                 listStyle: 'none',
                 padding: 0,
-                margin: '0 0 24px',
+                margin: 0,
               }}
             >
               {q.choices.map((c) => {
@@ -262,33 +245,101 @@ export function QuestionPage() {
                 )
               })}
             </ul>
-
-            <div
-              style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: 8,
-                justifyContent: 'center',
-                marginTop: 8,
-              }}
-            >
-              {navReversed ? (
-                <>
-                  {navNextBtn}
-                  {swapBtn}
-                  {navPrevBtn}
-                </>
-              ) : (
-                <>
-                  {navPrevBtn}
-                  {swapBtn}
-                  {navNextBtn}
-                </>
-              )}
-            </div>
           </>
         )}
       </main>
+
+      {q ? (
+        <nav
+          style={{
+            flexShrink: 0,
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'stretch',
+            borderTop: '1px solid #e5e4e7',
+            background: '#fff',
+            paddingBottom: 'env(safe-area-inset-bottom, 0px)',
+          }}
+          aria-label="문제 이동"
+        >
+          {navReversed ? (
+            <>
+              <button
+                type="button"
+                onClick={goNext}
+                style={btnThird({
+                  borderRight: '1px solid #e5e4e7',
+                  background: '#fff',
+                  color: '#111',
+                })}
+              >
+                다음
+              </button>
+              <button
+                type="button"
+                onClick={() => setNavReversed((v) => !v)}
+                style={btnThird({
+                  borderRight: '1px solid #e5e4e7',
+                  background: '#f5f5f5',
+                  color: '#111',
+                })}
+              >
+                변경
+              </button>
+              <button
+                type="button"
+                onClick={goPrev}
+                disabled={index <= 0}
+                style={btnThird({
+                  background: index <= 0 ? '#eee' : '#fff',
+                  color: '#111',
+                  cursor: index <= 0 ? 'not-allowed' : 'pointer',
+                })}
+              >
+                이전
+              </button>
+            </>
+          ) : (
+            <>
+              <button
+                type="button"
+                onClick={goPrev}
+                disabled={index <= 0}
+                style={btnThird({
+                  borderRight: '1px solid #e5e4e7',
+                  background: index <= 0 ? '#eee' : '#fff',
+                  color: '#111',
+                  cursor: index <= 0 ? 'not-allowed' : 'pointer',
+                })}
+              >
+                이전
+              </button>
+              <button
+                type="button"
+                onClick={() => setNavReversed((v) => !v)}
+                style={btnThird({
+                  borderRight: '1px solid #e5e4e7',
+                  background: '#f5f5f5',
+                  color: '#111',
+                })}
+              >
+                변경
+              </button>
+              <button
+                type="button"
+                onClick={goNext}
+                style={btnThird({
+                  background: '#fff',
+                  color: '#111',
+                })}
+              >
+                다음
+              </button>
+            </>
+          )}
+        </nav>
+      ) : null}
 
       {showNextSessionDialog && (
         <div

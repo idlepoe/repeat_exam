@@ -1,0 +1,3 @@
+# PDF 일괄 추출 도구 (웹 앱과 별도)
+# 설치: python -m pip install -r requirements-tools.txt
+pymupdf>=1.24.0,<2
