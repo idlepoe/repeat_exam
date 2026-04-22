@@ -66,6 +66,10 @@ class QuestionController extends GetxController {
     error.value = null;
     try {
       navReversed.value = await StorageService.loadNavReversed();
+      fontStep.value = (await StorageService.loadQuestionFontStep()).clamp(
+        0,
+        fontSteps.length - 1,
+      );
       answerHighlight.value = await StorageService.loadAnswerHighlight();
 
       final path = ExamFilesService.examJsonAssetPath(
@@ -145,6 +149,7 @@ class QuestionController extends GetxController {
 
   Future<void> cycleFontStep() async {
     fontStep.value = (fontStep.value + 1) % fontSteps.length;
+    await StorageService.saveQuestionFontStep(fontStep.value);
   }
 
   Future<void> toggleNavReversed() async {

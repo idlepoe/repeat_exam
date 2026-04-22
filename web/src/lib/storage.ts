@@ -2,6 +2,7 @@ const KEY_PROGRESS = 'repeat_exam:progress'
 const KEY_SESSION_COUNT = 'repeat_exam:session_count'
 const KEY_NAV_REVERSED = 'repeat_exam:nav_reversed'
 const KEY_ANSWER_HIGHLIGHT = 'repeat_exam:answer_highlight'
+const KEY_QUESTION_FONT_STEP = 'repeat_exam:question_font_step'
 
 export interface Progress {
   exam_type: string
@@ -170,6 +171,28 @@ export function loadNavReversed(): boolean {
 export function saveNavReversed(value: boolean): void {
   try {
     localStorage.setItem(KEY_NAV_REVERSED, value ? '1' : '0')
+  } catch {
+    /* ignore */
+  }
+}
+
+export function loadQuestionFontStep(): number {
+  try {
+    const raw = localStorage.getItem(KEY_QUESTION_FONT_STEP)
+    if (!raw) return 0
+    const parsed = Number(raw)
+    if (Number.isInteger(parsed) && parsed >= 0) {
+      return parsed
+    }
+  } catch {
+    /* ignore */
+  }
+  return 0
+}
+
+export function saveQuestionFontStep(step: number): void {
+  try {
+    localStorage.setItem(KEY_QUESTION_FONT_STEP, String(step))
   } catch {
     /* ignore */
   }

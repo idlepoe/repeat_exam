@@ -59,6 +59,7 @@ class StorageService {
   static const String _keySessionCount = 'repeat_exam:session_count';
   static const String _keyNavReversed = 'repeat_exam:nav_reversed';
   static const String _keyAnswerHighlight = 'repeat_exam:answer_highlight';
+  static const String _keyQuestionFontStep = 'repeat_exam:question_font_step';
 
   const StorageService._();
 
@@ -206,6 +207,16 @@ class StorageService {
   static Future<void> saveNavReversed(bool value) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString(_keyNavReversed, value ? '1' : '0');
+  }
+
+  static Future<int> loadQuestionFontStep() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getInt(_keyQuestionFontStep) ?? 0;
+  }
+
+  static Future<void> saveQuestionFontStep(int step) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setInt(_keyQuestionFontStep, step);
   }
 
   static Future<AnswerHighlight> loadAnswerHighlight() async {

@@ -61,7 +61,9 @@ class ExamSessionListView extends GetView<ExamSessionListController> {
                 padding: const EdgeInsets.only(bottom: 12),
                 child: InkWell(
                   borderRadius: BorderRadius.circular(8),
-                  onTap: () => controller.goQuestion(session),
+                  onTap: () async {
+                    await controller.goQuestion(session);
+                  },
                   child: Container(
                     decoration: BoxDecoration(
                       border: Border.all(color: const Color(0xFFCCCCCC)),

@@ -135,57 +135,61 @@ class ExamTypeListView extends GetView<ExamTypeListController> {
         return ListView(
           padding: const EdgeInsets.all(16),
           children: [
-            TextButton(
-              onPressed: () => controller.optionsFolded.toggle(),
-              style: TextButton.styleFrom(
-                foregroundColor: const Color(0xFF555555),
-                padding: const EdgeInsets.only(bottom: 8),
-                shape: const RoundedRectangleBorder(),
-                side: const BorderSide(color: Color(0xFFDDDDDD)),
+            ExpansionTile(
+              tilePadding: EdgeInsets.zero,
+              childrenPadding: const EdgeInsets.only(bottom: 8),
+              shape: const Border(),
+              collapsedShape: const Border(),
+              title: const Text(
+                '옵션',
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF555555),
+                ),
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    '옵션',
-                    style: TextStyle(fontWeight: FontWeight.w600),
-                  ),
-                  Text(
-                    controller.optionsFolded.value ? '펼치기' : '접기',
-                    style: const TextStyle(fontSize: 12),
-                  ),
-                ],
+              subtitle: Text(
+                controller.optionsFolded.value ? '펼치기' : '접기',
+                style: const TextStyle(fontSize: 12, color: Color(0xFF777777)),
               ),
+              initiallyExpanded: !controller.optionsFolded.value,
+              onExpansionChanged: (expanded) {
+                controller.optionsFolded.value = !expanded;
+              },
+              children: [
+                SizedBox(
+                  width: double.infinity,
+                  child: FilledButton(
+                    onPressed: () => _showHighlightDialog(context),
+                    style: FilledButton.styleFrom(
+                      backgroundColor: _hexToColor(highlight.bg),
+                      foregroundColor: _hexToColor(highlight.fg),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                    ),
+                    child: const Text('정답 하이라이트 색상 변경'),
+                  ),
+                ),
+                const SizedBox(height: 12),
+                SizedBox(
+                  width: double.infinity,
+                  child: OutlinedButton(
+                    onPressed: () async {
+                      await controller.clearAllProgress();
+                      if (context.mounted) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('진행상황이 초기화되었습니다.')),
+                        );
+                      }
+                    },
+                    style: OutlinedButton.styleFrom(
+                      foregroundColor: const Color(0xFFB00000),
+                      side: const BorderSide(color: Color(0xFFDD4444)),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                    ),
+                    child: const Text('진행상황 초기화하기'),
+                  ),
+                ),
+              ],
             ),
-            if (!controller.optionsFolded.value) ...[
-              const SizedBox(height: 12),
-              FilledButton(
-                onPressed: () => _showHighlightDialog(context),
-                style: FilledButton.styleFrom(
-                  backgroundColor: _hexToColor(highlight.bg),
-                  foregroundColor: _hexToColor(highlight.fg),
-                  padding: const EdgeInsets.symmetric(vertical: 12),
-                ),
-                child: const Text('정답 하이라이트 색상 변경'),
-              ),
-              const SizedBox(height: 12),
-              OutlinedButton(
-                onPressed: () async {
-                  await controller.clearAllProgress();
-                  if (context.mounted) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('진행상황이 초기화되었습니다.')),
-                    );
-                  }
-                },
-                style: OutlinedButton.styleFrom(
-                  foregroundColor: const Color(0xFFB00000),
-                  side: const BorderSide(color: Color(0xFFDD4444)),
-                  padding: const EdgeInsets.symmetric(vertical: 12),
-                ),
-                child: const Text('진행상황 초기화하기'),
-              ),
-            ],
             const SizedBox(height: 20),
             const Text(
               '시험 타입',

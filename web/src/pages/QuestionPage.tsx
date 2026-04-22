@@ -7,8 +7,10 @@ import {
   incrementSessionCountAndClearProgress,
   loadAnswerHighlight,
   loadNavReversed,
+  loadQuestionFontStep,
   loadProgress,
   saveNavReversed,
+  saveQuestionFontStep,
   saveProgress,
 } from '../lib/storage'
 import type { Question } from '../types/question'
@@ -35,7 +37,7 @@ export function QuestionPage() {
   const [loadErr, setLoadErr] = useState<string | null>(null)
   const [index, setIndex] = useState(0)
   const [navReversed, setNavReversed] = useState(() => loadNavReversed())
-  const [fontStep, setFontStep] = useState(0)
+  const [fontStep, setFontStep] = useState(() => loadQuestionFontStep())
   const [showNextSessionDialog, setShowNextSessionDialog] = useState(false)
   const [answerHighlight] = useState(() => loadAnswerHighlight())
 
@@ -106,6 +108,10 @@ export function QuestionPage() {
     saveNavReversed(navReversed)
   }, [navReversed])
 
+  useEffect(() => {
+    saveQuestionFontStep(fontStep)
+  }, [fontStep])
+
   const goPrev = () => {
     if (index > 0) setIndex((i) => i - 1)
   }
@@ -139,7 +145,10 @@ export function QuestionPage() {
     }
   }
 
-  const fontStepClamped = Math.min(fontStep, FONT_STEPS.length - 1)
+  const fontStepClamped = Math.max(
+    0,
+    Math.min(fontStep, FONT_STEPS.length - 1)
+  )
   const { base: baseFont, title: titleFs } = FONT_STEPS[fontStepClamped]
 
   const btnThird = (extra: CSSProperties): CSSProperties => ({

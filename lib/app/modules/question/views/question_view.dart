@@ -55,17 +55,9 @@ class QuestionView extends GetView<QuestionController> {
       appBar: AppBar(
         title: Obx(() => Text(controller.examType.value)),
         actions: [
-          Obx(
-            () => TextButton(
-              onPressed: controller.cycleFontStep,
-              child: Text(
-                'aA',
-                style: TextStyle(
-                  color: Theme.of(context).colorScheme.onPrimary,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
+          TextButton(
+            onPressed: controller.cycleFontStep,
+            child: Text('aA', style: TextStyle(fontWeight: FontWeight.w600)),
           ),
         ],
       ),

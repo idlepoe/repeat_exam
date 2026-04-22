@@ -84,10 +84,24 @@ class ExamSessionListController extends GetxController {
     return sessionProgressMap[session] ?? 0;
   }
 
-  void goQuestion(String session) {
-    Get.toNamed(
+  Future<void> goQuestion(String session) async {
+    await Get.toNamed(
       Routes.QUESTION,
       arguments: {'examType': examType.value, 'examSession': session},
     );
+    await _refreshSessionMetrics(session);
+  }
+
+  Future<void> _refreshSessionMetrics(String session) async {
+    final updatedMap = await StorageService.loadSessionCountMap();
+    final sessionKey = '${examType.value}::$session';
+    sessionCountMap[sessionKey] = updatedMap[sessionKey] ?? 0;
+    sessionCountMap.refresh();
+
+    final saved = await StorageService.loadProgress(examType.value, session);
+    final solved = saved?.questionNumber.clamp(0, totalQuestionsPerSession) ?? 0;
+    final pct = ((solved / totalQuestionsPerSession) * 100).round().clamp(0, 100);
+    sessionProgressMap[session] = pct;
+    sessionProgressMap.refresh();
   }
 }
