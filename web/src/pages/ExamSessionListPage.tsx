@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { AppBar } from '../components/AppBar'
-import { examJsonUrl } from '../lib/examFiles'
 import {
   getSessionCount,
+  loadAnswerHighlight,
   loadProgress,
   loadSessionCountMap,
   type SessionCountMap,
@@ -13,6 +13,8 @@ import {
   sessionsForExamType,
   type ExamSessionListJson,
 } from '../lib/examMeta'
+
+const TOTAL_QUESTIONS_PER_SESSION = 60
 
 export function ExamSessionListPage() {
   const { examType: examTypeParam } = useParams<{ examType: string }>()
@@ -25,6 +27,7 @@ export function ExamSessionListPage() {
   const [sessionProgressMap, setSessionProgressMap] = useState<
     Record<string, number>
   >({})
+  const [answerHighlight] = useState(() => loadAnswerHighlight())
 
   useEffect(() => {
     fetchExamSessionList()
@@ -41,44 +44,17 @@ export function ExamSessionListPage() {
       return
     }
 
-    let cancelled = false
-
-    void (async () => {
-      const entries = await Promise.all(
-        sessions.map(async (session) => {
-          const saved = loadProgress(examType, session)
-          if (!saved) return [session, 0] as const
-
-          try {
-            const res = await fetch(examJsonUrl(examType, session))
-            if (!res.ok) return [session, 0] as const
-            const data = (await res.json()) as Array<{ question_number: number }>
-            if (!Array.isArray(data) || data.length === 0) {
-              return [session, 0] as const
-            }
-            const sorted = [...data].sort(
-              (a, b) => a.question_number - b.question_number
-            )
-            const idx = sorted.findIndex(
-              (q) => q.question_number === saved.question_number
-            )
-            const solved = idx >= 0 ? idx + 1 : 0
-            const pct = Math.round((solved / sorted.length) * 100)
-            return [session, Math.max(0, Math.min(100, pct))] as const
-          } catch {
-            return [session, 0] as const
-          }
-        })
+    const entries = sessions.map((session) => {
+      const saved = loadProgress(examType, session)
+      if (!saved) return [session, 0] as const
+      const solved = Math.max(
+        0,
+        Math.min(TOTAL_QUESTIONS_PER_SESSION, saved.question_number)
       )
-
-      if (!cancelled) {
-        setSessionProgressMap(Object.fromEntries(entries))
-      }
-    })()
-
-    return () => {
-      cancelled = true
-    }
+      const pct = Math.round((solved / TOTAL_QUESTIONS_PER_SESSION) * 100)
+      return [session, Math.max(0, Math.min(100, pct))] as const
+    })
+    setSessionProgressMap(Object.fromEntries(entries))
   }, [examType, sessions])
 
   return (
@@ -115,11 +91,15 @@ export function ExamSessionListPage() {
                 textAlign: 'left',
                 border: '1px solid #ccc',
                 borderRadius: 8,
-                background: '#fafafa',
+                backgroundColor: '#fafafa',
+                backgroundImage: `linear-gradient(to right, ${answerHighlight.bg} ${pct}%, transparent ${pct}%)`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: '100% 5px',
+                backgroundPosition: 'left bottom',
                 cursor: 'pointer',
               }}
             >
-              <span>{session}</span>
+              <span style={{ color: '#111' }}>{session}</span>
               <span style={{ fontSize: 14, color: '#666' }}>
                 {pct}% · 회독 {count}
               </span>
