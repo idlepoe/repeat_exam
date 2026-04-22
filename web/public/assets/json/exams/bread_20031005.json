@@ -98,7 +98,7 @@
     "exam_session": "2003-10-05",
     "subject": "제조이론",
     "question_number": 4,
-    "question_text": "다음 머랭(Meringue)의 종류 중 설탕을 끓여 시럽으로 만들 어 제조하는 것은?",
+    "question_text": "다음 머랭(Meringue)의 종류 중 설탕을 끓여 시럽으로 만들어 제조하는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -408,7 +408,7 @@
     "exam_session": "2003-10-05",
     "subject": "제조이론",
     "question_number": 14,
-    "question_text": "롤 케이크를 말 때 표면이 터질 경우의 조치사항이 아닌 것 은?",
+    "question_text": "롤 케이크를 말 때 표면이 터질 경우의 조치사항이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -439,7 +439,7 @@
     "exam_session": "2003-10-05",
     "subject": "제조이론",
     "question_number": 15,
-    "question_text": "반죽형 케이크를 반죽 믹싱법에 대한 설명으로 틀리는 것 은?",
+    "question_text": "반죽형 케이크를 반죽 믹싱법에 대한 설명으로 틀리는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -532,7 +532,7 @@
     "exam_session": "2003-10-05",
     "subject": "제조이론",
     "question_number": 18,
-    "question_text": "오븐 온도가 높을 때 식빵 제품에 미치는 영향이 아닌 것 은?",
+    "question_text": "오븐 온도가 높을 때 식빵 제품에 미치는 영향이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1214,7 +1214,7 @@
     "exam_session": "2003-10-05",
     "subject": "영양학",
     "question_number": 40,
-    "question_text": "밀가루 수분함량이 1% 감소할 때 마다 흡수율은 얼마나 증 가되는가?",
+    "question_text": "밀가루 수분함량이 1% 감소할 때 마다 흡수율은 얼마나 증가되는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1524,7 +1524,7 @@
     "exam_session": "2003-10-05",
     "subject": "영양학",
     "question_number": 50,
-    "question_text": "난백이 교반에 의해 머랭으로 변하는 현상을 무엇이라고 하 는가?",
+    "question_text": "난백이 교반에 의해 머랭으로 변하는 현상을 무엇이라고 하는가?",
     "question_image_url": null,
     "choices": [
       {

@@ -408,7 +408,7 @@
     "exam_session": "2003-07-20",
     "subject": "제조이론",
     "question_number": 14,
-    "question_text": "스펀지 케이크의 반죽 1g당 팬용적(cm3)은 얼마인가?",
+    "question_text": "스펀지 케이크의 반죽 1g당 팬용적(cm³)은 얼마인가?",
     "question_image_url": null,
     "choices": [
       {
@@ -766,7 +766,7 @@
       },
       {
         "no": 4,
-        "text": "비용적의 단위는 cm3/g이다."
+        "text": "비용적의 단위는 cm³/g이다."
       }
     ],
     "correct_answer": 2,

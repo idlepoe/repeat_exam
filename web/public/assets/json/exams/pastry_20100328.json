@@ -98,7 +98,7 @@
     "exam_session": "2010-03-28",
     "subject": "제조이론",
     "question_number": 4,
-    "question_text": "반죽의 비중이 제품에 미치는 영향 중 관계가 가장 적은 것 은?",
+    "question_text": "반죽의 비중이 제품에 미치는 영향 중 관계가 가장 적은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -222,7 +222,7 @@
     "exam_session": "2010-03-28",
     "subject": "제조이론",
     "question_number": 8,
-    "question_text": "슈 제조시 반죽표면을 분무 또는 침지시키는 이유가 아닌 것 은?",
+    "question_text": "슈 제조시 반죽표면을 분무 또는 침지시키는 이유가 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -284,7 +284,7 @@
     "exam_session": "2010-03-28",
     "subject": "제조이론",
     "question_number": 10,
-    "question_text": "제과/제빵공장에서 생산관리시 매일 점검할 사항이 아닌 것 은?",
+    "question_text": "제과/제빵공장에서 생산관리시 매일 점검할 사항이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -408,7 +408,7 @@
     "exam_session": "2010-03-28",
     "subject": "제조이론",
     "question_number": 14,
-    "question_text": "다음 제품 제조시 2차 발효실의 습도를 가장 낮게 유지 하 는 것은?",
+    "question_text": "다음 제품 제조시 2차 발효실의 습도를 가장 낮게 유지 하는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -501,7 +501,7 @@
     "exam_session": "2010-03-28",
     "subject": "제조이론",
     "question_number": 17,
-    "question_text": "분할을 할 때 반죽의 손상을 죽일 수 있는 방법이 아닌 것 은?",
+    "question_text": "분할을 할 때 반죽의 손상을 죽일 수 있는 방법이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1002,7 +1002,7 @@
     "choices": [
       {
         "no": 1,
-        "text": "호밀 단백질은 밀가루 단백질에 비하여 글루텐을 형성하 는 능력이 떨어진다."
+        "text": "호밀 단백질은 밀가루 단백질에 비하여 글루텐을 형성하는 능력이 떨어진다."
       },
       {
         "no": 2,
@@ -1059,7 +1059,7 @@
     "exam_session": "2010-03-28",
     "subject": "영양학",
     "question_number": 35,
-    "question_text": "분당(Powdered sugar)의 고형화를 방지하기 위하여 첨가하 는 물질은?",
+    "question_text": "분당(Powdered sugar)의 고형화를 방지하기 위하여 첨가하는 물질은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1126,19 +1126,19 @@
     "choices": [
       {
         "no": 1,
-        "text": "파운드 케이크 : 2.40cm3/g"
+        "text": "파운드 케이크 : 2.40cm³/g"
       },
       {
         "no": 2,
-        "text": "엔젤 푸드 케이크 : 4.71cm3/g"
+        "text": "엔젤 푸드 케이크 : 4.71cm³/g"
       },
       {
         "no": 3,
-        "text": "레이어 케이크 : 5.05cm3/g"
+        "text": "레이어 케이크 : 5.05cm³/g"
       },
       {
         "no": 4,
-        "text": "스펀지 케이크 : 5.08cm3/g"
+        "text": "스펀지 케이크 : 5.08cm³/g"
       }
     ],
     "correct_answer": 3,
@@ -1462,7 +1462,7 @@
     "exam_session": "2010-03-28",
     "subject": "영양학",
     "question_number": 48,
-    "question_text": "난백이 교반에 의해 머랭으로 변하는 현상을 무엇이라고 하 는가?",
+    "question_text": "난백이 교반에 의해 머랭으로 변하는 현상을 무엇이라고 하는가?",
     "question_image_url": null,
     "choices": [
       {

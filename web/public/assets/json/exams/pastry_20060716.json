@@ -253,7 +253,7 @@
     "exam_session": "2006-07-16",
     "subject": "제조이론",
     "question_number": 9,
-    "question_text": "과자반죽 믹싱법 중에서 크림법은 어떤 재료를 먼저 믹싱하 는 방법인가?",
+    "question_text": "과자반죽 믹싱법 중에서 크림법은 어떤 재료를 먼저 믹싱하는 방법인가?",
     "question_image_url": null,
     "choices": [
       {
@@ -501,7 +501,7 @@
     "exam_session": "2006-07-16",
     "subject": "제조이론",
     "question_number": 17,
-    "question_text": "일반 식빵 제조에서 최대의 부피를 갖는 쇼트닝의 사용량 은?",
+    "question_text": "일반 식빵 제조에서 최대의 부피를 갖는 쇼트닝의 사용량은?",
     "question_image_url": null,
     "choices": [
       {
@@ -625,7 +625,7 @@
     "exam_session": "2006-07-16",
     "subject": "재료과학",
     "question_number": 21,
-    "question_text": "일반 빵 제조에 있어 2차 발효실의 온도로 가장 적당한 것 은?",
+    "question_text": "일반 빵 제조에 있어 2차 발효실의 온도로 가장 적당한 것은?",
     "question_image_url": null,
     "choices": [
       {

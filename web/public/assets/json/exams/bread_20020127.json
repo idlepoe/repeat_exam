@@ -36,7 +36,7 @@
     "exam_session": "2002-01-27",
     "subject": "제조이론",
     "question_number": 2,
-    "question_text": "케이크 팬용적 410 cm3에 100 g의 스펀지 케이크 반죽을 넣 어 좋은 결과를 얻었다면 팬용적 1230 cm3에 넣어야 할 스 펀지 케이크의 반죽무게는?",
+    "question_text": "케이크 팬용적 410 cm³에 100 g의 스펀지 케이크 반죽을 넣어 좋은 결과를 얻었다면 팬용적 1230 cm³에 넣어야 할 스펀지 케이크의 반죽무게는?",
     "question_image_url": null,
     "choices": [
       {
@@ -129,7 +129,7 @@
     "exam_session": "2002-01-27",
     "subject": "제조이론",
     "question_number": 5,
-    "question_text": "파운드케이크의 배합율 조정에 관한 사항 중밀가루, 설탕을 일정하게 하고 쇼트닝을 증가시킬 때 조치 중 틀리는 것은?",
+    "question_text": "파운드케이크의 배합율 조정에 관한 사항 중 밀가루, 설탕을 일정하게 하고 쇼트닝을 증가시킬 때 조치 중 틀리는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -191,7 +191,7 @@
     "exam_session": "2002-01-27",
     "subject": "제조이론",
     "question_number": 7,
-    "question_text": "슈 제조시 굽기 중간에 오븐문을 자주 열어주면 완제품은 어 떻게 되는가?",
+    "question_text": "슈 제조시 굽기 중간에 오븐문을 자주 열어주면 완제품은 어떻게 되는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -253,7 +253,7 @@
     "exam_session": "2002-01-27",
     "subject": "제조이론",
     "question_number": 9,
-    "question_text": "다음 중무스 제조시 젤라틴을 팽윤시키려 할 때 물사용량으 로 알맞은 것은?",
+    "question_text": "다음 중 무스 제조시 젤라틴을 팽윤시키려 할 때 물사용량으로 알맞은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -377,7 +377,7 @@
     "exam_session": "2002-01-27",
     "subject": "제조이론",
     "question_number": 13,
-    "question_text": "유지와 밀가루를 먼저 넣고 반죽하는 케이크 제조방법은 어 느 것인가?",
+    "question_text": "유지와 밀가루를 먼저 넣고 반죽하는 케이크 제조방법은 어느 것인가?",
     "question_image_url": null,
     "choices": [
       {
@@ -439,7 +439,7 @@
     "exam_session": "2002-01-27",
     "subject": "제조이론",
     "question_number": 15,
-    "question_text": "식빵을 만들 때 필요한 기계 중성형기와 바로 연결하여 설 치하지 않아도 되는 것은?",
+    "question_text": "식빵을 만들 때 필요한 기계 중 성형기와 바로 연결하여 설치하지 않아도 되는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -470,7 +470,7 @@
     "exam_session": "2002-01-27",
     "subject": "제조이론",
     "question_number": 16,
-    "question_text": "빵 제조시 경수를 사용해야만 하는 지역에 있어서 조치 사 항 중 틀린 것은?",
+    "question_text": "빵 제조시 경수를 사용해야만 하는 지역에 있어서 조치 사항 중 틀린 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -625,7 +625,7 @@
     "exam_session": "2002-01-27",
     "subject": "재료과학",
     "question_number": 21,
-    "question_text": "굽기 중 일어나는 변화로 가장 높은 온도에서 발생하는 것 은?",
+    "question_text": "굽기 중 일어나는 변화로 가장 높은 온도에서 발생하는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -718,7 +718,7 @@
     "exam_session": "2002-01-27",
     "subject": "재료과학",
     "question_number": 24,
-    "question_text": "스펀지법에서 스펀지에 사용하는 일반적인 재료가 아닌 것 은?",
+    "question_text": "스펀지법에서 스펀지에 사용하는 일반적인 재료가 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -904,7 +904,7 @@
     "exam_session": "2002-01-27",
     "subject": "재료과학",
     "question_number": 30,
-    "question_text": "반죽 10kg을 믹싱 할 때 다음 중 가장 적합한 믹서의 용량 은?",
+    "question_text": "반죽 10kg을 믹싱할 때 다음 중 가장 적합한 믹서의 용량은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1183,7 +1183,7 @@
     "exam_session": "2002-01-27",
     "subject": "영양학",
     "question_number": 39,
-    "question_text": "활성 건조이스트를 수화시킬 때 발효력을 증가시키기 위하 여 밀가루에 기준하여 1-3%를 물에 풀어 넣을 수 있는 재료는?",
+    "question_text": "활성 건조이스트를 수화시킬 때 발효력을 증가시키기 위하여 밀가루에 기준하여 1-3%를 물에 풀어 넣을 수 있는 재료는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1276,7 +1276,7 @@
     "exam_session": "2002-01-27",
     "subject": "영양학",
     "question_number": 42,
-    "question_text": "패리노그래프에 의한 측정으로 알 수 있는 반죽 특성과거리 가 먼 것은?",
+    "question_text": "패리노그래프에 의한 측정으로 알 수 있는 반죽 특성과 거리가 먼 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1338,7 +1338,7 @@
     "exam_session": "2002-01-27",
     "subject": "영양학",
     "question_number": 44,
-    "question_text": "항산화제 자체는 아니지만 항산화제와 병용하면 항산화효과 가 증대되는 보완제가 아닌 것은?",
+    "question_text": "항산화제 자체는 아니지만 항산화제와 병용하면 항산화효과가 증대되는 보완제가 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1524,7 +1524,7 @@
     "exam_session": "2002-01-27",
     "subject": "영양학",
     "question_number": 50,
-    "question_text": "한 개의 무게가 50g인 과자가 있다. 이 과자 100g 중에 탄 수화물 70g, 단백질 5g, 지방 15g, 무기질 4g, 물 6g이 들 어 있다면 이 과자 10개를 먹을 때 얼마의 열량을 낼 수 있 는가?",
+    "question_text": "한 개의 무게가 50g인 과자가 있다. 이 과자 100g 중에 탄수화물 70g, 단백질 5g, 지방 15g, 무기질 4g, 물 6g이 들어 있다면 이 과자 10개를 먹을 때 얼마의 열량을 낼 수 있는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1741,7 +1741,7 @@
     "exam_session": "2002-01-27",
     "subject": "식품위생학",
     "question_number": 57,
-    "question_text": "소독력이 매우 강한 일종의 표면활성제로서 공장의 소독, 종업원의 손을 소독할 때나 용기 및 기구의 소독제로 알맞 는 것은?",
+    "question_text": "소독력이 매우 강한 일종의 표면활성제로서 공장의 소독, 종업원의 손을 소독할 때나 용기 및 기구의 소독제로 알맞은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1772,7 +1772,7 @@
     "exam_session": "2002-01-27",
     "subject": "식품위생학",
     "question_number": 58,
-    "question_text": "식품 중에 자연적으로 생성되는 천연 유독성분에 대한설명 이 잘못된 것은?",
+    "question_text": "식품 중에 자연적으로 생성되는 천연 유독성분에 대한 설명이 잘못된 것은?",
     "question_image_url": null,
     "choices": [
       {

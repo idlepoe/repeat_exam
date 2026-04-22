@@ -36,7 +36,7 @@
     "exam_session": "2002-01-27",
     "subject": "제조이론",
     "question_number": 2,
-    "question_text": "비스킷 반죽을 오랫동안 믹싱할 때 일어나는 현상이 아닌 것 은?",
+    "question_text": "비스킷 반죽을 오랫동안 믹싱할 때 일어나는 현상이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -191,7 +191,7 @@
     "exam_session": "2002-01-27",
     "subject": "제조이론",
     "question_number": 7,
-    "question_text": "푸딩을 제조할 때 경도의 조절은 어떤 재료에 의하여 결정되 는가?",
+    "question_text": "푸딩을 제조할 때 경도의 조절은 어떤 재료에 의하여 결정되는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -408,7 +408,7 @@
     "exam_session": "2002-01-27",
     "subject": "제조이론",
     "question_number": 14,
-    "question_text": "과자제품의 평가시 내부적 평가 요인으로 알맞지 않은 것 은?",
+    "question_text": "과자제품의 평가시 내부적 평가 요인으로 알맞지 않은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -855,7 +855,7 @@
       },
       {
         "no": 3,
-        "text": "냉동반죽을 30~33℃, 상대습도 80%의 2차 발효실에 넣 어 해동시킨 후 발효시킨다."
+        "text": "냉동반죽을 30~33℃, 상대습도 80%의 2차 발효실에 넣어 해동시킨 후 발효시킨다."
       },
       {
         "no": 4,

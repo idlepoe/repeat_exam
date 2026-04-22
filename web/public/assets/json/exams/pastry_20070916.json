@@ -1245,7 +1245,7 @@
     "exam_session": "2007-09-16",
     "subject": "영양학",
     "question_number": 41,
-    "question_text": "베이킹파우더가 반응을 일으키면 주로 어떤 가스가 발생하 는가?",
+    "question_text": "베이킹파우더가 반응을 일으키면 주로 어떤 가스가 발생하는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1710,7 +1710,7 @@
     "exam_session": "2007-09-16",
     "subject": "식품위생학",
     "question_number": 56,
-    "question_text": "다음 중 HACCP 적용의 7가지 원칙에 해당하지 않는 것 은?",
+    "question_text": "다음 중 HACCP 적용의 7가지 원칙에 해당하지 않는 것은?",
     "question_image_url": null,
     "choices": [
       {

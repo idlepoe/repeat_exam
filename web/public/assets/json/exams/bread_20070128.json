@@ -377,7 +377,7 @@
     "exam_session": "2007-01-28",
     "subject": "제조이론",
     "question_number": 13,
-    "question_text": "틀의 안치수 지름이 12cm, 높이가 4cm인 둥근 틀에 케이 크 반죽을 채우려고 한다. 반죽이 1g당 2.40cm3의 부피를 가진다면 이 틀에 약 몇 g의 반죽을 넣어야 알맞은가?",
+    "question_text": "틀의 안치수 지름이 12cm, 높이가 4cm인 둥근 틀에 케이 크 반죽을 채우려고 한다. 반죽이 1g당 2.40cm³의 부피를 가진다면 이 틀에 약 몇 g의 반죽을 넣어야 알맞은가?",
     "question_image_url": null,
     "choices": [
       {
@@ -532,7 +532,7 @@
     "exam_session": "2007-01-28",
     "subject": "제조이론",
     "question_number": 18,
-    "question_text": "발효에 직접적으로 영향을 주는 요소와 가장 거리가 먼 것 은?",
+    "question_text": "발효에 직접적으로 영향을 주는 요소와 가장 거리가 먼 것은?",
     "question_image_url": null,
     "choices": [
       {

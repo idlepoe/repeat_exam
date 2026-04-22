@@ -878,19 +878,19 @@
     "choices": [
       {
         "no": 1,
-        "text": "0.36 cm3/g"
+        "text": "0.36 cm³/g"
       },
       {
         "no": 2,
-        "text": "1.36 cm3/g"
+        "text": "1.36 cm³/g"
       },
       {
         "no": 3,
-        "text": "3.36 cm3/g"
+        "text": "3.36 cm³/g"
       },
       {
         "no": 4,
-        "text": "5.36 cm3/g"
+        "text": "5.36 cm³/g"
       }
     ],
     "correct_answer": 3,
