@@ -1,7 +1,7 @@
 {
-  "name": "web",
+  "name": "광고없는 제과 제빵 기출 풀이",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",

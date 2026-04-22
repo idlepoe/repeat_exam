@@ -151,3 +151,11 @@ export function loadAnswerHighlight(): AnswerHighlight {
   }
   return fallback
 }
+
+export function saveAnswerHighlight(value: AnswerHighlight): void {
+  try {
+    localStorage.setItem(KEY_ANSWER_HIGHLIGHT, JSON.stringify(value))
+  } catch {
+    /* ignore */
+  }
+}
