@@ -222,7 +222,7 @@
     "exam_session": "2003-03-30",
     "subject": "제조이론",
     "question_number": 8,
-    "question_text": "비터(beater)를 이용하여 교반하는 것이 적당한 제법으로 알 맞은 것은?",
+    "question_text": "비터(beater)를 이용하여 교반하는 것이 적당한 제법으로 알맞은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -470,7 +470,7 @@
     "exam_session": "2003-03-30",
     "subject": "제조이론",
     "question_number": 16,
-    "question_text": "스트레이트법으로 일반 식빵을 만들 때 믹싱 후 반죽의 온 도로 가장 이상적인 것은?",
+    "question_text": "스트레이트법으로 일반 식빵을 만들 때 믹싱 후 반죽의 온도로 가장 이상적인 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -873,7 +873,7 @@
     "exam_session": "2003-03-30",
     "subject": "재료과학",
     "question_number": 29,
-    "question_text": "굽기 중 전분의 호화 개시 온도와 이스트의 사멸온도로 가 장 적당한 것은?",
+    "question_text": "굽기 중 전분의 호화 개시 온도와 이스트의 사멸온도로 가장 적당한 것은?",
     "question_image_url": null,
     "choices": [
       {

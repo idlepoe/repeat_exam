@@ -1,0 +1,1862 @@
+[
+  {
+    "id": "bread_20100711_1",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "제조이론",
+    "question_number": 1,
+    "question_text": "로-마지팬(raw mazipan)에서 ‘아몬드 : 설탕’의 적합한 혼합 비율은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "1 : 0.5"
+      },
+      {
+        "no": 2,
+        "text": "1 : 1.5"
+      },
+      {
+        "no": 3,
+        "text": "1 : 2.5"
+      },
+      {
+        "no": 4,
+        "text": "1 : 3.5"
+      }
+    ],
+    "correct_answer": 1,
+    "keywords": [
+      "제조이론"
+    ]
+  },
+  {
+    "id": "bread_20100711_2",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "제조이론",
+    "question_number": 2,
+    "question_text": "다음 중 달걀에 대한 설명이 틀린 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "노른자의 수분함량은 약 50% 정도이다."
+      },
+      {
+        "no": 2,
+        "text": "전란(흰자와 노른자) 의 수분함량은75%정도이다,"
+      },
+      {
+        "no": 3,
+        "text": "노른자에는 유화기능을 갖는 레시틴이 함유되어 있다."
+      },
+      {
+        "no": 4,
+        "text": "달걀은 -5 ~ -10℃로 냉동 저장하여야 품질을 보장할 수"
+      }
+    ],
+    "correct_answer": 4,
+    "keywords": [
+      "제조이론"
+    ]
+  },
+  {
+    "id": "bread_20100711_3",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "제조이론",
+    "question_number": 3,
+    "question_text": "같은 용적의 팬에 같은 무게의 반죽을 팬닝 하였을 경우 부피가 가장 작은 제품은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "시퐁 케이크"
+      },
+      {
+        "no": 2,
+        "text": "레이어 케이크"
+      },
+      {
+        "no": 3,
+        "text": "파운드 케이크"
+      },
+      {
+        "no": 4,
+        "text": "스펀지 케이크"
+      }
+    ],
+    "correct_answer": 3,
+    "keywords": [
+      "제조이론"
+    ]
+  },
+  {
+    "id": "bread_20100711_4",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "제조이론",
+    "question_number": 4,
+    "question_text": "다크 초콜릿을 템퍼링(Tempering) 할 때 맨 처음 녹이는 공 정의 온도 범위로 가장 적합한 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "10 ~ 20℃"
+      },
+      {
+        "no": 2,
+        "text": "20 ~ 30℃"
+      },
+      {
+        "no": 3,
+        "text": "30 ~ 40℃"
+      },
+      {
+        "no": 4,
+        "text": "40 ~ 50℃"
+      }
+    ],
+    "correct_answer": 4,
+    "keywords": [
+      "제조이론"
+    ]
+  },
+  {
+    "id": "bread_20100711_5",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "제조이론",
+    "question_number": 5,
+    "question_text": "도넛에서 발한을 제거하는 방법은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "도넛에 묻히는 설탕의 양을 감소시킨다."
+      },
+      {
+        "no": 2,
+        "text": "기름을 충분히 예열시킨다."
+      },
+      {
+        "no": 3,
+        "text": "결착력이 없는 기름을 사용한다."
+      },
+      {
+        "no": 4,
+        "text": "튀김 시간을 증가시킨다."
+      }
+    ],
+    "correct_answer": 4,
+    "keywords": [
+      "제조이론"
+    ]
+  },
+  {
+    "id": "bread_20100711_6",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "제조이론",
+    "question_number": 6,
+    "question_text": "다음 중 케이크의 아이싱에 주로 사용되는 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "마지팬"
+      },
+      {
+        "no": 2,
+        "text": "프랄린"
+      },
+      {
+        "no": 3,
+        "text": "글레이즈"
+      },
+      {
+        "no": 4,
+        "text": "휘핑크림"
+      }
+    ],
+    "correct_answer": 4,
+    "keywords": [
+      "제조이론"
+    ]
+  },
+  {
+    "id": "bread_20100711_7",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "제조이론",
+    "question_number": 7,
+    "question_text": "충전물 또는 젤리가 롤케이크에 축축하게 스며드는 것을 막 기 위해 조치해야 할 사항으로 틀린 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "굽기 조정"
+      },
+      {
+        "no": 2,
+        "text": "물 사용량 감소"
+      },
+      {
+        "no": 3,
+        "text": "반죽시간 증가"
+      },
+      {
+        "no": 4,
+        "text": "밀가루 사용량 감소"
+      }
+    ],
+    "correct_answer": 4,
+    "keywords": [
+      "제조이론"
+    ]
+  },
+  {
+    "id": "bread_20100711_8",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "제조이론",
+    "question_number": 8,
+    "question_text": "비중컵의 무게 40g, 물을 담은 비중컵의 무게 240g, 반죽을 담은 비중컵의 무게 180g일 때 반죽의 비중은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "0.2"
+      },
+      {
+        "no": 2,
+        "text": "0.4"
+      },
+      {
+        "no": 3,
+        "text": "0.6"
+      },
+      {
+        "no": 4,
+        "text": "0.7"
+      }
+    ],
+    "correct_answer": 4,
+    "keywords": [
+      "제조이론"
+    ]
+  },
+  {
+    "id": "bread_20100711_9",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "제조이론",
+    "question_number": 9,
+    "question_text": "다음 믹싱 방법 중 먼저 유지와 설탕을 섞는 방법으로 부피 를 우선으로 할 때 사용하는 방법은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "크림법"
+      },
+      {
+        "no": 2,
+        "text": "1단계법"
+      },
+      {
+        "no": 3,
+        "text": "블렌딩법"
+      },
+      {
+        "no": 4,
+        "text": "설탕/물법"
+      }
+    ],
+    "correct_answer": 1,
+    "keywords": [
+      "제조이론"
+    ]
+  },
+  {
+    "id": "bread_20100711_10",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "제조이론",
+    "question_number": 10,
+    "question_text": "쿠키 포장지의 특성으로 적합하지 않은 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "내용물의 색, 향이 변하지 않아야 한다."
+      },
+      {
+        "no": 2,
+        "text": "독성 물질이 생성되지 않아야한다."
+      },
+      {
+        "no": 3,
+        "text": "통기성이 있어야 한다."
+      },
+      {
+        "no": 4,
+        "text": "방습성이 있어야 한다."
+      }
+    ],
+    "correct_answer": 3,
+    "keywords": [
+      "제조이론"
+    ]
+  },
+  {
+    "id": "bread_20100711_11",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "제조이론",
+    "question_number": 11,
+    "question_text": "열원으로 찜(수증기)을 이용했을 때의 주 열전달 방식은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "대류"
+      },
+      {
+        "no": 2,
+        "text": "전도"
+      },
+      {
+        "no": 3,
+        "text": "초음파"
+      },
+      {
+        "no": 4,
+        "text": "복사"
+      }
+    ],
+    "correct_answer": 1,
+    "keywords": [
+      "제조이론"
+    ]
+  },
+  {
+    "id": "bread_20100711_12",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "제조이론",
+    "question_number": 12,
+    "question_text": "쇼트 브레드 쿠키 제조 시 휴지를 시킬 때 성형을 용이하게 하기 위한 조치는?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "반죽을 뜨겁게 한다."
+      },
+      {
+        "no": 2,
+        "text": "반죽을 차게 한다."
+      },
+      {
+        "no": 3,
+        "text": "휴지 전 단계에서 오랫동안 믹싱 한다."
+      },
+      {
+        "no": 4,
+        "text": "휴지 전 단계에서 짧게 믹싱 한다."
+      }
+    ],
+    "correct_answer": 2,
+    "keywords": [
+      "제조이론"
+    ]
+  },
+  {
+    "id": "bread_20100711_13",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "제조이론",
+    "question_number": 13,
+    "question_text": "찜(수증기)을 이용하여 만들어진 제품이 아닌 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "소프트 롤"
+      },
+      {
+        "no": 2,
+        "text": "찜 케이크"
+      },
+      {
+        "no": 3,
+        "text": "중화 만두"
+      },
+      {
+        "no": 4,
+        "text": "호빵"
+      }
+    ],
+    "correct_answer": 1,
+    "keywords": [
+      "제조이론"
+    ]
+  },
+  {
+    "id": "bread_20100711_14",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "제조이론",
+    "question_number": 14,
+    "question_text": "다음 굽기 중 과일 충전물이 끓어 넘치는 원인으로 점검할 사항이 아닌 것은 ?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "배합의 부정확 여부를 확인한다."
+      },
+      {
+        "no": 2,
+        "text": "충전물 온도가 높은지 점검한다."
+      },
+      {
+        "no": 3,
+        "text": "바닥 껍질이 너무 얇지는 않은지를 점검한다."
+      },
+      {
+        "no": 4,
+        "text": "껍데기에 구멍이 없어야 하고, 껍질 사이가 잘 봉해져"
+      }
+    ],
+    "correct_answer": 4,
+    "keywords": [
+      "제조이론"
+    ]
+  },
+  {
+    "id": "bread_20100711_15",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "제조이론",
+    "question_number": 15,
+    "question_text": "스펀지 젤리롤을 만들 때 겉면이 터지는 결점에 대한 조치 사항으로 올바르지 않은 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "설탕의 일부를 물엿으로 대치한다."
+      },
+      {
+        "no": 2,
+        "text": "팽창제 사용량을 감소시킨다."
+      },
+      {
+        "no": 3,
+        "text": "계란 노른자를 감소시킨다."
+      },
+      {
+        "no": 4,
+        "text": "반죽의 비중을 증가시킨다."
+      }
+    ],
+    "correct_answer": 4,
+    "keywords": [
+      "제조이론"
+    ]
+  },
+  {
+    "id": "bread_20100711_16",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "제조이론",
+    "question_number": 16,
+    "question_text": "2차 발효에 대한 설명으로 틀린 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "이산화탄소를 생성시켜 최대한의 부피를 얻고 글루텐을 신장시키는 과정이다."
+      },
+      {
+        "no": 2,
+        "text": "2차 발효실의 온도는 반죽의 온도보다 같거나 높아야 한 다."
+      },
+      {
+        "no": 3,
+        "text": "2차 발효실의 습도는 평균 75 ~ 90% 정도이다."
+      },
+      {
+        "no": 4,
+        "text": "2차 발효실의 습도가 높을 경우 겉껍질이 형성되고 터짐"
+      }
+    ],
+    "correct_answer": 4,
+    "keywords": [
+      "제조이론"
+    ]
+  },
+  {
+    "id": "bread_20100711_17",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "제조이론",
+    "question_number": 17,
+    "question_text": "빵을 포장하려 할 때 가장 적합한 빵의 중심온도와 수분 함 량은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "30℃ , 30%"
+      },
+      {
+        "no": 2,
+        "text": "35℃ , 38%"
+      },
+      {
+        "no": 3,
+        "text": "42℃ , 45%"
+      },
+      {
+        "no": 4,
+        "text": "48℃ , 55%"
+      }
+    ],
+    "correct_answer": 2,
+    "keywords": [
+      "제조이론"
+    ]
+  },
+  {
+    "id": "bread_20100711_18",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "제조이론",
+    "question_number": 18,
+    "question_text": "둥글리기가 끝난 반죽을 성형하기 전에 짧은 시간 동안 발효시키는 목적으로 적합하지 않은 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "가스 발생으로 반죽의 유연성을 회복시키기 위해"
+      },
+      {
+        "no": 2,
+        "text": "가스 발생력을 키워 반죽을 부풀리기 위해"
+      },
+      {
+        "no": 3,
+        "text": "반죽표면에 얇은 막을 만들어 성형할 때 끈적거리지 않 도록 하기위해"
+      },
+      {
+        "no": 4,
+        "text": "분할, 둥글리기 하는 과정에서 손상된 글루텐 구조를 재"
+      }
+    ],
+    "correct_answer": 2,
+    "keywords": [
+      "제조이론"
+    ]
+  },
+  {
+    "id": "bread_20100711_19",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "제조이론",
+    "question_number": 19,
+    "question_text": "냉동빵 혼합(Mixing)시 흔히 사용하고 있는 제법으로, 환원 제로 시스테인(cysteine)들을 사용하는 제법은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "스트레이트법"
+      },
+      {
+        "no": 2,
+        "text": "스펀지법"
+      },
+      {
+        "no": 3,
+        "text": "액체발효법"
+      },
+      {
+        "no": 4,
+        "text": "노타임법"
+      }
+    ],
+    "correct_answer": 4,
+    "keywords": [
+      "제조이론"
+    ]
+  },
+  {
+    "id": "bread_20100711_20",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "제조이론",
+    "question_number": 20,
+    "question_text": "식빵 껍질 표면에 물집이 생긴 이유가 아닌 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "반죽이 질었다."
+      },
+      {
+        "no": 2,
+        "text": "2차 발효실의 습도가 높았다."
+      },
+      {
+        "no": 3,
+        "text": "발효가 과하였다."
+      },
+      {
+        "no": 4,
+        "text": "오븐의 윗 열이 너무 높았다."
+      }
+    ],
+    "correct_answer": 3,
+    "keywords": [
+      "제조이론"
+    ]
+  },
+  {
+    "id": "bread_20100711_21",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "재료과학",
+    "question_number": 21,
+    "question_text": "빵의 품질평가 방법 중 내부 특성에 대한 평가항목이 아닌 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "기공"
+      },
+      {
+        "no": 2,
+        "text": "속색"
+      },
+      {
+        "no": 3,
+        "text": "조직"
+      },
+      {
+        "no": 4,
+        "text": "껍질의 특성"
+      }
+    ],
+    "correct_answer": 4,
+    "keywords": [
+      "재료과학"
+    ]
+  },
+  {
+    "id": "bread_20100711_22",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "재료과학",
+    "question_number": 22,
+    "question_text": "팬 오일의 조건이 아닌 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "발연점이 130℃ 정도 되는 기름을 사용한다."
+      },
+      {
+        "no": 2,
+        "text": "산패되기 쉬운 지방산이 적어야 한다."
+      },
+      {
+        "no": 3,
+        "text": "보통 반죽 무게의 0.1 ~ 0.2 %를 사용한다."
+      },
+      {
+        "no": 4,
+        "text": "면실유, 대두유등의 기름이 이용된다."
+      }
+    ],
+    "correct_answer": 1,
+    "keywords": [
+      "재료과학"
+    ]
+  },
+  {
+    "id": "bread_20100711_23",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "재료과학",
+    "question_number": 23,
+    "question_text": "다음 중 반죽이 매끈해지고 글루텐이 가장 많이 형성되어 탄력성이 강한 것이 특징이며, 프랑스 빵 반죽의 믹싱 완료 시기인 단계는?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "클린업 단계"
+      },
+      {
+        "no": 2,
+        "text": "발전단계"
+      },
+      {
+        "no": 3,
+        "text": "최종단계"
+      },
+      {
+        "no": 4,
+        "text": "렛다운 단계"
+      }
+    ],
+    "correct_answer": 2,
+    "keywords": [
+      "재료과학"
+    ]
+  },
+  {
+    "id": "bread_20100711_24",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "재료과학",
+    "question_number": 24,
+    "question_text": "분할된 반죽을 둥그렇게 말아 하나의 피막을 형성되도록 하 는 기계는 ?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "믹서(mixer)"
+      },
+      {
+        "no": 2,
+        "text": "오버헤드 프루퍼(overhead proofer)"
+      },
+      {
+        "no": 3,
+        "text": "정형기(moulder)"
+      },
+      {
+        "no": 4,
+        "text": "라운더(rounder)"
+      }
+    ],
+    "correct_answer": 4,
+    "keywords": [
+      "재료과학"
+    ]
+  },
+  {
+    "id": "bread_20100711_25",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "재료과학",
+    "question_number": 25,
+    "question_text": "식빵을 만드는데 실내온도 15℃, 수돗물 온도 10℃, 밀가루 온도 13℃일 때 믹싱 후의 반죽온도가 21℃가 되었다면 이 때 마찰계수는?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "5"
+      },
+      {
+        "no": 2,
+        "text": "10"
+      },
+      {
+        "no": 3,
+        "text": "20"
+      },
+      {
+        "no": 4,
+        "text": "25"
+      }
+    ],
+    "correct_answer": 4,
+    "keywords": [
+      "재료과학"
+    ]
+  },
+  {
+    "id": "bread_20100711_26",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "재료과학",
+    "question_number": 26,
+    "question_text": "빵의 생산시 고려해야 할 원가요소와 가장 거리가 먼 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "재료비"
+      },
+      {
+        "no": 2,
+        "text": "노무비"
+      },
+      {
+        "no": 3,
+        "text": "경비"
+      },
+      {
+        "no": 4,
+        "text": "학술비"
+      }
+    ],
+    "correct_answer": 4,
+    "keywords": [
+      "재료과학"
+    ]
+  },
+  {
+    "id": "bread_20100711_27",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "재료과학",
+    "question_number": 27,
+    "question_text": "더운 여름에 얼음을 사용하여 반죽온도 조절시 계산 순서로 적합한 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "마찰 계수→물 온도 계산→얼음 사용량"
+      },
+      {
+        "no": 2,
+        "text": "물 온도 계산→얼음 사용량→마찰계수"
+      },
+      {
+        "no": 3,
+        "text": "얼음 사용량→마찰계수→물 온도 계산"
+      },
+      {
+        "no": 4,
+        "text": "물 온도 계산→마찰 계수→얼음 사용량"
+      }
+    ],
+    "correct_answer": 1,
+    "keywords": [
+      "재료과학"
+    ]
+  },
+  {
+    "id": "bread_20100711_28",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "재료과학",
+    "question_number": 28,
+    "question_text": "굽기 과정에서 일어나는 변화로 틀린 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "당의 캐러멜화와 갈변반응으로 껍질색이 진해지며 특유 의 향을 발생한다."
+      },
+      {
+        "no": 2,
+        "text": "굽기가 완료되면 모든 미생물이 사멸하고 대부분의 효소 도 불활성화가 된다."
+      },
+      {
+        "no": 3,
+        "text": "전분 입자는 팽윤과 호화의 변화를 일으켜 구조형성으로 한다."
+      },
+      {
+        "no": 4,
+        "text": "빵의 외부 층에 있는 전분이 내부 층의 전분보다 호화가"
+      }
+    ],
+    "correct_answer": 4,
+    "keywords": [
+      "재료과학"
+    ]
+  },
+  {
+    "id": "bread_20100711_29",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "재료과학",
+    "question_number": 29,
+    "question_text": "대형공장에서 사용되고, 온도조절이 쉽다는 장점이 있는 반 면에 넓은 면적이 필요하고 열손실이 큰 결점인 오븐은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "회전식 오븐(rack oven)"
+      },
+      {
+        "no": 2,
+        "text": "데크오븐(deck oven)"
+      },
+      {
+        "no": 3,
+        "text": "터널식오븐(tunnel oven)"
+      },
+      {
+        "no": 4,
+        "text": "릴 오븐(reel oven)"
+      }
+    ],
+    "correct_answer": 3,
+    "keywords": [
+      "재료과학"
+    ]
+  },
+  {
+    "id": "bread_20100711_30",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "재료과학",
+    "question_number": 30,
+    "question_text": "액체 발효법에서 액종 발효시 완충제 역할을 하는 재료는?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "탈지분유"
+      },
+      {
+        "no": 2,
+        "text": "설탕"
+      },
+      {
+        "no": 3,
+        "text": "소금"
+      },
+      {
+        "no": 4,
+        "text": "쇼트닝"
+      }
+    ],
+    "correct_answer": 1,
+    "keywords": [
+      "재료과학"
+    ]
+  },
+  {
+    "id": "bread_20100711_31",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "영양학",
+    "question_number": 31,
+    "question_text": "제빵에 가장 적합한 물의 광물질 함량은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "1~60ppm"
+      },
+      {
+        "no": 2,
+        "text": "60~120ppm"
+      },
+      {
+        "no": 3,
+        "text": "120~180ppm"
+      },
+      {
+        "no": 4,
+        "text": "180ppm 이상"
+      }
+    ],
+    "correct_answer": 3,
+    "keywords": [
+      "영양학"
+    ]
+  },
+  {
+    "id": "bread_20100711_32",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "영양학",
+    "question_number": 32,
+    "question_text": "아밀로그래프의 기능이 아닌 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "전분의 점도 측정"
+      },
+      {
+        "no": 2,
+        "text": "아말라아제의 효소능력 측정"
+      },
+      {
+        "no": 3,
+        "text": "점도를 B.U 단위로 측정"
+      },
+      {
+        "no": 4,
+        "text": "전분의 다소(多小) 측정"
+      }
+    ],
+    "correct_answer": 4,
+    "keywords": [
+      "영양학"
+    ]
+  },
+  {
+    "id": "bread_20100711_33",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "영양학",
+    "question_number": 33,
+    "question_text": "다음 중 유지를 구성하는 분자가 아닌 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "질소"
+      },
+      {
+        "no": 2,
+        "text": "수소"
+      },
+      {
+        "no": 3,
+        "text": "탄소"
+      },
+      {
+        "no": 4,
+        "text": "산소"
+      }
+    ],
+    "correct_answer": 1,
+    "keywords": [
+      "영양학"
+    ]
+  },
+  {
+    "id": "bread_20100711_34",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "영양학",
+    "question_number": 34,
+    "question_text": "코코아(cocoa)에 대한 설명 중 옳은 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "초콜릿 리쿠어(chocolate liquor)를 압착 건조한 것이다."
+      },
+      {
+        "no": 2,
+        "text": "코코아 버터(cocoa butter)를 만들고 남은 박(press cake) 을 분쇄한 것이다."
+      },
+      {
+        "no": 3,
+        "text": "카카오 니브스(cacao nibs)를 건조한 것이다."
+      },
+      {
+        "no": 4,
+        "text": "비터 초콜릿(butter chocolate) 을 건조 분쇄한 것이다."
+      }
+    ],
+    "correct_answer": 2,
+    "keywords": [
+      "영양학"
+    ]
+  },
+  {
+    "id": "bread_20100711_35",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "영양학",
+    "question_number": 35,
+    "question_text": "다음 중 환원당이 아닌 당은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "포도당"
+      },
+      {
+        "no": 2,
+        "text": "과당"
+      },
+      {
+        "no": 3,
+        "text": "자당"
+      },
+      {
+        "no": 4,
+        "text": "맥아당"
+      }
+    ],
+    "correct_answer": 3,
+    "keywords": [
+      "영양학"
+    ]
+  },
+  {
+    "id": "bread_20100711_36",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "영양학",
+    "question_number": 36,
+    "question_text": "유지의 크림성이 가장 중요한 제품은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "케이크"
+      },
+      {
+        "no": 2,
+        "text": "쿠키"
+      },
+      {
+        "no": 3,
+        "text": "식빵"
+      },
+      {
+        "no": 4,
+        "text": "단과자빵"
+      }
+    ],
+    "correct_answer": 1,
+    "keywords": [
+      "영양학"
+    ]
+  },
+  {
+    "id": "bread_20100711_37",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "영양학",
+    "question_number": 37,
+    "question_text": "제과제빵에서 안정제의 기능이 아닌 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "파이 충전물의 증점제 역할을 한다."
+      },
+      {
+        "no": 2,
+        "text": "제품의 수분흡수율을 감소시킨다."
+      },
+      {
+        "no": 3,
+        "text": "아이싱의 끈적거림을 방지한다."
+      },
+      {
+        "no": 4,
+        "text": "토핑물을 부드럽게 만든다."
+      }
+    ],
+    "correct_answer": 2,
+    "keywords": [
+      "영양학"
+    ]
+  },
+  {
+    "id": "bread_20100711_38",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "영양학",
+    "question_number": 38,
+    "question_text": "계란의 흰자 540g을 얻으려고 한다. 계란 한 개의 평균 무 게가 60g 이라면 몇 개의 계란이 필요한가?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "10개"
+      },
+      {
+        "no": 2,
+        "text": "15개"
+      },
+      {
+        "no": 3,
+        "text": "20개"
+      },
+      {
+        "no": 4,
+        "text": "25개"
+      }
+    ],
+    "correct_answer": 2,
+    "keywords": [
+      "영양학"
+    ]
+  },
+  {
+    "id": "bread_20100711_39",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "영양학",
+    "question_number": 39,
+    "question_text": "다음 당류 중 일반적인 제빵용 이스트에 의하여 분해되지 않는 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "설탕"
+      },
+      {
+        "no": 2,
+        "text": "맥아당"
+      },
+      {
+        "no": 3,
+        "text": "과당"
+      },
+      {
+        "no": 4,
+        "text": "유당"
+      }
+    ],
+    "correct_answer": 4,
+    "keywords": [
+      "영양학"
+    ]
+  },
+  {
+    "id": "bread_20100711_40",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "영양학",
+    "question_number": 40,
+    "question_text": "빵반죽의 특성인 글루텐을 형성하는 밀가루의 단백질 중 탄 력성과 가장 관계가 깊은 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "알부민(albumin)"
+      },
+      {
+        "no": 2,
+        "text": "글로불린(globulin)"
+      },
+      {
+        "no": 3,
+        "text": "글루테닌(glutenin)"
+      },
+      {
+        "no": 4,
+        "text": "글리아딘(gliadin)"
+      }
+    ],
+    "correct_answer": 3,
+    "keywords": [
+      "영양학"
+    ]
+  },
+  {
+    "id": "bread_20100711_41",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "영양학",
+    "question_number": 41,
+    "question_text": "아밀로펙틴이 요오드 정색 반응에서 나타나는 색은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "적자색"
+      },
+      {
+        "no": 2,
+        "text": "청색"
+      },
+      {
+        "no": 3,
+        "text": "황색"
+      },
+      {
+        "no": 4,
+        "text": "흑색"
+      }
+    ],
+    "correct_answer": 1,
+    "keywords": [
+      "영양학"
+    ]
+  },
+  {
+    "id": "bread_20100711_42",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "영양학",
+    "question_number": 42,
+    "question_text": "설탕을 포도당과 과당으로 분해하는 효소는?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "인버타아제(Invertase)"
+      },
+      {
+        "no": 2,
+        "text": "지마아제(Zymaes)"
+      },
+      {
+        "no": 3,
+        "text": "말타아제(Maltase)"
+      },
+      {
+        "no": 4,
+        "text": "알파 아밀라아제(?-amylase)"
+      }
+    ],
+    "correct_answer": 1,
+    "keywords": [
+      "영양학"
+    ]
+  },
+  {
+    "id": "bread_20100711_43",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "영양학",
+    "question_number": 43,
+    "question_text": "다음 유제품 중 일반적으로 100g 당 열량을 가장 많이 내 는 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "요구르트"
+      },
+      {
+        "no": 2,
+        "text": "탈지분유"
+      },
+      {
+        "no": 3,
+        "text": "가공치즈"
+      },
+      {
+        "no": 4,
+        "text": "시유"
+      }
+    ],
+    "correct_answer": 3,
+    "keywords": [
+      "영양학"
+    ]
+  },
+  {
+    "id": "bread_20100711_44",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "영양학",
+    "question_number": 44,
+    "question_text": "패리노 그래프의 기능이 아닌 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "산화제 첨가 필요량 측정"
+      },
+      {
+        "no": 2,
+        "text": "밀가루의 흡수율 측정"
+      },
+      {
+        "no": 3,
+        "text": "믹싱시간 측정"
+      },
+      {
+        "no": 4,
+        "text": "믹싱내구성 측정"
+      }
+    ],
+    "correct_answer": 1,
+    "keywords": [
+      "영양학"
+    ]
+  },
+  {
+    "id": "bread_20100711_45",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "영양학",
+    "question_number": 45,
+    "question_text": "다음 중 식물성 검류가 아닌 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "젤라틴"
+      },
+      {
+        "no": 2,
+        "text": "펙틴"
+      },
+      {
+        "no": 3,
+        "text": "구아검"
+      },
+      {
+        "no": 4,
+        "text": "아라비아검"
+      }
+    ],
+    "correct_answer": 1,
+    "keywords": [
+      "영양학"
+    ]
+  },
+  {
+    "id": "bread_20100711_46",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "영양학",
+    "question_number": 46,
+    "question_text": "팔미트산(16:0)이 모두 아세틸 CoA로 분해되려면 ß-산화를 몇 번 반복하여야 하나?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "5번"
+      },
+      {
+        "no": 2,
+        "text": "6번"
+      },
+      {
+        "no": 3,
+        "text": "7번"
+      },
+      {
+        "no": 4,
+        "text": "8번"
+      }
+    ],
+    "correct_answer": 3,
+    "keywords": [
+      "영양학"
+    ]
+  },
+  {
+    "id": "bread_20100711_47",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "영양학",
+    "question_number": 47,
+    "question_text": "비타민의 결핍 증상이 잘못 짝지어진 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "비타민 B1 - 각기병"
+      },
+      {
+        "no": 2,
+        "text": "비타민 C - 괴혈병"
+      },
+      {
+        "no": 3,
+        "text": "비타민 B2 - 야맹증"
+      },
+      {
+        "no": 4,
+        "text": "나이아신 - 펠라그라"
+      }
+    ],
+    "correct_answer": 3,
+    "keywords": [
+      "영양학"
+    ]
+  },
+  {
+    "id": "bread_20100711_48",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "영양학",
+    "question_number": 48,
+    "question_text": "질병에 대한 저항력을 지닌 항체를 만드는데 꼭 필요한 영 양소는?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "탄수화물"
+      },
+      {
+        "no": 2,
+        "text": "지방"
+      },
+      {
+        "no": 3,
+        "text": "칼슘"
+      },
+      {
+        "no": 4,
+        "text": "단백질"
+      }
+    ],
+    "correct_answer": 4,
+    "keywords": [
+      "영양학"
+    ]
+  },
+  {
+    "id": "bread_20100711_49",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "영양학",
+    "question_number": 49,
+    "question_text": "다음 중 포화지방산을 가장 많이 함유하고 있는 식품은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "올리브유"
+      },
+      {
+        "no": 2,
+        "text": "버터"
+      },
+      {
+        "no": 3,
+        "text": "콩기름"
+      },
+      {
+        "no": 4,
+        "text": "홍화유"
+      }
+    ],
+    "correct_answer": 2,
+    "keywords": [
+      "영양학"
+    ]
+  },
+  {
+    "id": "bread_20100711_50",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "영양학",
+    "question_number": 50,
+    "question_text": "다음 중 단당류가 아닌 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "갈락토오스"
+      },
+      {
+        "no": 2,
+        "text": "포도당"
+      },
+      {
+        "no": 3,
+        "text": "과당"
+      },
+      {
+        "no": 4,
+        "text": "맥아당"
+      }
+    ],
+    "correct_answer": 4,
+    "keywords": [
+      "영양학"
+    ]
+  },
+  {
+    "id": "bread_20100711_51",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "식품위생학",
+    "question_number": 51,
+    "question_text": "주로 단백질이 세균에 의해 분해되어 악취, 유해물질을 생 성하는 현상은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "발효"
+      },
+      {
+        "no": 2,
+        "text": "부패"
+      },
+      {
+        "no": 3,
+        "text": "변패"
+      },
+      {
+        "no": 4,
+        "text": "산패"
+      }
+    ],
+    "correct_answer": 2,
+    "keywords": [
+      "식품위생학"
+    ]
+  },
+  {
+    "id": "bread_20100711_52",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "식품위생학",
+    "question_number": 52,
+    "question_text": "탄수화물이 많이 든 식품을 고온에서 가열하거나 튀길 때 생성되는 발암성 물질은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "니트로사민(nitrosamine)"
+      },
+      {
+        "no": 2,
+        "text": "다이옥신(dioxins)"
+      },
+      {
+        "no": 3,
+        "text": "벤조피렌(benzopyrene)"
+      },
+      {
+        "no": 4,
+        "text": "아크릴아마이드(acrylamide)"
+      }
+    ],
+    "correct_answer": 4,
+    "keywords": [
+      "식품위생학"
+    ]
+  },
+  {
+    "id": "bread_20100711_53",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "식품위생학",
+    "question_number": 53,
+    "question_text": "우리나라의 식품위생법에서 정하고 있는 내용이 아닌 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "건강기능식품의 검사"
+      },
+      {
+        "no": 2,
+        "text": "건강진단 및 위생교육"
+      },
+      {
+        "no": 3,
+        "text": "조리사 및 영양사의 면허"
+      },
+      {
+        "no": 4,
+        "text": "식중독에 관한 조사보고"
+      }
+    ],
+    "correct_answer": 1,
+    "keywords": [
+      "식품위생학"
+    ]
+  },
+  {
+    "id": "bread_20100711_54",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "식품위생학",
+    "question_number": 54,
+    "question_text": "다음 식품첨가물 중에서 보존제로 허용되지 않은 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "소르빈산칼륨"
+      },
+      {
+        "no": 2,
+        "text": "말라카이트 그린"
+      },
+      {
+        "no": 3,
+        "text": "데히드로초산"
+      },
+      {
+        "no": 4,
+        "text": "안식향산나트륨"
+      }
+    ],
+    "correct_answer": 2,
+    "keywords": [
+      "식품위생학"
+    ]
+  },
+  {
+    "id": "bread_20100711_55",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "식품위생학",
+    "question_number": 55,
+    "question_text": "작업장의 방충, 방서용 금서망의 그물로 적당한 크기는?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "5 mesh"
+      },
+      {
+        "no": 2,
+        "text": "15 mesh"
+      },
+      {
+        "no": 3,
+        "text": "20 mesh"
+      },
+      {
+        "no": 4,
+        "text": "30 mesh"
+      }
+    ],
+    "correct_answer": 4,
+    "keywords": [
+      "식품위생학"
+    ]
+  },
+  {
+    "id": "bread_20100711_56",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "식품위생학",
+    "question_number": 56,
+    "question_text": "병원성 대장균 식중독의 가장 적합한 예방책은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "곡류의 수분을 10% 이하로 조정한다."
+      },
+      {
+        "no": 2,
+        "text": "어류의 내장을 제거하고 충분히 세척한다."
+      },
+      {
+        "no": 3,
+        "text": "어패류는 민물로 깨끗이 씻는다."
+      },
+      {
+        "no": 4,
+        "text": "건강보균자나 환자의 분변 오염을 방지한다."
+      }
+    ],
+    "correct_answer": 4,
+    "keywords": [
+      "식품위생학"
+    ]
+  },
+  {
+    "id": "bread_20100711_57",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "식품위생학",
+    "question_number": 57,
+    "question_text": "다음 중 제 1급 법정전염병은?(2020년 01월 01일 개정된 규정 적용됨)",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "결핵"
+      },
+      {
+        "no": 2,
+        "text": "디프테리아"
+      },
+      {
+        "no": 3,
+        "text": "장티푸스"
+      },
+      {
+        "no": 4,
+        "text": "말라리아"
+      }
+    ],
+    "correct_answer": 2,
+    "keywords": [
+      "식품위생학"
+    ]
+  },
+  {
+    "id": "bread_20100711_58",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "식품위생학",
+    "question_number": 58,
+    "question_text": "클로스트리디움 보툴리늄 식중독과 관련 있는 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "화농성 질환의 대표균"
+      },
+      {
+        "no": 2,
+        "text": "저온살균 처리로 예방"
+      },
+      {
+        "no": 3,
+        "text": "내열성 포자 형성"
+      },
+      {
+        "no": 4,
+        "text": "감염형 식중독"
+      }
+    ],
+    "correct_answer": 3,
+    "keywords": [
+      "식품위생학"
+    ]
+  },
+  {
+    "id": "bread_20100711_59",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "식품위생학",
+    "question_number": 59,
+    "question_text": "병원성대장균 식중독의 원인균에 관한 설명으로 옳은 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "독소를 생산하는 것도 있다."
+      },
+      {
+        "no": 2,
+        "text": "보통의 대장균과 똑같다."
+      },
+      {
+        "no": 3,
+        "text": "혐기성 또는 강한 혐기성이다."
+      },
+      {
+        "no": 4,
+        "text": "장내 상재균총의 대표격이다."
+      }
+    ],
+    "correct_answer": 1,
+    "keywords": [
+      "식품위생학"
+    ]
+  },
+  {
+    "id": "bread_20100711_60",
+    "exam_type": "제빵기능사",
+    "exam_session": "2010-07-11",
+    "subject": "식품위생학",
+    "question_number": 60,
+    "question_text": "다음 중 전염병과 관련 내용이 바르게 연결되지 않은 것은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "콜레라 - 외래 전염병"
+      },
+      {
+        "no": 2,
+        "text": "파상열 - 바이러스성 인수공통전염병"
+      },
+      {
+        "no": 3,
+        "text": "장티푸스 - 고열 수반"
+      },
+      {
+        "no": 4,
+        "text": "세균성 이질 - 점액성 혈변"
+      }
+    ],
+    "correct_answer": 2,
+    "keywords": [
+      "식품위생학"
+    ]
+  }
+]

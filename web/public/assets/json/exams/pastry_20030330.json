@@ -594,7 +594,7 @@
     "exam_session": "2003-03-30",
     "subject": "제조이론",
     "question_number": 20,
-    "question_text": "한 반죽당 손분할이나 기계분할은 가능한 몇 분 이내로 완 료하는 것이 가장 좋은가?",
+    "question_text": "한 반죽당 손분할이나 기계분할은 가능한 몇 분 이내로 완료하는 것이 가장 좋은가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1679,7 +1679,7 @@
     "exam_session": "2003-03-30",
     "subject": "식품위생학",
     "question_number": 55,
-    "question_text": "다음 중 살모넬라(Salmonella)균에 의한 식중독 증상과 가 장 거리가 먼 것은?",
+    "question_text": "다음 중 살모넬라(Salmonella)균에 의한 식중독 증상과 가장 거리가 먼 것은?",
     "question_image_url": null,
     "choices": [
       {
