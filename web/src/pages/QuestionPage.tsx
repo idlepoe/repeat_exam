@@ -5,6 +5,7 @@ import { examJsonUrl } from '../lib/examFiles'
 import { fetchExamSessionList, nextSession } from '../lib/examMeta'
 import {
   incrementSessionCountAndClearProgress,
+  loadAnswerHighlight,
   loadNavReversed,
   loadProgress,
   saveNavReversed,
@@ -36,6 +37,7 @@ export function QuestionPage() {
   const [navReversed, setNavReversed] = useState(() => loadNavReversed())
   const [fontStep, setFontStep] = useState(0)
   const [showNextSessionDialog, setShowNextSessionDialog] = useState(false)
+  const [answerHighlight] = useState(() => loadAnswerHighlight())
 
   useEffect(() => {
     if (!examType || !examSession) return
@@ -247,8 +249,8 @@ export function QuestionPage() {
                       padding: '10px 12px',
                       border: '1px solid #ddd',
                       borderRadius: 6,
-                      background: isAnswer ? '#c00' : '#fafafa',
-                      color: isAnswer ? '#fff' : '#111',
+                      background: isAnswer ? answerHighlight.bg : '#fafafa',
+                      color: isAnswer ? answerHighlight.fg : '#111',
                     }}
                   >
                     {c.no}. {c.text}

@@ -1,11 +1,17 @@
 const KEY = 'repeat_exam:progress'
 const KEY_SESSION_COUNT = 'repeat_exam:session_count'
 const KEY_NAV_REVERSED = 'repeat_exam:nav_reversed'
+const KEY_ANSWER_HIGHLIGHT = 'repeat_exam:answer_highlight'
 
 export interface Progress {
   exam_type: string
   exam_session: string
   question_number: number
+}
+
+export interface AnswerHighlight {
+  bg: string
+  fg: string
 }
 
 export type SessionCountMap = Record<string, number>
@@ -51,6 +57,14 @@ export function loadProgress(): Progress | null {
 export function clearProgress(): void {
   try {
     localStorage.removeItem(KEY)
+  } catch {
+    /* ignore */
+  }
+}
+
+export function clearSessionCount(): void {
+  try {
+    localStorage.removeItem(KEY_SESSION_COUNT)
   } catch {
     /* ignore */
   }
@@ -119,4 +133,21 @@ export function saveNavReversed(value: boolean): void {
   } catch {
     /* ignore */
   }
+}
+
+export function loadAnswerHighlight(): AnswerHighlight {
+  const fallback: AnswerHighlight = { bg: '#c00', fg: '#fff' }
+  try {
+    const raw = localStorage.getItem(KEY_ANSWER_HIGHLIGHT)
+    if (!raw) return fallback
+    const parsed = JSON.parse(raw) as unknown
+    if (!parsed || typeof parsed !== 'object') return fallback
+    const obj = parsed as Record<string, unknown>
+    const bg = typeof obj.bg === 'string' ? obj.bg : fallback.bg
+    const fg = typeof obj.fg === 'string' ? obj.fg : fallback.fg
+    return { bg, fg }
+  } catch {
+    /* ignore */
+  }
+  return fallback
 }
