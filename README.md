@@ -9,7 +9,6 @@
 - 각 문제에서 정답은 즉시 표시되며, 문제-정답을 반복적으로 익히는 데 최적화되어 있습니다.
 - 학습 진행 상황이 저장되어, 앱을 다시 실행해도 이어서 학습할 수 있습니다.
 - 어떠한 광고도 포함되어 있지 않습니다.
-- 웹 버전은 [repeat-exam.web.app](https://repeat-exam.web.app) 을 참고해 주세요.
 - 모바일에서 사용하기 쉽도록 화면과 학습 흐름을 구성했습니다.
 
 ## 이런 분께 추천합니다
@@ -23,3 +22,11 @@
 1. 제과 또는 제빵 과목을 선택합니다.
 2. 문제를 확인하면서 정답을 바로 함께 학습합니다.
 3. 반복 회독을 통해 문제와 정답을 자연스럽게 암기합니다.
+
+## 다운로드
+
+- Android: [GitHub Releases](https://github.com/idlepoe/repeat_exam/releases)
+
+## 웹 버전
+
+- [repeat-exam.web.app](https://repeat-exam.web.app)
