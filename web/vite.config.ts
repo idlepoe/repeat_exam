@@ -12,9 +12,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'icons.svg'],
       manifest: {
-        name: '광고없는 제과제빵기출회독',
-        short_name: '제과제빵기출회독',
-        description: '광고없는 제과제빵 기출 회독 앱',
+        name: '광고없는제과제빵필기기출회독',
+        short_name: '광고없는제과제빵필기기출회독',
+        description: '광고없는제과제빵필기기출회독',
         theme_color: '#222222',
         background_color: '#ffffff',
         display: 'standalone',
