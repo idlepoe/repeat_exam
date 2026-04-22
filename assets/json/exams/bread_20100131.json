@@ -656,7 +656,7 @@
     "exam_session": "2010-01-31",
     "subject": "재료과학",
     "question_number": 22,
-    "question_text": "팬에 바르는 기름은 다음 중 무엇이 높은 것을 선택해야 하 는가?",
+    "question_text": "팬에 바르는 기름은 다음 중 무엇이 높은 것을 선택해야 하는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1431,7 +1431,7 @@
     "exam_session": "2010-01-31",
     "subject": "영양학",
     "question_number": 47,
-    "question_text": "다당류 중 포도당으로만 구성되어 있는 탄수화물이 아닌 것 은?",
+    "question_text": "다당류 중 포도당으로만 구성되어 있는 탄수화물이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1710,7 +1710,7 @@
     "exam_session": "2010-01-31",
     "subject": "식품위생학",
     "question_number": 56,
-    "question_text": "다음의 경구 전염병을 일으키는 것으로 바르게 연결되지 않 은 것은?",
+    "question_text": "다음의 경구 전염병을 일으키는 것으로 바르게 연결되지 않은 것은?",
     "question_image_url": null,
     "choices": [
       {

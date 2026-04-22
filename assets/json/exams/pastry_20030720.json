@@ -36,7 +36,7 @@
     "exam_session": "2003-07-20",
     "subject": "제조이론",
     "question_number": 2,
-    "question_text": "과자 반죽 믹싱법 중에서 크림법은 어떤 재료를 먼저 믹싱하 는 방법인가?",
+    "question_text": "과자 반죽 믹싱법 중에서 크림법은 어떤 재료를 먼저 믹싱하는 방법인가?",
     "question_image_url": null,
     "choices": [
       {
@@ -160,7 +160,7 @@
     "exam_session": "2003-07-20",
     "subject": "제조이론",
     "question_number": 6,
-    "question_text": "파이를 만들 때 충전물이 끓어 넘쳤다. 그 원인으로 틀린 것 은?",
+    "question_text": "파이를 만들 때 충전물이 끓어 넘쳤다. 그 원인으로 틀린 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -222,7 +222,7 @@
     "exam_session": "2003-07-20",
     "subject": "제조이론",
     "question_number": 8,
-    "question_text": "파운드 케이크를 구운 직후 계란 노른자에 설탕을 넣어 칠하 는 방법이 있다. 이 때 설탕의 역할이 아닌 것은?",
+    "question_text": "파운드 케이크를 구운 직후 계란 노른자에 설탕을 넣어 칠하는 방법이 있다. 이 때 설탕의 역할이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -966,7 +966,7 @@
     "exam_session": "2003-07-20",
     "subject": "영양학",
     "question_number": 32,
-    "question_text": "버터를 쇼트닝으로 대치할 때 고려해야 할 사항이 아닌 것 은?",
+    "question_text": "버터를 쇼트닝으로 대치할 때 고려해야 할 사항이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {

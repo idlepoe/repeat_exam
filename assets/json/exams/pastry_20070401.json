@@ -811,7 +811,7 @@
     "exam_session": "2007-04-01",
     "subject": "재료과학",
     "question_number": 27,
-    "question_text": "팬에 바르는 기름은 다음 중 무엇이 높은 것을 선택해야 하 는가?",
+    "question_text": "팬에 바르는 기름은 다음 중 무엇이 높은 것을 선택해야 하는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1462,7 +1462,7 @@
     "exam_session": "2007-04-01",
     "subject": "영양학",
     "question_number": 48,
-    "question_text": "유당분해효소결핍증(유당불내증)의 일반적인 증세가 아닌 것 은?",
+    "question_text": "유당분해효소결핍증(유당불내증)의 일반적인 증세가 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
