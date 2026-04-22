@@ -1679,7 +1679,38 @@
     "exam_session": "2008-10-05",
     "subject": "식품위생학",
     "question_number": 55,
-    "question_text": "탄저, 브루셀라증과 같이 사람과 가축의 양쪽에 이환되는 전염병은? ① 법정전염병 경구전염병 ❸ 인수공통전염병 ④ 금성전염병 56. 기생충과 숙주와의 연결이 틀린 것은?",
+    "question_text": "탄저, 브루셀라증과 같이 사람과 가축의 양쪽에 이환되는 전염병은?",
+    "question_image_url": null,
+    "choices": [
+      {
+        "no": 1,
+        "text": "법정전염병"
+      },
+      {
+        "no": 2,
+        "text": "경구전염병"
+      },
+      {
+        "no": 3,
+        "text": "인수공통전염병"
+      },
+      {
+        "no": 4,
+        "text": "금성전염병"
+      }
+    ],
+    "correct_answer": 3,
+    "keywords": [
+      "식품위생학"
+    ]
+  },
+  {
+    "id": "bread_20081005_56",
+    "exam_type": "제빵기능사",
+    "exam_session": "2008-10-05",
+    "subject": "식품위생학",
+    "question_number": 56,
+    "question_text": "기생충과 숙주와의 연결이 틀린 것은?",
     "question_image_url": null,
     "choices": [
       {
