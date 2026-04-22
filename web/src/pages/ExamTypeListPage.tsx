@@ -13,7 +13,7 @@ export function ExamTypeListPage() {
   const navigate = useNavigate()
   const [data, setData] = useState<ExamTypeListJson | null>(null)
   const [err, setErr] = useState<string | null>(null)
-  const [optionsFolded, setOptionsFolded] = useState(false)
+  const [optionsFolded, setOptionsFolded] = useState(true)
   const [showHighlightDialog, setShowHighlightDialog] = useState(false)
   const [answerHighlight, setAnswerHighlight] = useState(() =>
     loadAnswerHighlight()

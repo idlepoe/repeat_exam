@@ -1,4 +1,4 @@
-const KEY = 'repeat_exam:progress'
+const KEY_PROGRESS = 'repeat_exam:progress'
 const KEY_SESSION_COUNT = 'repeat_exam:session_count'
 const KEY_NAV_REVERSED = 'repeat_exam:nav_reversed'
 const KEY_ANSWER_HIGHLIGHT = 'repeat_exam:answer_highlight'
@@ -20,6 +20,10 @@ function sessionKey(examType: string, examSession: string): string {
   return `${examType}::${examSession}`
 }
 
+function progressKey(examType: string, examSession: string): string {
+  return `${KEY_PROGRESS}:${sessionKey(examType, examSession)}`
+}
+
 export function getSessionCount(
   map: SessionCountMap,
   examType: string,
@@ -28,17 +32,25 @@ export function getSessionCount(
   return map[sessionKey(examType, examSession)] ?? 0
 }
 
-export function saveProgress(p: Progress): void {
+export function saveProgress(
+  p: Progress,
+  examType: string,
+  examSession: string
+): void {
   try {
-    localStorage.setItem(KEY, JSON.stringify(p))
+    localStorage.setItem(progressKey(examType, examSession), JSON.stringify(p))
   } catch {
     /* ignore */
   }
 }
 
-export function loadProgress(): Progress | null {
+export function loadProgress(
+  examType: string,
+  examSession: string
+): Progress | null {
+  const key = progressKey(examType, examSession)
   try {
-    const raw = localStorage.getItem(KEY)
+    const raw = localStorage.getItem(key)
     if (!raw) return null
     const p = JSON.parse(raw) as Progress
     if (
@@ -51,12 +63,36 @@ export function loadProgress(): Progress | null {
   } catch {
     /* ignore */
   }
+
+  // 하위 호환: 과거 단일 키에 저장된 같은 세션 데이터 1회 마이그레이션
+  try {
+    const legacyRaw = localStorage.getItem(KEY_PROGRESS)
+    if (!legacyRaw) return null
+    const p = JSON.parse(legacyRaw) as Progress
+    if (
+      typeof p.exam_type === 'string' &&
+      typeof p.exam_session === 'string' &&
+      typeof p.question_number === 'number' &&
+      p.exam_type === examType &&
+      p.exam_session === examSession
+    ) {
+      localStorage.setItem(key, JSON.stringify(p))
+      localStorage.removeItem(KEY_PROGRESS)
+      return p
+    }
+  } catch {
+    /* ignore */
+  }
   return null
 }
 
-export function clearProgress(): void {
+export function clearProgress(examType?: string, examSession?: string): void {
   try {
-    localStorage.removeItem(KEY)
+    if (examType && examSession) {
+      localStorage.removeItem(progressKey(examType, examSession))
+      return
+    }
+    localStorage.removeItem(KEY_PROGRESS)
   } catch {
     /* ignore */
   }
@@ -103,14 +139,7 @@ export function incrementSessionCountAndClearProgress(
   }
 
   try {
-    const progress = loadProgress()
-    if (
-      progress &&
-      progress.exam_type === examType &&
-      progress.exam_session === examSession
-    ) {
-      localStorage.removeItem(KEY)
-    }
+    clearProgress(examType, examSession)
   } catch {
     /* ignore */
   }

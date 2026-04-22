@@ -58,7 +58,7 @@ export function QuestionPage() {
         const sorted = [...data].sort(
           (a, b) => a.question_number - b.question_number
         )
-        const saved = loadProgress()
+        const saved = loadProgress(examType, examSession)
         let start = 0
         if (
           saved &&
@@ -91,11 +91,15 @@ export function QuestionPage() {
 
   useEffect(() => {
     if (!q) return
-    saveProgress({
-      exam_type: examType,
-      exam_session: examSession,
-      question_number: q.question_number,
-    })
+    saveProgress(
+      {
+        exam_type: examType,
+        exam_session: examSession,
+        question_number: q.question_number,
+      },
+      examType,
+      examSession
+    )
   }, [q, examType, examSession])
 
   useEffect(() => {
