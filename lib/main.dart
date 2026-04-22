@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
       title: "광고없는제과제빵기출회독",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: lightScheme,
