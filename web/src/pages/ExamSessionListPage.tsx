@@ -2,6 +2,11 @@ import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { AppBar } from '../components/AppBar'
 import {
+  getSessionCount,
+  loadSessionCountMap,
+  type SessionCountMap,
+} from '../lib/storage'
+import {
   fetchExamSessionList,
   sessionsForExamType,
   type ExamSessionListJson,
@@ -14,11 +19,13 @@ export function ExamSessionListPage() {
 
   const [meta, setMeta] = useState<ExamSessionListJson | null>(null)
   const [err, setErr] = useState<string | null>(null)
+  const [sessionCountMap, setSessionCountMap] = useState<SessionCountMap>({})
 
   useEffect(() => {
     fetchExamSessionList()
       .then(setMeta)
       .catch((e: Error) => setErr(e.message))
+    setSessionCountMap(loadSessionCountMap())
   }, [])
 
   const sessions = meta ? sessionsForExamType(meta, examType) : []
@@ -34,7 +41,9 @@ export function ExamSessionListPage() {
         <p style={{ fontWeight: 600, marginBottom: 12, fontSize: 16 }}>{examType}</p>
         {err && <p style={{ color: 'crimson' }}>{err}</p>}
         {!meta && !err && <p>불러오는 중…</p>}
-        {sessions.map((session) => (
+        {sessions.map((session) => {
+          const count = getSessionCount(sessionCountMap, examType, session)
+          return (
           <button
             key={session}
             type="button"
@@ -44,7 +53,9 @@ export function ExamSessionListPage() {
               )
             }
             style={{
-              display: 'block',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
               width: '100%',
               marginBottom: 12,
               padding: '14px 16px',
@@ -56,9 +67,11 @@ export function ExamSessionListPage() {
               cursor: 'pointer',
             }}
           >
-            {session}
+            <span>{session}</span>
+            <span style={{ fontSize: 14, color: '#666' }}>회독 {count}</span>
           </button>
-        ))}
+          )
+        })}
       </main>
     </div>
   )

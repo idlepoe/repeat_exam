@@ -3,7 +3,13 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { AppBar } from '../components/AppBar'
 import { examJsonUrl } from '../lib/examFiles'
 import { fetchExamSessionList, nextSession } from '../lib/examMeta'
-import { loadProgress, saveProgress } from '../lib/storage'
+import {
+  incrementSessionCountAndClearProgress,
+  loadNavReversed,
+  loadProgress,
+  saveNavReversed,
+  saveProgress,
+} from '../lib/storage'
 import type { Question } from '../types/question'
 
 /** 본문 / 과목 라벨 글자 크기 단계 (버튼 클릭 시 순환) */
@@ -27,7 +33,7 @@ export function QuestionPage() {
   const [questions, setQuestions] = useState<Question[]>([])
   const [loadErr, setLoadErr] = useState<string | null>(null)
   const [index, setIndex] = useState(0)
-  const [navReversed, setNavReversed] = useState(false)
+  const [navReversed, setNavReversed] = useState(() => loadNavReversed())
   const [fontStep, setFontStep] = useState(0)
   const [showNextSessionDialog, setShowNextSessionDialog] = useState(false)
 
@@ -90,6 +96,10 @@ export function QuestionPage() {
     })
   }, [q, examType, examSession])
 
+  useEffect(() => {
+    saveNavReversed(navReversed)
+  }, [navReversed])
+
   const goPrev = () => {
     if (index > 0) setIndex((i) => i - 1)
   }
@@ -105,6 +115,7 @@ export function QuestionPage() {
 
   const handleNextSessionConfirm = async () => {
     setShowNextSessionDialog(false)
+    incrementSessionCountAndClearProgress(examType, examSession)
     try {
       const meta = await fetchExamSessionList()
       const next = nextSession(meta, examType, examSession)
@@ -394,6 +405,10 @@ export function QuestionPage() {
                 type="button"
                 onClick={() => {
                   setShowNextSessionDialog(false)
+                  incrementSessionCountAndClearProgress(
+                    examType,
+                    examSession
+                  )
                   navigate(`/sessions/${encodeURIComponent(examType)}`)
                 }}
                 style={{

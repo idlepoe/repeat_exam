@@ -36,7 +36,7 @@
     "exam_session": "2002-01-27",
     "subject": "제조이론",
     "question_number": 2,
-    "question_text": "케이크 팬용적 410 cm3에 100 g의 스펀지 케이크 반죽을 넣어 좋은 결과를 얻었다면 팬용적 1230 cm3에 넣어야 할 스펀지 케이크의 반죽무게는?",
+    "question_text": "케이크 팬용적 410 cm3에 100 g의 스펀지 케이크 반죽을 넣 어 좋은 결과를 얻었다면 팬용적 1230 cm3에 넣어야 할 스 펀지 케이크의 반죽무게는?",
     "question_image_url": null,
     "choices": [
       {
@@ -111,7 +111,7 @@
       },
       {
         "no": 3,
-        "text": "1차 및 2차 발효과정이 없다."
+        "text": "1차 및2차 발효과정이 없다."
       },
       {
         "no": 4,
@@ -129,7 +129,7 @@
     "exam_session": "2002-01-27",
     "subject": "제조이론",
     "question_number": 5,
-    "question_text": "파운드케이크의 배합율 조정에 관한 사항 중 밀가루, 설탕을 일정하게 하고 쇼트닝을 증가시킬 때 조치 중 틀리는 것은?",
+    "question_text": "파운드케이크의 배합율 조정에 관한 사항 중밀가루, 설탕을 일정하게 하고 쇼트닝을 증가시킬 때 조치 중 틀리는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -191,7 +191,7 @@
     "exam_session": "2002-01-27",
     "subject": "제조이론",
     "question_number": 7,
-    "question_text": "슈 제조시 굽기 중간에 오븐문을 자주 열어주면 완제품은 어떻게 되는가?",
+    "question_text": "슈 제조시 굽기 중간에 오븐문을 자주 열어주면 완제품은 어 떻게 되는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -253,7 +253,7 @@
     "exam_session": "2002-01-27",
     "subject": "제조이론",
     "question_number": 9,
-    "question_text": "다음 중 무스 제조시 젤라틴을 팽윤시키려 할 때 물사용량으로 알맞은 것은?",
+    "question_text": "다음 중무스 제조시 젤라틴을 팽윤시키려 할 때 물사용량으 로 알맞은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -315,7 +315,7 @@
     "exam_session": "2002-01-27",
     "subject": "제조이론",
     "question_number": 11,
-    "question_text": "다음 제품 중 찜류 제품이 아닌 것은?",
+    "question_text": "다음 제품 중찜류 제품이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -377,7 +377,7 @@
     "exam_session": "2002-01-27",
     "subject": "제조이론",
     "question_number": 13,
-    "question_text": "유지와 밀가루를 먼저 넣고 반죽하는 케이크 제조방법은 어느 것인가?",
+    "question_text": "유지와 밀가루를 먼저 넣고 반죽하는 케이크 제조방법은 어 느 것인가?",
     "question_image_url": null,
     "choices": [
       {
@@ -439,7 +439,7 @@
     "exam_session": "2002-01-27",
     "subject": "제조이론",
     "question_number": 15,
-    "question_text": "식빵을 만들 때 필요한 기계 중 성형기와 바로 연결하여 설치하지 않아도 되는 것은?",
+    "question_text": "식빵을 만들 때 필요한 기계 중성형기와 바로 연결하여 설 치하지 않아도 되는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -470,7 +470,7 @@
     "exam_session": "2002-01-27",
     "subject": "제조이론",
     "question_number": 16,
-    "question_text": "빵 제조시 경수를 사용해야만 하는 지역에 있어서 조치 사항 중 틀린 것은?",
+    "question_text": "빵 제조시 경수를 사용해야만 하는 지역에 있어서 조치 사 항 중 틀린 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -623,9 +623,9 @@
     "id": "bread_20020127_21",
     "exam_type": "제빵기능사",
     "exam_session": "2002-01-27",
-    "subject": "제조이론",
+    "subject": "재료과학",
     "question_number": 21,
-    "question_text": "굽기 중 일어나는 변화로 가장 높은 온도에서 발생하는 것은?",
+    "question_text": "굽기 중 일어나는 변화로 가장 높은 온도에서 발생하는 것 은?",
     "question_image_url": null,
     "choices": [
       {
@@ -647,14 +647,14 @@
     ],
     "correct_answer": 4,
     "keywords": [
-      "제조이론"
+      "재료과학"
     ]
   },
   {
     "id": "bread_20020127_22",
     "exam_type": "제빵기능사",
     "exam_session": "2002-01-27",
-    "subject": "제조이론",
+    "subject": "재료과학",
     "question_number": 22,
     "question_text": "식빵 제조 시 낮은 부피의 제품이 되는 원인은?",
     "question_image_url": null,
@@ -678,14 +678,14 @@
     ],
     "correct_answer": 2,
     "keywords": [
-      "제조이론"
+      "재료과학"
     ]
   },
   {
     "id": "bread_20020127_23",
     "exam_type": "제빵기능사",
     "exam_session": "2002-01-27",
-    "subject": "제조이론",
+    "subject": "재료과학",
     "question_number": 23,
     "question_text": "다음 중 빵의 노화속도가 가장 빠른 온도는?",
     "question_image_url": null,
@@ -709,16 +709,16 @@
     ],
     "correct_answer": 1,
     "keywords": [
-      "제조이론"
+      "재료과학"
     ]
   },
   {
     "id": "bread_20020127_24",
     "exam_type": "제빵기능사",
     "exam_session": "2002-01-27",
-    "subject": "제조이론",
+    "subject": "재료과학",
     "question_number": 24,
-    "question_text": "스펀지법에서 스펀지에 사용하는 일반적인 재료가 아닌 것은?",
+    "question_text": "스펀지법에서 스펀지에 사용하는 일반적인 재료가 아닌 것 은?",
     "question_image_url": null,
     "choices": [
       {
@@ -740,14 +740,14 @@
     ],
     "correct_answer": 4,
     "keywords": [
-      "제조이론"
+      "재료과학"
     ]
   },
   {
     "id": "bread_20020127_25",
     "exam_type": "제빵기능사",
     "exam_session": "2002-01-27",
-    "subject": "제조이론",
+    "subject": "재료과학",
     "question_number": 25,
     "question_text": "안치수가 그림과 같은 식빵 철판의 용적은?",
     "question_image_url": null,
@@ -771,16 +771,16 @@
     ],
     "correct_answer": 2,
     "keywords": [
-      "제조이론"
+      "재료과학"
     ]
   },
   {
     "id": "bread_20020127_26",
     "exam_type": "제빵기능사",
     "exam_session": "2002-01-27",
-    "subject": "제조이론",
+    "subject": "재료과학",
     "question_number": 26,
-    "question_text": "식빵의 믹싱공정 중 반죽의 신장성이 최대가 되는 단계는?",
+    "question_text": "식빵의 믹싱공정 중반죽의 신장성이 최대가 되는 단계는?",
     "question_image_url": null,
     "choices": [
       {
@@ -802,14 +802,14 @@
     ],
     "correct_answer": 3,
     "keywords": [
-      "제조이론"
+      "재료과학"
     ]
   },
   {
     "id": "bread_20020127_27",
     "exam_type": "제빵기능사",
     "exam_session": "2002-01-27",
-    "subject": "제조이론",
+    "subject": "재료과학",
     "question_number": 27,
     "question_text": "데니시 페이스트리에서 롤인 유지함량 및 접기 횟수에 대한 내용을 나타낸 것 중 옳지 않은 것은?",
     "question_image_url": null,
@@ -824,23 +824,23 @@
       },
       {
         "no": 3,
-        "text": "같은 롤인 유지함량에서는 접기 횟수가 증가 할수록 부피는 증가하다 최고점을 지나면 감소한다."
+        "text": "같은 롤인 유지함량에서는 접기 횟수가 증가 할수록 부 피는 증가하다 최고점을 지나면 감소한다."
       },
       {
         "no": 4,
-        "text": "롤인 유지함량이 많은 것이 롤인 유지함량이 적은것 보다 접기 횟수가 증가함에 따라 부피가 증가하다. 최고점을 지나면 감소하는 현상이 현저하다."
+        "text": "롤인 유지함량이 많은 것이 롤인 유지함량이 적은것 보"
       }
     ],
     "correct_answer": 4,
     "keywords": [
-      "제조이론"
+      "재료과학"
     ]
   },
   {
     "id": "bread_20020127_28",
     "exam_type": "제빵기능사",
     "exam_session": "2002-01-27",
-    "subject": "제조이론",
+    "subject": "재료과학",
     "question_number": 28,
     "question_text": "빵의 포장재 특성으로 부적합한 것은?",
     "question_image_url": null,
@@ -864,14 +864,14 @@
     ],
     "correct_answer": 4,
     "keywords": [
-      "제조이론"
+      "재료과학"
     ]
   },
   {
     "id": "bread_20020127_29",
     "exam_type": "제빵기능사",
     "exam_session": "2002-01-27",
-    "subject": "제조이론",
+    "subject": "재료과학",
     "question_number": 29,
     "question_text": "원가관리 개념에서 식품을 저장하고자 할 때 저장 온도로 부적합한 것은?",
     "question_image_url": null,
@@ -895,16 +895,16 @@
     ],
     "correct_answer": 4,
     "keywords": [
-      "제조이론"
+      "재료과학"
     ]
   },
   {
     "id": "bread_20020127_30",
     "exam_type": "제빵기능사",
     "exam_session": "2002-01-27",
-    "subject": "제조이론",
+    "subject": "재료과학",
     "question_number": 30,
-    "question_text": "반죽 10kg을 믹싱 할 때 다음 중 가장 적합한 믹서의 용량은?",
+    "question_text": "반죽 10kg을 믹싱 할 때 다음 중 가장 적합한 믹서의 용량 은?",
     "question_image_url": null,
     "choices": [
       {
@@ -926,14 +926,14 @@
     ],
     "correct_answer": 3,
     "keywords": [
-      "제조이론"
+      "재료과학"
     ]
   },
   {
     "id": "bread_20020127_31",
     "exam_type": "제빵기능사",
     "exam_session": "2002-01-27",
-    "subject": "제조이론",
+    "subject": "영양학",
     "question_number": 31,
     "question_text": "α전분과 β전분의 차이에 관해서 옳은 것은?",
     "question_image_url": null,
@@ -957,14 +957,14 @@
     ],
     "correct_answer": 3,
     "keywords": [
-      "제조이론"
+      "영양학"
     ]
   },
   {
     "id": "bread_20020127_32",
     "exam_type": "제빵기능사",
     "exam_session": "2002-01-27",
-    "subject": "제조이론",
+    "subject": "영양학",
     "question_number": 32,
     "question_text": "단순 단백질이 아닌 것은?",
     "question_image_url": null,
@@ -988,14 +988,14 @@
     ],
     "correct_answer": 3,
     "keywords": [
-      "제조이론"
+      "영양학"
     ]
   },
   {
     "id": "bread_20020127_33",
     "exam_type": "제빵기능사",
     "exam_session": "2002-01-27",
-    "subject": "제조이론",
+    "subject": "영양학",
     "question_number": 33,
     "question_text": "유지의 크림가가 가장 중요한 제품은?",
     "question_image_url": null,
@@ -1017,16 +1017,16 @@
         "text": "단과자빵"
       }
     ],
-    "correct_answer": 3,
+    "correct_answer": 1,
     "keywords": [
-      "제조이론"
+      "영양학"
     ]
   },
   {
     "id": "bread_20020127_34",
     "exam_type": "제빵기능사",
     "exam_session": "2002-01-27",
-    "subject": "제조이론",
+    "subject": "영양학",
     "question_number": 34,
     "question_text": "다음 곡물 전분입자 중 크기가 가장 작은 것은?",
     "question_image_url": null,
@@ -1048,16 +1048,16 @@
         "text": "쌀전분"
       }
     ],
-    "correct_answer": 1,
+    "correct_answer": 4,
     "keywords": [
-      "제조이론"
+      "영양학"
     ]
   },
   {
     "id": "bread_20020127_35",
     "exam_type": "제빵기능사",
     "exam_session": "2002-01-27",
-    "subject": "제조이론",
+    "subject": "영양학",
     "question_number": 35,
     "question_text": "소맥분의 등급은 무엇을 기준으로 하는가?",
     "question_image_url": null,
@@ -1079,16 +1079,16 @@
         "text": "탄수화물"
       }
     ],
-    "correct_answer": 4,
+    "correct_answer": 1,
     "keywords": [
-      "제조이론"
+      "영양학"
     ]
   },
   {
     "id": "bread_20020127_36",
     "exam_type": "제빵기능사",
     "exam_session": "2002-01-27",
-    "subject": "제조이론",
+    "subject": "영양학",
     "question_number": 36,
     "question_text": "빵 제조시 밀가루를 체로 치는 이유가 아닌 것은?",
     "question_image_url": null,
@@ -1112,16 +1112,16 @@
     ],
     "correct_answer": 1,
     "keywords": [
-      "제조이론"
+      "영양학"
     ]
   },
   {
     "id": "bread_20020127_37",
     "exam_type": "제빵기능사",
     "exam_session": "2002-01-27",
-    "subject": "제조이론",
+    "subject": "영양학",
     "question_number": 37,
-    "question_text": "우유의 성분 중 제품의 껍질색을 개선시켜 주는 것은?",
+    "question_text": "우유의 성분 중제품의 껍질색을 개선시켜 주는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1141,16 +1141,16 @@
         "text": "칼슘"
       }
     ],
-    "correct_answer": 1,
+    "correct_answer": 3,
     "keywords": [
-      "제조이론"
+      "영양학"
     ]
   },
   {
     "id": "bread_20020127_38",
     "exam_type": "제빵기능사",
     "exam_session": "2002-01-27",
-    "subject": "제조이론",
+    "subject": "영양학",
     "question_number": 38,
     "question_text": "커스터드 크림에서 계란은 주로 어떤 역할을 하는가?",
     "question_image_url": null,
@@ -1172,18 +1172,18 @@
         "text": "저장성"
       }
     ],
-    "correct_answer": 3,
+    "correct_answer": 2,
     "keywords": [
-      "제조이론"
+      "영양학"
     ]
   },
   {
     "id": "bread_20020127_39",
     "exam_type": "제빵기능사",
     "exam_session": "2002-01-27",
-    "subject": "제조이론",
+    "subject": "영양학",
     "question_number": 39,
-    "question_text": "활성 건조이스트를 수화시킬 때 발효력을 증가시키기 위해 밀가루에 기준하여 1-3%를 물에 풀어 넣을 수 있는 재료는?",
+    "question_text": "활성 건조이스트를 수화시킬 때 발효력을 증가시키기 위하 여 밀가루에 기준하여 1-3%를 물에 풀어 넣을 수 있는 재 료는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1203,16 +1203,16 @@
         "text": "밀가루"
       }
     ],
-    "correct_answer": 2,
+    "correct_answer": 1,
     "keywords": [
-      "제조이론"
+      "영양학"
     ]
   },
   {
     "id": "bread_20020127_40",
     "exam_type": "제빵기능사",
     "exam_session": "2002-01-27",
-    "subject": "제조이론",
+    "subject": "영양학",
     "question_number": 40,
     "question_text": "일시적 경수에 대하여 바르게 설명한 것은?",
     "question_image_url": null,
@@ -1236,14 +1236,14 @@
     ],
     "correct_answer": 1,
     "keywords": [
-      "제조이론"
+      "영양학"
     ]
   },
   {
     "id": "bread_20020127_41",
     "exam_type": "제빵기능사",
     "exam_session": "2002-01-27",
-    "subject": "재료과학",
+    "subject": "영양학",
     "question_number": 41,
     "question_text": "이스트푸드의 구성성분 중 칼슘염의 주기능은?",
     "question_image_url": null,
@@ -1254,7 +1254,7 @@
       },
       {
         "no": 2,
-        "text": "반죽에 탄성을 준다."
+        "text": "반죽에 탄성을 준다. 3과목 : 영양학"
       },
       {
         "no": 3,
@@ -1267,16 +1267,16 @@
     ],
     "correct_answer": 4,
     "keywords": [
-      "재료과학"
+      "영양학"
     ]
   },
   {
     "id": "bread_20020127_42",
     "exam_type": "제빵기능사",
     "exam_session": "2002-01-27",
-    "subject": "재료과학",
+    "subject": "영양학",
     "question_number": 42,
-    "question_text": "패리노그래프에 의한 측정으로 알 수 있는 반죽 특성과 거리가 먼 것은?",
+    "question_text": "패리노그래프에 의한 측정으로 알 수 있는 반죽 특성과거리 가 먼 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1298,14 +1298,14 @@
     ],
     "correct_answer": 4,
     "keywords": [
-      "재료과학"
+      "영양학"
     ]
   },
   {
     "id": "bread_20020127_43",
     "exam_type": "제빵기능사",
     "exam_session": "2002-01-27",
-    "subject": "재료과학",
+    "subject": "영양학",
     "question_number": 43,
     "question_text": "다음 중 이당류로 환원당이 아닌 당은?",
     "question_image_url": null,
@@ -1329,16 +1329,16 @@
     ],
     "correct_answer": 3,
     "keywords": [
-      "재료과학"
+      "영양학"
     ]
   },
   {
     "id": "bread_20020127_44",
     "exam_type": "제빵기능사",
     "exam_session": "2002-01-27",
-    "subject": "재료과학",
+    "subject": "영양학",
     "question_number": 44,
-    "question_text": "항산화제 자체는 아니지만 항산화제와 병용하면 항산화효과가 증대되는 보완제가 아닌 것은?",
+    "question_text": "항산화제 자체는 아니지만 항산화제와 병용하면 항산화효과 가 증대되는 보완제가 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1360,21 +1360,21 @@
     ],
     "correct_answer": 2,
     "keywords": [
-      "재료과학"
+      "영양학"
     ]
   },
   {
     "id": "bread_20020127_45",
     "exam_type": "제빵기능사",
     "exam_session": "2002-01-27",
-    "subject": "재료과학",
+    "subject": "영양학",
     "question_number": 45,
     "question_text": "빵, 과자류 제품 제조에 사용하는 유지의 특성을 설명한 것 중 틀리는 항목은?",
     "question_image_url": null,
     "choices": [
       {
         "no": 1,
-        "text": "파운드 케이크와 같이 많은 유지와 액체를 사용하는 제품에는 유화성이 중요하다."
+        "text": "파운드 케이크와 같이 많은 유지와 액체를 사용하는 제 품에는 유화성이 중요하다."
       },
       {
         "no": 2,
@@ -1382,23 +1382,23 @@
       },
       {
         "no": 3,
-        "text": "저장기간이 긴 쿠키나 고온에서 작업하는 튀김류에는 기능성이 중요하다."
+        "text": "저장기간이 긴 쿠키나 고온에서 작업하는 튀김류에는 기 능성이 중요하다."
       },
       {
         "no": 4,
-        "text": "부드러움을 주기 위하여 빵류에 사용하는 유지는 쇼트닝성이 중요하다."
+        "text": "부드러움을 주기 위하여 빵류에 사용하는 유지는 쇼트닝"
       }
     ],
     "correct_answer": 3,
     "keywords": [
-      "재료과학"
+      "영양학"
     ]
   },
   {
     "id": "bread_20020127_46",
     "exam_type": "제빵기능사",
     "exam_session": "2002-01-27",
-    "subject": "재료과학",
+    "subject": "영양학",
     "question_number": 46,
     "question_text": "유용한 장내세균의 발육을 도와 정장작용을 하는 이당류는?",
     "question_image_url": null,
@@ -1422,7 +1422,7 @@
     ],
     "correct_answer": 2,
     "keywords": [
-      "재료과학"
+      "영양학"
     ]
   },
   {
@@ -1524,7 +1524,7 @@
     "exam_session": "2002-01-27",
     "subject": "영양학",
     "question_number": 50,
-    "question_text": "한 개의 무게가 50g인 과자가 있다. 이 과자 100g 중에 탄수화물 70g, 단백질 5g, 지방 15g, 무기질 4g, 물 6g이 들어 있다면 이 과자 10개를 먹을 때 얼마의 열량을 낼 수 있는가?",
+    "question_text": "한 개의 무게가 50g인 과자가 있다. 이 과자 100g 중에 탄 수화물 70g, 단백질 5g, 지방 15g, 무기질 4g, 물 6g이 들 어 있다면 이 과자 10개를 먹을 때 얼마의 열량을 낼 수 있 는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1555,7 +1555,7 @@
     "exam_session": "2002-01-27",
     "subject": "식품위생학",
     "question_number": 51,
-    "question_text": "식품오염 미생물의 유래와 경로에 대한 설명이다. 토양미생물의 특징과 관계가 가장 적은 것은?",
+    "question_text": "식품오염 미생물의 유래와 경로에 대한 설명이다. 토양미생 물의 특징과 관계가 가장 적은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1617,7 +1617,7 @@
     "exam_session": "2002-01-27",
     "subject": "식품위생학",
     "question_number": 53,
-    "question_text": "일본에서 공장폐수로 인해 오염된 식품을 섭취하고 이타이이타이(itai itai)병이 발생하여 식품공해를 일으킨 예가 있다. 이와 관계되는 유해성 금속화합물은?",
+    "question_text": "일본에서 공장폐수로 인해 오염된 식품을 섭취하고 이타이 이타이(itai itai)병이 발생하여 식품공해를 일으킨 예가 있다. 이와 관계되는 유해성 금속화합물은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1710,7 +1710,7 @@
     "exam_session": "2002-01-27",
     "subject": "식품위생학",
     "question_number": 56,
-    "question_text": "일명 점착제로서 식품의 점착성을 증가시켜 미각을 증진시키는 효과를 갖는 첨가물은?",
+    "question_text": "일명 점착제로서 식품의 점착성을 증가시켜 미각을 증진시 키는 효과를 갖는 첨가물은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1741,7 +1741,7 @@
     "exam_session": "2002-01-27",
     "subject": "식품위생학",
     "question_number": 57,
-    "question_text": "소독력이 매우 강한 일종의 표면활성제로서 공장의 소독, 종업원의 손을 소독할 때나 용기 및 기구의 소독제로 알맞는 것은?",
+    "question_text": "소독력이 매우 강한 일종의 표면활성제로서 공장의 소독, 종업원의 손을 소독할 때나 용기 및 기구의 소독제로 알맞 는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1772,16 +1772,16 @@
     "exam_session": "2002-01-27",
     "subject": "식품위생학",
     "question_number": 58,
-    "question_text": "식품 중에 자연적으로 생성되는 천연 유독성분에 대한 설명이 잘못된 것은?",
+    "question_text": "식품 중에 자연적으로 생성되는 천연 유독성분에 대한설명 이 잘못된 것은?",
     "question_image_url": null,
     "choices": [
       {
         "no": 1,
-        "text": "아몬드, 살구씨, 복숭아씨 등에는 아미그달린이라는 천연의 유독성분이 존재한다."
+        "text": "아몬드, 살구씨, 복숭아씨 등에는 아미그달린이라는 천연 의 유독성분이 존재한다."
       },
       {
         "no": 2,
-        "text": "천연 유독성분 중에는 사람에게 발암성, 돌연변이, 기형유발성, 알레르기성, 영양장해 및 급성중독을 일으키는 것들이 있다."
+        "text": "천연 유독성분 중에는 사람에게 발암성, 돌연변이, 기형 유발성, 알레르기성, 영양장해 및 급성중독을 일으키는 것들이 있다."
       },
       {
         "no": 3,
@@ -1789,7 +1789,7 @@
       },
       {
         "no": 4,
-        "text": "천연의 유독성분들은 모두 열에 불안정하여 100℃로 가열하면 독성이 분해되므로 인체에 무해하다."
+        "text": "천연의 유독성분들은 모두 열에 불안정하여 100℃로 가"
       }
     ],
     "correct_answer": 4,
