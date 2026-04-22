@@ -1,1 +1,3 @@
-python -m tools.pdf_batch --input "assets/pdf" --out "assets/json/exams" --expected-count 60
+get create page:exam_session_list
+get create page:exam_type_list
+get create page:question
