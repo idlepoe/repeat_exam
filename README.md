@@ -1,1 +1,1 @@
-# repeat_exam
+python -m tools.pdf_batch --input "assets/pdf" --out "assets/json/exams" --expected-count 60
