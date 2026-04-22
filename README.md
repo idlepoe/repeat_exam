@@ -38,6 +38,8 @@
 
 ## 스크린샷
 
-![메인 화면](https://raw.githubusercontent.com/idlepoe/repeat_exam/main/screenshot/0x0ss.png)
-![출시회차 화면](https://raw.githubusercontent.com/idlepoe/repeat_exam/main/screenshot/0x0ss%20(2).png)
-![문제 풀이 화면](https://raw.githubusercontent.com/idlepoe/repeat_exam/main/screenshot/0x0ss%20(1).png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/idlepoe/repeat_exam/main/screenshot/0x0ss.png" alt="메인 화면" width="32%" />
+  <img src="https://raw.githubusercontent.com/idlepoe/repeat_exam/main/screenshot/0x0ss%20(2).png" alt="출시회차 화면" width="32%" />
+  <img src="https://raw.githubusercontent.com/idlepoe/repeat_exam/main/screenshot/0x0ss%20(1).png" alt="문제 풀이 화면" width="32%" />
+</p>
