@@ -1,7 +1,8 @@
 import 'dart:convert';
 
-import 'package:flutter/services.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
+import 'package:http/http.dart' as http;
 
 import '../../../data/models/question_model.dart';
 import '../../../data/services/exam_files_service.dart';
@@ -64,6 +65,7 @@ class QuestionController extends GetxController {
   Future<void> _load() async {
     loading.value = true;
     error.value = null;
+    String? sourcePath;
     try {
       navReversed.value = await StorageService.loadNavReversed();
       fontStep.value = (await StorageService.loadQuestionFontStep()).clamp(
@@ -72,11 +74,13 @@ class QuestionController extends GetxController {
       );
       answerHighlight.value = await StorageService.loadAnswerHighlight();
 
-      final path = ExamFilesService.examJsonAssetPath(
+      final sources = ExamFilesService.examJsonSources(
         examType.value,
         examSession.value,
       );
-      final raw = await rootBundle.loadString(path);
+      final loadedSource = await _loadExamJsonFromSources(sources);
+      sourcePath = loadedSource.source;
+      final raw = loadedSource.raw;
       final decoded = jsonDecode(raw);
       if (decoded is! List) {
         throw Exception('문제 데이터 형식이 올바르지 않습니다.');
@@ -109,12 +113,39 @@ class QuestionController extends GetxController {
       }
       index.value = start;
       await _saveCurrentProgress();
-    } catch (e) {
+    } catch (e, st) {
       error.value = e.toString();
+      debugPrint(
+        '[QuestionController] load failed '
+        '(examType=${examType.value}, examSession=${examSession.value}, '
+        'source=${sourcePath ?? 'unknown'}): $e',
+      );
+      debugPrint(st.toString());
       questions.clear();
     } finally {
       loading.value = false;
     }
+  }
+
+  Future<({String source, String raw})> _loadExamJsonFromSources(
+    List<String> sources,
+  ) async {
+    Object? lastError;
+    for (final source in sources) {
+      try {
+        final res = await http.get(Uri.parse(source));
+        if (res.statusCode != 200) {
+          throw Exception('HTTP ${res.statusCode}');
+        }
+        if (res.body.trim().isEmpty) {
+          throw Exception('응답 본문이 비어 있습니다.');
+        }
+        return (source: source, raw: res.body);
+      } catch (e) {
+        lastError = e;
+      }
+    }
+    throw Exception('문제 파일 로드 실패: $lastError');
   }
 
   Future<void> _saveCurrentProgress() async {
