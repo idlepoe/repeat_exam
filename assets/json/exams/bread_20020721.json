@@ -1835,7 +1835,7 @@
     "subject": "식품위생학",
     "question_number": 60,
     "question_text": "전염병은 다음과 같은 감염과정을 거친다. ( ) 안에 가장 적당한 것은?",
-    "question_image_url": "https://github.com/idlepoe/repeat_exam/blob/main/assets/images/bread_2002072160.png",
+    "question_image_url": "https://raw.githubusercontent.com/idlepoe/repeat_exam/main/assets/images/bread_2002072160.png",
     "choices": [
       {
         "no": 1,

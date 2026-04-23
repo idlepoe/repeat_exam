@@ -409,7 +409,7 @@
     "subject": "제조이론",
     "question_number": 14,
     "question_text": "케이크 도넛의 성형방법이다. ( )에 들어갈 공정은?",
-    "question_image_url": "https://github.com/idlepoe/repeat_exam/blob/main/assets/images/bread_2003072014.png",
+    "question_image_url": "https://raw.githubusercontent.com/idlepoe/repeat_exam/main/assets/images/bread_2003072014.png",
     "choices": [
       {
         "no": 1,
