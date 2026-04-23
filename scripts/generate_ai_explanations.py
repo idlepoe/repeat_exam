@@ -17,7 +17,7 @@ from typing import Any
 from google import genai
 from google.genai import types
 
-MODEL_NAME = "gemini-2.5-flash-lite"
+MODEL_NAME = "gemini-flash-lite-latest"
 CACHE_MIN_TOKEN_COUNT = 1024
 SYSTEM_INSTRUCTION = (
     "당신은 제과·제빵 기능사 시험 전문 강사입니다. "
@@ -248,16 +248,18 @@ def generate_ai_explanations(
                 processed += 1
                 total_processed += 1
 
+            # 배치 단위로 즉시 저장: 중간 중단 시에도 완료된 해설 보존
+            target_path.write_text(
+                json.dumps(data, ensure_ascii=False, indent=2) + "\n",
+                encoding="utf-8",
+            )
+
             print(
                 f"  - 배치 [{batch_index}/{len(batches)}] 완료 "
                 f"(누적 {processed}/{len(source_items)}, "
                 f"소요 {time.perf_counter() - batch_start:.1f}s)"
             )
-
-        target_path.write_text(
-            json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
-        )
-        print(f"저장 완료: {target_path}")
+        print(f"파일 반영 완료: {target_path}")
         if failed_batches:
             print(f"  - 실패 배치 {len(failed_batches)}건")
             for failed in failed_batches:
