@@ -10,13 +10,14 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import time
 from pathlib import Path
 from typing import Any
 
 from google import genai
 from google.genai import types
 
-MODEL_NAME = "gemini-flash-lite-latest"
+MODEL_NAME = "gemini-2.5-flash-lite"
 CACHE_MIN_TOKEN_COUNT = 1024
 SYSTEM_INSTRUCTION = (
     "당신은 제과·제빵 기능사 시험 전문 강사입니다. "
@@ -61,20 +62,22 @@ def _load_api_key() -> str:
     )
 
 
-def _build_prompt(item: dict[str, Any]) -> str:
-    choices = item.get("choices", [])
-    choices_text = "\n".join(
-        f"- {choice.get('no')}: {choice.get('text', '')}" for choice in choices
-    )
-    payload = {
+def _item_payload(item: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "id": item.get("id"),
         "question_text": item.get("question_text"),
         "question_image_url": item.get("question_image_url"),
-        "choices": choices,
+        "choices": item.get("choices", []),
         "correct_answer": item.get("correct_answer"),
     }
+
+
+def _build_prompt(batch: list[dict[str, Any]]) -> str:
+    payload = [_item_payload(item) for item in batch]
     return (
         "아래 문제 정보를 참고해 시험 대비용 해설을 작성해줘.\n"
         "반드시 한국어로 답변하고 JSON 형식만 반환해.\n\n"
+        "여러 문제를 한 번에 보낼 수 있으므로, 반드시 id를 키로 하는 객체 형태로 반환해.\n\n"
         "작성 규칙:\n"
         "1) correctExplanation:\n"
         "- 정답(틀린 보기)이 왜 틀렸는지 정확한 개념으로 설명\n"
@@ -87,14 +90,14 @@ def _build_prompt(item: dict[str, Any]) -> str:
         "- 문제 키워드만 보고 정답을 찾는 한 줄 요령\n"
         "- 암기용 문장 형태로 작성\n\n"
         "{\n"
-        '  "correctExplanation": "...",\n'
-        '  "wrongAnswerNotes": ["1번: ...", "2번: ...", "3번: ...", "4번: ..."],\n'
-        '  "examTip": "..."\n'
+        '  "문제ID": {\n'
+        '    "correctExplanation": "...",\n'
+        '    "wrongAnswerNotes": ["1번: ...", "2번: ...", "3번: ...", "4번: ..."],\n'
+        '    "examTip": "..."\n'
+        "  }\n"
         "}\n\n"
-        "문제 메타(JSON):\n"
-        f"{json.dumps(payload, ensure_ascii=False, indent=2)}\n\n"
-        "보기:\n"
-        f"{choices_text}"
+        "문제 메타(JSON 배열):\n"
+        f"{json.dumps(payload, ensure_ascii=False, indent=2)}"
     )
 
 
@@ -144,9 +147,23 @@ def _target_paths(input_path: Path) -> list[Path]:
     return [input_path]
 
 
-def generate_ai_explanations(input_path: Path) -> None:
+def _chunked(items: list[dict[str, Any]], size: int) -> list[list[dict[str, Any]]]:
+    return [items[i : i + size] for i in range(0, len(items), size)]
+
+
+def generate_ai_explanations(
+    input_path: Path,
+    batch_size: int,
+    skip_existing: bool,
+    fail_fast: bool,
+) -> None:
     api_key = _load_api_key()
     client = genai.Client(api_key=api_key)
+    print(
+        "[설정] "
+        f"model={MODEL_NAME}, batch_size={batch_size}, skip_existing={skip_existing}, "
+        f"fail_fast={fail_fast}"
+    )
     cache_name: str | None = None
     try:
         cache_name = _build_cache(client)
@@ -158,14 +175,37 @@ def generate_ai_explanations(input_path: Path) -> None:
     if not target_paths:
         raise FileNotFoundError(f"처리할 JSON 파일이 없습니다: {input_path}")
 
+    total_files = len(target_paths)
+    total_processed = 0
+    total_failed_batches = 0
     for file_index, target_path in enumerate(target_paths, start=1):
+        file_start = time.perf_counter()
         data = json.loads(target_path.read_text(encoding="utf-8"))
         if not isinstance(data, list):
             raise ValueError(f"입력 JSON은 문제 객체 배열이어야 합니다: {target_path}")
 
         print(f"\n[{file_index}/{len(target_paths)}] 파일 처리: {target_path}")
-        for idx, item in enumerate(data, start=1):
-            prompt = _build_prompt(item)
+        source_items = data
+        if skip_existing:
+            source_items = [item for item in data if "aiExplanation" not in item]
+            skipped_count = len(data) - len(source_items)
+            if skipped_count:
+                print(f"  - 기존 aiExplanation 스킵: {skipped_count}개")
+
+        if not source_items:
+            print("  - 처리할 신규 문항이 없어 파일 저장을 건너뜁니다.")
+            continue
+
+        batches = _chunked(source_items, batch_size)
+        processed = 0
+        failed_batches: list[str] = []
+        for batch_index, batch in enumerate(batches, start=1):
+            batch_ids = [str(item.get("id")) for item in batch]
+            print(
+                f"  - 배치 시작 [{batch_index}/{len(batches)}] "
+                f"size={len(batch)} ids={batch_ids[0]}..{batch_ids[-1]}"
+            )
+            prompt = _build_prompt(batch)
             config = types.GenerateContentConfig(
                 response_mime_type="application/json",
                 temperature=0.3,
@@ -173,22 +213,64 @@ def generate_ai_explanations(input_path: Path) -> None:
             if cache_name:
                 config.cached_content = cache_name
 
-            resp = client.models.generate_content(
-                model=MODEL_NAME,
-                contents=prompt,
-                config=config,
-            )
+            batch_start = time.perf_counter()
+            try:
+                resp = client.models.generate_content(
+                    model=MODEL_NAME,
+                    contents=prompt,
+                    config=config,
+                )
+            except Exception as e:
+                print(f"배치 실패: {e}")
+                msg = (
+                    f"배치 실패 [{batch_index}/{len(batches)}] "
+                    f"ids={batch_ids}, batch_size={len(batch)}, "
+                    f"error_type={type(e).__name__}: {e}"
+                )
+                if fail_fast:
+                    raise RuntimeError(msg) from e
+                failed_batches.append(msg)
+                total_failed_batches += 1
+                print(f"  - {msg}")
+                continue
             if not resp.text:
-                raise RuntimeError(f"{item.get('id')} 응답이 비어 있습니다.")
+                raise RuntimeError(f"{target_path} 배치 응답이 비어 있습니다.")
 
             explanation = _parse_response_json(resp.text)
-            item["aiExplanation"] = explanation
-            print(f"  - [{idx}/{len(data)}] 완료: {item.get('id')}")
+            if not isinstance(explanation, dict):
+                raise RuntimeError("배치 응답 형식이 올바르지 않습니다(dict 필요).")
+
+            for item in batch:
+                item_id = str(item.get("id"))
+                if item_id not in explanation:
+                    raise RuntimeError(f"배치 응답에 id 누락: {item_id}")
+                item["aiExplanation"] = explanation[item_id]
+                processed += 1
+                total_processed += 1
+
+            print(
+                f"  - 배치 [{batch_index}/{len(batches)}] 완료 "
+                f"(누적 {processed}/{len(source_items)}, "
+                f"소요 {time.perf_counter() - batch_start:.1f}s)"
+            )
 
         target_path.write_text(
             json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
         )
         print(f"저장 완료: {target_path}")
+        if failed_batches:
+            print(f"  - 실패 배치 {len(failed_batches)}건")
+            for failed in failed_batches:
+                print(f"    * {failed}")
+        print(
+            f"[{file_index}/{total_files}] 파일 완료: {target_path} "
+            f"(소요 {time.perf_counter() - file_start:.1f}s)"
+        )
+
+    print(
+        f"\n전체 완료: 파일 {total_files}개, 처리 문항 {total_processed}개, "
+        f"실패 배치 {total_failed_batches}건"
+    )
 
 
 def main() -> None:
@@ -198,8 +280,31 @@ def main() -> None:
         default="assets/json/exams",
         help="해설을 추가할 JSON 파일 또는 폴더 경로(폴더면 *.json 전체 처리)",
     )
+    parser.add_argument(
+        "--batch-size",
+        type=int,
+        default=1,
+        help="한 번의 API 호출에 포함할 문제 수 (기본 1, 권장 5)",
+    )
+    parser.add_argument(
+        "--skip-existing",
+        action="store_true",
+        help="이미 aiExplanation가 있는 문항은 API 호출 없이 건너뜁니다.",
+    )
+    parser.add_argument(
+        "--fail-fast",
+        action="store_true",
+        help="배치 실패 시 즉시 중단합니다(기본은 실패 배치 건너뛰고 계속).",
+    )
     args = parser.parse_args()
-    generate_ai_explanations(Path(args.input))
+    if args.batch_size < 1:
+        raise ValueError("--batch-size는 1 이상이어야 합니다.")
+    generate_ai_explanations(
+        Path(args.input),
+        batch_size=args.batch_size,
+        skip_existing=args.skip_existing,
+        fail_fast=args.fail_fast,
+    )
 
 
 if __name__ == "__main__":

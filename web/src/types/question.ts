@@ -3,6 +3,12 @@ export interface Choice {
   text: string
 }
 
+export interface AiExplanation {
+  correctExplanation: string
+  wrongAnswerNotes: string[]
+  examTip: string
+}
+
 export interface Question {
   id: string
   exam_type: string
@@ -14,4 +20,5 @@ export interface Question {
   choices: Choice[]
   correct_answer: number
   keywords: string[]
+  aiExplanation?: AiExplanation
 }

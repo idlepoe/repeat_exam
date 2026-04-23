@@ -43,3 +43,8 @@
   <img src="https://raw.githubusercontent.com/idlepoe/repeat_exam/main/screenshot/0x0ss%20(2).png" alt="출시회차 화면" width="32%" />
   <img src="https://raw.githubusercontent.com/idlepoe/repeat_exam/main/screenshot/0x0ss%20(1).png" alt="문제 풀이 화면" width="32%" />
 </p>
+
+
+python scripts/generate_ai_explanations.py --input assets/json/exams --batch-size 10 --skip-existing --timeout-seconds 30
+
+python scripts/generate_ai_explanations.py --input assets/json/exams --batch-size 10 --skip-existing --timeout-seconds 30 --max-retries 5 --retry-delay-seconds 3

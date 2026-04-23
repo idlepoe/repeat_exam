@@ -271,6 +271,44 @@ export function QuestionPage() {
                 )
               })}
             </ul>
+
+            {q.aiExplanation ? (
+              <section
+                style={{
+                  marginTop: 18,
+                  padding: 12,
+                  border: '1px solid #e5e4e7',
+                  borderRadius: 8,
+                  background: '#fff',
+                }}
+                aria-label="AI 해설"
+              >
+                <h3 style={{ margin: '0 0 8px', fontSize: 16 }}>AI 해설</h3>
+
+                <p style={{ margin: '0 0 10px' }}>
+                  <strong>정답 해설</strong>
+                  <br />
+                  {q.aiExplanation.correctExplanation}
+                </p>
+
+                <div style={{ marginBottom: 10 }}>
+                  <strong>오답 노트</strong>
+                  <ul style={{ margin: '6px 0 0 18px', padding: 0 }}>
+                    {q.aiExplanation.wrongAnswerNotes.map((note, i) => (
+                      <li key={`${q.id}-ai-note-${i}`} style={{ marginBottom: 4 }}>
+                        {note}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <p style={{ margin: 0 }}>
+                  <strong>쪽집게</strong>
+                  <br />
+                  {q.aiExplanation.examTip}
+                </p>
+              </section>
+            ) : null}
           </>
         )}
       </main>
