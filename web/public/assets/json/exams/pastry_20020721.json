@@ -165,19 +165,19 @@
     "choices": [
       {
         "no": 1,
-        "text": "125 kg"
+        "text": "125kg"
       },
       {
         "no": 2,
-        "text": "250 kg"
+        "text": "250kg"
       },
       {
         "no": 3,
-        "text": "300 kg"
+        "text": "300kg"
       },
       {
         "no": 4,
-        "text": "600 kg"
+        "text": "600kg"
       }
     ],
     "correct_answer": 2,

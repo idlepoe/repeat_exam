@@ -98,7 +98,7 @@
     "exam_session": "2003-03-30",
     "subject": "제조이론",
     "question_number": 4,
-    "question_text": "흰자를 사용하는 제품에 주석산크림과 같은 산을 넣는 이유 가 아닌 것은?",
+    "question_text": "흰자를 사용하는 제품에 주석산크림과 같은 산을 넣는 이유가 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -160,7 +160,7 @@
     "exam_session": "2003-03-30",
     "subject": "제조이론",
     "question_number": 6,
-    "question_text": "별립법 제조 시 흰자와 노른자를 분리할 경우 흰자에 노른자 가 들어가서는 안되는 이유로 알맞은 것은?",
+    "question_text": "별립법 제조 시 흰자와 노른자를 분리할 경우 흰자에 노른자가 들어가서는 안되는 이유로 알맞은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -191,7 +191,7 @@
     "exam_session": "2003-03-30",
     "subject": "제조이론",
     "question_number": 7,
-    "question_text": "버터크림 당액 제조시 설탕에 대한 물 사용량으로 가장 알맞 은 것은?",
+    "question_text": "버터크림 당액 제조시 설탕에 대한 물 사용량으로 가장 알맞은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -315,7 +315,7 @@
     "exam_session": "2003-03-30",
     "subject": "제조이론",
     "question_number": 11,
-    "question_text": "초콜릿의 품온이 32℃라면 초콜릿을 굳히기 위한 실내 온도 로 가장 알맞은 것은?",
+    "question_text": "초콜릿의 품온이 32℃라면 초콜릿을 굳히기 위한 실내 온도로 가장 알맞은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -731,11 +731,11 @@
       },
       {
         "no": 3,
-        "text": "밀가루 1㎏에 1g의 비타민 C를 계량된 물의 일부에 녹 인 후 첨가한다."
+        "text": "밀가루 1㎏에 1g의 비타민 C를 계량된 물의 일부에 녹인 후 첨가한다."
       },
       {
         "no": 4,
-        "text": "밀가루 1㎏에 10g의 비타민 C를 계량된 물의 일부에 녹"
+        "text": "밀가루 1㎏에 10g의 비타민 C를 계량된 물의 일부에 녹인 후 첨가한다."
       }
     ],
     "correct_answer": 1,
@@ -842,7 +842,7 @@
     "exam_session": "2003-03-30",
     "subject": "재료과학",
     "question_number": 28,
-    "question_text": "일정한 굳기를 가진 반죽의 신장도 및 신장 저항력을 측정 하여 자동 기록함으로써 반죽의 점탄성을 파악하고, 밀가루 중의 효소나 산화 환원제의 영향을 자세히 알 수 있는 그래 프는?",
+    "question_text": "일정한 굳기를 가진 반죽의 신장도 및 신장 저항력을 측정하여 자동 기록함으로써 반죽의 점탄성을 파악하고, 밀가루 중의 효소나 산화 환원제의 영향을 자세히 알 수 있는 그래프는?",
     "question_image_url": null,
     "choices": [
       {
@@ -966,7 +966,7 @@
     "exam_session": "2003-03-30",
     "subject": "영양학",
     "question_number": 32,
-    "question_text": "케이크의 껍질색을 내는데 영향을 미치는 우유 중의 당류 는?",
+    "question_text": "케이크의 껍질색을 내는데 영향을 미치는 우유 중의 당류는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1343,19 +1343,19 @@
     "choices": [
       {
         "no": 1,
-        "text": "밀가루에 소금을 첨가하면 흡수율이 감소하고 반죽시간 은 길어진다."
+        "text": "밀가루에 소금을 첨가하면 흡수율이 감소하고 반죽시간은 길어진다."
       },
       {
         "no": 2,
-        "text": "밀가루에 소금을 첨가하면 흡수율이 감소하고 반죽시간 은 짧아진다."
+        "text": "밀가루에 소금을 첨가하면 흡수율이 감소하고 반죽시간은 짧아진다."
       },
       {
         "no": 3,
-        "text": "밀가루에 소금을 첨가하면 흡수율이 증가하고 반죽시간 은 길어진다."
+        "text": "밀가루에 소금을 첨가하면 흡수율이 증가하고 반죽시간은 길어진다."
       },
       {
         "no": 4,
-        "text": "밀가루에 소금을 첨가하면 흡수율이 증가하고 반죽시간"
+        "text": "밀가루에 소금을 첨가하면 흡수율이 증가하고 반죽시간은 짧아진다."
       }
     ],
     "correct_answer": 1,
@@ -1462,7 +1462,7 @@
     "exam_session": "2003-03-30",
     "subject": "영양학",
     "question_number": 48,
-    "question_text": "섬유소(Cellulose)를 완전하게 가수분해하면 무엇이 생기는 가?",
+    "question_text": "섬유소(Cellulose)를 완전하게 가수분해하면 무엇이 생기는가?",
     "question_image_url": null,
     "choices": [
       {

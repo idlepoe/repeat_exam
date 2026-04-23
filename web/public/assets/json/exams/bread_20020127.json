@@ -36,24 +36,24 @@
     "exam_session": "2002-01-27",
     "subject": "제조이론",
     "question_number": 2,
-    "question_text": "케이크 팬용적 410 cm³에 100 g의 스펀지 케이크 반죽을 넣어 좋은 결과를 얻었다면 팬용적 1230 cm³에 넣어야 할 스펀지 케이크의 반죽무게는?",
+    "question_text": "케이크 팬용적 410cm³에 100g의 스펀지 케이크 반죽을 넣어 좋은 결과를 얻었다면 팬용적 1230cm³에 넣어야 할 스펀지 케이크의 반죽무게는?",
     "question_image_url": null,
     "choices": [
       {
         "no": 1,
-        "text": "123 g"
+        "text": "123g"
       },
       {
         "no": 2,
-        "text": "200 g"
+        "text": "200g"
       },
       {
         "no": 3,
-        "text": "300 g"
+        "text": "300g"
       },
       {
         "no": 4,
-        "text": "410 g"
+        "text": "410g"
       }
     ],
     "correct_answer": 3,
@@ -111,7 +111,7 @@
       },
       {
         "no": 3,
-        "text": "1차 및2차 발효과정이 없다."
+        "text": "1차 및 2차 발효과정이 없다."
       },
       {
         "no": 4,
@@ -351,7 +351,7 @@
     "choices": [
       {
         "no": 1,
-        "text": "조명은 50 Lux 이하가 좋다."
+        "text": "조명은 50Lux 이하가 좋다."
       },
       {
         "no": 2,
@@ -754,19 +754,19 @@
     "choices": [
       {
         "no": 1,
-        "text": "4662 cc"
+        "text": "4662cc"
       },
       {
         "no": 2,
-        "text": "4837.5 cc"
+        "text": "4837.5cc"
       },
       {
         "no": 3,
-        "text": "5018.5 cc"
+        "text": "5018.5cc"
       },
       {
         "no": 4,
-        "text": "5218.5 cc"
+        "text": "5218.5cc"
       }
     ],
     "correct_answer": 2,
@@ -785,19 +785,19 @@
     "choices": [
       {
         "no": 1,
-        "text": "픽업(pick up)단계"
+        "text": "픽업(pick up) 단계"
       },
       {
         "no": 2,
-        "text": "클린업(clean up)단계"
+        "text": "클린업(clean up) 단계"
       },
       {
         "no": 3,
-        "text": "최종(final)단계"
+        "text": "최종(final) 단계"
       },
       {
         "no": 4,
-        "text": "렛다운(let-down)단계"
+        "text": "렛다운(let-down) 단계"
       }
     ],
     "correct_answer": 3,
@@ -824,11 +824,11 @@
       },
       {
         "no": 3,
-        "text": "같은 롤인 유지함량에서는 접기 횟수가 증가 할수록 부 피는 증가하다 최고점을 지나면 감소한다."
+        "text": "같은 롤인 유지함량에서는 접기 횟수가 증가할수록 부피는 증가하다 최고점을 지나면 감소한다."
       },
       {
         "no": 4,
-        "text": "롤인 유지함량이 많은 것이 롤인 유지함량이 적은것 보"
+        "text": "롤인 유지함량이 많은 것이 롤인 유지함량이 적은 것보다"
       }
     ],
     "correct_answer": 4,

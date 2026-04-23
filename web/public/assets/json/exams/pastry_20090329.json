@@ -549,7 +549,7 @@
       },
       {
         "no": 4,
-        "text": "렛 다운 단계"
+        "text": "렛다운 단계"
       }
     ],
     "correct_answer": 2,
@@ -878,15 +878,15 @@
     "choices": [
       {
         "no": 1,
-        "text": "13~15 ℃"
+        "text": "13~15℃"
       },
       {
         "no": 2,
-        "text": "18~20 ℃"
+        "text": "18~20℃"
       },
       {
         "no": 3,
-        "text": "23~25 ℃"
+        "text": "23~25℃"
       },
       {
         "no": 4,
@@ -909,19 +909,19 @@
     "choices": [
       {
         "no": 1,
-        "text": "25~30 ℃"
+        "text": "25~30℃"
       },
       {
         "no": 2,
-        "text": "30~35 ℃"
+        "text": "30~35℃"
       },
       {
         "no": 3,
-        "text": "35~40 ℃"
+        "text": "35~40℃"
       },
       {
         "no": 4,
-        "text": "45~50 ℃"
+        "text": "45~50℃"
       }
     ],
     "correct_answer": 3,
@@ -940,19 +940,19 @@
     "choices": [
       {
         "no": 1,
-        "text": "0~60 ppm"
+        "text": "0~60ppm"
       },
       {
         "no": 2,
-        "text": "120~180 ppm"
+        "text": "120~180ppm"
       },
       {
         "no": 3,
-        "text": "180~360 ppm"
+        "text": "180~360ppm"
       },
       {
         "no": 4,
-        "text": "360 ppm 이상"
+        "text": "360ppm 이상"
       }
     ],
     "correct_answer": 2,
@@ -1401,7 +1401,7 @@
     "subject": "영양학",
     "question_number": 46,
     "question_text": "아래의 쌀과 콩에 대한 설명 중 ()에 알맞은 것은?",
-    "question_image_url": null,
+    "question_image_url": "https://github.com/idlepoe/repeat_exam/blob/main/assets/images/pastry_2009032946.png",
     "choices": [
       {
         "no": 1,

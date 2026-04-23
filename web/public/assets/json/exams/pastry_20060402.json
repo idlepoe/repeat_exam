@@ -439,7 +439,7 @@
     "exam_session": "2006-04-02",
     "subject": "제조이론",
     "question_number": 15,
-    "question_text": "제품의 유연감 즉 부드러움을 목적으로 할 때 가장 좋은 믹 싱 방법은?",
+    "question_text": "제품의 유연감 즉 부드러움을 목적으로 할 때 가장 좋은 믹싱 방법은?",
     "question_image_url": null,
     "choices": [
       {
@@ -749,7 +749,7 @@
     "exam_session": "2006-04-02",
     "subject": "재료과학",
     "question_number": 25,
-    "question_text": "포장전 빵의 온도가 너무 낮을 때는 다음의 어떤 현상이 일 어나는가?",
+    "question_text": "포장전 빵의 온도가 너무 낮을 때는 다음의 어떤 현상이 일어나는가?",
     "question_image_url": null,
     "choices": [
       {

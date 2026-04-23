@@ -5,7 +5,7 @@
     "exam_session": "2003-01-26",
     "subject": "제조이론",
     "question_number": 1,
-    "question_text": "파운드 케이크 배합율에서 계란 양이 증가할 때 다른 재료들 의 변화가 바르게 된 것은?",
+    "question_text": "파운드 케이크 배합율에서 계란 양이 증가할 때 다른 재료들의 변화가 바르게 된 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -98,7 +98,7 @@
     "exam_session": "2003-01-26",
     "subject": "제조이론",
     "question_number": 4,
-    "question_text": "퍼프 페이스트리 제조시 과도한 덧가루를 사용할 때의 영향 이 아닌 것은?",
+    "question_text": "퍼프 페이스트리 제조시 과도한 덧가루를 사용할 때의 영향이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -129,7 +129,7 @@
     "exam_session": "2003-01-26",
     "subject": "제조이론",
     "question_number": 5,
-    "question_text": "케이크 굽기시의 캐러멜 반응은 다음 어느 성분의 변화로 일 어나는가?",
+    "question_text": "케이크 굽기시의 캐러멜 반응은 다음 어느 성분의 변화로 일어나는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -346,7 +346,7 @@
     "exam_session": "2003-01-26",
     "subject": "제조이론",
     "question_number": 12,
-    "question_text": "파운드 케이크 반죽을 가로 5㎝, 세로 12㎝, 높이 5㎝의 소 형 파운드 팬에 100개 팬닝하려고 한다. 총 반죽의 무게로 알맞은 것은?",
+    "question_text": "파운드 케이크 반죽을 가로 5㎝, 세로 12㎝, 높이 5㎝의 소형 파운드 팬에 100개 팬닝하려고 한다. 총 반죽의 무게로 알맞은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -386,7 +386,7 @@
       },
       {
         "no": 2,
-        "text": "평평하게 팬닝하기 위해 고무주걱 등으로 윗부분을 마무 리 한다."
+        "text": "평평하게 팬닝하기 위해 고무주걱 등으로 윗부분을 마무리 한다."
       },
       {
         "no": 3,
@@ -394,7 +394,7 @@
       },
       {
         "no": 4,
-        "text": "철판에 팬닝하고 보울에 남은 반죽으로 무늬반죽을 만든"
+        "text": "철판에 팬닝하고 보울에 남은 반죽으로 무늬반죽을 만든다."
       }
     ],
     "correct_answer": 1,

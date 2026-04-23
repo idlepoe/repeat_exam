@@ -222,7 +222,7 @@
     "exam_session": "2009-09-27",
     "subject": "제조이론",
     "question_number": 8,
-    "question_text": "소맥분 온도 25℃, 실내온도 26℃, 수돗물 온도 18℃, 결과 온도30 ℃, 희망온도 27℃, 사용물의 양이 10kg일 때 마찰계 수는?",
+    "question_text": "소맥분 온도 25℃, 실내온도 26℃, 수돗물 온도 18℃, 결과 온도30℃, 희망온도 27℃, 사용물의 양이 10kg일 때 마찰계 수는?",
     "question_image_url": null,
     "choices": [
       {
@@ -750,7 +750,7 @@
     "subject": "재료과학",
     "question_number": 25,
     "question_text": "다음은 식빵 배합표이다. ( )안에 적합한 것은?",
-    "question_image_url": null,
+    "question_image_url": "https://github.com/idlepoe/repeat_exam/blob/main/assets/images/pastry_2009092725.png",
     "choices": [
       {
         "no": 1,
@@ -1121,7 +1121,7 @@
     "exam_session": "2009-09-27",
     "subject": "영양학",
     "question_number": 37,
-    "question_text": "믹서내에서 일어나는 물리적 성질을 파동 곡선기록기로 기 록하여 밀가루의 흡수율, 믹싱시간, 믹싱 내구성 등을 측정 하는 기계는?",
+    "question_text": "믹서내에서 일어나는 물리적 성질을 파동 곡선기록기로 기록하여 밀가루의 흡수율, 믹싱시간, 믹싱 내구성 등을 측정하는 기계는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1772,7 +1772,7 @@
     "exam_session": "2009-09-27",
     "subject": "식품위생학",
     "question_number": 58,
-    "question_text": "정제가 불충분한 기름 중에 남아 식중독을 일으키는 고시폴 은 어느 기름에서 유래하는가?",
+    "question_text": "정제가 불충분한 기름 중에 남아 식중독을 일으키는 고시폴은 어느 기름에서 유래하는가?",
     "question_image_url": null,
     "choices": [
       {

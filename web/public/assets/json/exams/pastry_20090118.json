@@ -253,7 +253,7 @@
     "exam_session": "2009-01-18",
     "subject": "제조이론",
     "question_number": 9,
-    "question_text": "거품을 올린 흰자에 뜨거운 시럽을 첨가하면서 고속으로 믹 싱하여 만드는 아이싱은?",
+    "question_text": "거품을 올린 흰자에 뜨거운 시럽을 첨가하면서 고속으로 믹싱하여 만드는 아이싱은?",
     "question_image_url": null,
     "choices": [
       {
@@ -890,7 +890,7 @@
       },
       {
         "no": 4,
-        "text": "해동온도가 2 ~5℃로 낮은 경우"
+        "text": "해동온도가 2~5℃로 낮은 경우"
       }
     ],
     "correct_answer": 4,
@@ -1028,7 +1028,7 @@
     "exam_session": "2009-01-18",
     "subject": "영양학",
     "question_number": 34,
-    "question_text": "젤리를 제조하는데 당분 60~65% , 펙틴 1.0 ~1.5% 일 때 가장 적합한 pH는?",
+    "question_text": "젤리를 제조하는데 당분 60~65% , 펙틴 1.0~1.5% 일 때 가장 적합한 pH는?",
     "question_image_url": null,
     "choices": [
       {

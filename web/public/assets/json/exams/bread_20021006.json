@@ -5,7 +5,7 @@
     "exam_session": "2002-10-06",
     "subject": "제조이론",
     "question_number": 1,
-    "question_text": "스펀지 케이크 반죽에 버터를 사용하고자 할 때 버터의 온도 는 얼마가 가장 좋은가?",
+    "question_text": "스펀지 케이크 반죽에 버터를 사용하고자 할 때 버터의 온도는 얼마가 가장 좋은가?",
     "question_image_url": null,
     "choices": [
       {
@@ -36,7 +36,7 @@
     "exam_session": "2002-10-06",
     "subject": "제조이론",
     "question_number": 2,
-    "question_text": "제품의 유연감 즉 부드러움을 목적으로 할 때 가장 좋은 믹 싱 방법은?",
+    "question_text": "제품의 유연감 즉 부드러움을 목적으로 할 때 가장 좋은 믹싱 방법은?",
     "question_image_url": null,
     "choices": [
       {
@@ -98,7 +98,7 @@
     "exam_session": "2002-10-06",
     "subject": "제조이론",
     "question_number": 4,
-    "question_text": "반죽형 쿠키를 구울 팬에 제품이 달라붙게 되는 이유로서 부 적당한 것은?",
+    "question_text": "반죽형 쿠키를 구울 팬에 제품이 달라붙게 되는 이유로서 부적당한 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -222,7 +222,7 @@
     "exam_session": "2002-10-06",
     "subject": "제조이론",
     "question_number": 8,
-    "question_text": "반죽형 케이크 반죽을 부피위주로 만들 때 사용할 믹싱방법 은?",
+    "question_text": "반죽형 케이크 반죽을 부피위주로 만들 때 사용할 믹싱방법은?",
     "question_image_url": null,
     "choices": [
       {
@@ -532,7 +532,7 @@
     "exam_session": "2002-10-06",
     "subject": "제조이론",
     "question_number": 18,
-    "question_text": "빵 발효에 영향을 주는 요소로 이스트의 양이 중요하다. 이 스트 2%를 사용하여 4시간 발효시킨 경우 양질의 빵을 만 들었다면 발효시간을 3시간으로 단축하자면 약 얼마의 이스 트를 사용해야 하는가?",
+    "question_text": "빵 발효에 영향을 주는 요소로 이스트의 양이 중요하다. 이스트 2%를 사용하여 4시간 발효시킨 경우 양질의 빵을 만 들었다면 발효시간을 3시간으로 단축하자면 약 얼마의 이스트를 사용해야 하는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -842,7 +842,7 @@
     "exam_session": "2002-10-06",
     "subject": "재료과학",
     "question_number": 28,
-    "question_text": "열풍을 강제 순환시키면서 굽는 타입으로 굽기의 편차가 극 히 적은 오븐은?",
+    "question_text": "열풍을 강제 순환시키면서 굽는 타입으로 굽기의 편차가 극히 적은 오븐은?",
     "question_image_url": null,
     "choices": [
       {
@@ -952,7 +952,7 @@
       },
       {
         "no": 4,
-        "text": "노화는 전분분자 끼리의 결합이 전분과 물분자의 결합보"
+        "text": "노화는 전분분자 끼리의 결합이 전분과 물분자의 결합보다 크기 때문에 일어난다."
       }
     ],
     "correct_answer": 2,
@@ -1107,7 +1107,7 @@
       },
       {
         "no": 4,
-        "text": "제분수율이 증가하면 일반적으로 무기질 함량이 감소한"
+        "text": "제분수율이 증가하면 일반적으로 무기질 함량이 감소한다."
       }
     ],
     "correct_answer": 4,
@@ -1121,7 +1121,7 @@
     "exam_session": "2002-10-06",
     "subject": "영양학",
     "question_number": 37,
-    "question_text": "유지에 있어 어느 한도 내에서 파괴되지 않고 외부 힘에 따 라 변형될 수 있는 성질은?",
+    "question_text": "유지에 있어 어느 한도 내에서 파괴되지 않고 외부 힘에 따라 변형될 수 있는 성질은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1214,7 +1214,7 @@
     "exam_session": "2002-10-06",
     "subject": "영양학",
     "question_number": 40,
-    "question_text": "메이스와 같은 나무에서 생산되는 향신료로서 빵도넛에 많 이 사용하는 것은?",
+    "question_text": "메이스와 같은 나무에서 생산되는 향신료로서 빵도넛에 많이 사용하는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1710,7 +1710,7 @@
     "exam_session": "2002-10-06",
     "subject": "식품위생학",
     "question_number": 56,
-    "question_text": "고시폴(gossypol)은 어느 식품에서 발생할 수 있는 식중독 의 원인 성분인가?",
+    "question_text": "고시폴(gossypol)은 어느 식품에서 발생할 수 있는 식중독의 원인 성분인가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1785,11 +1785,11 @@
       },
       {
         "no": 3,
-        "text": "소량씩 연속적으로 섭취할 경우 특히 발암성이 문제 된 다."
+        "text": "소량씩 연속적으로 섭취할 경우 특히 발암성이 문제 된다."
       },
       {
         "no": 4,
-        "text": "특히 간장과 신장에 대하여 독성을 나타내는 공통점을"
+        "text": "특히 간장과 신장에 대하여 독성을 나타내는 공통점을 갖고 있다."
       }
     ],
     "correct_answer": 1,

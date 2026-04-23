@@ -5,7 +5,7 @@
     "exam_session": "2006-10-01",
     "subject": "제조이론",
     "question_number": 1,
-    "question_text": "커스터드 푸딩을 컵에 채워 몇 ℃의 오븐에서 중탕으로 굽는 것이 가장 적당한가?",
+    "question_text": "커스터드 푸딩을 컵에 채워 몇℃의 오븐에서 중탕으로 굽는 것이 가장 적당한가?",
     "question_image_url": null,
     "choices": [
       {
@@ -160,7 +160,7 @@
     "exam_session": "2006-10-01",
     "subject": "제조이론",
     "question_number": 6,
-    "question_text": "스펀지케이크 반죽을 할 때 더운 방법은 계란과 설탕을 몇 ℃로 만든 후 믹싱 하는 것이 가장 좋은가?",
+    "question_text": "스펀지케이크 반죽을 할 때 더운 방법은 계란과 설탕을 몇℃로 만든 후 믹싱 하는 것이 가장 좋은가?",
     "question_image_url": null,
     "choices": [
       {
