@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
 import '../../../data/models/exam_meta_model.dart';
@@ -65,8 +66,13 @@ class ExamSessionListController extends GetxController {
         progressEntries[session] = pct;
       }
       sessionProgressMap.assignAll(progressEntries);
-    } catch (e) {
+    } catch (e, st) {
       error.value = e.toString();
+      debugPrint(
+        '[ExamSessionListController] load failed '
+        '(examType=${examType.value}): $e',
+      );
+      debugPrint(st.toString());
     } finally {
       loading.value = false;
     }

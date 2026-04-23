@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
 import '../../../data/models/exam_meta_model.dart';
@@ -27,8 +28,10 @@ class ExamTypeListController extends GetxController {
       final highlight = await StorageService.loadAnswerHighlight();
       data.value = result;
       answerHighlight.value = highlight;
-    } catch (e) {
+    } catch (e, st) {
       error.value = e.toString();
+      debugPrint('[ExamTypeListController] load failed: $e');
+      debugPrint(st.toString());
     } finally {
       loading.value = false;
     }
