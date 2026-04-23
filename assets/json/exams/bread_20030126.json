@@ -425,7 +425,7 @@
       },
       {
         "no": 4,
-        "text": "계란 노른자를 바른 뒤 조금 지난 뒤 포크로 무늬를 그"
+        "text": "계란 노른자를 바른 뒤 조금 지난 뒤 포크로 무늬를 그려 낸다."
       }
     ],
     "correct_answer": 2,
@@ -594,7 +594,7 @@
     "exam_session": "2003-01-26",
     "subject": "제조이론",
     "question_number": 20,
-    "question_text": "팬에 칠하는 팬오일로 유지를 사용할 때 다음 중 가장 중요 한 성질은?",
+    "question_text": "팬에 칠하는 팬오일로 유지를 사용할 때 다음 중 가장 중요한 성질은?",
     "question_image_url": null,
     "choices": [
       {
@@ -625,7 +625,7 @@
     "exam_session": "2003-01-26",
     "subject": "재료과학",
     "question_number": 21,
-    "question_text": "단백질 함량이 2% 증가된 밀가루를 사용시 흡수율의 변화 는?",
+    "question_text": "단백질 함량이 2% 증가된 밀가루를 사용시 흡수율의 변화는?",
     "question_image_url": null,
     "choices": [
       {
@@ -656,12 +656,12 @@
     "exam_session": "2003-01-26",
     "subject": "재료과학",
     "question_number": 22,
-    "question_text": "반죽의 오버 믹싱(over mixing) 현상에 대한 설명으로 올바 르지 못한 것은?",
+    "question_text": "반죽의 오버 믹싱(over mixing) 현상에 대한 설명으로 올바르지 못한 것은?",
     "question_image_url": null,
     "choices": [
       {
         "no": 1,
-        "text": "글루텐 3차원 구조의 상실로 미끄럼에 대한 저항성의 상 실 현상"
+        "text": "글루텐 3차원 구조의 상실로 미끄럼에 대한 저항성의 상실 현상"
       },
       {
         "no": 2,
@@ -718,7 +718,7 @@
     "exam_session": "2003-01-26",
     "subject": "재료과학",
     "question_number": 24,
-    "question_text": "식빵은 보통 내부 온도가 35∼40℃정도 될 때까지 냉각시킨 다. 식빵의 온도를 28℃까지 냉각한 후 포장하였다고 가정 할 때 식빵에 미치는 영향으로 올바른 것은?",
+    "question_text": "식빵은 보통 내부 온도가 35∼40℃정도 될 때까지 냉각시킨 다. 식빵의 온도를 28℃까지 냉각한 후 포장하였다고 가정할 때 식빵에 미치는 영향으로 올바른 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -749,7 +749,7 @@
     "exam_session": "2003-01-26",
     "subject": "재료과학",
     "question_number": 25,
-    "question_text": "반죽 과정 중 탄력성이 약해지고 신전성이 최대가 되는 단 계는?",
+    "question_text": "반죽 과정 중 탄력성이 약해지고 신전성이 최대가 되는 단계는?",
     "question_image_url": null,
     "choices": [
       {
@@ -904,7 +904,7 @@
     "exam_session": "2003-01-26",
     "subject": "재료과학",
     "question_number": 30,
-    "question_text": "냉장, 냉동, 해동, 2차발효를 프로그래밍에 의하여 자동적으 로 조절하는 기계는?",
+    "question_text": "냉장, 냉동, 해동, 2차발효를 프로그래밍에 의하여 자동적으로 조절하는 기계는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1059,7 +1059,7 @@
     "exam_session": "2003-01-26",
     "subject": "영양학",
     "question_number": 35,
-    "question_text": "젖은 글루텐 중의 단백질 함량이 26.4% 라면 건조 글루텐 에서 단백질 함량이 몇 % 정도로 되는가?",
+    "question_text": "젖은 글루텐 중의 단백질 함량이 26.4% 라면 건조 글루텐에서 단백질 함량이 몇 % 정도로 되는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1183,7 +1183,7 @@
     "exam_session": "2003-01-26",
     "subject": "영양학",
     "question_number": 39,
-    "question_text": "연수는 물속에 용해된 광물질의 함량이 적은 것이다. 연수 의 광물질 함량 범위는?",
+    "question_text": "연수는 물속에 용해된 광물질의 함량이 적은 것이다. 연수의 광물질 함량 범위는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1320,11 +1320,11 @@
       },
       {
         "no": 3,
-        "text": "색깔을 진하게 해야 할 제품에는 산성 팽창제를 사용한 다."
+        "text": "색깔을 진하게 해야 할 제품에는 산성 팽창제를 사용한다."
       },
       {
         "no": 4,
-        "text": "낮은 온도에서 오래 구워야 하는 제품에는 속효성과 지"
+        "text": "낮은 온도에서 오래 구워야 하는 제품에는 속효성과 지효성 산성염을 잘 배합한 제품을 사용한다."
       }
     ],
     "correct_answer": 3,
@@ -1444,7 +1444,7 @@
       },
       {
         "no": 3,
-        "text": "발생하는 에너지는 탄수화물이나 단백질보다 적어 비효 율적이다."
+        "text": "발생하는 에너지는 탄수화물이나 단백질보다 적어 비효율적이다."
       },
       {
         "no": 4,
@@ -1524,7 +1524,7 @@
     "exam_session": "2003-01-26",
     "subject": "영양학",
     "question_number": 50,
-    "question_text": "케이크 제조시 첨가되는 탈지분유에서 얻을 수 있는 영양소 는?",
+    "question_text": "케이크 제조시 첨가되는 탈지분유에서 얻을 수 있는 영양소는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1560,7 +1560,7 @@
     "choices": [
       {
         "no": 1,
-        "text": "식품을 냉장 저장하면 미생물이 사멸되므로 부패를 완전 히 막을 수 있다."
+        "text": "식품을 냉장 저장하면 미생물이 사멸되므로 부패를 완전히 막을 수 있다."
       },
       {
         "no": 2,
@@ -1572,7 +1572,7 @@
       },
       {
         "no": 4,
-        "text": "부패하기 쉬운 식품에는 수분과 영양원이 충분하므로 온"
+        "text": "부패하기 쉬운 식품에는 수분과 영양원이 충분하므로 온도관리가 크게 문제된다."
       }
     ],
     "correct_answer": 4,
