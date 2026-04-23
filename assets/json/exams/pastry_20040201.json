@@ -408,7 +408,7 @@
     "exam_session": "2004-02-01",
     "subject": "제조이론",
     "question_number": 14,
-    "question_text": "퍼프 페이스트리 반죽의 휴지 효과에 대한 설명으로 틀리 는 것은?",
+    "question_text": "퍼프 페이스트리 반죽의 휴지 효과에 대한 설명으로 틀리는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -572,7 +572,7 @@
       },
       {
         "no": 2,
-        "text": "50 - 55% 1과목 : 제조이론"
+        "text": "50 - 55%"
       },
       {
         "no": 3,

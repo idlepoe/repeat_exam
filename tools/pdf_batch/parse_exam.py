@@ -136,7 +136,7 @@ def _is_subject_line(line: str) -> bool | str:
     m = re.match(r"^[【\[]\s*(.+?)\s*[】\]]$", s)
     if m and m.group(1) in DEFAULT_SUBJECT_MARKERS:
         return m.group(1)
-    # 1과목 : 제조이론
+    #
     m2 = re.match(r"^\d+과목\s*:\s*(.+)$", s)
     if m2:
         sub = m2.group(1).strip()

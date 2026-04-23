@@ -470,7 +470,7 @@
     "exam_session": "2007-04-01",
     "subject": "제조이론",
     "question_number": 16,
-    "question_text": "소규모 제과점용으로 가장 많이 사용되며 반죽을 넣는 입구 와 제품을 꺼내는 출구가 같은 오븐은?",
+    "question_text": "소규모 제과점용으로 가장 많이 사용되며 반죽을 넣는 입구와 제품을 꺼내는 출구가 같은 오븐은?",
     "question_image_url": null,
     "choices": [
       {
@@ -537,15 +537,15 @@
     "choices": [
       {
         "no": 1,
-        "text": "21˚C"
+        "text": "21℃"
       },
       {
         "no": 2,
-        "text": "27˚C"
+        "text": "27℃"
       },
       {
         "no": 3,
-        "text": "33˚C"
+        "text": "33℃"
       },
       {
         "no": 4,

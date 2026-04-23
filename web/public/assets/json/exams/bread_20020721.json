@@ -5,7 +5,7 @@
     "exam_session": "2002-07-21",
     "subject": "제조이론",
     "question_number": 1,
-    "question_text": "브랜딩법(Blending method)은 어떤 재료를 먼저 배합하는 방 법인가?",
+    "question_text": "브랜딩법(Blending method)은 어떤 재료를 먼저 배합하는 방법인가?",
     "question_image_url": null,
     "choices": [
       {
@@ -36,7 +36,7 @@
     "exam_session": "2002-07-21",
     "subject": "제조이론",
     "question_number": 2,
-    "question_text": "스펀지 케이크 제조시 더운 믹싱방법을 사용할 때 계란과 설 탕의 중탕 온도로 가장 적당한 것은?",
+    "question_text": "스펀지 케이크 제조시 더운 믹싱방법을 사용할 때 계란과 설탕의 중탕 온도로 가장 적당한 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -67,7 +67,7 @@
     "exam_session": "2002-07-21",
     "subject": "제조이론",
     "question_number": 3,
-    "question_text": "데블스 푸드 케이크를 만들려고 한다. 반죽의 비중을 재기 위 하여 필요한 무게가 아닌 것은?",
+    "question_text": "데블스 푸드 케이크를 만들려고 한다. 반죽의 비중을 재기 위하여 필요한 무게가 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -129,7 +129,7 @@
     "exam_session": "2002-07-21",
     "subject": "제조이론",
     "question_number": 5,
-    "question_text": "케이크 제품에 응용하는 아이싱이 끈적거리거나 포장지에 붙 는 경향을 감소시키는 방법으로 틀리는 것은?",
+    "question_text": "케이크 제품에 응용하는 아이싱이 끈적거리거나 포장지에 붙는 경향을 감소시키는 방법으로 틀리는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -532,7 +532,7 @@
     "exam_session": "2002-07-21",
     "subject": "제조이론",
     "question_number": 18,
-    "question_text": "반죽단계에서 수화는 완료되고 글루텐 일부가 결합된 상태 는?",
+    "question_text": "반죽단계에서 수화는 완료되고 글루텐 일부가 결합된 상태는?",
     "question_image_url": null,
     "choices": [
       {
@@ -700,7 +700,7 @@
       },
       {
         "no": 3,
-        "text": "스테아릴 젖산 나트륨(S. S. L)과 같은 반죽 건조제를 사 용한다."
+        "text": "스테아릴 젖산 나트륨(S. S. L)과 같은 반죽 건조제를 사용한다."
       },
       {
         "no": 4,
@@ -718,7 +718,7 @@
     "exam_session": "2002-07-21",
     "subject": "재료과학",
     "question_number": 24,
-    "question_text": "스펀지 &도우법에서 스펀지 반죽의 재료가 아닌 것은?",
+    "question_text": "스펀지&도우법에서 스펀지 반죽의 재료가 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -749,7 +749,7 @@
     "exam_session": "2002-07-21",
     "subject": "재료과학",
     "question_number": 25,
-    "question_text": "반죽의 내부 온도가 60℃에 도달하지 않은 상태에서 온도상 승에 따른 이스트의 활동으로 부피의 점진적인 증가가 진행 되는 현상은?",
+    "question_text": "반죽의 내부 온도가 60℃에 도달하지 않은 상태에서 온도상승에 따른 이스트의 활동으로 부피의 점진적인 증가가 진행 되는 현상은?",
     "question_image_url": null,
     "choices": [
       {
@@ -842,7 +842,7 @@
     "exam_session": "2002-07-21",
     "subject": "재료과학",
     "question_number": 28,
-    "question_text": "소규모 제과점용으로 가장 많이 사용되며 반죽을 넣는 입구 와 제품을 꺼내는 출구가 같은 오븐은?",
+    "question_text": "소규모 제과점용으로 가장 많이 사용되며 반죽을 넣는 입구와 제품을 꺼내는 출구가 같은 오븐은?",
     "question_image_url": null,
     "choices": [
       {
@@ -966,7 +966,7 @@
     "exam_session": "2002-07-21",
     "subject": "영양학",
     "question_number": 32,
-    "question_text": "밀가루를 용도별로 나눌 때 일반적으로 회분함량이 가장 낮 은 것은?",
+    "question_text": "밀가루를 용도별로 나눌 때 일반적으로 회분함량이 가장 낮은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1276,7 +1276,7 @@
     "exam_session": "2002-07-21",
     "subject": "영양학",
     "question_number": 42,
-    "question_text": "알파-아밀라아제에 대한 베타-아밀라아제의 설명으로 틀리 는 항목은?",
+    "question_text": "알파-아밀라아제에 대한 베타-아밀라아제의 설명으로 틀리는 항목은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1289,7 +1289,7 @@
       },
       {
         "no": 3,
-        "text": "전분의 구조가 아밀로펙틴인 경우 약 52%까지만 가수분 해 한다."
+        "text": "전분의 구조가 아밀로펙틴인 경우 약 52%까지만 가수분해 한다."
       },
       {
         "no": 4,
@@ -1347,7 +1347,7 @@
       },
       {
         "no": 2,
-        "text": "합성향료는 석유 및 석탄류에 포함되어 있는 방향성 유 기물질로부터 합성하여 만든다."
+        "text": "합성향료는 석유 및 석탄류에 포함되어 있는 방향성 유기물질로부터 합성하여 만든다."
       },
       {
         "no": 3,
@@ -1355,7 +1355,7 @@
       },
       {
         "no": 4,
-        "text": "식품에 사용하는 향료는 첨가물이지만 품질 규격 및 사"
+        "text": "식품에 사용하는 향료는 첨가물이지만 품질 규격 및 사용법을 준수하지 않아도 된다."
       }
     ],
     "correct_answer": 4,

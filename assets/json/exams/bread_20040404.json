@@ -5,7 +5,7 @@
     "exam_session": "2004-04-04",
     "subject": "제조이론",
     "question_number": 1,
-    "question_text": "반죽형 케이크에 사용하는 반죽법으로서 유지와 밀가루를 넣 고 믹싱하여 밀가루가 피복되도록 사용하는 방법은?",
+    "question_text": "반죽형 케이크에 사용하는 반죽법으로서 유지와 밀가루를 넣고 믹싱하여 밀가루가 피복되도록 사용하는 방법은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1183,24 +1183,24 @@
     "exam_session": "2004-04-04",
     "subject": "영양학",
     "question_number": 39,
-    "question_text": "생계란을 분말계란으로 대체하고자 한생계란(수분 72%) 25 ㎏을 분말계란(수분 4%)으로 대체하려면 분말계란이 얼마나 필요한가?",
+    "question_text": "생계란을 분말계란으로 대체하고자 한생계란(수분 72%) 25㎏을 분말계란(수분 4%)으로 대체하려면 분말계란이 얼마나 필요한가?",
     "question_image_url": null,
     "choices": [
       {
         "no": 1,
-        "text": "6.7 ㎏"
+        "text": "6.7㎏"
       },
       {
         "no": 2,
-        "text": "6.9 ㎏"
+        "text": "6.9㎏"
       },
       {
         "no": 3,
-        "text": "7.1 ㎏"
+        "text": "7.1㎏"
       },
       {
         "no": 4,
-        "text": "7.3 ㎏"
+        "text": "7.3㎏"
       }
     ],
     "correct_answer": 4,

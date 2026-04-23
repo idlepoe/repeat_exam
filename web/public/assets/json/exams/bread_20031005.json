@@ -470,7 +470,7 @@
     "exam_session": "2003-10-05",
     "subject": "제조이론",
     "question_number": 16,
-    "question_text": "스펀지 &도우법에서 스펀지의 표준온도는 얼마인가?",
+    "question_text": "스펀지&도우법에서 스펀지의 표준온도는 얼마인가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1254,7 +1254,7 @@
       },
       {
         "no": 2,
-        "text": "약 10% 2과목 : 재료과학 3과목 : 영양학"
+        "text": "약 10%"
       },
       {
         "no": 3,

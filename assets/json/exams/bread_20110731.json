@@ -413,7 +413,7 @@
     "choices": [
       {
         "no": 1,
-        "text": "24 ~27℃"
+        "text": "24~27℃"
       },
       {
         "no": 2,
@@ -421,7 +421,7 @@
       },
       {
         "no": 3,
-        "text": "33~36 ℃"
+        "text": "33~36℃"
       },
       {
         "no": 4,
@@ -568,19 +568,19 @@
     "choices": [
       {
         "no": 1,
-        "text": "40 ~ 45%"
+        "text": "40~45%"
       },
       {
         "no": 2,
-        "text": "50 ~ 55%"
+        "text": "50~55%"
       },
       {
         "no": 3,
-        "text": "70 ~ 80%"
+        "text": "70~80%"
       },
       {
         "no": 4,
-        "text": "90 ~ 95%"
+        "text": "90~95%"
       }
     ],
     "correct_answer": 3,
@@ -886,7 +886,7 @@
       },
       {
         "no": 3,
-        "text": "기계분할은 손 분할에 비해 약한 밀가루로 만든 반죽분 할에 유리하다."
+        "text": "기계분할은 손 분할에 비해 약한 밀가루로 만든 반죽 분할에 유리하다."
       },
       {
         "no": 4,
@@ -1493,24 +1493,24 @@
     "exam_session": "2011-07-31",
     "subject": "영양학",
     "question_number": 49,
-    "question_text": "트립토판 360 mg은 체내에서 니아신 몇 mg으로 전환 되는 가?",
+    "question_text": "트립토판 360mg은 체내에서 니아신 몇 mg으로 전환 되는 가?",
     "question_image_url": null,
     "choices": [
       {
         "no": 1,
-        "text": "0.6 mg"
+        "text": "0.6mg"
       },
       {
         "no": 2,
-        "text": "6 mg"
+        "text": "6mg"
       },
       {
         "no": 3,
-        "text": "36 mg"
+        "text": "36mg"
       },
       {
         "no": 4,
-        "text": "60 mg"
+        "text": "60mg"
       }
     ],
     "correct_answer": 2,

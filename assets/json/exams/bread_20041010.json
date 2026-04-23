@@ -67,7 +67,7 @@
     "exam_session": "2004-10-10",
     "subject": "제조이론",
     "question_number": 3,
-    "question_text": "케이크 제품에 응용하는 아이싱이 끈적거리거나 포장지에 붙 는 경향을 감소시키는 방법으로 틀리는 것은?",
+    "question_text": "케이크 제품에 응용하는 아이싱이 끈적거리거나 포장지에 붙는 경향을 감소시키는 방법으로 틀리는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -346,7 +346,7 @@
     "exam_session": "2004-10-10",
     "subject": "제조이론",
     "question_number": 12,
-    "question_text": "커스터드 푸딩을 컵에 채워 몇 ℃의 오븐에서 중량으로 굽 는 것이 가장 적당한가?",
+    "question_text": "커스터드 푸딩을 컵에 채워 몇℃의 오븐에서 중량으로 굽 는 것이 가장 적당한가?",
     "question_image_url": null,
     "choices": [
       {

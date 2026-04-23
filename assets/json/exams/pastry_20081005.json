@@ -36,7 +36,7 @@
     "exam_session": "2008-10-05",
     "subject": "제조이론",
     "question_number": 2,
-    "question_text": "젤리 롤 케이크를 말 때 표면이 터지는 결점을 방지하는 방 법으로 잘못된 것은?",
+    "question_text": "젤리 롤 케이크를 말 때 표면이 터지는 결점을 방지하는 방법으로 잘못된 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -661,19 +661,19 @@
     "choices": [
       {
         "no": 1,
-        "text": "18 ~ 22℃"
+        "text": "18~22℃"
       },
       {
         "no": 2,
-        "text": "26 ~ 31℃"
+        "text": "26~31℃"
       },
       {
         "no": 3,
-        "text": "35 ~ 39℃"
+        "text": "35~39℃"
       },
       {
         "no": 4,
-        "text": "45 ~ 49℃"
+        "text": "45~49℃"
       }
     ],
     "correct_answer": 1,
@@ -847,7 +847,7 @@
     "choices": [
       {
         "no": 1,
-        "text": "-5℃, 0~ 4℃"
+        "text": "-5℃, 0~4℃"
       },
       {
         "no": 2,
