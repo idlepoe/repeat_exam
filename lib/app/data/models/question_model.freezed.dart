@@ -31,6 +31,7 @@ mixin _$QuestionModel {
   List<ChoiceModel> get choices => throw _privateConstructorUsedError;
   int get correct_answer => throw _privateConstructorUsedError;
   List<String> get keywords => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get aiExplanation => throw _privateConstructorUsedError;
 
   /// Serializes this QuestionModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -60,6 +61,7 @@ abstract class $QuestionModelCopyWith<$Res> {
     List<ChoiceModel> choices,
     int correct_answer,
     List<String> keywords,
+    Map<String, dynamic>? aiExplanation,
   });
 }
 
@@ -88,6 +90,7 @@ class _$QuestionModelCopyWithImpl<$Res, $Val extends QuestionModel>
     Object? choices = null,
     Object? correct_answer = null,
     Object? keywords = null,
+    Object? aiExplanation = freezed,
   }) {
     return _then(
       _value.copyWith(
@@ -131,6 +134,10 @@ class _$QuestionModelCopyWithImpl<$Res, $Val extends QuestionModel>
                 ? _value.keywords
                 : keywords // ignore: cast_nullable_to_non_nullable
                       as List<String>,
+            aiExplanation: freezed == aiExplanation
+                ? _value.aiExplanation
+                : aiExplanation // ignore: cast_nullable_to_non_nullable
+                      as Map<String, dynamic>?,
           )
           as $Val,
     );
@@ -157,6 +164,7 @@ abstract class _$$QuestionModelImplCopyWith<$Res>
     List<ChoiceModel> choices,
     int correct_answer,
     List<String> keywords,
+    Map<String, dynamic>? aiExplanation,
   });
 }
 
@@ -184,6 +192,7 @@ class __$$QuestionModelImplCopyWithImpl<$Res>
     Object? choices = null,
     Object? correct_answer = null,
     Object? keywords = null,
+    Object? aiExplanation = freezed,
   }) {
     return _then(
       _$QuestionModelImpl(
@@ -227,6 +236,10 @@ class __$$QuestionModelImplCopyWithImpl<$Res>
             ? _value._keywords
             : keywords // ignore: cast_nullable_to_non_nullable
                   as List<String>,
+        aiExplanation: freezed == aiExplanation
+            ? _value._aiExplanation
+            : aiExplanation // ignore: cast_nullable_to_non_nullable
+                  as Map<String, dynamic>?,
       ),
     );
   }
@@ -246,8 +259,10 @@ class _$QuestionModelImpl implements _QuestionModel {
     required final List<ChoiceModel> choices,
     required this.correct_answer,
     required final List<String> keywords,
+    final Map<String, dynamic>? aiExplanation,
   }) : _choices = choices,
-       _keywords = keywords;
+       _keywords = keywords,
+       _aiExplanation = aiExplanation;
 
   factory _$QuestionModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$QuestionModelImplFromJson(json);
@@ -284,9 +299,19 @@ class _$QuestionModelImpl implements _QuestionModel {
     return EqualUnmodifiableListView(_keywords);
   }
 
+  final Map<String, dynamic>? _aiExplanation;
+  @override
+  Map<String, dynamic>? get aiExplanation {
+    final value = _aiExplanation;
+    if (value == null) return null;
+    if (_aiExplanation is EqualUnmodifiableMapView) return _aiExplanation;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   String toString() {
-    return 'QuestionModel(id: $id, exam_type: $exam_type, subject: $subject, exam_session: $exam_session, question_number: $question_number, question_text: $question_text, question_image_url: $question_image_url, choices: $choices, correct_answer: $correct_answer, keywords: $keywords)';
+    return 'QuestionModel(id: $id, exam_type: $exam_type, subject: $subject, exam_session: $exam_session, question_number: $question_number, question_text: $question_text, question_image_url: $question_image_url, choices: $choices, correct_answer: $correct_answer, keywords: $keywords, aiExplanation: $aiExplanation)';
   }
 
   @override
@@ -309,7 +334,11 @@ class _$QuestionModelImpl implements _QuestionModel {
             const DeepCollectionEquality().equals(other._choices, _choices) &&
             (identical(other.correct_answer, correct_answer) ||
                 other.correct_answer == correct_answer) &&
-            const DeepCollectionEquality().equals(other._keywords, _keywords));
+            const DeepCollectionEquality().equals(other._keywords, _keywords) &&
+            const DeepCollectionEquality().equals(
+              other._aiExplanation,
+              _aiExplanation,
+            ));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -326,6 +355,7 @@ class _$QuestionModelImpl implements _QuestionModel {
     const DeepCollectionEquality().hash(_choices),
     correct_answer,
     const DeepCollectionEquality().hash(_keywords),
+    const DeepCollectionEquality().hash(_aiExplanation),
   );
 
   /// Create a copy of QuestionModel
@@ -354,6 +384,7 @@ abstract class _QuestionModel implements QuestionModel {
     required final List<ChoiceModel> choices,
     required final int correct_answer,
     required final List<String> keywords,
+    final Map<String, dynamic>? aiExplanation,
   }) = _$QuestionModelImpl;
 
   factory _QuestionModel.fromJson(Map<String, dynamic> json) =
@@ -379,6 +410,8 @@ abstract class _QuestionModel implements QuestionModel {
   int get correct_answer;
   @override
   List<String> get keywords;
+  @override
+  Map<String, dynamic>? get aiExplanation;
 
   /// Create a copy of QuestionModel
   /// with the given fields replaced by the non-null parameter values.

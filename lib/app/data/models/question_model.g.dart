@@ -22,6 +22,7 @@ _$QuestionModelImpl _$$QuestionModelImplFromJson(Map<String, dynamic> json) =>
       keywords: (json['keywords'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
+      aiExplanation: json['aiExplanation'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$$QuestionModelImplToJson(_$QuestionModelImpl instance) =>
@@ -36,4 +37,5 @@ Map<String, dynamic> _$$QuestionModelImplToJson(_$QuestionModelImpl instance) =>
       'choices': instance.choices,
       'correct_answer': instance.correct_answer,
       'keywords': instance.keywords,
+      'aiExplanation': instance.aiExplanation,
     };

@@ -78,6 +78,22 @@ class QuestionView extends GetView<QuestionController> {
         if (q == null) {
           return const Center(child: Text('불러오는 중…'));
         }
+        final ai = q.aiExplanation;
+        final correctExplanation =
+            (ai?['correctExplanation'] as String?)?.trim() ?? '';
+        final wrongAnswerNotesRaw = ai?['wrongAnswerNotes'];
+        final wrongAnswerNotes = wrongAnswerNotesRaw is List
+            ? wrongAnswerNotesRaw
+                  .whereType<dynamic>()
+                  .map((e) => e.toString())
+                  .where((e) => e.trim().isNotEmpty)
+                  .toList()
+            : <String>[];
+        final examTip = (ai?['examTip'] as String?)?.trim() ?? '';
+        final hasAiExplanation =
+            correctExplanation.isNotEmpty ||
+            wrongAnswerNotes.isNotEmpty ||
+            examTip.isNotEmpty;
         final highlight = controller.answerHighlight.value;
         final answerBg = _hexToColor(highlight.bg);
         final answerFg = _hexToColor(highlight.fg);
@@ -142,6 +158,81 @@ class QuestionView extends GetView<QuestionController> {
                       ),
                     );
                   }),
+                  if (hasAiExplanation) ...[
+                    const SizedBox(height: 8),
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: const Color(0xFFE5E4E7)),
+                        borderRadius: BorderRadius.circular(8),
+                        color: Colors.white,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'AI 해설',
+                            style: TextStyle(
+                              fontSize: controller.baseFont,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          if (correctExplanation.isNotEmpty) ...[
+                            const SizedBox(height: 8),
+                            Text(
+                              '정답 해설',
+                              style: TextStyle(
+                                fontSize: controller.baseFont,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            const SizedBox(height: 4),
+                            Text(
+                              correctExplanation,
+                              style: TextStyle(fontSize: controller.baseFont),
+                            ),
+                          ],
+                          if (wrongAnswerNotes.isNotEmpty) ...[
+                            const SizedBox(height: 10),
+                            Text(
+                              '오답 노트',
+                              style: TextStyle(
+                                fontSize: controller.baseFont,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            const SizedBox(height: 4),
+                            ...wrongAnswerNotes.map(
+                              (note) => Padding(
+                                padding: const EdgeInsets.only(bottom: 3),
+                                child: Text(
+                                  '• $note',
+                                  style: TextStyle(
+                                    fontSize: controller.baseFont,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                          if (examTip.isNotEmpty) ...[
+                            const SizedBox(height: 10),
+                            Text(
+                              '쪽집게',
+                              style: TextStyle(
+                                fontSize: controller.baseFont,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            const SizedBox(height: 4),
+                            Text(
+                              examTip,
+                              style: TextStyle(fontSize: controller.baseFont),
+                            ),
+                          ],
+                        ],
+                      ),
+                    ),
+                  ],
                 ],
               ),
             ),

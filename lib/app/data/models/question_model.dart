@@ -17,6 +17,7 @@ class QuestionModel with _$QuestionModel {
     required List<ChoiceModel> choices,
     required int correct_answer,
     required List<String> keywords,
+    Map<String, dynamic>? aiExplanation,
   }) = _QuestionModel;
 
   factory QuestionModel.fromJson(Map<String, dynamic> json) =>
