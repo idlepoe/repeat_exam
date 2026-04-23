@@ -1246,7 +1246,7 @@
     "subject": "영양학",
     "question_number": 41,
     "question_text": "아래의 갈색반응의 반응식에서 ( )에 알맞은 것은?",
-    "question_image_url": null,
+    "question_image_url": "https://github.com/idlepoe/repeat_exam/blob/main/assets/images/pastry_2008020341.png",
     "choices": [
       {
         "no": 1,
@@ -1595,7 +1595,7 @@
       },
       {
         "no": 2,
-        "text": "효모는 주로 분열법으로 그 수를 늘리며 식품 부패에 가 장 많이 관여하는 미생물이다."
+        "text": "효모는 주로 분열법으로 그 수를 늘리며 식품 부패에 가장 많이 관여하는 미생물이다."
       },
       {
         "no": 3,
@@ -1603,7 +1603,7 @@
       },
       {
         "no": 4,
-        "text": "바이러스는 주로 출아법으로 그 수를 늘리며 스스로 필"
+        "text": "바이러스는 주로 출아법으로 그 수를 늘리며 효모와 유사하게 식품의 부패에 관여하는 미생물이다."
       }
     ],
     "correct_answer": 3,
@@ -1789,7 +1789,7 @@
       },
       {
         "no": 4,
-        "text": "오염식품 섭취 8~20시간 후 복통이 있고 홀씨A, F형의"
+        "text": "오염식품 섭취 8~20시간 후 복통이 있고 홀씨A, F형의 독소에 의한 발병이 특징이다."
       }
     ],
     "correct_answer": 1,

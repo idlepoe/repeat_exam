@@ -57,7 +57,7 @@ RE_HEADER_NOISE_IN_QUESTION = re.compile(
 
 SAFE_JOIN_REPLACEMENTS = (
     ("아 닌", "아닌"),
-    ("가 장", "가장"),
+    ("가장", "가장"),
     ("알 맞", "알맞"),
     ("온 도", "온도"),
     ("습 도", "습도"),

@@ -1820,7 +1820,7 @@
       },
       {
         "no": 4,
-        "text": "외국으로부터 유입되는 가축은 항구나 공항 등에서 검"
+        "text": "외국으로부터 유입되는 가축은 항구나 공항 등에서 검역을 철저히 한다."
       }
     ],
     "correct_answer": 2,
@@ -1834,7 +1834,7 @@
     "exam_session": "2007-07-15",
     "subject": "식품위생학",
     "question_number": 60,
-    "question_text": "장염 비브리오균에 의한 식중독이 가장 일어나기 쉬운 식 품은?",
+    "question_text": "장염 비브리오균에 의한 식중독이 가장 일어나기 쉬운 식품은?",
     "question_image_url": null,
     "choices": [
       {

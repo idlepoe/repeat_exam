@@ -1401,7 +1401,7 @@
     "subject": "영양학",
     "question_number": 46,
     "question_text": "아래의 쌀과 콩에 대한 설명 중 ()에 알맞은 것은?",
-    "question_image_url": null,
+    "question_image_url": "https://github.com/idlepoe/repeat_exam/blob/main/assets/images/pastry_2009032946.png",
     "choices": [
       {
         "no": 1,
@@ -1493,7 +1493,7 @@
     "exam_session": "2009-03-29",
     "subject": "영양학",
     "question_number": 49,
-    "question_text": "체내에서 사용한 단백질은 주로 어떤 경로를 통해 배설되는 가?",
+    "question_text": "체내에서 사용한 단백질은 주로 어떤 경로를 통해 배설되는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1634,7 +1634,7 @@
       },
       {
         "no": 4,
-        "text": "외국으로부터 유입되는 가축은 항구나 공항 등에서 검역"
+        "text": "외국으로부터 유입되는 가축은 항구나 공항 등에서 검역을 철저히 한다."
       }
     ],
     "correct_answer": 2,

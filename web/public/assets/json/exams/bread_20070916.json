@@ -53,7 +53,7 @@
       },
       {
         "no": 4,
-        "text": "공장의 모든 업무가 효과적으로 진행되기 위한 기본은 주"
+        "text": "공장의 모든 업무가 효과적으로 진행되기 위한 기본은 주방의 위치와 규모에 대한 설계이다."
       }
     ],
     "correct_answer": 2,
@@ -1462,7 +1462,7 @@
     "exam_session": "2007-09-16",
     "subject": "영양학",
     "question_number": 48,
-    "question_text": "하루 2400kcal를 섭취하는 사람의 이상적인 탄수화물의 섭 취량은 약 얼마인가?",
+    "question_text": "하루 2400kcal를 섭취하는 사람의 이상적인 탄수화물의 섭취량은 약 얼마인가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1772,7 +1772,7 @@
     "exam_session": "2007-09-16",
     "subject": "식품위생학",
     "question_number": 58,
-    "question_text": "식품의 미생물에 의한 부패를 방지할 목적으로 사용되는 식 품첨가물은?",
+    "question_text": "식품의 미생물에 의한 부패를 방지할 목적으로 사용되는 식품첨가물은?",
     "question_image_url": null,
     "choices": [
       {

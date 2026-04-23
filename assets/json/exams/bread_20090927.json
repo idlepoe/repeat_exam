@@ -439,7 +439,7 @@
     "exam_session": "2009-09-27",
     "subject": "제조이론",
     "question_number": 15,
-    "question_text": "아이싱에 이용되는 퐁당(fondant)은 설탕의 어떤 성질을 이 용하는가?",
+    "question_text": "아이싱에 이용되는 퐁당(fondant)은 설탕의 어떤 성질을 이용하는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1320,7 +1320,7 @@
       },
       {
         "no": 3,
-        "text": "산화제는 반죽의 구조를 강화시켜 제품의 부피를 증가시 킨다."
+        "text": "산화제는 반죽의 구조를 강화시켜 제품의 부피를 증가시킨다."
       },
       {
         "no": 4,
