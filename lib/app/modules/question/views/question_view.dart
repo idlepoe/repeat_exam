@@ -102,6 +102,7 @@ class QuestionView extends GetView<QuestionController> {
           children: [
             Expanded(
               child: ListView(
+                key: ValueKey(q.question_number),
                 padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
                 children: [
                   Text(

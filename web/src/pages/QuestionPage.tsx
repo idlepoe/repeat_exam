@@ -1,4 +1,4 @@
-import { useEffect, useState, type CSSProperties } from 'react'
+import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { AppBar } from '../components/AppBar'
 import { examJsonUrl } from '../lib/examFiles'
@@ -40,6 +40,11 @@ export function QuestionPage() {
   const [fontStep, setFontStep] = useState(() => loadQuestionFontStep())
   const [showNextSessionDialog, setShowNextSessionDialog] = useState(false)
   const [answerHighlight] = useState(() => loadAnswerHighlight())
+  const mainRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    mainRef.current?.scrollTo(0, 0)
+  }, [index, examType, examSession])
 
   useEffect(() => {
     if (!examType || !examSession) return
@@ -201,6 +206,7 @@ export function QuestionPage() {
       />
 
       <main
+        ref={mainRef}
         style={{
           flex: 1,
           minHeight: 0,
