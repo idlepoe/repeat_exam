@@ -8,8 +8,10 @@
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeoutError
 import json
 import os
+import random
 import time
 from pathlib import Path
 from typing import Any
@@ -19,12 +21,99 @@ from google.genai import types
 
 MODEL_NAME = "gemini-flash-lite-latest"
 CACHE_MIN_TOKEN_COUNT = 1024
+STUCK_TIMEOUT_SECONDS = 30
+MAX_RETRIES = 5
+DEBUG_LOG_DIR = Path("logs/ai_response_debug")
+DEFAULT_VERTEX_LOCATION = "global"
 SYSTEM_INSTRUCTION = (
     "당신은 제과·제빵 기능사 시험 전문 강사입니다. "
     "수험생이 빠르게 정답을 찾을 수 있도록 '쪽집게 해설'을 제공합니다. "
     "불필요한 설명 없이 핵심 개념, 정답 근거, 오답 비교를 명확하게 설명합니다. "
     "특히 '틀린 것은?' 문제에서는 어떤 부분이 틀렸는지 정확히 짚어야 합니다."
 )
+
+
+class StuckTimeoutError(RuntimeError):
+    """모델 호출이 비정상적으로 오래 걸릴 때 강제 종료하기 위한 예외."""
+
+
+def _is_retryable_error(error: Exception) -> bool:
+    message = str(error).lower()
+    retryable_tokens = (
+        "429",
+        "rate limit",
+        "resource_exhausted",
+        "quota",
+        "temporarily unavailable",
+        "deadline exceeded",
+        "503",
+        "500",
+        "timeout",
+        "timed out",
+    )
+    return any(token in message for token in retryable_tokens)
+
+
+def _response_text(resp: Any) -> str:
+    """non-text 파트가 포함된 응답에서도 텍스트 파트만 안전하게 추출한다."""
+    text_parts: list[str] = []
+    for candidate in getattr(resp, "candidates", []) or []:
+        content = getattr(candidate, "content", None)
+        parts = getattr(content, "parts", None) or []
+        for part in parts:
+            text = getattr(part, "text", None)
+            if text:
+                text_parts.append(text)
+    if text_parts:
+        return "".join(text_parts).strip()
+    text = getattr(resp, "text", None)
+    return (text or "").strip()
+
+
+def _generate_with_timeout_and_retry(
+    client: genai.Client,
+    *,
+    prompt: str,
+    config: types.GenerateContentConfig,
+    batch_label: str,
+) -> Any:
+    for attempt in range(1, MAX_RETRIES + 1):
+        start = time.perf_counter()
+        executor = ThreadPoolExecutor(max_workers=1)
+        timed_out = False
+        try:
+            future = executor.submit(
+                client.models.generate_content,
+                model=MODEL_NAME,
+                contents=prompt,
+                config=config,
+            )
+            return future.result(timeout=STUCK_TIMEOUT_SECONDS)
+        except FuturesTimeoutError as e:
+            elapsed = time.perf_counter() - start
+            timed_out = True
+            future.cancel()
+            message = (
+                f"{batch_label} 응답 대기 {elapsed:.1f}s 초과 "
+                f"(기준 {STUCK_TIMEOUT_SECONDS}s): 스턱으로 판단해 종료합니다."
+            )
+            raise StuckTimeoutError(message) from e
+        except Exception as e:
+            if (not _is_retryable_error(e)) or attempt == MAX_RETRIES:
+                raise
+            backoff = min(30.0, (2 ** (attempt - 1)) + random.uniform(0.0, 1.0))
+            print(
+                f"  - 재시도 {attempt}/{MAX_RETRIES} ({batch_label}) "
+                f"error={type(e).__name__}: {e} | {backoff:.1f}s 후 재시도"
+            )
+            time.sleep(backoff)
+        finally:
+            # timeout 시 worker 종료를 기다리지 않아 실제 종료가 지연되지 않게 한다.
+            if timed_out:
+                executor.shutdown(wait=False, cancel_futures=True)
+            else:
+                executor.shutdown(wait=True)
+    raise RuntimeError(f"{batch_label} 재시도 루프가 비정상 종료되었습니다.")
 
 
 def _read_dotenv_value(env_path: Path, key: str) -> str | None:
@@ -60,6 +149,34 @@ def _load_api_key() -> str:
     raise RuntimeError(
         "API 키를 찾을 수 없습니다. .env에 GOOGLE_API_KEY(또는 GEMINI_API_KEY)를 설정하세요."
     )
+
+
+def _env_flag(name: str, default: bool = False) -> bool:
+    raw = os.getenv(name)
+    if raw is None:
+        return default
+    return raw.strip().lower() in {"1", "true", "yes", "y", "on"}
+
+
+def _build_genai_client() -> tuple[genai.Client, str]:
+    """환경변수 설정에 따라 Gemini Developer API 또는 Vertex AI 클라이언트를 생성한다."""
+    use_vertex = _env_flag("GOOGLE_GENAI_USE_VERTEXAI", default=False)
+    if use_vertex:
+        project = os.getenv("GOOGLE_CLOUD_PROJECT")
+        if not project:
+            raise RuntimeError(
+                "GOOGLE_GENAI_USE_VERTEXAI=1 인 경우 GOOGLE_CLOUD_PROJECT가 필요합니다."
+            )
+        client = genai.Client(
+            vertexai=True,
+            project=project,
+            location=DEFAULT_VERTEX_LOCATION,
+        )
+        return client, f"vertexai(project={project}, location={DEFAULT_VERTEX_LOCATION})"
+
+    api_key = _load_api_key()
+    client = genai.Client(api_key=api_key)
+    return client, "developer-api(api_key)"
 
 
 def _item_payload(item: dict[str, Any]) -> dict[str, Any]:
@@ -141,6 +258,50 @@ def _parse_response_json(text: str) -> dict[str, Any]:
     return json.loads(cleaned)
 
 
+def _dump_parse_debug_log(
+    *,
+    target_path: Path,
+    batch_index: int,
+    total_batches: int,
+    batch_ids: list[str],
+    response_text: str,
+    error: Exception,
+) -> Path:
+    DEBUG_LOG_DIR.mkdir(parents=True, exist_ok=True)
+    ts = time.strftime("%Y%m%d_%H%M%S")
+    safe_name = target_path.stem.replace(" ", "_")
+    debug_path = DEBUG_LOG_DIR / f"{safe_name}_b{batch_index:03d}_{ts}.log"
+
+    first_open = response_text.find("{")
+    last_close = response_text.rfind("}")
+    preview_head = response_text[:1000]
+    preview_tail = response_text[-1000:] if len(response_text) > 1000 else response_text
+
+    lines = [
+        "=== JSON Parse Error Debug Log ===",
+        f"file={target_path}",
+        f"batch={batch_index}/{total_batches}",
+        f"ids={batch_ids[0]}..{batch_ids[-1]}",
+        f"error_type={type(error).__name__}",
+        f"error={error}",
+        f"response_len={len(response_text)}",
+        f"first_open_brace_index={first_open}",
+        f"last_close_brace_index={last_close}",
+        "",
+        "=== RESPONSE HEAD (first 1000 chars) ===",
+        preview_head,
+        "",
+        "=== RESPONSE TAIL (last 1000 chars) ===",
+        preview_tail,
+        "",
+        "=== FULL RESPONSE ===",
+        response_text,
+        "",
+    ]
+    debug_path.write_text("\n".join(lines), encoding="utf-8")
+    return debug_path
+
+
 def _target_paths(input_path: Path) -> list[Path]:
     if input_path.is_dir():
         return sorted(input_path.glob("*.json"))
@@ -157,12 +318,12 @@ def generate_ai_explanations(
     skip_existing: bool,
     fail_fast: bool,
 ) -> None:
-    api_key = _load_api_key()
-    client = genai.Client(api_key=api_key)
+    client, client_mode = _build_genai_client()
     print(
         "[설정] "
         f"model={MODEL_NAME}, batch_size={batch_size}, skip_existing={skip_existing}, "
-        f"fail_fast={fail_fast}"
+        f"fail_fast={fail_fast}, stuck_timeout={STUCK_TIMEOUT_SECONDS}s, "
+        f"max_retries={MAX_RETRIES}, client={client_mode}"
     )
     cache_name: str | None = None
     try:
@@ -215,11 +376,18 @@ def generate_ai_explanations(
 
             batch_start = time.perf_counter()
             try:
-                resp = client.models.generate_content(
-                    model=MODEL_NAME,
-                    contents=prompt,
+                resp = _generate_with_timeout_and_retry(
+                    client,
+                    prompt=prompt,
                     config=config,
+                    batch_label=(
+                        f"{target_path.name} [{batch_index}/{len(batches)}] "
+                        f"ids={batch_ids[0]}..{batch_ids[-1]}"
+                    ),
                 )
+            except StuckTimeoutError:
+                # 사용자가 요청한 "스턱 시 종료" 정책: 즉시 전체 실행 중단
+                raise
             except Exception as e:
                 print(f"배치 실패: {e}")
                 msg = (
@@ -233,10 +401,28 @@ def generate_ai_explanations(
                 total_failed_batches += 1
                 print(f"  - {msg}")
                 continue
-            if not resp.text:
+            response_text = _response_text(resp)
+            if not response_text:
                 raise RuntimeError(f"{target_path} 배치 응답이 비어 있습니다.")
 
-            explanation = _parse_response_json(resp.text)
+            try:
+                explanation = _parse_response_json(response_text)
+            except json.JSONDecodeError as e:
+                debug_path = _dump_parse_debug_log(
+                    target_path=target_path,
+                    batch_index=batch_index,
+                    total_batches=len(batches),
+                    batch_ids=batch_ids,
+                    response_text=response_text,
+                    error=e,
+                )
+                print(
+                    f"배치 JSON 파싱 실패 [{batch_index}/{len(batches)}] "
+                    f"ids={batch_ids[0]}..{batch_ids[-1]}"
+                )
+                print(f"  - 디버그 로그 저장: {debug_path}")
+                print(f"  - 응답 길이: {len(response_text)}자")
+                raise
             if not isinstance(explanation, dict):
                 raise RuntimeError("배치 응답 형식이 올바르지 않습니다(dict 필요).")
 
