@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "target": "jebbang",
     "public": "web/dist",
     "ignore": [
       "firebase.json",

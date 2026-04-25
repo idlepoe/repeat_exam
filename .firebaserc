@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "repeat-exam"
+  },
+  "targets": {
+    "repeat-exam": {
+      "hosting": {
+        "jebbang": [
+          "jebbang"
+        ]
+      }
+    }
   }
 }
