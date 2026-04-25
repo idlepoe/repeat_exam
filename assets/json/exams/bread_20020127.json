@@ -990,7 +990,7 @@
     "subject": "재료과학",
     "question_number": 25,
     "question_text": "안치수가 그림과 같은 식빵 철판의 용적은?",
-    "question_image_url": null,
+    "question_image_url": "https://raw.githubusercontent.com/idlepoe/repeat_exam/main/assets/images/bread_2002012725.png",
     "choices": [
       {
         "no": 1,
