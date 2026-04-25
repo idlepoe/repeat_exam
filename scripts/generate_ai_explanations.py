@@ -12,6 +12,7 @@ from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeou
 import json
 import os
 import random
+import re
 import time
 from pathlib import Path
 from typing import Any
@@ -25,6 +26,9 @@ STUCK_TIMEOUT_SECONDS = 30
 MAX_RETRIES = 5
 DEBUG_LOG_DIR = Path("logs/ai_response_debug")
 DEFAULT_VERTEX_LOCATION = "global"
+AUTO_RESTART_ON_STUCK = True
+MAX_AUTO_RESTARTS = 20
+RESTART_DELAY_SECONDS = 3
 SYSTEM_INSTRUCTION = (
     "당신은 제과·제빵 기능사 시험 전문 강사입니다. "
     "수험생이 빠르게 정답을 찾을 수 있도록 '쪽집게 해설'을 제공합니다. "
@@ -195,6 +199,10 @@ def _build_prompt(batch: list[dict[str, Any]]) -> str:
         "아래 문제 정보를 참고해 시험 대비용 해설을 작성해줘.\n"
         "반드시 한국어로 답변하고 JSON 형식만 반환해.\n\n"
         "여러 문제를 한 번에 보낼 수 있으므로, 반드시 id를 키로 하는 객체 형태로 반환해.\n\n"
+        "중요: JSON 문법을 엄격히 지켜.\n"
+        "- 코드블록(```) 금지\n"
+        "- JSON 앞뒤 설명문/주석 금지\n"
+        "- 배열/객체 마지막 요소 뒤 후행 콤마 금지\n\n"
         "작성 규칙:\n"
         "1) correctExplanation:\n"
         "- 정답(틀린 보기)이 왜 틀렸는지 정확한 개념으로 설명\n"
@@ -255,7 +263,35 @@ def _parse_response_json(text: str) -> dict[str, Any]:
     if cleaned.startswith("```"):
         cleaned = cleaned.strip("`")
         cleaned = cleaned.replace("json", "", 1).strip()
-    return json.loads(cleaned)
+    try:
+        parsed = json.loads(cleaned)
+        if not isinstance(parsed, dict):
+            raise RuntimeError("응답 JSON 최상위는 객체(dict)여야 합니다.")
+        return parsed
+    except json.JSONDecodeError:
+        # 모델이 JSON 뒤에 여분 문자를 붙이는 경우(예: 추가 '}' 또는 설명문)를 복구한다.
+        decoder = json.JSONDecoder()
+        try:
+            parsed, end_idx = decoder.raw_decode(cleaned)
+            if not isinstance(parsed, dict):
+                raise RuntimeError("응답 JSON 최상위는 객체(dict)여야 합니다.")
+            remainder = cleaned[end_idx:].strip()
+            if remainder:
+                print(
+                    "  - 경고: 응답에 JSON 외 잔여 데이터가 있어 첫 JSON 객체만 사용합니다. "
+                    f"잔여 길이={len(remainder)}"
+                )
+            return parsed
+        except json.JSONDecodeError:
+            # 흔한 JSON 오염(후행 콤마)을 보정해 재파싱한다.
+            sanitized = re.sub(r",\s*([}\]])", r"\1", cleaned)
+            if sanitized != cleaned:
+                print("  - 경고: JSON 후행 콤마를 자동 보정해 재시도합니다.")
+                parsed = json.loads(sanitized)
+                if not isinstance(parsed, dict):
+                    raise RuntimeError("응답 JSON 최상위는 객체(dict)여야 합니다.")
+                return parsed
+            raise
 
 
 def _dump_parse_debug_log(
@@ -487,12 +523,30 @@ def main() -> None:
     args = parser.parse_args()
     if args.batch_size < 1:
         raise ValueError("--batch-size는 1 이상이어야 합니다.")
-    generate_ai_explanations(
-        Path(args.input),
-        batch_size=args.batch_size,
-        skip_existing=args.skip_existing,
-        fail_fast=args.fail_fast,
-    )
+    restart_count = 0
+    while True:
+        try:
+            generate_ai_explanations(
+                Path(args.input),
+                batch_size=args.batch_size,
+                skip_existing=args.skip_existing,
+                fail_fast=args.fail_fast,
+            )
+            break
+        except StuckTimeoutError as e:
+            if not AUTO_RESTART_ON_STUCK:
+                raise
+            restart_count += 1
+            print(f"\n[자동 재시작] 스턱 감지: {e}")
+            if restart_count > MAX_AUTO_RESTARTS:
+                raise RuntimeError(
+                    f"스턱으로 인한 자동 재시작 한도({MAX_AUTO_RESTARTS}회)를 초과했습니다."
+                ) from e
+            print(
+                f"[자동 재시작] {restart_count}/{MAX_AUTO_RESTARTS}회, "
+                f"{RESTART_DELAY_SECONDS}s 후 재시도"
+            )
+            time.sleep(RESTART_DELAY_SECONDS)
 
 
 if __name__ == "__main__":
