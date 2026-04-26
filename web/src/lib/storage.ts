@@ -3,6 +3,7 @@ const KEY_SESSION_COUNT = 'repeat_exam:session_count'
 const KEY_NAV_REVERSED = 'repeat_exam:nav_reversed'
 const KEY_ANSWER_HIGHLIGHT = 'repeat_exam:answer_highlight'
 const KEY_QUESTION_FONT_STEP = 'repeat_exam:question_font_step'
+const KEY_REPORTED_QUESTION_IDS = 'repeat_exam:reported_question_ids'
 
 export interface Progress {
   exam_type: string
@@ -218,6 +219,40 @@ export function loadAnswerHighlight(): AnswerHighlight {
 export function saveAnswerHighlight(value: AnswerHighlight): void {
   try {
     localStorage.setItem(KEY_ANSWER_HIGHLIGHT, JSON.stringify(value))
+  } catch {
+    /* ignore */
+  }
+}
+
+function loadReportedQuestionMap(): Record<string, true> {
+  try {
+    const raw = localStorage.getItem(KEY_REPORTED_QUESTION_IDS)
+    if (!raw) return {}
+    const parsed = JSON.parse(raw) as unknown
+    if (!parsed || typeof parsed !== 'object') return {}
+    const out: Record<string, true> = {}
+    for (const [k, v] of Object.entries(parsed)) {
+      if (v === true) out[k] = true
+    }
+    return out
+  } catch {
+    /* ignore */
+  }
+  return {}
+}
+
+export function hasReportedQuestion(questionId: string): boolean {
+  if (!questionId) return false
+  const current = loadReportedQuestionMap()
+  return current[questionId] === true
+}
+
+export function saveReportedQuestion(questionId: string): void {
+  if (!questionId) return
+  try {
+    const current = loadReportedQuestionMap()
+    current[questionId] = true
+    localStorage.setItem(KEY_REPORTED_QUESTION_IDS, JSON.stringify(current))
   } catch {
     /* ignore */
   }

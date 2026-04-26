@@ -5,14 +5,17 @@ import { examJsonUrl } from '../lib/examFiles'
 import { fetchExamSessionList, nextSession } from '../lib/examMeta'
 import {
   incrementSessionCountAndClearProgress,
+  hasReportedQuestion,
   loadAnswerHighlight,
   loadNavReversed,
   loadQuestionFontStep,
   loadProgress,
+  saveReportedQuestion,
   saveNavReversed,
   saveQuestionFontStep,
   saveProgress,
 } from '../lib/storage'
+import { submitQuestionReport, type ReportType } from '../lib/report'
 import type { Question } from '../types/question'
 
 /** 본문 / 과목 라벨 글자 크기 단계 (버튼 클릭 시 순환) */
@@ -23,6 +26,7 @@ const FONT_STEPS = [
   { base: 22, title: 18 },
   { base: 24, title: 20 },
 ] as const
+const REPORT_TYPES: ReportType[] = ['사진 누락', '내용 누락', '정답 오류']
 
 export function QuestionPage() {
   const { examType: et, examSession: es } = useParams<{
@@ -39,6 +43,9 @@ export function QuestionPage() {
   const [navReversed, setNavReversed] = useState(() => loadNavReversed())
   const [fontStep, setFontStep] = useState(() => loadQuestionFontStep())
   const [showNextSessionDialog, setShowNextSessionDialog] = useState(false)
+  const [showReportDialog, setShowReportDialog] = useState(false)
+  const [reportSubmitting, setReportSubmitting] = useState(false)
+  const [reportToastVisible, setReportToastVisible] = useState(false)
   const [answerHighlight] = useState(() => loadAnswerHighlight())
   const mainRef = useRef<HTMLDivElement>(null)
 
@@ -95,6 +102,7 @@ export function QuestionPage() {
   }, [examType, examSession])
 
   const q = questions[index]
+  const isAlreadyReported = q ? hasReportedQuestion(q.id) : false
 
   useEffect(() => {
     if (!q) return
@@ -116,6 +124,16 @@ export function QuestionPage() {
   useEffect(() => {
     saveQuestionFontStep(fontStep)
   }, [fontStep])
+
+  useEffect(() => {
+    if (!reportToastVisible) return
+    const timer = window.setTimeout(() => {
+      setReportToastVisible(false)
+    }, 2200)
+    return () => {
+      window.clearTimeout(timer)
+    }
+  }, [reportToastVisible])
 
   const goPrev = () => {
     if (index > 0) setIndex((i) => i - 1)
@@ -150,6 +168,31 @@ export function QuestionPage() {
     }
   }
 
+  const handleReport = async (type: ReportType) => {
+    if (!q || reportSubmitting) return
+    if (hasReportedQuestion(q.id)) {
+      window.alert('이미 신고한 문제입니다.')
+      setShowReportDialog(false)
+      return
+    }
+    setReportSubmitting(true)
+    try {
+      await submitQuestionReport({
+        questionId: q.id,
+        type,
+        examType,
+        examSession,
+      })
+      saveReportedQuestion(q.id)
+      setShowReportDialog(false)
+      setReportToastVisible(true)
+    } catch (e) {
+      window.alert(e instanceof Error ? e.message : '신고 처리에 실패했습니다.')
+    } finally {
+      setReportSubmitting(false)
+    }
+  }
+
   const fontStepClamped = Math.max(
     0,
     Math.min(fontStep, FONT_STEPS.length - 1)
@@ -179,7 +222,7 @@ export function QuestionPage() {
       }}
     >
       <AppBar
-        title={examType}
+        title={examSession ? `${examType} ${examSession}회` : examType}
         showBack
         onBack={() =>
           navigate(`/sessions/${encodeURIComponent(examType)}`)
@@ -315,100 +358,121 @@ export function QuestionPage() {
                 </p>
               </section>
             ) : null}
+            <div style={{ marginTop: 18 }}>
+              <button
+                type="button"
+                onClick={() => setShowReportDialog(true)}
+                disabled={isAlreadyReported}
+                style={{
+                  width: '100%',
+                  padding: '10px 12px',
+                  fontSize: 14,
+                  border: '1px solid #999',
+                  borderRadius: 8,
+                  background: '#fff',
+                  color: isAlreadyReported ? '#888' : '#333',
+                  cursor: isAlreadyReported ? 'not-allowed' : 'pointer',
+                }}
+              >
+                {isAlreadyReported ? '이미 신고한 문제입니다' : '문제 오류 신고 하기'}
+              </button>
+            </div>
           </>
         )}
       </main>
 
       {q ? (
-        <nav
-          style={{
-            flexShrink: 0,
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'stretch',
-            borderTop: '1px solid #e5e4e7',
-            background: '#fff',
-            paddingBottom: 'env(safe-area-inset-bottom, 0px)',
-          }}
-          aria-label="문제 이동"
-        >
-          {navReversed ? (
-            <>
-              <button
-                type="button"
-                onClick={goNext}
-                style={btnThird({
-                  borderRight: '1px solid #e5e4e7',
-                  background: '#fff',
-                  color: '#111',
-                })}
-              >
-                다음
-              </button>
-              <button
-                type="button"
-                onClick={() => setNavReversed((v) => !v)}
-                style={btnThird({
-                  borderRight: '1px solid #e5e4e7',
-                  background: '#f5f5f5',
-                  color: '#111',
-                })}
-              >
-                변경
-              </button>
-              <button
-                type="button"
-                onClick={goPrev}
-                disabled={index <= 0}
-                style={btnThird({
-                  background: index <= 0 ? '#eee' : '#fff',
-                  color: '#111',
-                  cursor: index <= 0 ? 'not-allowed' : 'pointer',
-                })}
-              >
-                이전
-              </button>
-            </>
-          ) : (
-            <>
-              <button
-                type="button"
-                onClick={goPrev}
-                disabled={index <= 0}
-                style={btnThird({
-                  borderRight: '1px solid #e5e4e7',
-                  background: index <= 0 ? '#eee' : '#fff',
-                  color: '#111',
-                  cursor: index <= 0 ? 'not-allowed' : 'pointer',
-                })}
-              >
-                이전
-              </button>
-              <button
-                type="button"
-                onClick={() => setNavReversed((v) => !v)}
-                style={btnThird({
-                  borderRight: '1px solid #e5e4e7',
-                  background: '#f5f5f5',
-                  color: '#111',
-                })}
-              >
-                변경
-              </button>
-              <button
-                type="button"
-                onClick={goNext}
-                style={btnThird({
-                  background: '#fff',
-                  color: '#111',
-                })}
-              >
-                다음
-              </button>
-            </>
-          )}
-        </nav>
+        <>
+          <nav
+            style={{
+              flexShrink: 0,
+              width: '100%',
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'stretch',
+              borderTop: '1px solid #e5e4e7',
+              background: '#fff',
+              paddingBottom: 'env(safe-area-inset-bottom, 0px)',
+            }}
+            aria-label="문제 이동"
+          >
+            {navReversed ? (
+              <>
+                <button
+                  type="button"
+                  onClick={goNext}
+                  style={btnThird({
+                    borderRight: '1px solid #e5e4e7',
+                    background: '#fff',
+                    color: '#111',
+                  })}
+                >
+                  다음
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setNavReversed((v) => !v)}
+                  style={btnThird({
+                    borderRight: '1px solid #e5e4e7',
+                    background: '#f5f5f5',
+                    color: '#111',
+                  })}
+                >
+                  변경
+                </button>
+                <button
+                  type="button"
+                  onClick={goPrev}
+                  disabled={index <= 0}
+                  style={btnThird({
+                    background: index <= 0 ? '#eee' : '#fff',
+                    color: '#111',
+                    cursor: index <= 0 ? 'not-allowed' : 'pointer',
+                  })}
+                >
+                  이전
+                </button>
+              </>
+            ) : (
+              <>
+                <button
+                  type="button"
+                  onClick={goPrev}
+                  disabled={index <= 0}
+                  style={btnThird({
+                    borderRight: '1px solid #e5e4e7',
+                    background: index <= 0 ? '#eee' : '#fff',
+                    color: '#111',
+                    cursor: index <= 0 ? 'not-allowed' : 'pointer',
+                  })}
+                >
+                  이전
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setNavReversed((v) => !v)}
+                  style={btnThird({
+                    borderRight: '1px solid #e5e4e7',
+                    background: '#f5f5f5',
+                    color: '#111',
+                  })}
+                >
+                  변경
+                </button>
+                <button
+                  type="button"
+                  onClick={goNext}
+                  style={btnThird({
+                    background: '#fff',
+                    color: '#111',
+                  })}
+                >
+                  다음
+                </button>
+              </>
+            )}
+          </nav>
+        </>
       ) : null}
 
       {showNextSessionDialog && (
@@ -498,6 +562,109 @@ export function QuestionPage() {
               </button>
             </div>
           </div>
+        </div>
+      )}
+      {showReportDialog && q && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          style={{
+            position: 'fixed',
+            inset: 0,
+            background: 'rgba(0,0,0,0.45)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 100,
+            padding: 16,
+          }}
+        >
+          <div
+            style={{
+              background: '#fff',
+              borderRadius: 12,
+              padding: 20,
+              maxWidth: 360,
+              width: '100%',
+              boxShadow: '0 8px 24px rgba(0,0,0,0.2)',
+            }}
+          >
+            <p style={{ margin: '0 0 14px', fontSize: 17, fontWeight: 600 }}>
+              오류 유형을 선택해 주세요.
+            </p>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 8,
+                marginBottom: 8,
+              }}
+            >
+              {REPORT_TYPES.map((type) => (
+                <button
+                  key={type}
+                  type="button"
+                  onClick={() => {
+                    void handleReport(type)
+                  }}
+                  disabled={reportSubmitting || isAlreadyReported}
+                  style={{
+                    padding: '12px',
+                    fontSize: 16,
+                    border: '1px solid #ccc',
+                    borderRadius: 8,
+                    background: '#fff',
+                    cursor:
+                      reportSubmitting || isAlreadyReported
+                        ? 'not-allowed'
+                        : 'pointer',
+                    color: '#222',
+                  }}
+                >
+                  {type}
+                </button>
+              ))}
+            </div>
+            <button
+              type="button"
+              onClick={() => setShowReportDialog(false)}
+              disabled={reportSubmitting}
+              style={{
+                width: '100%',
+                padding: '12px',
+                fontSize: 16,
+                border: '1px solid #ccc',
+                borderRadius: 8,
+                background: '#f5f5f5',
+                cursor: reportSubmitting ? 'not-allowed' : 'pointer',
+              }}
+            >
+              닫기
+            </button>
+          </div>
+        </div>
+      )}
+      {reportToastVisible && (
+        <div
+          role="status"
+          aria-live="polite"
+          style={{
+            position: 'fixed',
+            left: '50%',
+            bottom: 'calc(env(safe-area-inset-bottom, 0px) + 78px)',
+            transform: 'translateX(-50%)',
+            zIndex: 120,
+            background: 'rgba(34,34,34,0.95)',
+            color: '#fff',
+            padding: '10px 14px',
+            borderRadius: 999,
+            fontSize: 14,
+            boxShadow: '0 6px 20px rgba(0,0,0,0.2)',
+            maxWidth: 'calc(100% - 32px)',
+            textAlign: 'center',
+          }}
+        >
+          신고 감사합니다. 확인하고 고칠께요.
         </div>
       )}
     </div>
