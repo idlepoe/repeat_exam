@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "586008015901",
+    "project_id": "repeat-exam",
+    "storage_bucket": "repeat-exam.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:586008015901:android:afa6805d6de38446a542f4",
+        "android_client_info": {
+          "package_name": "com.jylee.repeat_exam"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmPjI2fM9hiXB3--9ts045h4QZiqgbm2A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

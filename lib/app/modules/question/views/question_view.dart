@@ -49,11 +49,57 @@ class QuestionView extends GetView<QuestionController> {
     );
   }
 
+  Future<void> _showReportDialog(BuildContext context) async {
+    await Get.dialog<void>(
+      AlertDialog(
+        title: const Text('오류 유형을 선택해 주세요.'),
+        content: Obx(
+          () => Column(
+            mainAxisSize: MainAxisSize.min,
+            children:
+                QuestionController.reportTypes
+                    .map(
+                      (type) => Padding(
+                        padding: const EdgeInsets.only(bottom: 8),
+                        child: SizedBox(
+                          width: double.infinity,
+                          child: OutlinedButton(
+                            onPressed:
+                                controller.reportSubmitting.value ||
+                                        controller.isCurrentQuestionReported.value
+                                    ? null
+                                    : () async {
+                                      await controller.submitReport(type);
+                                      if (context.mounted) Get.back<void>();
+                                    },
+                            child: Text(type),
+                          ),
+                        ),
+                      ),
+                    )
+                    .toList(),
+          ),
+        ),
+        actions: [
+          TextButton(onPressed: () => Get.back<void>(), child: const Text('닫기')),
+        ],
+      ),
+      barrierDismissible: true,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Obx(() => Text(controller.examType.value)),
+        title: Obx(
+          () => Text(
+            controller.appBarTitle,
+            textAlign: TextAlign.center,
+            style: const TextStyle(height: 1.2),
+          ),
+        ),
+        centerTitle: true,
         actions: [
           TextButton(
             onPressed: controller.cycleFontStep,
@@ -98,13 +144,15 @@ class QuestionView extends GetView<QuestionController> {
         final answerBg = _hexToColor(highlight.bg);
         final answerFg = _hexToColor(highlight.fg);
 
-        return Column(
+        return Stack(
           children: [
-            Expanded(
-              child: ListView(
-                key: ValueKey(q.question_number),
-                padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
-                children: [
+            Column(
+              children: [
+                Expanded(
+                  child: ListView(
+                    key: ValueKey(q.question_number),
+                    padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
+                    children: [
                   Text(
                     '[${q.subject}]',
                     style: TextStyle(
@@ -234,9 +282,30 @@ class QuestionView extends GetView<QuestionController> {
                       ),
                     ),
                   ],
+                  const SizedBox(height: 18),
+                  Obx(
+                    () => SizedBox(
+                      width: double.infinity,
+                      child: OutlinedButton(
+                        onPressed:
+                            controller.isCurrentQuestionReported.value
+                                ? null
+                                : () async {
+                                  await _showReportDialog(context);
+                                },
+                        child: Text(
+                          controller.isCurrentQuestionReported.value
+                              ? '이미 신고한 문제입니다'
+                              : '문제 오류 신고 하기',
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
+          ],
+        ),
             Obx(
               () => SafeArea(
                 top: false,
@@ -244,6 +313,7 @@ class QuestionView extends GetView<QuestionController> {
                   children: controller.navReversed.value
                       ? [
                           Expanded(
+                            flex: 4,
                             child: _navButton(
                               label: '다음',
                               onTap: () async {
@@ -255,6 +325,7 @@ class QuestionView extends GetView<QuestionController> {
                             ),
                           ),
                           Expanded(
+                            flex: 2,
                             child: _navButton(
                               label: '변경',
                               bgColor: const Color(0xFFF5F5F5),
@@ -263,6 +334,7 @@ class QuestionView extends GetView<QuestionController> {
                             ),
                           ),
                           Expanded(
+                            flex: 4,
                             child: _navButton(
                               label: '이전',
                               enabled: !controller.isFirst,
@@ -276,6 +348,7 @@ class QuestionView extends GetView<QuestionController> {
                         ]
                       : [
                           Expanded(
+                            flex: 4,
                             child: _navButton(
                               label: '이전',
                               enabled: !controller.isFirst,
@@ -286,6 +359,7 @@ class QuestionView extends GetView<QuestionController> {
                             ),
                           ),
                           Expanded(
+                            flex: 2,
                             child: _navButton(
                               label: '변경',
                               bgColor: const Color(0xFFF5F5F5),
@@ -294,6 +368,7 @@ class QuestionView extends GetView<QuestionController> {
                             ),
                           ),
                           Expanded(
+                            flex: 4,
                             child: _navButton(
                               label: '다음',
                               borderLeft: true,
@@ -308,6 +383,33 @@ class QuestionView extends GetView<QuestionController> {
                         ],
                 ),
               ),
+            ),
+            Obx(
+              () =>
+                  controller.reportToastVisible.value
+                      ? Positioned(
+                        left: 16,
+                        right: 16,
+                        bottom: 78,
+                        child: DecoratedBox(
+                          decoration: BoxDecoration(
+                            color: const Color(0xFF222222),
+                            borderRadius: BorderRadius.circular(999),
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 14,
+                              vertical: 10,
+                            ),
+                            child: Text(
+                              '신고 감사합니다. 확인하고 고칠께요.',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white, fontSize: 14),
+                            ),
+                          ),
+                        ),
+                      )
+                      : const SizedBox.shrink(),
             ),
           ],
         );

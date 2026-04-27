@@ -7,10 +7,13 @@ import 'package:http/http.dart' as http;
 import '../../../data/models/question_model.dart';
 import '../../../data/services/exam_files_service.dart';
 import '../../../data/services/exam_meta_service.dart';
+import '../../../data/services/report_service.dart';
 import '../../../data/services/storage_service.dart';
 import '../../../routes/app_pages.dart';
 
 class QuestionController extends GetxController {
+  static const reportTypes = <String>['사진 누락', '내용 누락', '정답 오류'];
+
   final examType = ''.obs;
   final examSession = ''.obs;
 
@@ -21,6 +24,9 @@ class QuestionController extends GetxController {
   final navReversed = false.obs;
   final fontStep = 0.obs;
   final answerHighlight = const AnswerHighlight(bg: '#c00', fg: '#fff').obs;
+  final reportSubmitting = false.obs;
+  final reportToastVisible = false.obs;
+  final isCurrentQuestionReported = false.obs;
 
   static const fontSteps = <Map<String, double>>[
     {'base': 16, 'title': 15},
@@ -61,6 +67,11 @@ class QuestionController extends GetxController {
 
   double get titleFont =>
       fontSteps[fontStep.value.clamp(0, fontSteps.length - 1)]['title']!;
+
+  String get appBarTitle =>
+      examSession.value.isEmpty
+          ? examType.value
+          : '${examType.value}\n${examSession.value}회';
 
   Future<void> _load() async {
     loading.value = true;
@@ -113,6 +124,7 @@ class QuestionController extends GetxController {
       }
       index.value = start;
       await _saveCurrentProgress();
+      await _syncReportedState();
     } catch (e, st) {
       error.value = e.toString();
       debugPrint(
@@ -162,10 +174,22 @@ class QuestionController extends GetxController {
     );
   }
 
+  Future<void> _syncReportedState() async {
+    final q = currentQuestion;
+    if (q == null) {
+      isCurrentQuestionReported.value = false;
+      return;
+    }
+    isCurrentQuestionReported.value = await StorageService.hasReportedQuestion(
+      q.id,
+    );
+  }
+
   Future<void> goPrev() async {
     if (isFirst) return;
     index.value -= 1;
     await _saveCurrentProgress();
+    await _syncReportedState();
   }
 
   Future<bool> goNextOrAsk() async {
@@ -173,9 +197,39 @@ class QuestionController extends GetxController {
     if (!isLast) {
       index.value += 1;
       await _saveCurrentProgress();
+      await _syncReportedState();
       return false;
     }
     return true;
+  }
+
+  Future<void> submitReport(String type) async {
+    final q = currentQuestion;
+    if (q == null || reportSubmitting.value) return;
+    if (isCurrentQuestionReported.value) {
+      Get.snackbar('안내', '이미 신고한 문제입니다.');
+      return;
+    }
+
+    reportSubmitting.value = true;
+    try {
+      await ReportService.submitQuestionReport(
+        questionId: q.id,
+        type: type,
+        examType: examType.value,
+        examSession: examSession.value,
+      );
+      await StorageService.saveReportedQuestion(q.id);
+      isCurrentQuestionReported.value = true;
+      reportToastVisible.value = true;
+      Future<void>.delayed(const Duration(milliseconds: 2200), () {
+        reportToastVisible.value = false;
+      });
+    } catch (e) {
+      Get.snackbar('오류', e.toString());
+    } finally {
+      reportSubmitting.value = false;
+    }
   }
 
   Future<void> cycleFontStep() async {
@@ -214,6 +268,7 @@ class QuestionController extends GetxController {
       Get.snackbar('안내', '이어질 다음 회차가 없습니다.');
       return;
     }
+    await StorageService.clearProgress(examType: examType.value, examSession: next);
     Get.offNamed(
       Routes.QUESTION,
       arguments: {'examType': examType.value, 'examSession': next},

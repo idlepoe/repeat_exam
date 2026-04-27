@@ -60,6 +60,8 @@ class StorageService {
   static const String _keyNavReversed = 'repeat_exam:nav_reversed';
   static const String _keyAnswerHighlight = 'repeat_exam:answer_highlight';
   static const String _keyQuestionFontStep = 'repeat_exam:question_font_step';
+  static const String _keyReportedQuestionIds =
+      'repeat_exam:reported_question_ids';
 
   const StorageService._();
 
@@ -240,5 +242,40 @@ class StorageService {
   static Future<void> saveAnswerHighlight(AnswerHighlight value) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString(_keyAnswerHighlight, jsonEncode(value.toJson()));
+  }
+
+  static Future<Map<String, bool>> _loadReportedQuestionMap() async {
+    final prefs = await SharedPreferences.getInstance();
+    final raw = prefs.getString(_keyReportedQuestionIds);
+    if (raw == null) return {};
+    try {
+      final decoded = jsonDecode(raw);
+      if (decoded is! Map) return {};
+      final out = <String, bool>{};
+      for (final entry in decoded.entries) {
+        final key = entry.key;
+        final value = entry.value;
+        if (key is String && value == true) {
+          out[key] = true;
+        }
+      }
+      return out;
+    } catch (_) {
+      return {};
+    }
+  }
+
+  static Future<bool> hasReportedQuestion(String questionId) async {
+    if (questionId.isEmpty) return false;
+    final map = await _loadReportedQuestionMap();
+    return map[questionId] == true;
+  }
+
+  static Future<void> saveReportedQuestion(String questionId) async {
+    if (questionId.isEmpty) return;
+    final prefs = await SharedPreferences.getInstance();
+    final map = await _loadReportedQuestionMap();
+    map[questionId] = true;
+    await prefs.setString(_keyReportedQuestionIds, jsonEncode(map));
   }
 }

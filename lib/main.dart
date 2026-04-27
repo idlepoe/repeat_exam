@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flex_seed_scheme/flex_seed_scheme.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import 'package:get/get.dart';
 
 import 'app/routes/app_pages.dart';
+import 'firebase_options.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  try {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+  } catch (_) {
+    // Windows/macOS/web 미설정 환경에서는 앱이 계속 동작하도록 둔다.
+  }
   runApp(const MyApp());
 }
 
