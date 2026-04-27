@@ -49,45 +49,6 @@ class QuestionView extends GetView<QuestionController> {
     );
   }
 
-  Future<void> _showReportDialog(BuildContext context) async {
-    await Get.dialog<void>(
-      AlertDialog(
-        title: const Text('오류 유형을 선택해 주세요.'),
-        content: Obx(
-          () => Column(
-            mainAxisSize: MainAxisSize.min,
-            children:
-                QuestionController.reportTypes
-                    .map(
-                      (type) => Padding(
-                        padding: const EdgeInsets.only(bottom: 8),
-                        child: SizedBox(
-                          width: double.infinity,
-                          child: OutlinedButton(
-                            onPressed:
-                                controller.reportSubmitting.value ||
-                                        controller.isCurrentQuestionReported.value
-                                    ? null
-                                    : () async {
-                                      await controller.submitReport(type);
-                                      if (context.mounted) Get.back<void>();
-                                    },
-                            child: Text(type),
-                          ),
-                        ),
-                      ),
-                    )
-                    .toList(),
-          ),
-        ),
-        actions: [
-          TextButton(onPressed: () => Get.back<void>(), child: const Text('닫기')),
-        ],
-      ),
-      barrierDismissible: true,
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -151,265 +112,239 @@ class QuestionView extends GetView<QuestionController> {
                 Expanded(
                   child: ListView(
                     key: ValueKey(q.question_number),
-                    padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
+                    padding: EdgeInsets.fromLTRB(
+                      16,
+                      16,
+                      16,
+                      8 + 56 + MediaQuery.of(context).padding.bottom,
+                    ),
                     children: [
-                  Text(
-                    '[${q.subject}]',
-                    style: TextStyle(
-                      fontSize: controller.titleFont,
-                      fontWeight: FontWeight.w600,
-                      color: const Color(0xFF333333),
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  RichText(
-                    text: TextSpan(
-                      style: TextStyle(
-                        fontSize: controller.baseFont,
-                        height: 1.5,
-                        color: const Color(0xFF111111),
-                      ),
-                      children: [
-                        TextSpan(
-                          text: '${q.question_number}. ',
-                          style: const TextStyle(fontWeight: FontWeight.w600),
-                        ),
-                        TextSpan(text: q.question_text),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  if (q.question_image_url != null &&
-                      q.question_image_url!.trim().isNotEmpty)
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 16),
-                      child: Image.network(q.question_image_url!),
-                    ),
-                  ...q.choices.map((c) {
-                    final isAnswer = c.no == q.correct_answer;
-                    return Container(
-                      margin: const EdgeInsets.only(bottom: 10),
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 12,
-                        vertical: 10,
-                      ),
-                      decoration: BoxDecoration(
-                        border: Border.all(color: const Color(0xFFDDDDDD)),
-                        borderRadius: BorderRadius.circular(6),
-                        color: isAnswer ? answerBg : const Color(0xFFFAFAFA),
-                      ),
-                      child: Text(
-                        '${c.no}. ${c.text}',
+                      Text(
+                        '[${q.subject}]',
                         style: TextStyle(
-                          color: isAnswer ? answerFg : const Color(0xFF111111),
-                          fontSize: controller.baseFont,
+                          fontSize: controller.titleFont,
+                          fontWeight: FontWeight.w600,
+                          color: const Color(0xFF333333),
                         ),
                       ),
-                    );
-                  }),
-                  if (hasAiExplanation) ...[
-                    const SizedBox(height: 8),
-                    Container(
-                      padding: const EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        border: Border.all(color: const Color(0xFFE5E4E7)),
-                        borderRadius: BorderRadius.circular(8),
-                        color: Colors.white,
+                      const SizedBox(height: 8),
+                      RichText(
+                        text: TextSpan(
+                          style: TextStyle(
+                            fontSize: controller.baseFont,
+                            height: 1.5,
+                            color: const Color(0xFF111111),
+                          ),
+                          children: [
+                            TextSpan(
+                              text: '${q.question_number}. ',
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            TextSpan(text: q.question_text),
+                          ],
+                        ),
                       ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'AI 해설',
+                      const SizedBox(height: 16),
+                      if (q.question_image_url != null &&
+                          q.question_image_url!.trim().isNotEmpty)
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 16),
+                          child: Image.network(q.question_image_url!),
+                        ),
+                      ...q.choices.map((c) {
+                        final isAnswer = c.no == q.correct_answer;
+                        return Container(
+                          margin: const EdgeInsets.only(bottom: 10),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 12,
+                            vertical: 10,
+                          ),
+                          decoration: BoxDecoration(
+                            border: Border.all(color: const Color(0xFFDDDDDD)),
+                            borderRadius: BorderRadius.circular(6),
+                            color: isAnswer
+                                ? answerBg
+                                : const Color(0xFFFAFAFA),
+                          ),
+                          child: Text(
+                            '${c.no}. ${c.text}',
                             style: TextStyle(
+                              color: isAnswer
+                                  ? answerFg
+                                  : const Color(0xFF111111),
                               fontSize: controller.baseFont,
-                              fontWeight: FontWeight.w700,
                             ),
                           ),
-                          if (correctExplanation.isNotEmpty) ...[
-                            const SizedBox(height: 8),
-                            Text(
-                              '정답 해설',
-                              style: TextStyle(
-                                fontSize: controller.baseFont,
-                                fontWeight: FontWeight.w600,
+                        );
+                      }),
+                      if (hasAiExplanation) ...[
+                        const SizedBox(height: 8),
+                        Container(
+                          padding: const EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            border: Border.all(color: const Color(0xFFE5E4E7)),
+                            borderRadius: BorderRadius.circular(8),
+                            color: Colors.white,
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'AI 해설',
+                                style: TextStyle(
+                                  fontSize: controller.baseFont,
+                                  fontWeight: FontWeight.w700,
+                                ),
                               ),
-                            ),
-                            const SizedBox(height: 4),
-                            Text(
-                              correctExplanation,
-                              style: TextStyle(fontSize: controller.baseFont),
-                            ),
-                          ],
-                          if (wrongAnswerNotes.isNotEmpty) ...[
-                            const SizedBox(height: 10),
-                            Text(
-                              '오답 노트',
-                              style: TextStyle(
-                                fontSize: controller.baseFont,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            const SizedBox(height: 4),
-                            ...wrongAnswerNotes.map(
-                              (note) => Padding(
-                                padding: const EdgeInsets.only(bottom: 3),
-                                child: Text(
-                                  '• $note',
+                              if (correctExplanation.isNotEmpty) ...[
+                                const SizedBox(height: 8),
+                                Text(
+                                  '정답 해설',
+                                  style: TextStyle(
+                                    fontSize: controller.baseFont,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  correctExplanation,
                                   style: TextStyle(
                                     fontSize: controller.baseFont,
                                   ),
                                 ),
-                              ),
-                            ),
-                          ],
-                          if (examTip.isNotEmpty) ...[
-                            const SizedBox(height: 10),
-                            Text(
-                              '쪽집게',
-                              style: TextStyle(
-                                fontSize: controller.baseFont,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            const SizedBox(height: 4),
-                            Text(
-                              examTip,
-                              style: TextStyle(fontSize: controller.baseFont),
-                            ),
-                          ],
-                        ],
-                      ),
-                    ),
-                  ],
-                  const SizedBox(height: 18),
-                  Obx(
-                    () => SizedBox(
-                      width: double.infinity,
-                      child: OutlinedButton(
-                        onPressed:
-                            controller.isCurrentQuestionReported.value
-                                ? null
-                                : () async {
-                                  await _showReportDialog(context);
-                                },
-                        child: Text(
-                          controller.isCurrentQuestionReported.value
-                              ? '이미 신고한 문제입니다'
-                              : '문제 오류 신고 하기',
+                              ],
+                              if (wrongAnswerNotes.isNotEmpty) ...[
+                                const SizedBox(height: 10),
+                                Text(
+                                  '오답 노트',
+                                  style: TextStyle(
+                                    fontSize: controller.baseFont,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                ...wrongAnswerNotes.map(
+                                  (note) => Padding(
+                                    padding: const EdgeInsets.only(bottom: 3),
+                                    child: Text(
+                                      '• $note',
+                                      style: TextStyle(
+                                        fontSize: controller.baseFont,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                              if (examTip.isNotEmpty) ...[
+                                const SizedBox(height: 10),
+                                Text(
+                                  '쪽집게',
+                                  style: TextStyle(
+                                    fontSize: controller.baseFont,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  examTip,
+                                  style: TextStyle(
+                                    fontSize: controller.baseFont,
+                                  ),
+                                ),
+                              ],
+                            ],
+                          ),
                         ),
-                      ),
-                    ),
+                      ],
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
-        ),
-            Obx(
-              () => SafeArea(
-                top: false,
-                child: Row(
-                  children: controller.navReversed.value
-                      ? [
-                          Expanded(
-                            flex: 4,
-                            child: _navButton(
-                              label: '다음',
-                              onTap: () async {
-                                final ask = await controller.goNextOrAsk();
-                                if (ask && context.mounted) {
-                                  await _showNextSessionDialog(context);
-                                }
-                              },
+            Positioned(
+              left: 0,
+              right: 0,
+              bottom: 0,
+              child: Obx(
+                () => SafeArea(
+                  top: false,
+                  child: Row(
+                    children: controller.navReversed.value
+                        ? [
+                            Expanded(
+                              flex: 4,
+                              child: _navButton(
+                                label: '다음',
+                                onTap: () async {
+                                  final ask = await controller.goNextOrAsk();
+                                  if (ask && context.mounted) {
+                                    await _showNextSessionDialog(context);
+                                  }
+                                },
+                              ),
                             ),
-                          ),
-                          Expanded(
-                            flex: 2,
-                            child: _navButton(
-                              label: '변경',
-                              bgColor: const Color(0xFFF5F5F5),
-                              borderLeft: true,
-                              onTap: controller.toggleNavReversed,
+                            Expanded(
+                              flex: 2,
+                              child: _navButton(
+                                label: '변경',
+                                bgColor: const Color(0xFFF5F5F5),
+                                borderLeft: true,
+                                onTap: controller.toggleNavReversed,
+                              ),
                             ),
-                          ),
-                          Expanded(
-                            flex: 4,
-                            child: _navButton(
-                              label: '이전',
-                              enabled: !controller.isFirst,
-                              bgColor: controller.isFirst
-                                  ? const Color(0xFFEEEEEE)
-                                  : Colors.white,
-                              borderLeft: true,
-                              onTap: controller.goPrev,
+                            Expanded(
+                              flex: 4,
+                              child: _navButton(
+                                label: '이전',
+                                enabled: !controller.isFirst,
+                                bgColor: controller.isFirst
+                                    ? const Color(0xFFEEEEEE)
+                                    : Colors.white,
+                                borderLeft: true,
+                                onTap: controller.goPrev,
+                              ),
                             ),
-                          ),
-                        ]
-                      : [
-                          Expanded(
-                            flex: 4,
-                            child: _navButton(
-                              label: '이전',
-                              enabled: !controller.isFirst,
-                              bgColor: controller.isFirst
-                                  ? const Color(0xFFEEEEEE)
-                                  : Colors.white,
-                              onTap: controller.goPrev,
+                          ]
+                        : [
+                            Expanded(
+                              flex: 4,
+                              child: _navButton(
+                                label: '이전',
+                                enabled: !controller.isFirst,
+                                bgColor: controller.isFirst
+                                    ? const Color(0xFFEEEEEE)
+                                    : Colors.white,
+                                onTap: controller.goPrev,
+                              ),
                             ),
-                          ),
-                          Expanded(
-                            flex: 2,
-                            child: _navButton(
-                              label: '변경',
-                              bgColor: const Color(0xFFF5F5F5),
-                              borderLeft: true,
-                              onTap: controller.toggleNavReversed,
+                            Expanded(
+                              flex: 2,
+                              child: _navButton(
+                                label: '변경',
+                                bgColor: const Color(0xFFF5F5F5),
+                                borderLeft: true,
+                                onTap: controller.toggleNavReversed,
+                              ),
                             ),
-                          ),
-                          Expanded(
-                            flex: 4,
-                            child: _navButton(
-                              label: '다음',
-                              borderLeft: true,
-                              onTap: () async {
-                                final ask = await controller.goNextOrAsk();
-                                if (ask && context.mounted) {
-                                  await _showNextSessionDialog(context);
-                                }
-                              },
+                            Expanded(
+                              flex: 4,
+                              child: _navButton(
+                                label: '다음',
+                                borderLeft: true,
+                                onTap: () async {
+                                  final ask = await controller.goNextOrAsk();
+                                  if (ask && context.mounted) {
+                                    await _showNextSessionDialog(context);
+                                  }
+                                },
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                  ),
                 ),
               ),
-            ),
-            Obx(
-              () =>
-                  controller.reportToastVisible.value
-                      ? Positioned(
-                        left: 16,
-                        right: 16,
-                        bottom: 78,
-                        child: DecoratedBox(
-                          decoration: BoxDecoration(
-                            color: const Color(0xFF222222),
-                            borderRadius: BorderRadius.circular(999),
-                          ),
-                          child: const Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 14,
-                              vertical: 10,
-                            ),
-                            child: Text(
-                              '신고 감사합니다. 확인하고 고칠께요.',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white, fontSize: 14),
-                            ),
-                          ),
-                        ),
-                      )
-                      : const SizedBox.shrink(),
             ),
           ],
         );
