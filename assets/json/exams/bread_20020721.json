@@ -252,7 +252,7 @@
     "subject": "제조이론",
     "question_number": 7,
     "question_text": "어떤 제품을 만드는데 보기와 같은 배합표가 작성되었다면 이 제품명은?",
-    "question_image_url": null,
+    "question_image_url": "https://raw.githubusercontent.com/idlepoe/repeat_exam/main/assets/images/bread_200207217.png",
     "choices": [
       {
         "no": 1,
@@ -907,7 +907,7 @@
     "exam_session": "2002-07-21",
     "subject": "재료과학",
     "question_number": 23,
-    "question_text": "냉동반죽에서 반죽의 가스보유력을 증가시키기 위하여사용 하는 재료의 설명으로 옳지 않은 것은?",
+    "question_text": "냉동반죽에서 반죽의 가스보유력을 증가시키기 위하여 사용 하는 재료의 설명으로 옳지 않은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1482,7 +1482,7 @@
     "subject": "영양학",
     "question_number": 37,
     "question_text": "다음은 갈색 반응에 대한 설명이다. 빈 칸에 맞는 것은?",
-    "question_image_url": null,
+    "question_image_url": "https://raw.githubusercontent.com/idlepoe/repeat_exam/main/assets/images/bread_2002072137.png",
     "choices": [
       {
         "no": 1,

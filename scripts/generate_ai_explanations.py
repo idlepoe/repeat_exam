@@ -344,6 +344,27 @@ def _target_paths(input_path: Path) -> list[Path]:
     return [input_path]
 
 
+def needs_ai_explanation(item: dict[str, Any]) -> bool:
+    """aiExplanation이 없거나 비어 있거나 필수 필드가 불완전하면 True."""
+    ae = item.get("aiExplanation")
+    if ae is None:
+        return True
+    if not isinstance(ae, dict):
+        return True
+    ce = ae.get("correctExplanation")
+    if not isinstance(ce, str) or not ce.strip():
+        return True
+    tip = ae.get("examTip")
+    if not isinstance(tip, str) or not tip.strip():
+        return True
+    notes = ae.get("wrongAnswerNotes")
+    if not isinstance(notes, list) or len(notes) == 0:
+        return True
+    if not all(isinstance(x, str) and x.strip() for x in notes):
+        return True
+    return False
+
+
 def _chunked(items: list[dict[str, Any]], size: int) -> list[list[dict[str, Any]]]:
     return [items[i : i + size] for i in range(0, len(items), size)]
 
@@ -352,12 +373,14 @@ def generate_ai_explanations(
     input_path: Path,
     batch_size: int,
     skip_existing: bool,
+    missing_only: bool,
     fail_fast: bool,
 ) -> None:
     client, client_mode = _build_genai_client()
     print(
         "[설정] "
-        f"model={MODEL_NAME}, batch_size={batch_size}, skip_existing={skip_existing}, "
+        f"model={MODEL_NAME}, batch_size={batch_size}, "
+        f"skip_existing={skip_existing}, missing_only={missing_only}, "
         f"fail_fast={fail_fast}, stuck_timeout={STUCK_TIMEOUT_SECONDS}s, "
         f"max_retries={MAX_RETRIES}, client={client_mode}"
     )
@@ -383,7 +406,12 @@ def generate_ai_explanations(
 
         print(f"\n[{file_index}/{len(target_paths)}] 파일 처리: {target_path}")
         source_items = data
-        if skip_existing:
+        if missing_only:
+            source_items = [item for item in data if needs_ai_explanation(item)]
+            skipped_count = len(data) - len(source_items)
+            if skipped_count:
+                print(f"  - 이미 완전한 aiExplanation 스킵: {skipped_count}개")
+        elif skip_existing:
             source_items = [item for item in data if "aiExplanation" not in item]
             skipped_count = len(data) - len(source_items)
             if skipped_count:
@@ -516,6 +544,14 @@ def main() -> None:
         help="이미 aiExplanation가 있는 문항은 API 호출 없이 건너뜁니다.",
     )
     parser.add_argument(
+        "--missing-only",
+        action="store_true",
+        help=(
+            "aiExplanation 키가 없거나 값이 불완전한 문항만 처리합니다 "
+            "(기존 스크립트 fill_missing_ai_explanations.py와 동일 목적)."
+        ),
+    )
+    parser.add_argument(
         "--fail-fast",
         action="store_true",
         help="배치 실패 시 즉시 중단합니다(기본은 실패 배치 건너뛰고 계속).",
@@ -523,6 +559,8 @@ def main() -> None:
     args = parser.parse_args()
     if args.batch_size < 1:
         raise ValueError("--batch-size는 1 이상이어야 합니다.")
+    if args.missing_only and args.skip_existing:
+        raise ValueError("--missing-only 와 --skip-existing 는 함께 쓸 수 없습니다.")
     restart_count = 0
     while True:
         try:
@@ -530,6 +568,7 @@ def main() -> None:
                 Path(args.input),
                 batch_size=args.batch_size,
                 skip_existing=args.skip_existing,
+                missing_only=args.missing_only,
                 fail_fast=args.fail_fast,
             )
             break
