@@ -4,6 +4,7 @@ import { AppBar } from '../components/AppBar'
 import { examJsonUrl } from '../lib/examFiles'
 import { fetchExamSessionList, nextSession } from '../lib/examMeta'
 import {
+  clearProgress,
   incrementSessionCountAndClearProgress,
   hasReportedQuestion,
   loadAnswerHighlight,
@@ -47,7 +48,9 @@ export function QuestionPage() {
   const [reportSubmitting, setReportSubmitting] = useState(false)
   const [reportToastVisible, setReportToastVisible] = useState(false)
   const [answerHighlight] = useState(() => loadAnswerHighlight())
+  const [loadedSessionKey, setLoadedSessionKey] = useState<string | null>(null)
   const mainRef = useRef<HTMLDivElement>(null)
+  const currentSessionKey = `${examType}::${examSession}`
 
   useEffect(() => {
     mainRef.current?.scrollTo(0, 0)
@@ -58,6 +61,9 @@ export function QuestionPage() {
     let cancelled = false
 
     void (async () => {
+      setLoadedSessionKey(null)
+      setQuestions([])
+      setIndex(0)
       setLoadErr(null)
       try {
         const url = examJsonUrl(examType, examSession)
@@ -87,11 +93,13 @@ export function QuestionPage() {
         if (!cancelled) {
           setQuestions(sorted)
           setIndex(start)
+          setLoadedSessionKey(currentSessionKey)
         }
       } catch (e) {
         if (!cancelled) {
           setLoadErr(e instanceof Error ? e.message : '로드 실패')
           setQuestions([])
+          setLoadedSessionKey(null)
         }
       }
     })()
@@ -99,13 +107,14 @@ export function QuestionPage() {
     return () => {
       cancelled = true
     }
-  }, [examType, examSession])
+  }, [examType, examSession, currentSessionKey])
 
   const q = questions[index]
   const isAlreadyReported = q ? hasReportedQuestion(q.id) : false
 
   useEffect(() => {
     if (!q) return
+    if (loadedSessionKey !== currentSessionKey) return
     saveProgress(
       {
         exam_type: examType,
@@ -115,7 +124,7 @@ export function QuestionPage() {
       examType,
       examSession
     )
-  }, [q, examType, examSession])
+  }, [q, examType, examSession, loadedSessionKey, currentSessionKey])
 
   useEffect(() => {
     saveNavReversed(navReversed)
@@ -158,6 +167,8 @@ export function QuestionPage() {
         window.alert('이어질 다음 회차가 없습니다.')
         return
       }
+      // 다음 회차는 항상 1번부터 시작하도록 기존 진도를 지운다.
+      clearProgress(examType, next)
       navigate(
         `/quiz/${encodeURIComponent(examType)}/${encodeURIComponent(next)}`
       )
@@ -199,8 +210,8 @@ export function QuestionPage() {
   )
   const { base: baseFont, title: titleFs } = FONT_STEPS[fontStepClamped]
 
-  const btnThird = (extra: CSSProperties): CSSProperties => ({
-    flex: '1 1 0',
+  const btnThird = (weight: number, extra: CSSProperties): CSSProperties => ({
+    flex: `${weight} 1 0`,
     minWidth: 0,
     boxSizing: 'border-box',
     padding: '14px 8px',
@@ -222,7 +233,7 @@ export function QuestionPage() {
       }}
     >
       <AppBar
-        title={examSession ? `${examType} ${examSession}회` : examType}
+        title={examSession ? `${examType}\n${examSession}회` : examType}
         showBack
         onBack={() =>
           navigate(`/sessions/${encodeURIComponent(examType)}`)
@@ -401,7 +412,7 @@ export function QuestionPage() {
                 <button
                   type="button"
                   onClick={goNext}
-                  style={btnThird({
+                  style={btnThird(4, {
                     borderRight: '1px solid #e5e4e7',
                     background: '#fff',
                     color: '#111',
@@ -412,7 +423,7 @@ export function QuestionPage() {
                 <button
                   type="button"
                   onClick={() => setNavReversed((v) => !v)}
-                  style={btnThird({
+                  style={btnThird(2, {
                     borderRight: '1px solid #e5e4e7',
                     background: '#f5f5f5',
                     color: '#111',
@@ -424,7 +435,7 @@ export function QuestionPage() {
                   type="button"
                   onClick={goPrev}
                   disabled={index <= 0}
-                  style={btnThird({
+                  style={btnThird(4, {
                     background: index <= 0 ? '#eee' : '#fff',
                     color: '#111',
                     cursor: index <= 0 ? 'not-allowed' : 'pointer',
@@ -439,7 +450,7 @@ export function QuestionPage() {
                   type="button"
                   onClick={goPrev}
                   disabled={index <= 0}
-                  style={btnThird({
+                  style={btnThird(4, {
                     borderRight: '1px solid #e5e4e7',
                     background: index <= 0 ? '#eee' : '#fff',
                     color: '#111',
@@ -451,7 +462,7 @@ export function QuestionPage() {
                 <button
                   type="button"
                   onClick={() => setNavReversed((v) => !v)}
-                  style={btnThird({
+                  style={btnThird(2, {
                     borderRight: '1px solid #e5e4e7',
                     background: '#f5f5f5',
                     color: '#111',
@@ -462,7 +473,7 @@ export function QuestionPage() {
                 <button
                   type="button"
                   onClick={goNext}
-                  style={btnThird({
+                  style={btnThird(4, {
                     background: '#fff',
                     color: '#111',
                   })}

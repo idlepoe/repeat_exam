@@ -42,7 +42,16 @@ export function AppBar({ title, showBack, onBack, right }: Props) {
       ) : (
         <span style={{ width: 72 }} />
       )}
-      <div style={{ flex: 1, fontWeight: 600, fontSize: 16, textAlign: 'center' }}>
+      <div
+        style={{
+          flex: 1,
+          fontWeight: 600,
+          fontSize: 16,
+          textAlign: 'center',
+          whiteSpace: 'pre-line',
+          lineHeight: 1.2,
+        }}
+      >
         {title ?? ''}
       </div>
       <div style={{ minWidth: 72, display: 'flex', justifyContent: 'flex-end' }}>
