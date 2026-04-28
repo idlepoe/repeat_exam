@@ -69,6 +69,8 @@ export function MockExamPage() {
   } | null>(null)
 
   const timeUpFiredRef = useRef(false)
+  /** false면 localStorage에 모의고사 세션을 쓰지 않음(종료·제출 후 persist 재저장 방지) */
+  const sessionPersistEnabledRef = useRef(true)
   const mainRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -84,6 +86,8 @@ export function MockExamPage() {
       navigate('/', { replace: true })
       return
     }
+
+    sessionPersistEnabledRef.current = true
 
     let cancelled = false
     void (async () => {
@@ -152,7 +156,16 @@ export function MockExamPage() {
   }, [ready, startedAt])
 
   useEffect(() => {
+    if (!sessionPersistEnabledRef.current) {
+      if (import.meta.env.DEV) {
+        console.log('[MockExam]', 'persist skipped (세션 종료됨)')
+      }
+      return
+    }
     if (!ready || questions.length !== MOCK_TOTAL || !isMockKind(examKind)) return
+    if (import.meta.env.DEV) {
+      console.log('[MockExam]', 'persist effect: saveMockSession')
+    }
     saveMockSession({
       examKind,
       questions,
@@ -191,6 +204,15 @@ export function MockExamPage() {
     const score = mockExamScoreFloored(correct)
     const passed = isMockExamPassed(score)
 
+    console.log('[MockExam]', 'finishExam: start', {
+      correct,
+      score,
+      passed,
+      answerKeys: Object.keys(finalAnswers).length,
+    })
+
+    sessionPersistEnabledRef.current = false
+
     appendMockHistory({
       examKind: examKind as MockExamKind,
       startedAt,
@@ -199,8 +221,12 @@ export function MockExamPage() {
       totalQuestions: MOCK_TOTAL,
       scoreFloored: score,
       passed,
+      questions,
+      answers: finalAnswers,
     })
-    clearMockSession()
+    clearMockSession('finishExam')
+    console.log('[MockExam]', 'finishExam: after clearMockSession, opening result dialog')
+
     setResultSummary({ passed, correct, score })
     setShowResultDialog(true)
   }
@@ -219,7 +245,8 @@ export function MockExamPage() {
   }
 
   const confirmEndExam = () => {
-    clearMockSession()
+    sessionPersistEnabledRef.current = false
+    clearMockSession('confirmEndExam')
     setShowEndConfirm(false)
     navigate(-1)
   }
@@ -259,7 +286,7 @@ export function MockExamPage() {
     )
   }
 
-  const timeLabel = `${formatRemainMs(remainMs)} / 60분`
+  const timeLabel = `${formatRemainMs(remainMs)} / 60`
 
   return (
     <div
