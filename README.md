@@ -30,11 +30,11 @@
 
 ## 웹 버전
 
-- [repeat-exam.web.app](https://repeat-exam.web.app)
+- [jebbang.web.app](https://jebbang.web.app)
 
 ## 개인정보처리방침
 
-- [https://repeat-exam.web.app/etc/policy.html](https://repeat-exam.web.app/etc/policy.html)
+- [https://jebbang.web.app/etc/policy.html](https://jebbang.web.app/etc/policy.html)
 
 ## 스크린샷
 
