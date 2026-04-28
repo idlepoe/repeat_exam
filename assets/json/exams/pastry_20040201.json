@@ -456,7 +456,7 @@
     "exam_session": "2004-02-01",
     "subject": "제조이론",
     "question_number": 12,
-    "question_text": "다음의 머랭(meringue) 중에서 설탕을 끓여서 시럽으로 만 들어 제조하는 것은?",
+    "question_text": "다음의 머랭(meringue) 중에서 설탕을 끓여서 시럽으로 만들어 제조하는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -579,7 +579,7 @@
     "exam_session": "2004-02-01",
     "subject": "제조이론",
     "question_number": 15,
-    "question_text": "반죽형 케이크를 구웠더니 너무 가볍고 부서지는 현상이 나 타났다. 그 원인이 아닌 것은?",
+    "question_text": "반죽형 케이크를 구웠더니 너무 가볍고 부서지는 현상이 나타났다. 그 원인이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -743,7 +743,7 @@
     "exam_session": "2004-02-01",
     "subject": "제조이론",
     "question_number": 19,
-    "question_text": "일반적으로 적절한 2차 발효점은 완제품 용적의 몇 % 가 가장 적당한가?",
+    "question_text": "일반적으로 적절한 2차 발효점은 완제품 용적의 몇 %가 가장 적당한가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1194,7 +1194,7 @@
     "exam_session": "2004-02-01",
     "subject": "재료과학",
     "question_number": 30,
-    "question_text": "어떤 제품의 가격이 600원일 때 이것의 제조원가는 얼마인 가? 단, 손실율 10%,이익률(마진율) 15%, 부가가치세 10% 를 포함한 가격이다.",
+    "question_text": "어떤 제품의 가격이 600원일 때 이것의 제조원가는 얼마인 가? 단, 손실율 10%, 이익률(마진율) 15%, 부가가치세 10%를 포함한 가격이다.",
     "question_image_url": null,
     "choices": [
       {
@@ -1845,7 +1845,7 @@
     "exam_session": "2004-02-01",
     "subject": "영양학",
     "question_number": 46,
-    "question_text": "유용한 장내 세균의 발육을 왕성하게 하여 장에 좋은 영향 을 미치는 이당류는?",
+    "question_text": "유용한 장내 세균의 발육을 왕성하게 하여 장에 좋은 영향을 미치는 이당류는?",
     "question_image_url": null,
     "choices": [
       {
@@ -2250,7 +2250,7 @@
     "exam_session": "2004-02-01",
     "subject": "식품위생학",
     "question_number": 56,
-    "question_text": "대장균 O-157 이 내는 독성물질은?",
+    "question_text": "대장균 O-157이 내는 독성물질은?",
     "question_image_url": null,
     "choices": [
       {

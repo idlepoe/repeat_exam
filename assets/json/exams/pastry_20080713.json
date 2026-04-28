@@ -46,7 +46,7 @@
     "exam_session": "2008-07-13",
     "subject": "제조이론",
     "question_number": 2,
-    "question_text": "고율배합 제품과 저율배합 제품 비중의 일반적인 비교 설명 으로 맞는 것은?",
+    "question_text": "고율배합 제품과 저율배합 제품 비중의 일반적인 비교 설명으로 맞는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -87,7 +87,7 @@
     "exam_session": "2008-07-13",
     "subject": "제조이론",
     "question_number": 3,
-    "question_text": "직경이 10cm, 높이가 4.5cm인 원형팬에 부피 2.4cm³당 1g 인 반죽을 70%로 팬닝 한다면 채워야 할 반죽의 무게는 약 얼마인가?",
+    "question_text": "직경이 10cm, 높이가 4.5cm인 원형팬에 부피 2.4cm³당 1g 인 반죽을 70%로 팬닝 한다면 채워야할 반죽의 무게는 약 얼마인가?",
     "question_image_url": null,
     "choices": [
       {
@@ -620,7 +620,7 @@
     "exam_session": "2008-07-13",
     "subject": "제조이론",
     "question_number": 16,
-    "question_text": "식빵 600g짜리 10개를 제조할 때 발효 및 굽기·냉각 손실 등 을 합하여 총 손실이 20%이고, 배합률의 합계가 150% 라면 밀가루 사용량은?",
+    "question_text": "식빵 600g짜리 10개를 제조할 때 발효 및 굽기·냉각 손실 등을 합하여 총 손실이 20%이고, 배합률의 합계가 150% 라면 밀가루 사용량은?",
     "question_image_url": null,
     "choices": [
       {
@@ -973,7 +973,7 @@
       "재료과학"
     ],
     "aiExplanation": {
-      "correctExplanation": "새로운 팬은 표면의 기름기나 불순물을 제거하고 코팅을 안정화하기 위해 길들이기(Seasoning) 과정이 필요합니다. 218℃ 이하에서 1시간 정도 구워 코팅을 입히는 것이 정석입니다.",
+      "correctExplanation": "새로운 팬은 표면의 기름기나 불순물을 제거하고 코팅을 안정화하기 위해 길들이기(Seasoning)과정이 필요합니다. 218℃ 이하에서 1시간 정도 구워 코팅을 입히는 것이 정석입니다.",
       "wrongAnswerNotes": [
         "1번: 새 팬은 길들이기를 통해 코팅을 안정화해야 함.",
         "2번: 실리콘 코팅은 고온에서 손상될 수 있음.",
@@ -1932,7 +1932,7 @@
     "exam_session": "2008-07-13",
     "subject": "영양학",
     "question_number": 48,
-    "question_text": "밀가루가 75%의 탄수화물, 10%의 단백질, 1%의 지방을 함 유하고 있다면 100g의 밀가루를 섭취하였을 때 얻을 수 있 은 열량은?",
+    "question_text": "밀가루가 75%의 탄수화물, 10%의 단백질, 1%의 지방을 함 유하고 있다면 100g의 밀가루를 섭취하였을 때 얻을 수 있은 열량은?",
     "question_image_url": null,
     "choices": [
       {

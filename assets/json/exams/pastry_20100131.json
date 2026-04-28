@@ -34,7 +34,7 @@
       "wrongAnswerNotes": [
         "1번: 오버런의 정의를 정확히 설명함.",
         "2번: 이는 버터 제조 시 발생하는 유지 분리 현상입니다.",
-        "3번: 이는 아이스크림 믹스의 숙성(Aging) 과정에 대한 설명입니다.",
+        "3번: 이는 아이스크림 믹스의 숙성(Aging)과정에 대한 설명입니다.",
         "4번: 이는 우유의 균질화(Homogenization) 공정입니다."
       ],
       "examTip": "오버런 = 공기 혼입량 = 부피 증가율"
@@ -210,7 +210,7 @@
     "exam_session": "2010-01-31",
     "subject": "제조이론",
     "question_number": 6,
-    "question_text": "퍼프페이스트리의 휴지가 종료되었을 때 손으로 살짝 누르 게 되면 다음 중 어떤 현상이 나타나는가?",
+    "question_text": "퍼프페이스트리의 휴지가 종료되었을 때 손으로 살짝 누르게 되면 다음 중 어떤 현상이 나타나는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -661,7 +661,7 @@
     "exam_session": "2010-01-31",
     "subject": "제조이론",
     "question_number": 17,
-    "question_text": "오븐에서 나온 빵을 냉각하여 포장하는 온도로 가장 적합 한 것은?",
+    "question_text": "오븐에서 나온 빵을 냉각하여 포장하는 온도로 가장 적합한 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -784,7 +784,7 @@
     "exam_session": "2010-01-31",
     "subject": "제조이론",
     "question_number": 20,
-    "question_text": "제빵에서 탈지분유를 1% 증가시킬 때 추가되는 물의 양으 로 가장 적합한 것은?",
+    "question_text": "제빵에서 탈지분유를 1% 증가시킬 때 추가되는 물의 양으로 가장 적합한 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1194,7 +1194,7 @@
     "exam_session": "2010-01-31",
     "subject": "재료과학",
     "question_number": 30,
-    "question_text": "대량생산 공장에서 많이 사용되는 오븐으로 반죽이 들어가 는 입구와 제품이 나오는 출구가 서로 다른 오븐은?",
+    "question_text": "대량생산 공장에서 많이 사용되는 오븐으로 반죽이 들어가는 입구와 제품이 나오는 출구가 서로 다른 오븐은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1727,7 +1727,7 @@
     "exam_session": "2010-01-31",
     "subject": "영양학",
     "question_number": 43,
-    "question_text": "밀가루의 점도변화를 측정함으로써 알파-아밀라아제 효과 를 판정할 수 있는 기기는?",
+    "question_text": "밀가루의 점도변화를 측정함으로써 알파-아밀라아제 효과를 판정할 수 있는 기기는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1932,7 +1932,7 @@
     "exam_session": "2010-01-31",
     "subject": "영양학",
     "question_number": 48,
-    "question_text": "다음의 단팥빵 영양가 표를 참고하여 단팥빵 200g의 열량 을 구하면 얼마인가?",
+    "question_text": "다음의 단팥빵 영양가 표를 참고하여 단팥빵 200g의 열량을 구하면 얼마인가?",
     "question_image_url": null,
     "choices": [
       {
@@ -2301,7 +2301,7 @@
     "exam_session": "2010-01-31",
     "subject": "식품위생학",
     "question_number": 57,
-    "question_text": "소독력이 강한 양이온계면활성제로서 종업원의 손을 소독 할 때나 용기 및 기구의 소독제로 알맞은 것은?",
+    "question_text": "소독력이 강한 양이온계면활성제로서 종업원의 손을 소독할 때나 용기 및 기구의 소독제로 알맞은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2383,7 +2383,7 @@
     "exam_session": "2010-01-31",
     "subject": "식품위생학",
     "question_number": 59,
-    "question_text": "알레르기성 식중독의 원인이 될 수 있는 가능성이 가장 높 은 식품은?",
+    "question_text": "알레르기성 식중독의 원인이 될 수 있는 가능성이 가장 높은 식품은?",
     "question_image_url": null,
     "choices": [
       {

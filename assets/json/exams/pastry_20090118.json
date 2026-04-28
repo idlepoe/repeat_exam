@@ -46,7 +46,7 @@
     "exam_session": "2009-01-18",
     "subject": "제조이론",
     "question_number": 2,
-    "question_text": "40g의 계량컵에 물을 가득 채웠더니 240g이었다. 과자 반죽 을 넣고 달아보니 220g 이 되었다면 이 반죽의 비중은 얼마 인가?",
+    "question_text": "40g의 계량컵에 물을 가득 채웠더니 240g이었다. 과자 반죽을 넣고 달아보니 220g이 되었다면 이 반죽의 비중은 얼마 인가?",
     "question_image_url": null,
     "choices": [
       {
@@ -620,7 +620,7 @@
     "exam_session": "2009-01-18",
     "subject": "제조이론",
     "question_number": 16,
-    "question_text": "같은 밀가루로 식빵 불란서빵을 만들 경우 , 식빵의 가수율 이 63%였다면 불란서빵의 가수율을 얼마나 하는 것이 가장 좋은가?",
+    "question_text": "같은 밀가루로 식빵 불란서빵을 만들 경우, 식빵의 가수율이 63%였다면 불란서빵의 가수율을 얼마나 하는 것이 가장 좋은가?",
     "question_image_url": null,
     "choices": [
       {
@@ -743,7 +743,7 @@
     "exam_session": "2009-01-18",
     "subject": "제조이론",
     "question_number": 19,
-    "question_text": "제빵시 팬오일로 유지를 사용할 때 다음 중 무엇이 높은 것 을 선택하는 것이 좋은가?",
+    "question_text": "제빵시 팬오일로 유지를 사용할 때 다음 중 무엇이 높은 것을 선택하는 것이 좋은가?",
     "question_image_url": null,
     "choices": [
       {
@@ -948,7 +948,7 @@
     "exam_session": "2009-01-18",
     "subject": "재료과학",
     "question_number": 24,
-    "question_text": "같은 조건의 반죽에 설탕, 포도당, 과당을 같은 농도로첨가 했다고 가정할 때 마이야르 반응속도를 촉진시키는 순서대 로 나열된 것은?",
+    "question_text": "같은 조건의 반죽에 설탕, 포도당, 과당을 같은 농도로첨가 했다고 가정할 때 마이야르 반응속도를 촉진시키는 순서대로 나열된 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1112,7 +1112,7 @@
     "exam_session": "2009-01-18",
     "subject": "재료과학",
     "question_number": 28,
-    "question_text": "갓 구워낸 빵을 식혀 상온으로 낮추는 냉각에 관한 설명으 로 틀린 것은?",
+    "question_text": "갓 구워낸 빵을 식혀 상온으로 낮추는 냉각에 관한 설명으로 틀린 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1358,7 +1358,7 @@
     "exam_session": "2009-01-18",
     "subject": "영양학",
     "question_number": 34,
-    "question_text": "젤리를 제조하는데 당분 60~65% , 펙틴 1.0~1.5% 일 때 가장 적합한 pH는?",
+    "question_text": "젤리를 제조하는데 당분 60~65%, 펙틴 1.0~1.5% 일 때 가장 적합한 pH는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1399,7 +1399,7 @@
     "exam_session": "2009-01-18",
     "subject": "영양학",
     "question_number": 35,
-    "question_text": "가공하지 않은 초콜릿(비터 초콜릿:Bitter Chocolate)40% 에 포함되어 있는 가장 적합한 코코아의 양은?",
+    "question_text": "가공하지 않은 초콜릿(비터 초콜릿:Bitter Chocolate) 40%에 포함되어 있는 가장 적합한 코코아의 양은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1563,7 +1563,7 @@
     "exam_session": "2009-01-18",
     "subject": "영양학",
     "question_number": 39,
-    "question_text": "건조이스트는 같은 중량을 사용할 생이스트 보다 활성이 약 몇 배 더 강한가?",
+    "question_text": "건조이스트는 같은 중량을 사용할 생이스트보다 활성이 약 몇 배 더 강한가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1809,7 +1809,7 @@
     "exam_session": "2009-01-18",
     "subject": "영양학",
     "question_number": 45,
-    "question_text": "과실이 익어감에 따라 어떤 효소의 작용에 의해 수용성펙틴 이 생성되는가?",
+    "question_text": "과실이 익어감에 따라 어떤 효소의 작용에 의해 수용성펙틴이 생성되는가?",
     "question_image_url": null,
     "choices": [
       {

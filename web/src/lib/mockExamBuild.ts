@@ -1,4 +1,5 @@
 import { fetchExamSessionList } from './examMeta'
+import { examJsonUrl } from './examFiles'
 import type { Question } from '../types/question'
 import type { MockExamKind } from './mockExamStorage'
 
@@ -19,12 +20,6 @@ function shuffle<T>(items: T[]): T[] {
     ;[arr[i], arr[j]] = [arr[j], arr[i]]
   }
   return arr
-}
-
-function examFileUrl(examKind: MockExamKind, session: string): string {
-  const ymd = session.replace(/-/g, '')
-  const prefix = examKind === '제빵기능사' ? 'bread' : 'pastry'
-  return `/assets/json/exams/${prefix}_${ymd}.json`
 }
 
 /**
@@ -50,7 +45,7 @@ export async function buildMockExamQuestions(
   }
 
   for (const session of sessions) {
-    const url = examFileUrl(examKind, session)
+    const url = examJsonUrl(examKind, session)
     try {
       const res = await fetch(url)
       if (!res.ok) continue

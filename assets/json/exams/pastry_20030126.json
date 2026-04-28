@@ -46,7 +46,7 @@
     "exam_session": "2003-01-26",
     "subject": "제조이론",
     "question_number": 2,
-    "question_text": "비중 0.75인 과자 반죽 1ℓ 의 무게는?",
+    "question_text": "비중 0.75인 과자 반죽 1ℓ의 무게는?",
     "question_image_url": null,
     "choices": [
       {
@@ -87,7 +87,7 @@
     "exam_session": "2003-01-26",
     "subject": "제조이론",
     "question_number": 3,
-    "question_text": "용적 2,050cm³인 팬에 스펀지 케이크 반죽을 400g 분할할 때 좋은 제품이 되었다면 용적 2,870cm³인 팬에 적당 한 분 할 무게는?",
+    "question_text": "용적 2,050cm³인 팬에 스펀지 케이크 반죽을 400g 분할할 때 좋은 제품이 되었다면 용적 2,870cm³인 팬에 적당한 분할 무게는?",
     "question_image_url": null,
     "choices": [
       {
@@ -169,7 +169,7 @@
     "exam_session": "2003-01-26",
     "subject": "제조이론",
     "question_number": 5,
-    "question_text": "도넛에 묻힌 설탕이 녹는 현상(발한)을 감소시키기 위한 조치 로 틀린 것은?",
+    "question_text": "도넛에 묻힌 설탕이 녹는 현상(발한)을 감소시키기 위한 조치로 틀린 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -251,7 +251,7 @@
     "exam_session": "2003-01-26",
     "subject": "제조이론",
     "question_number": 7,
-    "question_text": "퍼프 페이스트리 제조시 충전용 유지가 많을수록 어떤 결과 가 생기는가?",
+    "question_text": "퍼프 페이스트리 제조시 충전용 유지가 많을수록 어떤 결과가 생기는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -333,7 +333,7 @@
     "exam_session": "2003-01-26",
     "subject": "제조이론",
     "question_number": 9,
-    "question_text": "파운드 케이크를 제조하려할 때 유지의 품온으로 가장 알맞은 것은?",
+    "question_text": "파운드 케이크를 제조하려 할 때 유지의 품온으로 가장 알맞은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -415,7 +415,7 @@
     "exam_session": "2003-01-26",
     "subject": "제조이론",
     "question_number": 11,
-    "question_text": "소다 1.2%를 사용하는 배합비율의 팽창제를 베이킹파우더 로 대체하고자 할 경우 사용량으로 알맞은 것은?",
+    "question_text": "소다 1.2%를 사용하는 배합비율의 팽창제를 베이킹파우더로 대체하고자 할 경우 사용량으로 알맞은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -661,7 +661,7 @@
     "exam_session": "2003-01-26",
     "subject": "제조이론",
     "question_number": 17,
-    "question_text": "스펀지법에서 스펀지에 밀가루 사용량을 증가할 때 나타나 는 현상으로 틀린 것은?",
+    "question_text": "스펀지법에서 스펀지에 밀가루 사용량을 증가할 때 나타나는 현상으로 틀린 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -702,7 +702,7 @@
     "exam_session": "2003-01-26",
     "subject": "제조이론",
     "question_number": 18,
-    "question_text": "스펀지법에서 사용할 물의 온도는? (원하는 반죽온도 : 2 6℃, 마찰계수 : 20, 실내온도 : 26℃,스펀지, 반죽온도 : 28℃, 밀가루온도 : 21℃)",
+    "question_text": "스펀지법에서 사용할 물의 온도는? (원하는 반죽온도: 2 6℃, 마찰계수: 20, 실내온도: 26℃,스펀지, 반죽온도: 28℃, 밀가루온도: 21℃)",
     "question_image_url": null,
     "choices": [
       {
@@ -784,7 +784,7 @@
     "exam_session": "2003-01-26",
     "subject": "제조이론",
     "question_number": 20,
-    "question_text": "적당한 2차 발효점은 여러 여건에 따라 차이가 있다. 일반 적으로 완제품의 몇 % 까지 팽창시키는가?",
+    "question_text": "적당한 2차 발효점은 여러 여건에 따라 차이가 있다. 일반 적으로 완제품의 몇 %까지 팽창시키는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1317,7 +1317,7 @@
     "exam_session": "2003-01-26",
     "subject": "영양학",
     "question_number": 33,
-    "question_text": "모노, 디 글리세라이드(mono, diglyceride)는 어느 반응 에 서 생성되는가?",
+    "question_text": "모노, 디 글리세라이드(mono, diglyceride)는 어느 반응에서 생성되는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1440,7 +1440,7 @@
     "exam_session": "2003-01-26",
     "subject": "영양학",
     "question_number": 36,
-    "question_text": "건조 이스트는 같은 중량을 사용할 때 생 이스트 보다 활성 이 약 몇 배 더 강한가?",
+    "question_text": "건조 이스트는 같은 중량을 사용할 때 생 이스트보다 활성이 약 몇 배 더 강한가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1645,7 +1645,7 @@
     "exam_session": "2003-01-26",
     "subject": "영양학",
     "question_number": 41,
-    "question_text": "빵류에 부드러움을 주기 위하여 사용하는 유지 제품의 특성 을 무엇이라 하는가?",
+    "question_text": "빵류에 부드러움을 주기 위하여 사용하는 유지 제품의 특성을 무엇이라 하는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1686,7 +1686,7 @@
     "exam_session": "2003-01-26",
     "subject": "영양학",
     "question_number": 42,
-    "question_text": "각 회사마다 제분율이 다르다. 어느 회사가 밀가루 생산량 이 가장 적은가? (제분율은 A사 70%, B사 72%, C사 74%, D사 76%)",
+    "question_text": "각 회사마다 제분율이 다르다. 어느 회사가 밀가루 생산량이 가장 적은가? (제분율은 A사 70%, B사 72%, C사 74%, D사 76%)",
     "question_image_url": null,
     "choices": [
       {
@@ -1973,7 +1973,7 @@
     "exam_session": "2003-01-26",
     "subject": "영양학",
     "question_number": 49,
-    "question_text": "리놀레산(linoleic acid)가 결핍시 발생할 수 있는 장애 가 아닌 것은?",
+    "question_text": "리놀레산(linoleic acid)가 결핍시 발생할 수 있는 장애가 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2178,7 +2178,7 @@
     "exam_session": "2003-01-26",
     "subject": "식품위생학",
     "question_number": 54,
-    "question_text": "식품에 세균이 오염되어 증식시 이들이 생성한 유독 물질 에 의해 발생되는 생리적 이상현상은?",
+    "question_text": "식품에 세균이 오염되어 증식시 이들이 생성한 유독 물질에 의해 발생되는 생리적 이상현상은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2383,7 +2383,7 @@
     "exam_session": "2003-01-26",
     "subject": "식품위생학",
     "question_number": 59,
-    "question_text": "적혈구의 혈색소 감소, 체중감소 및 신장장해, 칼슘대사 이 상과 호흡장해를 유발하는 유해성 금속물질은?",
+    "question_text": "적혈구의 혈색소 감소, 체중감소 및 신장장해, 칼슘대사이 상과 호흡장해를 유발하는 유해성 금속물질은?",
     "question_image_url": null,
     "choices": [
       {

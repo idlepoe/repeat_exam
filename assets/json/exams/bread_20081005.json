@@ -166,7 +166,7 @@
     "exam_session": "2008-10-05",
     "subject": "제조이론",
     "question_number": 5,
-    "question_text": "케이크 반죽의 ph 가 적정 범위를 벗어나 알칼리일 경우 제품에서 나타나는 현상은?",
+    "question_text": "케이크 반죽의 ph가 적정 범위를 벗어나 알칼리일 경우 제품에서 나타나는 현상은?",
     "question_image_url": null,
     "choices": [
       {
@@ -248,7 +248,7 @@
     "exam_session": "2008-10-05",
     "subject": "제조이론",
     "question_number": 7,
-    "question_text": "다음 제품 중 정형하여 패닝 할 경우 제품의 간격을 가장 충 분히 유지하여야 하는 제품은?",
+    "question_text": "다음 제품 중 정형하여 패닝할 경우 제품의 간격을 가장 충 분히 유지하여야 하는 제품은?",
     "question_image_url": null,
     "choices": [
       {
@@ -453,7 +453,7 @@
     "exam_session": "2008-10-05",
     "subject": "제조이론",
     "question_number": 12,
-    "question_text": "다음 기계 설비 중 대량 생산업체에서 주로 사용하는 설비 로 가장 알맞은 것은?",
+    "question_text": "다음 기계 설비 중 대량 생산업체에서 주로 사용하는 설비로 가장 알맞은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -617,7 +617,7 @@
     "exam_session": "2008-10-05",
     "subject": "제조이론",
     "question_number": 16,
-    "question_text": "2차 발효시 발효실 의 평균 온도와 습도는?",
+    "question_text": "2차 발효시 발효실의 평균 온도와 습도는?",
     "question_image_url": null,
     "choices": [
       {
@@ -699,7 +699,7 @@
     "exam_session": "2008-10-05",
     "subject": "제조이론",
     "question_number": 18,
-    "question_text": "팬 기름칠을 다른 제품 보다 더 많이 하는 제품은?",
+    "question_text": "팬 기름칠을 다른 제품보다 더 많이 하는 제품은?",
     "question_image_url": null,
     "choices": [
       {
@@ -822,7 +822,7 @@
     "exam_session": "2008-10-05",
     "subject": "재료과학",
     "question_number": 21,
-    "question_text": "다음 중 표준 스트레이트법 에서 믹싱 후 반죽 온도로 가장 적합한 것은?",
+    "question_text": "다음 중 표준 스트레이트법에서 믹싱 후 반죽 온도로 가장 적합한 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1022,7 +1022,7 @@
     "exam_session": "2008-10-05",
     "subject": "재료과학",
     "question_number": 26,
-    "question_text": "식빵의 표피에 작은 물방울이 생기는 원인과 거리 가 먼 것은?",
+    "question_text": "식빵의 표피에 작은 물방울이 생기는 원인과 거리가 먼 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1942,7 +1942,7 @@
     "exam_session": "2008-10-05",
     "subject": "영양학",
     "question_number": 49,
-    "question_text": "산과 알칼리 및 열에서 비교적 안정하고 칼슘의 흡수를 도 우며 골격 발육과 관계 깊은 비타민은?",
+    "question_text": "산과 알칼리 및 열에서 비교적 안정하고 칼슘의 흡수를 도우며 골격 발육과 관계 깊은 비타민은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2142,7 +2142,7 @@
     "exam_session": "2008-10-05",
     "subject": "식품위생학",
     "question_number": 54,
-    "question_text": "대장균 O-157 이 내는 독성물질은?",
+    "question_text": "대장균 O-157이 내는 독성물질은?",
     "question_image_url": null,
     "choices": [
       {

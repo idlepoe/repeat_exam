@@ -743,7 +743,7 @@
     "exam_session": "2010-03-28",
     "subject": "제조이론",
     "question_number": 19,
-    "question_text": "빵 발효에서 다른 조건이 같을 때 발효 손실에 대한 설명으 로 틀린 것은?",
+    "question_text": "빵 발효에서 다른 조건이 같을 때 발효 손실에 대한 설명으로 틀린 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1904,7 +1904,7 @@
       },
       {
         "no": 3,
-        "text": "결핍증은 펠라그라(Pellagra) 이다."
+        "text": "결핍증은 펠라그라(Pellagra)이다."
       },
       {
         "no": 4,
@@ -2014,7 +2014,7 @@
     "exam_session": "2010-03-28",
     "subject": "영양학",
     "question_number": 50,
-    "question_text": "20대 한 남성의 하루 열량 섭취량을 2500 kcal 로 했을 때 가장 이상적인 1일 지방 섭취량은?",
+    "question_text": "20대 한 남성의 하루 열량 섭취량을 2500 kcal로 했을 때 가장 이상적인 1일 지방 섭취량은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2424,7 +2424,7 @@
     "exam_session": "2010-03-28",
     "subject": "식품위생학",
     "question_number": 60,
-    "question_text": "보툴리누스 식중독에서 나타날 수 있는 주요 증상 및 증후 가 아닌 것은?",
+    "question_text": "보툴리누스 식중독에서 나타날 수 있는 주요 증상 및 증후가 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {

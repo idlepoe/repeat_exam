@@ -8,6 +8,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const repoExamsDir = path.resolve(__dirname, '../assets/json/exams')
+const buildOutExamsDir = path.resolve(__dirname, 'dist/assets/json/exams')
 
 /** dev/preview: /assets/json/exams/*.json → repo `assets/json/exams` (모의고사 출제) */
 function serveRepoExamsPlugin() {
@@ -51,10 +52,29 @@ function serveRepoExamsPlugin() {
   }
 }
 
+/** build: repo exams JSON을 dist/assets/json/exams 로 복사 */
+function copyRepoExamsOnBuildPlugin() {
+  return {
+    name: 'copy-repo-exams-on-build',
+    closeBundle() {
+      if (!fs.existsSync(repoExamsDir)) return
+      fs.mkdirSync(buildOutExamsDir, { recursive: true })
+      for (const name of fs.readdirSync(repoExamsDir)) {
+        if (!/^(bread|pastry)_\d{8}\.json$/i.test(name)) continue
+        fs.copyFileSync(
+          path.join(repoExamsDir, name),
+          path.join(buildOutExamsDir, name)
+        )
+      }
+    },
+  }
+}
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     serveRepoExamsPlugin(),
+    copyRepoExamsOnBuildPlugin(),
     react(),
     babel({ presets: [reactCompilerPreset()] }),
     VitePWA({

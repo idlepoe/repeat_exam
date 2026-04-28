@@ -169,7 +169,7 @@
     "exam_session": "2003-03-30",
     "subject": "제조이론",
     "question_number": 5,
-    "question_text": "굳어진 설탕 아이싱 크림을 여리게 하는 방법으로 부적당 한 것은?",
+    "question_text": "굳어진 설탕 아이싱 크림을 여리게 하는 방법으로 부적당한 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -415,7 +415,7 @@
     "exam_session": "2003-03-30",
     "subject": "제조이론",
     "question_number": 11,
-    "question_text": "제품의 중앙부가 오목하게 생산되었다. 조치하여야 할 사항 이 아닌 것은?",
+    "question_text": "제품의 중앙부가 오목하게 생산되었다. 조치하여야 할 사항이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -825,7 +825,7 @@
     "exam_session": "2003-03-30",
     "subject": "재료과학",
     "question_number": 21,
-    "question_text": "다음 식빵 밑바닥이 움푹패이는 결점(Cipping)에 대한 원인 을 열거한 것 중 관계없는 것은?",
+    "question_text": "다음 식빵 밑바닥이 움푹패이는 결점(Cipping)에 대한 원인을 열거한 것 중 관계없는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1645,7 +1645,7 @@
     "exam_session": "2003-03-30",
     "subject": "영양학",
     "question_number": 41,
-    "question_text": "빵 발효시 밀가루에 대하여 2% 정도의 설탕이 이스트 (yeast)에 의하여 소모될 경우 밀가루가 132㎏이라면 발효 에 의하여 소모되는 설탕의 양은?",
+    "question_text": "빵 발효시 밀가루에 대하여 2% 정도의 설탕이 이스트 (yeast)에 의하여 소모될 경우 밀가루가 132㎏이라면 발효에 의하여 소모되는 설탕의 양은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1715,7 +1715,7 @@
       "wrongAnswerNotes": [
         "1번: 연수는 미네랄 부족으로 이스트 활성이 낮아져 이스트푸드 보충이 필수적입니다.",
         "2번: 경수는 이스트 활성을 억제하여 발효시간을 오히려 지연시킵니다.",
-        "3번: 경도는 물 속의 칼슘(Ca)과 마그네슘(Mg) 이온 농도에 의해 결정됩니다.",
+        "3번: 경도는 물 속의 칼슘(Ca)과 마그네슘(Mg)이온 농도에 의해 결정됩니다.",
         "4번: 일시 경수는 끓이는 것만으로도 연수화가 가능합니다."
       ],
       "examTip": "연수(미네랄 부족)는 이스트푸드로 보완!"
@@ -1973,7 +1973,7 @@
     "exam_session": "2003-03-30",
     "subject": "영양학",
     "question_number": 49,
-    "question_text": "산과 알칼리 및 열에서 비교적 안정하고 칼슘의 흡수를 도 우며 골격 발육과 관계 깊은 비타민은?",
+    "question_text": "산과 알칼리 및 열에서 비교적 안정하고 칼슘의 흡수를 도우며 골격 발육과 관계 깊은 비타민은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2219,7 +2219,7 @@
     "exam_session": "2003-03-30",
     "subject": "식품위생학",
     "question_number": 55,
-    "question_text": "다음 중 살모넬라(Salmonella)균에 의한 식중독 증상과 가장 거리가 먼 것은?",
+    "question_text": "다음 중 살모넬라(Salmonella) 균에 의한 식중독 증상과 가장 거리가 먼 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2301,7 +2301,7 @@
     "exam_session": "2003-03-30",
     "subject": "식품위생학",
     "question_number": 57,
-    "question_text": "알레르기(allergy)성 식중독의 주된 원인 식품은?",
+    "question_text": "알레르기(allergy) 성 식중독의 주된 원인 식품은?",
     "question_image_url": null,
     "choices": [
       {

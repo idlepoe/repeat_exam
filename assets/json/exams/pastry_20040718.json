@@ -5,7 +5,7 @@
     "exam_session": "2004-07-18",
     "subject": "제조이론",
     "question_number": 1,
-    "question_text": "코코아 20%에 해당하는 초콜릿을 사용하여 케이크를 만들려 고 할 때 초콜릿 사용량은?",
+    "question_text": "코코아 20%에 해당하는 초콜릿을 사용하여 케이크를 만들려고 할 때 초콜릿 사용량은?",
     "question_image_url": null,
     "choices": [
       {
@@ -866,7 +866,7 @@
     "exam_session": "2004-07-18",
     "subject": "재료과학",
     "question_number": 22,
-    "question_text": "오버나이트 스펀지(overnight sponge)법에 대한 설명으로 틀린 것은?",
+    "question_text": "오버나이트 스펀지(overnight sponge) 법에 대한 설명으로 틀린 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1071,7 +1071,7 @@
     "exam_session": "2004-07-18",
     "subject": "재료과학",
     "question_number": 27,
-    "question_text": "식빵 반죽을 분할할 때 처음에 분할한 반죽과 나중에 분할 한 반죽은 숙성도의 차이가 크므로, 단시간 내에 분할해야 한다. 몇 분 이내로 완료하는 게 가장 좋은가?",
+    "question_text": "식빵 반죽을 분할할 때 처음에 분할한 반죽과 나중에 분할한 반죽은 숙성도의 차이가 크므로, 단시간 내에 분할해야 한다. 몇 분 이내로 완료하는게 가장 좋은가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1399,7 +1399,7 @@
     "exam_session": "2004-07-18",
     "subject": "영양학",
     "question_number": 35,
-    "question_text": "식빵 제조시 물을 넣는 것 보다 우유를 넣은 제품의 껍질색 이 진하다. 우유의 무엇이 제품의 껍질색을 진하게 하는가?",
+    "question_text": "식빵 제조시 물을 넣는 것보다 우유를 넣은 제품의 껍질색이 진하다. 우유의 무엇이 제품의 껍질색을 진하게 하는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1973,7 +1973,7 @@
     "exam_session": "2004-07-18",
     "subject": "영양학",
     "question_number": 49,
-    "question_text": "두뇌와 신경, 적혈구의 열원으로도 이용되며 체내 당 대사 의 중심물질인 것은?",
+    "question_text": "두뇌와 신경, 적혈구의 열원으로도 이용되며 체내 당 대사의 중심물질인 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2178,7 +2178,7 @@
     "exam_session": "2004-07-18",
     "subject": "식품위생학",
     "question_number": 54,
-    "question_text": "다음 물질 중 '이따이이따이병' 을 발생시키는 것은?",
+    "question_text": "다음 물질 중 '이따이이따이병'을 발생시키는 것은?",
     "question_image_url": null,
     "choices": [
       {

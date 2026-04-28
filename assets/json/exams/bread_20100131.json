@@ -374,7 +374,7 @@
     "exam_session": "2010-01-31",
     "subject": "제조이론",
     "question_number": 10,
-    "question_text": "비용적이 2.5(㎤/g)인 제품을 다음과 같은 원형팬을 이용하 여 만들고자 한다. 필요한 반죽의 무게는? (단, 소수점 첫째 자리에서 반올림하시오.)",
+    "question_text": "비용적이 2.5(㎤/g) 인 제품을 다음과 같은 원형팬을 이용하 여 만들고자 한다. 필요한 반죽의 무게는? (단, 소수점 첫째 자리에서 반올림하시오.)",
     "question_image_url": null,
     "choices": [
       {
@@ -579,7 +579,7 @@
     "exam_session": "2010-01-31",
     "subject": "제조이론",
     "question_number": 15,
-    "question_text": "젤리 롤 케이크를 말아서 성형 할 때 표면이 터지는 결점에 대한 보완사항이 아닌 것은?",
+    "question_text": "젤리 롤 케이크를 말아서 성형할 때 표면이 터지는 결점에 대한 보완사항이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -661,7 +661,7 @@
     "exam_session": "2010-01-31",
     "subject": "제조이론",
     "question_number": 17,
-    "question_text": "제빵 배합율 작성시 베이커스 퍼센트(Baker's %)에서 기준 이 되는 재료는?",
+    "question_text": "제빵 배합율 작성시 베이커스 퍼센트(Baker's %)에서 기준이 되는 재료는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1260,7 +1260,7 @@
       "영양학"
     ],
     "aiExplanation": {
-      "correctExplanation": "상대적 감미도는 설탕을 100으로 기준할 때 포도당은 약 75 정도의 감미를 가집니다. 과당(173), 맥아당(32), 전화당(130) 등 다른 당류의 수치와 혼동하지 않도록 주의해야 합니다.",
+      "correctExplanation": "상대적 감미도는 설탕을 100으로 기준할 때 포도당은 약 75 정도의 감미를 가집니다. 과당(173), 맥아당(32), 전화당(130)등 다른 당류의 수치와 혼동하지 않도록 주의해야 합니다.",
       "wrongAnswerNotes": [
         "1번: 과당의 감미도는 약 173으로 135는 틀린 수치입니다.",
         "2번: 포도당의 감미도는 설탕 대비 약 75로 올바른 연결입니다.",
@@ -1645,7 +1645,7 @@
     "exam_session": "2010-01-31",
     "subject": "영양학",
     "question_number": 41,
-    "question_text": "유장(whey products) 에 탈지분유, 밀가루, 대두분 등을 혼 합하여 탈지 분유의 기능과 유사하게 한 제품은?",
+    "question_text": "유장(whey products)에 탈지분유, 밀가루, 대두분 등을 혼합하여 탈지 분유의 기능과 유사하게한 제품은?",
     "question_image_url": null,
     "choices": [
       {

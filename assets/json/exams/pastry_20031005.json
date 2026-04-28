@@ -333,7 +333,7 @@
     "exam_session": "2003-10-05",
     "subject": "제조이론",
     "question_number": 9,
-    "question_text": "과일케이크를 만들 때 과일이 가라앉는 이유에 대한 설명으 로 틀린 것은?",
+    "question_text": "과일케이크를 만들 때 과일이 가라앉는 이유에 대한 설명으로 틀린 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -374,7 +374,7 @@
     "exam_session": "2003-10-05",
     "subject": "제조이론",
     "question_number": 10,
-    "question_text": "스펀지 케이크 제조시 제품의 중앙 부분이 함몰하는 원인으 로 가장 알맞은 것은?",
+    "question_text": "스펀지 케이크 제조시 제품의 중앙 부분이 함몰하는 원인으로 가장 알맞은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -538,7 +538,7 @@
     "exam_session": "2003-10-05",
     "subject": "제조이론",
     "question_number": 14,
-    "question_text": "파이롤러(pie roller)는 반죽을 롤러에 의해 평균적으로 늘리 는 기계인데, 주로 유지가 많은 반죽에 사용한다. 다음 중 파일롤러를 사용하지 않는 제품은?",
+    "question_text": "파이롤러(pie roller)는 반죽을 롤러에 의해 평균적으로 늘리는 기계인데, 주로 유지가 많은 반죽에 사용한다. 다음 중 파일롤러를 사용하지 않는 제품은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1030,7 +1030,7 @@
     "exam_session": "2003-10-05",
     "subject": "재료과학",
     "question_number": 26,
-    "question_text": "제빵의 생산시 고려해야할 원가요소에서 가장 거리가 먼 것은?",
+    "question_text": "제빵의 생산시 고려해야 할 원가요소에서 가장 거리가 먼 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1317,7 +1317,7 @@
     "exam_session": "2003-10-05",
     "subject": "영양학",
     "question_number": 33,
-    "question_text": "아이싱 크림이나 데커레이션에 사용되는 분당은 어느 당류 를 이용하는가?",
+    "question_text": "아이싱 크림이나 데커레이션에 사용되는 분당은 어느 당류를 이용하는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -2301,7 +2301,7 @@
     "exam_session": "2003-10-05",
     "subject": "식품위생학",
     "question_number": 57,
-    "question_text": "제과·제빵 공정 중 곰팡이에 의한 오염이 주로 발생하는 과 정은?",
+    "question_text": "제과·제빵 공정 중 곰팡이에 의한 오염이 주로 발생하는 과정은?",
     "question_image_url": null,
     "choices": [
       {

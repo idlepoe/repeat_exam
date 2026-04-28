@@ -56,6 +56,7 @@
       {
         "no": 2,
         "text": "전란(흰자와 노른자) 의 수분함량은75%정도이다,"
+        "text": "전란(흰자와 노른자)의 수분함량은75%정도이다,"
       },
       {
         "no": 3,
@@ -333,7 +334,7 @@
     "exam_session": "2010-07-11",
     "subject": "제조이론",
     "question_number": 9,
-    "question_text": "다음 믹싱 방법 중 먼저 유지와 설탕을 섞는 방법으로 부피 를 우선으로 할 때 사용하는 방법은?",
+    "question_text": "다음 믹싱 방법 중 먼저 유지와 설탕을 섞는 방법으로 부피를 우선으로 할 때 사용하는 방법은?",
     "question_image_url": null,
     "choices": [
       {
@@ -538,7 +539,7 @@
     "exam_session": "2010-07-11",
     "subject": "제조이론",
     "question_number": 14,
-    "question_text": "다음 굽기 중 과일 충전물이 끓어 넘치는 원인으로 점검할 사항이 아닌 것은 ?",
+    "question_text": "다음 굽기 중 과일 충전물이 끓어 넘치는 원인으로 점검할 사항이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -743,7 +744,7 @@
     "exam_session": "2010-07-11",
     "subject": "제조이론",
     "question_number": 19,
-    "question_text": "냉동빵 혼합(Mixing)시 흔히 사용하고 있는 제법으로, 환원 제로 시스테인(cysteine)들을 사용하는 제법은?",
+    "question_text": "냉동빵 혼합(Mixing) 시 흔히 사용하고 있는 제법으로, 환원 제로 시스테인(cysteine) 들을 사용하는 제법은?",
     "question_image_url": null,
     "choices": [
       {
@@ -948,7 +949,7 @@
     "exam_session": "2010-07-11",
     "subject": "재료과학",
     "question_number": 24,
-    "question_text": "분할된 반죽을 둥그렇게 말아 하나의 피막을 형성되도록 하는 기계는 ?",
+    "question_text": "분할된 반죽을 둥그렇게 말아 하나의 피막을 형성되도록 하는 기계는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1367,7 +1368,7 @@
       },
       {
         "no": 2,
-        "text": "코코아 버터(cocoa butter)를 만들고 남은 박(press cake) 을 분쇄한 것이다."
+        "text": "코코아 버터(cocoa butter)를 만들고 남은 박(press cake)을 분쇄한 것이다."
       },
       {
         "no": 3,
@@ -1375,7 +1376,7 @@
       },
       {
         "no": 4,
-        "text": "비터 초콜릿(butter chocolate) 을 건조 분쇄한 것이다."
+        "text": "비터 초콜릿(butter chocolate)을 건조 분쇄한 것이다."
       }
     ],
     "correct_answer": 2,
@@ -1727,7 +1728,7 @@
     "exam_session": "2010-07-11",
     "subject": "영양학",
     "question_number": 43,
-    "question_text": "다음 유제품 중 일반적으로 100g 당 열량을 가장 많이 내 는 것은?",
+    "question_text": "다음 유제품 중 일반적으로 100g 당 열량을 가장 많이 내는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2244,7 +2245,7 @@
       "식품위생학"
     ],
     "aiExplanation": {
-      "correctExplanation": "방충망의 눈 크기는 해충의 침입을 막기 위해 30메쉬(mesh) 이상이 적당합니다. 메쉬 숫자가 클수록 구멍의 크기는 작아집니다.",
+      "correctExplanation": "방충망의 눈 크기는 해충의 침입을 막기 위해 30메쉬(mesh)이상이 적당합니다. 메쉬 숫자가 클수록 구멍의 크기는 작아집니다.",
       "wrongAnswerNotes": [
         "1번: 구멍이 너무 커서 해충 방지가 불가능합니다.",
         "2번: 일반적인 방충망보다 구멍이 큽니다.",

@@ -5,7 +5,7 @@
     "exam_session": "2009-09-27",
     "subject": "제조이론",
     "question_number": 1,
-    "question_text": "파운드케이크를 패닝할 때 밑면의 껍질 형성을 방지하기 위 한 팬으로 가장 적합한 것은?",
+    "question_text": "파운드케이크를 패닝할 때 밑면의 껍질 형성을 방지하기 위한 팬으로 가장 적합한 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -87,7 +87,7 @@
     "exam_session": "2009-09-27",
     "subject": "제조이론",
     "question_number": 3,
-    "question_text": "반죽형 쿠키의 굽기 과정에서 퍼짐성이 나쁠 때 퍼짐성을 좋 게 하기 위해서 사용할 수 있는 방법은?",
+    "question_text": "반죽형 쿠키의 굽기 과정에서 퍼짐성이 나쁠 때 퍼짐성을 좋게 하기 위해서 사용할 수 있는 방법은?",
     "question_image_url": null,
     "choices": [
       {
@@ -169,7 +169,7 @@
     "exam_session": "2009-09-27",
     "subject": "제조이론",
     "question_number": 5,
-    "question_text": "먼저 밀가루와 유지를 넣고 믹싱하여 유지에 의해 밀가루가 피복되도록 한 후 나머지 재료를 투입하는 방법으로 유연감 을 우선으로 하는 제품에 사용되는 반죽법은?",
+    "question_text": "먼저 밀가루와 유지를 넣고 믹싱하여 유지에 의해 밀가루가 피복되도록 한 후 나머지 재료를 투입하는 방법으로 유연감을 우선으로 하는 제품에 사용되는 반죽법은?",
     "question_image_url": null,
     "choices": [
       {
@@ -456,7 +456,7 @@
     "exam_session": "2009-09-27",
     "subject": "제조이론",
     "question_number": 12,
-    "question_text": "카스타드 푸딩을 컵에 채워 몇 도의 오븐에서 중탕으로 굽 는 것이 가장 적당한가?",
+    "question_text": "카스타드 푸딩을 컵에 채워 몇 도의 오븐에서 중탕으로 굽는 것이 가장 적당한가?",
     "question_image_url": null,
     "choices": [
       {
@@ -620,7 +620,7 @@
     "exam_session": "2009-09-27",
     "subject": "제조이론",
     "question_number": 16,
-    "question_text": "빵 제품의 모서리가 예리하게 된 것은 다음 중 어떤 반죽에 서 오는 결과인가?",
+    "question_text": "빵 제품의 모서리가 예리하게 된 것은 다음 중 어떤 반죽에서 오는 결과인가?",
     "question_image_url": null,
     "choices": [
       {
@@ -866,7 +866,7 @@
     "exam_session": "2009-09-27",
     "subject": "재료과학",
     "question_number": 22,
-    "question_text": "내부에 팬이 부착되어 열풍을 강제 순환시키면서 굽는 타입 으로 굽기의 편차가 극히 적은 오븐은?",
+    "question_text": "내부에 팬이 부착되어 열풍을 강제 순환시키면서 굽는 타입으로 굽기의 편차가 극히 적은 오븐은?",
     "question_image_url": null,
     "choices": [
       {
@@ -907,7 +907,7 @@
     "exam_session": "2009-09-27",
     "subject": "재료과학",
     "question_number": 23,
-    "question_text": "정형한 식빵 반죽을 팬에 넣을 때 이음매의 위치는 어느 쪽 이 가장 좋은가?",
+    "question_text": "정형한 식빵 반죽을 팬에 넣을 때 이음매의 위치는 어느 쪽이 가장 좋은가?",
     "question_image_url": null,
     "choices": [
       {
@@ -948,7 +948,7 @@
     "exam_session": "2009-09-27",
     "subject": "재료과학",
     "question_number": 24,
-    "question_text": "식빵 반죽을 분할할 때 처음에 분할한 반죽과 나중에 분할 한 반죽은 숙성도의 차이가 크므로 단시간 내에 분할해야 한다. 몇 분 이내로 완료하는 것이 가장 좋은가?",
+    "question_text": "식빵 반죽을 분할할 때 처음에 분할한 반죽과 나중에 분할한 반죽은 숙성도의 차이가 크므로 단시간 내에 분할해야 한다. 몇 분 이내로 완료하는 것이 가장 좋은가?",
     "question_image_url": null,
     "choices": [
       {

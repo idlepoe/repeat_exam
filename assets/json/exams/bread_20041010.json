@@ -333,7 +333,7 @@
     "exam_session": "2004-10-10",
     "subject": "제조이론",
     "question_number": 9,
-    "question_text": "같은 용적의 팬에 같은 무게의 반죽을 팬닝하였을 경우 부피 가 가장적은 제품은?",
+    "question_text": "같은 용적의 팬에 같은 무게의 반죽을 팬닝하였을 경우 부피가 가장적은 제품은?",
     "question_image_url": null,
     "choices": [
       {
@@ -455,7 +455,7 @@
     "exam_session": "2004-10-10",
     "subject": "제조이론",
     "question_number": 12,
-    "question_text": "커스터드 푸딩을 컵에 채워 몇℃의 오븐에서 중량으로 굽 는 것이 가장 적당한가?",
+    "question_text": "커스터드 푸딩을 컵에 채워 몇℃의 오븐에서 중량으로 굽는 것이 가장 적당한가?",
     "question_image_url": null,
     "choices": [
       {
@@ -735,7 +735,7 @@
     "exam_session": "2004-10-10",
     "subject": "제조이론",
     "question_number": 19,
-    "question_text": "빵 반죽(믹싱)시 반죽 온도가 높아지는 가장 큰 이유는?",
+    "question_text": "빵 반죽(믹싱) 시 반죽 온도가 높아지는 가장 큰 이유는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1102,7 +1102,7 @@
     "exam_session": "2004-10-10",
     "subject": "재료과학",
     "question_number": 28,
-    "question_text": "발효에 영향을 주는 요인들 중에서 발효에 영향을 가장 적 게 주는 곳은?",
+    "question_text": "발효에 영향을 주는 요인들 중에서 발효에 영향을 가장 적게 주는 곳은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1345,7 +1345,7 @@
     "exam_session": "2004-10-10",
     "subject": "영양학",
     "question_number": 34,
-    "question_text": "파이 껍질에 있어 착색제의 역할을 하는 물질과 가장 거리 가 먼 것은?",
+    "question_text": "파이 껍질에 있어 착색제의 역할을 하는 물질과 가장 거리가 먼 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1425,7 +1425,7 @@
     "exam_session": "2004-10-10",
     "subject": "영양학",
     "question_number": 36,
-    "question_text": "버터 초콜릿(Butter Chocolate)32% 중에는 코코아가 약 얼 마나 들어있는가?",
+    "question_text": "버터 초콜릿(Butter Chocolate) 32% 중에는 코코아가 약 얼 마나 들어있는가?",
     "question_image_url": null,
     "choices": [
       {

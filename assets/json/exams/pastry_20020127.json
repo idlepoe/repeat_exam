@@ -292,7 +292,7 @@
     "exam_session": "2002-01-27",
     "subject": "제조이론",
     "question_number": 8,
-    "question_text": "초콜릿을 템퍼링(Tempering)할 때 처음 녹이는 공정의 온도 범위에 적합한 것은?",
+    "question_text": "초콜릿을 템퍼링(Tempering) 할 때 처음 녹이는 공정의 온도 범위에 적합한 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -784,7 +784,7 @@
     "exam_session": "2002-01-27",
     "subject": "제조이론",
     "question_number": 20,
-    "question_text": "스펀지 발효의 발효점은 일반적으로 처음 반죽부피의 몇 배 까지 팽창되는 것이 가장 적당한가?",
+    "question_text": "스펀지 발효의 발효점은 일반적으로 처음 반죽부피의 몇 배까지 팽창되는 것이 가장 적당한가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1194,7 +1194,7 @@
     "exam_session": "2002-01-27",
     "subject": "재료과학",
     "question_number": 30,
-    "question_text": "대량생산 공장에서 많이 사용되는 오븐으로 반죽이 들어가 는 입구와 제품이 나오는 출구가 서로 다른 오븐은?",
+    "question_text": "대량생산 공장에서 많이 사용되는 오븐으로 반죽이 들어가는 입구와 제품이 나오는 출구가 서로 다른 오븐은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2335,7 +2335,7 @@
     "exam_session": "2002-01-27",
     "subject": "식품위생학",
     "question_number": 58,
-    "question_text": "알레르기(allergy)성 식중독의 주된 원인 식품은?",
+    "question_text": "알레르기(allergy) 성 식중독의 주된 원인 식품은?",
     "question_image_url": null,
     "choices": [
       {

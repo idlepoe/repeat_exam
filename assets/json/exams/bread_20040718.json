@@ -5,7 +5,7 @@
     "exam_session": "2004-07-18",
     "subject": "제조이론",
     "question_number": 1,
-    "question_text": "케이크의 배합에서 고율배합이 저율배합에 비하여 높거나 많 은 항목은?",
+    "question_text": "케이크의 배합에서 고율배합이 저율배합에 비하여 높거나 많은 항목은?",
     "question_image_url": null,
     "choices": [
       {
@@ -374,7 +374,7 @@
     "exam_session": "2004-07-18",
     "subject": "제조이론",
     "question_number": 10,
-    "question_text": "비중컵의 무게가 50g, 반죽을 넣은 후 무게가 150g, 비중컵 에 물을 넣은 무게가 250g이었을 때 이 반죽의 비중은 얼 마인가?",
+    "question_text": "비중컵의 무게가 50g, 반죽을 넣은 후 무게가 150g, 비중컵에 물을 넣은 무게가 250g이었을 때 이 반죽의 비중은 얼 마인가?",
     "question_image_url": null,
     "choices": [
       {
@@ -538,7 +538,7 @@
     "exam_session": "2004-07-18",
     "subject": "제조이론",
     "question_number": 14,
-    "question_text": "포장된 케이크류에서는 곰팡이에 의한 변패가 많은데 변패 의 가장 중요한 원인은?",
+    "question_text": "포장된 케이크류에서는 곰팡이에 의한 변패가 많은데 변패의 가장 중요한 원인은?",
     "question_image_url": null,
     "choices": [
       {
@@ -620,7 +620,7 @@
     "exam_session": "2004-07-18",
     "subject": "제조이론",
     "question_number": 16,
-    "question_text": "스펀지에서 드롭 또는 브레이크 현상이 일어나는 가장 적당 한 시기는?",
+    "question_text": "스펀지에서 드롭 또는 브레이크 현상이 일어나는 가장 적당한 시기는?",
     "question_image_url": null,
     "choices": [
       {
@@ -948,7 +948,7 @@
     "exam_session": "2004-07-18",
     "subject": "재료과학",
     "question_number": 24,
-    "question_text": "과발효된(over proof) 반죽으로 만들어진 제품의 결함 사항 이 아닌 것은?",
+    "question_text": "과발효된(over proof) 반죽으로 만들어진 제품의 결함 사항이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1522,7 +1522,7 @@
     "exam_session": "2004-07-18",
     "subject": "영양학",
     "question_number": 38,
-    "question_text": "같은 연질소맥을 제분하여 다음과 같은 회분을 가진 박력분 이 제조되었다. 백질 함량이 가장 낮은 것으로 예상되는 것은?",
+    "question_text": "같은 연질소맥을 제분하여 다음과 같은 회분을 가진 박력분이 제조되었다. 백질 함량이 가장 낮은 것으로 예상되는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1792,12 +1792,12 @@
       "영양학"
     ],
     "aiExplanation": {
-      "correctExplanation": "마가린은 수중유형(W/O) 에멀젼으로, 물이 기름에 분산된 형태이므로 수중유적형(O/W) 식품이 아닙니다.",
+      "correctExplanation": "마가린은 수중유형(W/O)에멀젼으로, 물이 기름에 분산된 형태이므로 수중유적형(O/W) 식품이 아닙니다.",
       "wrongAnswerNotes": [
-        "1번: 우유는 물에 지방이 분산된 수중유적형(O/W) 에멀젼입니다.",
-        "2번: 마가린은 물방울이 기름에 분산된 수중유형(W/O) 에멀젼입니다.",
-        "3번: 마요네즈는 기름이 물에 분산된 수중유적형(O/W) 에멀젼입니다.",
-        "4번: 아이스크림은 물에 지방과 공기가 분산된 수중유적형(O/W) 에멀젼입니다."
+        "1번: 우유는 물에 지방이 분산된 수중유적형(O/W)에멀젼입니다.",
+        "2번: 마가린은 물방울이 기름에 분산된 수중유형(W/O)에멀젼입니다.",
+        "3번: 마요네즈는 기름이 물에 분산된 수중유적형(O/W)에멀젼입니다.",
+        "4번: 아이스크림은 물에 지방과 공기가 분산된 수중유적형(O/W)에멀젼입니다."
       ],
       "examTip": "마가린은 '수중유형(W/O)' 에멀젼으로, 수중유적형(O/W)이 아니다."
     }
@@ -2423,7 +2423,7 @@
     "exam_session": "2004-07-18",
     "subject": "식품위생학",
     "question_number": 60,
-    "question_text": "미생물에 의한 부패나 변질을 방지하고 화학적인 변화를 억 제하며 보존성을 높이며 영양가 및 신선도를 유지하는 목적 으로 첨가하는 것은?",
+    "question_text": "미생물에 의한 부패나 변질을 방지하고 화학적인 변화를 억 제하며 보존성을 높이며 영양가 및 신선도를 유지하는 목적으로 첨가하는 것은?",
     "question_image_url": null,
     "choices": [
       {

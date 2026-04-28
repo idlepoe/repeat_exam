@@ -415,7 +415,7 @@
     "exam_session": "2006-07-16",
     "subject": "제조이론",
     "question_number": 11,
-    "question_text": "다음 제품 중 정형하여 팬닝 할 경우 제품의 간격을 가장 충분히 유지하여야 하는 제품은?",
+    "question_text": "다음 제품 중 정형하여 팬닝할 경우 제품의 간격을 가장 충분히 유지하여야 하는 제품은?",
     "question_image_url": null,
     "choices": [
       {
@@ -579,8 +579,8 @@
     "exam_session": "2006-07-16",
     "subject": "제조이론",
     "question_number": 15,
-    "question_text": "어떤 한 종류의 케이크를 만들기 위하여 믹싱을 끝내고 비 중을 측정한 결과가 다음과 같을 때 구운 후 기공이 조밀하 고 부피가 가장 작아지는 것은?",
-    "question_image_url": null,
+    "question_text": "어떤 한 종류의 케이크를 만들기 위하여 믹싱을 끝내고 비 중을 측정한 결과가 다음과 같을 때 구운 후 기공이 조밀하고 부피가 가장 작아지는 것은?",
+    "question_image_url": "https://raw.githubusercontent.com/idlepoe/repeat_exam/main/assets/images/bread_201003287.png",
     "choices": [
       {
         "no": 1,
@@ -1030,7 +1030,7 @@
     "exam_session": "2006-07-16",
     "subject": "재료과학",
     "question_number": 26,
-    "question_text": "정형하여 철판에 반죽을 놓을 때 그 철판의 온도는 일반적 으로 몇 도가 가장 적당한가?",
+    "question_text": "정형하여 철판에 반죽을 놓을 때 그 철판의 온도는 일반적으로 몇 도가 가장 적당한가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1194,7 +1194,7 @@
     "exam_session": "2006-07-16",
     "subject": "재료과학",
     "question_number": 30,
-    "question_text": "대량 생산 공장에서 많이 사용하는 오븐으로 반죽이 들어가 는 입구와 제품이 나오는 입구가 다른 오븐으로 통과되는 속도와 온도가 중요시 되는 오븐은?",
+    "question_text": "대량 생산 공장에서 많이 사용하는 오븐으로 반죽이 들어가는 입구와 제품이 나오는 입구가 다른 오븐으로 통과되는 속도와 온도가 중요시 되는 오븐은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1342,7 +1342,7 @@
       "영양학"
     ],
     "aiExplanation": {
-      "correctExplanation": "이스트푸드는 이스트의 영양원 공급, 물의 경도 조절, 밀가루의 단백질 품질 개선(산화제 역할) 등을 위해 사용됩니다. 따라서 이 모든 기능을 포괄하는 설명이 정답입니다.",
+      "correctExplanation": "이스트푸드는 이스트의 영양원 공급, 물의 경도 조절, 밀가루의 단백질 품질 개선(산화제 역할)등을 위해 사용됩니다. 따라서 이 모든 기능을 포괄하는 설명이 정답입니다.",
       "wrongAnswerNotes": [
         "1번: 물의 경도 조절 기능이 누락되어 불완전합니다.",
         "2번: 설탕 분해는 이스트 자체의 효소 작용입니다.",
@@ -1358,7 +1358,7 @@
     "exam_session": "2006-07-16",
     "subject": "영양학",
     "question_number": 34,
-    "question_text": "밀가루에서 전분, 단백질, 펜트산, 손상된 전분이 동량이라 면 어느 것이 흡수율이 가장 좋은가?",
+    "question_text": "밀가루에서 전분, 단백질, 펜트산, 손상된 전분이 동량이라면 어느 것이 흡수율이 가장 좋은가?",
     "question_image_url": null,
     "choices": [
       {
@@ -2342,7 +2342,7 @@
     "exam_session": "2006-07-16",
     "subject": "식품위생학",
     "question_number": 58,
-    "question_text": "제품의 유통기간 연장을 위해서 포장에 이용되는 불활성 가 스는?",
+    "question_text": "제품의 유통기간 연장을 위해서 포장에 이용되는 불활성가스는?",
     "question_image_url": null,
     "choices": [
       {

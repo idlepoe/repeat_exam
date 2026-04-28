@@ -866,7 +866,7 @@
     "exam_session": "2008-02-03",
     "subject": "재료과학",
     "question_number": 22,
-    "question_text": "반죽을 믹싱(mixing)할 때 원료가 균일하게 혼합되고 글루텐 의 구조가 형성되기 시작하는 단계는?",
+    "question_text": "반죽을 믹싱(mixing) 할 때 원료가 균일하게 혼합되고 글루텐의 구조가 형성되기 시작하는 단계는?",
     "question_image_url": null,
     "choices": [
       {
@@ -989,7 +989,7 @@
     "exam_session": "2008-02-03",
     "subject": "재료과학",
     "question_number": 25,
-    "question_text": "제빵 공장에서 3명의 작업자가 10시간에 식빵 400개, 케이 크 50개, 모카빵 200개를 만들고 있다. 1시간에 직원 1인에 게 시간당 지급되는 비용이 1000원이라 할 때, 평균적으로 제품의 개당 노무비는 약 얼마인가?",
+    "question_text": "제빵 공장에서 3명의 작업자가 10시간에 식빵 400개, 케이 크 50개, 모카빵 200개를 만들고 있다. 1시간에 직원 1인에게 시간당 지급되는 비용이 1000원이라할 때, 평균적으로 제품의 개당 노무비는 약 얼마인가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1153,7 +1153,7 @@
     "exam_session": "2008-02-03",
     "subject": "재료과학",
     "question_number": 29,
-    "question_text": "주로 독일빵, 블란서빵 등 유럽빵이나 토스트브레드(toast bread) 등 된반죽을 치는데 사용하는 믹서는?",
+    "question_text": "주로 독일빵, 블란서빵 등 유럽빵이나 토스트브레드(toast bread)등 된반죽을 치는데 사용하는 믹서는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1276,7 +1276,7 @@
     "exam_session": "2008-02-03",
     "subject": "영양학",
     "question_number": 32,
-    "question_text": "물에 칼슘염과 마그네슘염이 일반적인 양보다 많이 녹아 있 을 때의 물의 상태는?",
+    "question_text": "물에 칼슘염과 마그네슘염이 일반적인 양보다 많이 녹아 있을 때의 물의 상태는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1645,7 +1645,7 @@
     "exam_session": "2008-02-03",
     "subject": "영양학",
     "question_number": 41,
-    "question_text": "아래의 갈색반응의 반응식에서 ( )에 알맞은 것은?",
+    "question_text": "아래의 갈색반응의 반응식에서 ()에 알맞은 것은?",
     "question_image_url": "https://raw.githubusercontent.com/idlepoe/repeat_exam/main/assets/images/pastry_2008020341.png",
     "choices": [
       {
@@ -1686,7 +1686,7 @@
     "exam_session": "2008-02-03",
     "subject": "영양학",
     "question_number": 42,
-    "question_text": "감미도 100인 설탕 20kg과 감미도 70인 포도당 24kg을 섞 었다면 이 혼합당의 감미도는? (단, 계산결과는 소수점 둘째 자리에서 반올림한다.)",
+    "question_text": "감미도 100인 설탕 20kg과 감미도 70인 포도당 24kg을 섞었다면 이 혼합당의 감미도는? (단, 계산결과는 소수점 둘째 자리에서 반올림한다.)",
     "question_image_url": null,
     "choices": [
       {
@@ -1711,7 +1711,7 @@
       "영양학"
     ],
     "aiExplanation": {
-      "correctExplanation": "혼합당의 감미도는 (설탕 감미도*설탕량 + 포도당 감미도*포도당량) / 전체 중량으로 계산합니다. (100*20 + 70*24) / 44 = 3680 / 44 = 83.636...이며 반올림하여 83.6입니다.",
+      "correctExplanation": "혼합당의 감미도는 (설탕 감미도*설탕량 + 포도당 감미도*포도당량) / 전체 중량으로 계산합니다. (100*20 + 70*24) / 44 = 3680 / 44 = 83.636... 이며 반올림하여 83.6입니다.",
       "wrongAnswerNotes": [
         "1번: 계산 결과가 일치하지 않습니다.",
         "2번: 가중평균 계산법에 따른 정확한 결과값입니다.",
@@ -2019,7 +2019,7 @@
     "choices": [
       {
         "no": 1,
-        "text": "일반적으로 전분은 아밀로오스(amylose)와 아밀로펙틴 (amylopectin) 으로 이루어져 있다."
+        "text": "일반적으로 전분은 아밀로오스(amylose)와 아밀로펙틴 (amylopectin)으로 이루어져 있다."
       },
       {
         "no": 2,

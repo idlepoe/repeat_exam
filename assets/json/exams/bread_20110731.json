@@ -538,7 +538,7 @@
     "exam_session": "2011-07-31",
     "subject": "제조이론",
     "question_number": 14,
-    "question_text": "도넛을 글레이즈 할 때 글레이즈의 적정한 품온은?",
+    "question_text": "도넛을 글레이즈할 때 글레이즈의 적정한 품온은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1645,7 +1645,7 @@
     "exam_session": "2011-07-31",
     "subject": "영양학",
     "question_number": 41,
-    "question_text": "이스트에 존재하는 효소로 포도당을 분해하여 알코올과 이 산화탄소를 발생시키는 것은?",
+    "question_text": "이스트에 존재하는 효소로 포도당을 분해하여 알코올과이 산화탄소를 발생시키는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2055,7 +2055,7 @@
     "exam_session": "2011-07-31",
     "subject": "식품위생학",
     "question_number": 51,
-    "question_text": "원인균이 내열성포자를 형성하기 때문에 병든 가축의 사체 를 처리할 경우 반드시 소각처리 하여야 하는 인수공통감염 병은?",
+    "question_text": "원인균이 내열성포자를 형성하기 때문에 병든 가축의 사체를 처리할 경우 반드시 소각처리 하여야 하는 인수공통감염 병은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2096,7 +2096,7 @@
     "exam_session": "2011-07-31",
     "subject": "식품위생학",
     "question_number": 52,
-    "question_text": "해수세균의 일종으로 식염농도 3%에서 잘 생육하며 어패류 를 생식할 경우 중독될 수 있는 균은?",
+    "question_text": "해수세균의 일종으로 식염농도 3%에서 잘 생육하며 어패류를 생식할 경우 중독될 수 있는 균은?",
     "question_image_url": null,
     "choices": [
       {

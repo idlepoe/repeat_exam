@@ -210,7 +210,7 @@
     "exam_session": "2008-03-30",
     "subject": "제조이론",
     "question_number": 6,
-    "question_text": "실내 온도 20℃ 밀가루 온도 20℃, 설탕 온도 20℃, 쇼트닝 온도 22℃, 계란 온도 20℃, 물 온도 18℃의 조건에서 반죽 의 결과온도가 24℃가 나왔다면 마찰계수는?",
+    "question_text": "실내 온도 20℃ 밀가루 온도 20℃, 설탕 온도 20℃, 쇼트닝 온도 22℃, 계란 온도 20℃, 물 온도 18℃의 조건에서 반죽의 결과온도가 24℃가 나왔다면 마찰계수는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1071,7 +1071,7 @@
     "exam_session": "2008-03-30",
     "subject": "재료과학",
     "question_number": 27,
-    "question_text": "굽기 후 빵을 썰어 포장하기에 가장 좋은 온도는 ?",
+    "question_text": "굽기 후 빵을 썰어 포장하기에 가장 좋은 온도는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1194,7 +1194,7 @@
     "exam_session": "2008-03-30",
     "subject": "재료과학",
     "question_number": 30,
-    "question_text": "반죽의 변화단계에서 생기 있는 외관이 되며 매끄럽고 부드 러우며 탄력성이 증가되어 강하고 단단한 반죽이 되었을 때 의 상태는?",
+    "question_text": "반죽의 변화단계에서 생기 있는 외관이 되며 매끄럽고 부드 러우며 탄력성이 증가되어 강하고 단단한 반죽이 되었을 때의 상태는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1276,7 +1276,7 @@
     "exam_session": "2008-03-30",
     "subject": "영양학",
     "question_number": 32,
-    "question_text": "소맥분의 패리노그래프를 그려 보니 믹싱타임(mixing time) 이 매우 짧 은 것으로 나타났다. 이 소맥분을 빵에 사용할 때 보완법으로 옳은 것은?",
+    "question_text": "소맥분의 패리노그래프를 그려 보니 믹싱타임(mixing time)이 매우 짧은 것으로 나타났다. 이 소맥분을 빵에 사용할 때 보완법으로 옳은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1317,7 +1317,7 @@
     "exam_session": "2008-03-30",
     "subject": "영양학",
     "question_number": 33,
-    "question_text": "유지의 경화란 무엇인가 ?",
+    "question_text": "유지의 경화란 무엇인가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1845,7 +1845,7 @@
     "exam_session": "2008-03-30",
     "subject": "영양학",
     "question_number": 46,
-    "question_text": "과자를 50g 섭취하였을 때 지방으로부터 얻을 수 있는 열량 은? (단, 과자 100g당 영양소 함량은 단백질 8.0g , 지질 17.2g당질 41.4g 이다.)",
+    "question_text": "과자를 50g 섭취하였을 때 지방으로부터 얻을 수 있는 열량 은? (단, 과자 100g당 영양소 함량은 단백질 8.0g, 지질 17.2g당질 41.4g 이다.)",
     "question_image_url": null,
     "choices": [
       {
@@ -2414,7 +2414,7 @@
     "exam_session": "2008-03-30",
     "subject": "식품위생학",
     "question_number": 60,
-    "question_text": "원인균이 내열성포자를 형성하기 때문에 병든 가축의 사체 를 처리할 경우 반드시 소각처리 하여야 하는 인수 공통전염병은?",
+    "question_text": "원인균이 내열성포자를 형성하기 때문에 병든 가축의 사체를 처리할 경우 반드시 소각처리 하여야 하는 인수 공통전염병은?",
     "question_image_url": null,
     "choices": [
       {

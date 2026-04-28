@@ -415,7 +415,7 @@
     "exam_session": "2007-01-28",
     "subject": "제조이론",
     "question_number": 11,
-    "question_text": "다음 기계 설비 중 대량 생산업체에서 주로 사용하는 설비 로 가장 알맞은 것은?",
+    "question_text": "다음 기계 설비 중 대량 생산업체에서 주로 사용하는 설비로 가장 알맞은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1317,7 +1317,7 @@
     "exam_session": "2007-01-28",
     "subject": "영양학",
     "question_number": 33,
-    "question_text": "중성 용매에 녹지 않고 묽은 산, 묽은 염기에 녹는 단백질 로 밀에 존재하는 단순 단백질은?",
+    "question_text": "중성 용매에 녹지 않고 묽은 산, 묽은 염기에 녹는 단백질로 밀에 존재하는 단순 단백질은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1604,7 +1604,7 @@
     "exam_session": "2007-01-28",
     "subject": "영양학",
     "question_number": 40,
-    "question_text": "효모가 포도당으로부터 에틸알콜을 생산할 때 발생되는 가 스는?",
+    "question_text": "효모가 포도당으로부터 에틸알콜을 생산할 때 발생되는 가스는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1973,7 +1973,7 @@
     "exam_session": "2007-01-28",
     "subject": "영양학",
     "question_number": 49,
-    "question_text": "설탕의 구성성분은 ?",
+    "question_text": "설탕의 구성성분은?",
     "question_image_url": null,
     "choices": [
       {

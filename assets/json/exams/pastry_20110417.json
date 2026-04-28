@@ -153,7 +153,7 @@
       "제조이론"
     ],
     "aiExplanation": {
-      "correctExplanation": "식품 제조 시설의 위생 및 배수 효율을 고려하여 배수관의 최소 내경은 10cm(약 4인치) 이상으로 규정하고 있습니다. 이는 오물이나 이물질로 인한 막힘을 방지하기 위함입니다.",
+      "correctExplanation": "식품 제조 시설의 위생 및 배수 효율을 고려하여 배수관의 최소 내경은 10cm(약 4인치)이상으로 규정하고 있습니다. 이는 오물이나 이물질로 인한 막힘을 방지하기 위함입니다.",
       "wrongAnswerNotes": [
         "1번: 너무 좁아 배수가 원활하지 않음",
         "2번: 규정된 최소 내경보다 작음",
@@ -415,7 +415,7 @@
     "exam_session": "2011-04-17",
     "subject": "제조이론",
     "question_number": 11,
-    "question_text": "케이크 도넛의 껍질색을 진하게 내려고 할 때 설탕의 일부 를 무엇으로 대치하여 사용하는가?",
+    "question_text": "케이크 도넛의 껍질색을 진하게 내려고 할 때 설탕의 일부를 무엇으로 대치하여 사용하는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -456,7 +456,7 @@
     "exam_session": "2011-04-17",
     "subject": "제조이론",
     "question_number": 12,
-    "question_text": "퍼프 페이스트리 제조 시 다른 조건이 같을 때 충전용 유지 에 대한 설명으로 틀린 것은?",
+    "question_text": "퍼프 페이스트리 제조 시 다른 조건이 같을 때 충전용 유지에 대한 설명으로 틀린 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -497,7 +497,7 @@
     "exam_session": "2011-04-17",
     "subject": "제조이론",
     "question_number": 13,
-    "question_text": "시퐁 케이크 제조시 냉각 전에 팬에서 분리되는 결점이 나 타났을 때의 원인과 거리가 먼 것은?",
+    "question_text": "시퐁 케이크 제조시 냉각 전에 팬에서 분리되는 결점이 나타났을 때의 원인과 거리가 먼 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1317,7 +1317,7 @@
     "exam_session": "2011-04-17",
     "subject": "영양학",
     "question_number": 33,
-    "question_text": "식염이 반죽의 물성 및 발효에 미치는 영향에 대한 설명으 로 틀린 것은?",
+    "question_text": "식염이 반죽의 물성 및 발효에 미치는 영향에 대한 설명으로 틀린 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1809,7 +1809,7 @@
     "exam_session": "2011-04-17",
     "subject": "영양학",
     "question_number": 45,
-    "question_text": "단당류 2~10개로 구성된 당으로, 장내의 비피더스균 증식 을 활발하게 하는 당은?",
+    "question_text": "단당류 2~10개로 구성된 당으로, 장내의 비피더스균 증식을 활발하게 하는 당은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1850,7 +1850,7 @@
     "exam_session": "2011-04-17",
     "subject": "영양학",
     "question_number": 46,
-    "question_text": "식빵에 당질50%, 지방 5%, 단백질 9%, 수분24%, 회분 2% 가 들어있다면 식빵을 100g 섭취하였을 때 열량은?",
+    "question_text": "식빵에 당질50%, 지방 5%, 단백질 9%, 수분24%, 회분 2%가 들어있다면 식빵을 100g 섭취하였을 때 열량은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2096,7 +2096,7 @@
     "exam_session": "2011-04-17",
     "subject": "식품위생학",
     "question_number": 52,
-    "question_text": "변질되기 쉬운 식품을 생산지로부터 소비자에게 전달하기까 지 저온으로 보존하는 시스템은?",
+    "question_text": "변질되기 쉬운 식품을 생산지로부터 소비자에게 전달하기까지 저온으로 보존하는 시스템은?",
     "question_image_url": null,
     "choices": [
       {

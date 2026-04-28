@@ -374,7 +374,7 @@
     "exam_session": "2005-01-30",
     "subject": "제조이론",
     "question_number": 10,
-    "question_text": "파운드 케이크 제조에 있어 배합율에 계란 사용량을 증가 시킬 때 다른 재료의 변화에 대한 설명으로 맞는 것은?",
+    "question_text": "파운드 케이크 제조에 있어 배합율에 계란 사용량을 증가시킬 때 다른 재료의 변화에 대한 설명으로 맞는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -579,7 +579,7 @@
     "exam_session": "2005-01-30",
     "subject": "제조이론",
     "question_number": 15,
-    "question_text": "다음 쿠키 중에서 다른 셋은 찌는 형태인데 비하여 상대적 으로 수분이 적어서 말아파는 형태로 만드는 제품은?",
+    "question_text": "다음 쿠키 중에서 다른 셋은 찌는 형태인데 비하여 상대적으로 수분이 적어서 말아파는 형태로 만드는 제품은?",
     "question_image_url": null,
     "choices": [
       {
@@ -661,7 +661,7 @@
     "exam_session": "2005-01-30",
     "subject": "제조이론",
     "question_number": 17,
-    "question_text": "성형과정을 거치는 동안에 반죽이 거친 취급을 받아 상처 를 받은 상태이므로 이를 회복시키기 위해 글루텐 숙성과 팽창을 도모하는 과정은?",
+    "question_text": "성형과정을 거치는 동안에 반죽이 거친 취급을 받아 상처를 받은 상태이므로 이를 회복시키기 위해 글루텐 숙성과 팽창을 도모하는 과정은?",
     "question_image_url": null,
     "choices": [
       {
@@ -784,7 +784,7 @@
     "exam_session": "2005-01-30",
     "subject": "제조이론",
     "question_number": 20,
-    "question_text": "오버 베이킹(over baking) 에 대한 설명으로 옳은 것은?",
+    "question_text": "오버 베이킹(over baking)에 대한 설명으로 옳은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1153,7 +1153,7 @@
     "exam_session": "2005-01-30",
     "subject": "재료과학",
     "question_number": 29,
-    "question_text": "제빵시 소금 첨가량이 적정량 보다 증가하였을 때 빵의 껍 질색은?",
+    "question_text": "제빵시 소금 첨가량이 적정량보다 증가하였을 때 빵의 껍 질색은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2260,7 +2260,7 @@
     "exam_session": "2005-01-30",
     "subject": "식품위생학",
     "question_number": 56,
-    "question_text": "미생물이 작용하여 식품을 흑변시켰다. 다음 중 흑변물질 과 가장 관계 깊은 것은?",
+    "question_text": "미생물이 작용하여 식품을 흑변시켰다. 다음 중 흑변물질과 가장 관계 깊은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2342,7 +2342,7 @@
     "exam_session": "2005-01-30",
     "subject": "식품위생학",
     "question_number": 58,
-    "question_text": "크림빵, 김밥, 도시락, 찹쌀떡이 주원인 식품이며, 조리사 의 화농방소와 관련이 있고, 봄. 가을철에 많이 발생하는 독소형 식중독은?",
+    "question_text": "크림빵, 김밥, 도시락, 찹쌀떡이 주원인 식품이며, 조리사의 화농방소와 관련이 있고, 봄. 가을철에 많이 발생하는 독소형 식중독은?",
     "question_image_url": null,
     "choices": [
       {

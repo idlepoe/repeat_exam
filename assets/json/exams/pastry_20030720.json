@@ -374,7 +374,7 @@
     "exam_session": "2003-07-20",
     "subject": "제조이론",
     "question_number": 10,
-    "question_text": "슈 바닥 껍질 가운데가 위로 올라가는 이유 중 틀리게 설명 한 것은?",
+    "question_text": "슈 바닥 껍질 가운데가 위로 올라가는 이유 중 틀리게 설명한 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -579,7 +579,7 @@
     "exam_session": "2003-07-20",
     "subject": "제조이론",
     "question_number": 15,
-    "question_text": "스펀지 케이크 제조시 계란의 사용량을 줄이려고 한다. 옳 지 않은 것은?",
+    "question_text": "스펀지 케이크 제조시 계란의 사용량을 줄이려고 한다. 옳지 않은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1315,7 +1315,7 @@
     "exam_session": "2003-07-20",
     "subject": "영양학",
     "question_number": 33,
-    "question_text": "어떤 케이크 제조에 1kg의 달걀이 필요하다면 껍질을 포함 한 평균 무게가 60g인 달걀은 약 몇 개가 필요한가?",
+    "question_text": "어떤 케이크 제조에 1kg의 달걀이 필요하다면 껍질을 포함한 평균 무게가 60g인 달걀은 약 몇 개가 필요한가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1340,7 +1340,7 @@
       "영양학"
     ],
     "aiExplanation": {
-      "correctExplanation": "달걀 1,000g을 60g으로 나누면 16.66...이 나옵니다. 껍질 무게(약 10%)를 제외한 가식부 무게를 고려하면 약 19개가 적절합니다.",
+      "correctExplanation": "달걀 1,000g을 60g으로 나누면 16.66... 이 나옵니다. 껍질 무게(약 10%)를 제외한 가식부 무게를 고려하면 약 19개가 적절합니다.",
       "wrongAnswerNotes": [
         "1번: 가식부 무게를 고려하지 않은 계산입니다.",
         "3번: 너무 많은 양입니다.",
@@ -1758,7 +1758,7 @@
     "exam_session": "2003-07-20",
     "subject": "영양학",
     "question_number": 44,
-    "question_text": "밀알을 껍질 부위, 배아 부위, 배유 부위로 분류할 때 배유 에 대한 설명으로 틀리는 것은?",
+    "question_text": "밀알을 껍질 부위, 배아 부위, 배유 부위로 분류할 때 배유에 대한 설명으로 틀리는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2086,7 +2086,7 @@
     "exam_session": "2003-07-20",
     "subject": "식품위생학",
     "question_number": 52,
-    "question_text": "빵 반죽을 분할시 또는 구울 때 달라붙지 않게 하고, 모양 을 유지하는데 사용되는 것은?",
+    "question_text": "빵 반죽을 분할시 또는 구울 때 달라붙지 않게 하고, 모양을 유지하는데 사용되는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2332,7 +2332,7 @@
     "exam_session": "2003-07-20",
     "subject": "식품위생학",
     "question_number": 58,
-    "question_text": "부패를 판정하는 방법으로 사람에 의한 관능검사를 실시 할 때 검사하는 항목이 아닌 것은?",
+    "question_text": "부패를 판정하는 방법으로 사람에 의한 관능검사를 실시할 때 검사하는 항목이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {

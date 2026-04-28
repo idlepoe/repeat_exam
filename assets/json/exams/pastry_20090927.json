@@ -169,7 +169,7 @@
     "exam_session": "2009-09-27",
     "subject": "제조이론",
     "question_number": 5,
-    "question_text": "흰자 100에 대하여 설탕 180의 비율로 만든 머랭으로써 구 웠을 때 표면에 광택이 나고 하루쯤 두었다가 사용해도 무방 한 머랭은?",
+    "question_text": "흰자 100에 대하여 설탕 180의 비율로 만든 머랭으로써 구 웠을 때 표면에 광택이 나고 하루쯤 두었다가 사용해도 무방한 머랭은?",
     "question_image_url": null,
     "choices": [
       {
@@ -645,7 +645,7 @@
       "제조이론"
     ],
     "aiExplanation": {
-      "correctExplanation": "중간발효 후 밀어펴기(정형) 과정은 분할 및 둥글리기 과정에서 불균일해진 가스를 고르게 분산시키는 역할을 한다. 이를 통해 반죽의 조직을 균일하게 만든다.",
+      "correctExplanation": "중간발효 후 밀어펴기(정형)과정은 분할 및 둥글리기 과정에서 불균일해진 가스를 고르게 분산시키는 역할을 한다. 이를 통해 반죽의 조직을 균일하게 만든다.",
       "wrongAnswerNotes": [
         "1번: 글루텐 재정돈은 둥글리기와 휴지의 효과임",
         "2번: 가스를 고르게 분산시켜 균일한 조직을 만듦",
@@ -989,7 +989,7 @@
     "exam_session": "2009-09-27",
     "subject": "재료과학",
     "question_number": 25,
-    "question_text": "다음은 식빵 배합표이다. ( )안에 적합한 것은?",
+    "question_text": "다음은 식빵 배합표이다. () 안에 적합한 것은?",
     "question_image_url": "https://raw.githubusercontent.com/idlepoe/repeat_exam/main/assets/images/pastry_2009092725.png",
     "choices": [
       {

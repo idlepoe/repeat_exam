@@ -989,7 +989,7 @@
     "exam_session": "2002-07-21",
     "subject": "재료과학",
     "question_number": 25,
-    "question_text": "반죽의 내부 온도가 60℃에 도달하지 않은 상태에서 온도상승에 따른 이스트의 활동으로 부피의 점진적인 증가가 진행 되는 현상은?",
+    "question_text": "반죽의 내부 온도가 60℃에 도달하지 않은 상태에서 온도상승에 따른 이스트의 활동으로 부피의 점진적인 증가가 진행되는 현상은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1055,7 +1055,7 @@
       "재료과학"
     ],
     "aiExplanation": {
-      "correctExplanation": "코팅되지 않은 새로운 팬은 기름을 바르고 218℃ 이하의 오븐에서 약 1시간 정도 구워 길들이기(Seasoning) 과정을 거쳐야 한다. 이는 팬의 부식을 방지하고 반죽이 달라붙지 않게 하기 위함이다.",
+      "correctExplanation": "코팅되지 않은 새로운 팬은 기름을 바르고 218℃ 이하의 오븐에서 약 1시간 정도 구워 길들이기(Seasoning)과정을 거쳐야 한다. 이는 팬의 부식을 방지하고 반죽이 달라붙지 않게 하기 위함이다.",
       "wrongAnswerNotes": [
         "1번: 코팅되지 않은 팬은 길들이기 과정이 필수적이다.",
         "2번: 실리콘 코팅 팬은 고온에서 구우면 코팅이 손상되므로 주의해야 한다.",
@@ -1727,7 +1727,7 @@
     "exam_session": "2002-07-21",
     "subject": "영양학",
     "question_number": 43,
-    "question_text": "수중 유적형(O/W)식품이 아닌 것은?",
+    "question_text": "수중 유적형(O/W) 식품이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1752,7 +1752,7 @@
       "영양학"
     ],
     "aiExplanation": {
-      "correctExplanation": "마가린은 물이 기름 속에 분산된 유중수적형(W/O) 에멀션입니다. 따라서 수중유적형(O/W) 식품이라는 설명은 틀렸습니다.",
+      "correctExplanation": "마가린은 물이 기름 속에 분산된 유중수적형(W/O)에멀션입니다. 따라서 수중유적형(O/W) 식품이라는 설명은 틀렸습니다.",
       "wrongAnswerNotes": [
         "1번: 우유는 물속에 지방이 분산된 대표적인 O/W 식품입니다.",
         "2번: 마가린은 기름 속에 물이 분산된 W/O 식품입니다.",
@@ -1973,7 +1973,7 @@
     "exam_session": "2002-07-21",
     "subject": "영양학",
     "question_number": 49,
-    "question_text": "다음 아미노산 중 필수 아미노산이며 분자구조에 황을 함유 하고 있는 것은?",
+    "question_text": "다음 아미노산 중 필수 아미노산이며 분자구조에 황을 함유하고 있는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2301,7 +2301,7 @@
     "exam_session": "2002-07-21",
     "subject": "식품위생학",
     "question_number": 57,
-    "question_text": "식품의 제조, 가공 또는 보존시 식품에 첨가, 혼합, 침윤 등 의 방법으로 사용되는 물질로 정의한 것은?",
+    "question_text": "식품의 제조, 가공 또는 보존시 식품에 첨가, 혼합, 침윤 등의 방법으로 사용되는 물질로 정의한 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2424,7 +2424,7 @@
     "exam_session": "2002-07-21",
     "subject": "식품위생학",
     "question_number": 60,
-    "question_text": "전염병은 다음과 같은 감염과정을 거친다. ( ) 안에 가장 적당한 것은?",
+    "question_text": "전염병은 다음과 같은 감염과정을 거친다. () 안에 가장 적당한 것은?",
     "question_image_url": "https://raw.githubusercontent.com/idlepoe/repeat_exam/main/assets/images/bread_2002072160.png",
     "choices": [
       {

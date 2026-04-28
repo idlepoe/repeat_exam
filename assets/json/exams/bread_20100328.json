@@ -251,8 +251,8 @@
     "exam_session": "2010-03-28",
     "subject": "제조이론",
     "question_number": 7,
-    "question_text": "어떤 한 종류의 케이크를 만들기 위하여 믹싱을 끝내고 비중 을 측정한 결과가 다음과 같을 때, 구운 후 기공이 조밀하고 부피가 가장 작아지는 비중의 수치는?",
-    "question_image_url": null,
+    "question_text": "어떤 한 종류의 케이크를 만들기 위하여 믹싱을 끝내고 비중을 측정한 결과가 다음과 같을 때, 구운 후 기공이 조밀하고 부피가 가장 작아지는 비중의 수치는?",
+    "question_image_url": "https://raw.githubusercontent.com/idlepoe/repeat_exam/main/assets/images/bread_201003287.png",
     "choices": [
       {
         "no": 1,
@@ -1973,7 +1973,7 @@
     "exam_session": "2010-03-28",
     "subject": "영양학",
     "question_number": 49,
-    "question_text": "동물성 지방을 과다 섭취하였을 때 발생할 가능성이 높아지 는 질병은?",
+    "question_text": "동물성 지방을 과다 섭취하였을 때 발생할 가능성이 높아지는 질병은?",
     "question_image_url": null,
     "choices": [
       {

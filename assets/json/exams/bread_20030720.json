@@ -538,7 +538,7 @@
     "exam_session": "2003-07-20",
     "subject": "제조이론",
     "question_number": 14,
-    "question_text": "케이크 도넛의 성형방법이다. ( )에 들어갈 공정은?",
+    "question_text": "케이크 도넛의 성형방법이다. ()에 들어갈 공정은?",
     "question_image_url": "https://raw.githubusercontent.com/idlepoe/repeat_exam/main/assets/images/bread_2003072014.png",
     "choices": [
       {
@@ -1194,7 +1194,7 @@
     "exam_session": "2003-07-20",
     "subject": "재료과학",
     "question_number": 30,
-    "question_text": "냉동반죽의 해동을 높은 온도에서 빨리 할 경우 반죽의 표 면에서 물이 나온다.(drip 현상) 그 이유로 틀린 것은?",
+    "question_text": "냉동반죽의 해동을 높은 온도에서 빨리할 경우 반죽의 표면에서 물이 나온다.(drip 현상) 그 이유로 틀린 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1768,7 +1768,7 @@
     "exam_session": "2003-07-20",
     "subject": "영양학",
     "question_number": 44,
-    "question_text": "계란 흰자의 약 13%를 차지하며 철과의 결합 능력이 강해 서 미생물이 이용하지 못하게 하는 항세균 물질은?",
+    "question_text": "계란 흰자의 약 13%를 차지하며 철과의 결합 능력이 강해서 미생물이 이용하지 못하게 하는 항세균 물질은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2055,7 +2055,7 @@
     "exam_session": "2003-07-20",
     "subject": "식품위생학",
     "question_number": 51,
-    "question_text": "식품중의 미생물 수를 줄이기 위한 방법으로 가장 부적당 한 것은?",
+    "question_text": "식품중의 미생물 수를 줄이기 위한 방법으로 가장 부적당한 것은?",
     "question_image_url": null,
     "choices": [
       {

@@ -128,7 +128,7 @@
     "exam_session": "2007-01-28",
     "subject": "제조이론",
     "question_number": 4,
-    "question_text": "도넛에 묻힌 설탕이 녹는 현상(발한)을 감소시키기 위한 조치 로 틀린 것은?",
+    "question_text": "도넛에 묻힌 설탕이 녹는 현상(발한)을 감소시키기 위한 조치로 틀린 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -535,7 +535,7 @@
     "exam_session": "2007-01-28",
     "subject": "제조이론",
     "question_number": 14,
-    "question_text": "반죽형 케이크를 구웠더니 너무 가볍고 부서지는 현상이 나 타났다. 그 원인이 아닌 것은?",
+    "question_text": "반죽형 케이크를 구웠더니 너무 가볍고 부서지는 현상이 나타났다. 그 원인이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -735,7 +735,7 @@
     "exam_session": "2007-01-28",
     "subject": "제조이론",
     "question_number": 19,
-    "question_text": "어떤 빵의 굽기 손실이 12%일 때 완제품의 중량을 600g으 로 만들려면 분할무게는 약 몇 g인가?",
+    "question_text": "어떤 빵의 굽기 손실이 12%일 때 완제품의 중량을 600g으로 만들려면 분할무게는 약 몇 g인가?",
     "question_image_url": null,
     "choices": [
       {
@@ -897,7 +897,7 @@
     "exam_session": "2007-01-28",
     "subject": "재료과학",
     "question_number": 23,
-    "question_text": "빵반죽의 글루텐을 구성하는 단백질은 약 몇 도에서 열변성 이 시작되는가?",
+    "question_text": "빵반죽의 글루텐을 구성하는 단백질은 약 몇 도에서 열변성이 시작되는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1102,7 +1102,7 @@
     "exam_session": "2007-01-28",
     "subject": "재료과학",
     "question_number": 28,
-    "question_text": "일정한 굳기를 가진 반죽의 신장도 및 신장 저항력을 측정하여 자동 기록함으로써 반죽의 점탄성을 파악하고 , 밀가 루 중의 효소나 산화제 환원제의 영향을 자세히 알 수 있는 그래프는?",
+    "question_text": "일정한 굳기를 가진 반죽의 신장도 및 신장 저항력을 측정하여 자동 기록함으로써 반죽의 점탄성을 파악하고, 밀가 루 중의 효소나 산화제 환원제의 영향을 자세히 알 수 있는 그래프는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1585,7 +1585,7 @@
     "exam_session": "2007-01-28",
     "subject": "영양학",
     "question_number": 40,
-    "question_text": "어떤 물속에 녹아있는 칼슘(Ca)과 마그네슘(Mg)염을 탄산칼 슘(CaCO3)으로 환산한 경도가 200ppm일 때 , 이 물은 다 음 중 어디에 속하는가?",
+    "question_text": "어떤 물속에 녹아있는 칼슘(Ca)과 마그네슘(Mg) 염을 탄산칼 슘(CaCO3)으로 환산한 경도가 200ppm일 때, 이 물은 다 음 중 어디에 속하는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1912,7 +1912,7 @@
     "exam_session": "2007-01-28",
     "subject": "영양학",
     "question_number": 48,
-    "question_text": "어떤 밀가루 100g의 조성이 수분 11%, 단백질 12%, 탄수 화물 72%,지방질 1.5%, 기타 4%일 때 , 이 밀가루의 g당 열량은?",
+    "question_text": "어떤 밀가루 100g의 조성이 수분 11%, 단백질 12%, 탄수 화물 72%,지방질 1.5%, 기타 4%일 때, 이 밀가루의 g당 열량은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2115,7 +2115,7 @@
     "exam_session": "2007-01-28",
     "subject": "식품위생학",
     "question_number": 53,
-    "question_text": "해수(海水)세균의 일종으로 식염농도 3%에서 잘 생육하며 어패류를 생식할 경우 중독 발생이 쉬운 균은?",
+    "question_text": "해수(海水) 세균의 일종으로 식염농도 3%에서 잘 생육하며 어패류를 생식할 경우 중독 발생이 쉬운 균은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2195,7 +2195,7 @@
     "exam_session": "2007-01-28",
     "subject": "식품위생학",
     "question_number": 55,
-    "question_text": "식기나 기구의 오용으로 구토 , 경련 , 설사 , 골연화증의 증상을 일으키며 ‘이타이이타이병’의 원인이 되는 유해성 금속 물질은?",
+    "question_text": "식기나 기구의 오용으로 구토, 경련, 설사, 골연화증의 증상을 일으키며 ‘이타이이타이병’의 원인이 되는 유해성 금속 물질은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2355,7 +2355,7 @@
     "exam_session": "2007-01-28",
     "subject": "식품위생학",
     "question_number": 59,
-    "question_text": "중독 시 두통 , 현기증 , 구토 , 설사 등과 시신경 염증을 유발시켜 실명의 원인이 되는 화학물질은?",
+    "question_text": "중독 시 두통, 현기증, 구토, 설사 등과 시신경 염증을 유발시켜 실명의 원인이 되는 화학물질은?",
     "question_image_url": null,
     "choices": [
       {

@@ -87,8 +87,8 @@
     "exam_session": "2006-04-02",
     "subject": "제조이론",
     "question_number": 3,
-    "question_text": "어떤 한 종류의 케이크를 만들기 위하여 믹싱을 끝내고 비중 을 측정한 결과가 다음과 같을 때 구운 후 기공이 조밀하고 부피가 가장 작아지는 것은?",
-    "question_image_url": null,
+    "question_text": "어떤 한 종류의 케이크를 만들기 위하여 믹싱을 끝내고 비중을 측정한 결과가 다음과 같을 때 구운 후 기공이 조밀하고 부피가 가장 작아지는 것은?",
+    "question_image_url": "https://raw.githubusercontent.com/idlepoe/repeat_exam/main/assets/images/bread_201003287.png",
     "choices": [
       {
         "no": 1,
@@ -374,7 +374,7 @@
     "exam_session": "2006-04-02",
     "subject": "제조이론",
     "question_number": 10,
-    "question_text": "쿠키에 있어 퍼짐율은 제품의 균일성과 포장에 중요한 의미 를 가진다. 다음 설명 중 퍼짐이 작아지는 원인으로 틀린 것은?",
+    "question_text": "쿠키에 있어 퍼짐율은 제품의 균일성과 포장에 중요한 의미를 가진다. 다음 설명 중 퍼짐이 작아지는 원인으로 틀린 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1358,7 +1358,7 @@
     "exam_session": "2006-04-02",
     "subject": "영양학",
     "question_number": 34,
-    "question_text": "제빵에서 탈지분유를 밀가루 대비 4-6% 정도를 사용할 때 의 영향이 아닌 것은?",
+    "question_text": "제빵에서 탈지분유를 밀가루 대비 4-6% 정도를 사용할 때의 영향이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2219,7 +2219,7 @@
     "exam_session": "2006-04-02",
     "subject": "식품위생학",
     "question_number": 55,
-    "question_text": "일명 점착제로서 식품의 점착성을 증가시켜 교질상의 미각 을 증진시키는 효과를 갖는 첨가물은?",
+    "question_text": "일명 점착제로서 식품의 점착성을 증가시켜 교질상의 미각을 증진시키는 효과를 갖는 첨가물은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2342,7 +2342,7 @@
     "exam_session": "2006-04-02",
     "subject": "식품위생학",
     "question_number": 58,
-    "question_text": "빵 반죽을 분할시 또는 구울 때 달라 붙지 않게 하고, 모양 을 유지하는데 사용되는 것은?",
+    "question_text": "빵 반죽을 분할시 또는 구울 때 달라 붙지 않게 하고, 모양을 유지하는데 사용되는 것은?",
     "question_image_url": null,
     "choices": [
       {

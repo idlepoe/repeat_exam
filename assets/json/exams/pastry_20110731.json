@@ -285,7 +285,7 @@
     "exam_session": "2011-07-31",
     "subject": "제조이론",
     "question_number": 8,
-    "question_text": "케이크 반죽의 pH가 적정 범위를 벗어나 알칼리일 경우 제품 에서 나타나는 현상은?",
+    "question_text": "케이크 반죽의 pH가 적정 범위를 벗어나 알칼리일 경우 제품에서 나타나는 현상은?",
     "question_image_url": null,
     "choices": [
       {
@@ -446,7 +446,7 @@
     "exam_session": "2011-07-31",
     "subject": "제조이론",
     "question_number": 12,
-    "question_text": "어떤 과자반죽의 비중을 측정하기 위하여 다음과 같이 무게 를 달았다면 이반죽의 비중은? (단, 비중컵=50g, 비중컵+물 =250g, 비중컵+반죽=170g)",
+    "question_text": "어떤 과자반죽의 비중을 측정하기 위하여 다음과 같이 무게를 달았다면 이반죽의 비중은? (단, 비중컵=50g, 비중컵+물 =250g, 비중컵+반죽=170g)",
     "question_image_url": null,
     "choices": [
       {
@@ -733,7 +733,7 @@
     "exam_session": "2011-07-31",
     "subject": "제조이론",
     "question_number": 19,
-    "question_text": "식빵의 온도를 28℃까지 냉각한 후 포장할 때 식빵에 미치 는 영향은?",
+    "question_text": "식빵의 온도를 28℃까지 냉각한 후 포장할 때 식빵에 미치는 영향은?",
     "question_image_url": null,
     "choices": [
       {
@@ -979,7 +979,7 @@
     "exam_session": "2011-07-31",
     "subject": "재료과학",
     "question_number": 25,
-    "question_text": "다음 재료 중 식빵 제조 시 반죽 온도에 가장 큰 영향을 주 는 것은?",
+    "question_text": "다음 재료 중 식빵 제조 시 반죽 온도에 가장 큰 영향을 주는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1266,7 +1266,7 @@
     "exam_session": "2011-07-31",
     "subject": "영양학",
     "question_number": 32,
-    "question_text": "우유를 살균할 때 고온단시간살균법(HTST)으로서 가장 적합 한 조건은?",
+    "question_text": "우유를 살균할 때 고온단시간살균법(HTST)으로서 가장 적합한 조건은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2373,7 +2373,7 @@
     "exam_session": "2011-07-31",
     "subject": "식품위생학",
     "question_number": 59,
-    "question_text": "주로 냉동된 육류 등 저온에서도 생존력이 강하고 수막염이 나 임신부의 자궁 내 패혈증 등을 일으키는 식중독균은?",
+    "question_text": "주로 냉동된 육류 등 저온에서도 생존력이 강하고 수막염이나 임신부의 자궁 내 패혈증 등을 일으키는 식중독균은?",
     "question_image_url": null,
     "choices": [
       {

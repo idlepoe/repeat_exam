@@ -5,7 +5,7 @@
     "exam_session": "2011-02-13",
     "subject": "제조이론",
     "question_number": 1,
-    "question_text": "나가사끼 카스테라 제조 시 굽기 과정에서 휘젓기를 하는 이 유가 아닌 것은?",
+    "question_text": "나가사끼 카스테라 제조 시 굽기 과정에서 휘젓기를 하는 이유가 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -87,7 +87,7 @@
     "exam_session": "2011-02-13",
     "subject": "제조이론",
     "question_number": 3,
-    "question_text": "코코아 20%에 해당하는 초콜릿을 사용하여 케이크를 만들려 고 할 때 초콜릿 사용량은?",
+    "question_text": "코코아 20%에 해당하는 초콜릿을 사용하여 케이크를 만들려고 할 때 초콜릿 사용량은?",
     "question_image_url": null,
     "choices": [
       {
@@ -128,7 +128,7 @@
     "exam_session": "2011-02-13",
     "subject": "제조이론",
     "question_number": 4,
-    "question_text": "40g의 계량컵에 물을 가득 채웠더니 240g이었다. 과자반죽 을 넣고 달아보니 220g이 되었다면 이 반죽의 비중은 얼마인 가?",
+    "question_text": "40g의 계량컵에 물을 가득 채웠더니 240g이었다. 과자반죽을 넣고 달아보니 220g이 되었다면 이 반죽의 비중은 얼마인 가?",
     "question_image_url": null,
     "choices": [
       {
@@ -538,7 +538,7 @@
     "exam_session": "2011-02-13",
     "subject": "제조이론",
     "question_number": 14,
-    "question_text": "머랭(meringgue)중에서 설탕을 끓여서 시럽으로 만들어 제 조하는 것은?",
+    "question_text": "머랭(meringgue) 중에서 설탕을 끓여서 시럽으로 만들어 제 조하는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -661,7 +661,7 @@
     "exam_session": "2011-02-13",
     "subject": "제조이론",
     "question_number": 17,
-    "question_text": "분할기에 의한 식빵 분할은 최대 몇 분 이내에 완료하는 것 이 가장 적합한가?",
+    "question_text": "분할기에 의한 식빵 분할은 최대 몇 분 이내에 완료하는 것이 가장 적합한가?",
     "question_image_url": null,
     "choices": [
       {
@@ -702,7 +702,7 @@
     "exam_session": "2011-02-13",
     "subject": "제조이론",
     "question_number": 18,
-    "question_text": "어떤 과자점에서 여름에 반죽 온도를 24℃로 하여 빵을 만 들려고 한다. 사용수 온도는 10℃, 수돗물의 온도는 18℃, 사용수 양은 3kg, 얼음 사용량은 900g일 때 조치사항으로 옳은 것은?",
+    "question_text": "어떤 과자점에서 여름에 반죽 온도를 24℃로 하여 빵을 만들려고 한다. 사용수 온도는 10℃, 수돗물의 온도는 18℃, 사용수 양은 3kg, 얼음 사용량은 900g일 때 조치사항으로 옳은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -743,7 +743,7 @@
     "exam_session": "2011-02-13",
     "subject": "제조이론",
     "question_number": 19,
-    "question_text": "어느 제과점의 지난 달 생산실적이 다음과 같은 경우 노동 분배율은? (외부가치 600만원, 생산가치 .3000만원, 인건비 1500만원, 총인원 10명)",
+    "question_text": "어느 제과점의 지난 달 생산실적이 다음과 같은 경우 노동 분배율은? (외부가치 600만원, 생산가치.3000만원, 인건비 1500만원, 총인원 10명)",
     "question_image_url": null,
     "choices": [
       {
@@ -907,7 +907,7 @@
     "exam_session": "2011-02-13",
     "subject": "재료과학",
     "question_number": 23,
-    "question_text": "성형한 식빵 반죽을 팬에 넣을 때 이음매의 위치는 어느 쪽 이 가장 좋은가?",
+    "question_text": "성형한 식빵 반죽을 팬에 넣을 때 이음매의 위치는 어느 쪽이 가장 좋은가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1522,7 +1522,7 @@
     "exam_session": "2011-02-13",
     "subject": "영양학",
     "question_number": 38,
-    "question_text": "제과·제빵용 건조 재료와 팽창제 및 유지 재료를 알맞은 배 합율로 균일하게 혼합한 원료는?",
+    "question_text": "제과·제빵용 건조 재료와 팽창제 및 유지 재료를 알맞은 배합율로 균일하게 혼합한 원료는?",
     "question_image_url": null,
     "choices": [
       {

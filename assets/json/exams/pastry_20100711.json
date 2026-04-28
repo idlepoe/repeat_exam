@@ -251,7 +251,7 @@
     "exam_session": "2010-07-11",
     "subject": "제조이론",
     "question_number": 7,
-    "question_text": "퐁당 아이싱이 끈적거리거나 포장지에 붙는 경향을 감소시키 는 방법으로 옳지 않은 것은?",
+    "question_text": "퐁당 아이싱이 끈적거리거나 포장지에 붙는 경향을 감소시키는 방법으로 옳지 않은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -333,7 +333,7 @@
     "exam_session": "2010-07-11",
     "subject": "제조이론",
     "question_number": 9,
-    "question_text": "케이크 팬용적 410cm³에 100g 의 스펀지케이크 반죽을 넣어 좋은 결과를 얻었다면, 팬용적 1230cm³에 넣어야 할 스펀 지케이크의 반죽무게(g)는?",
+    "question_text": "케이크 팬용적 410cm³에 100g의 스펀지케이크 반죽을 넣어 좋은 결과를 얻었다면, 팬용적 1230cm³에 넣어야할 스펀 지케이크의 반죽무게(g)는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1030,7 +1030,7 @@
     "exam_session": "2010-07-11",
     "subject": "재료과학",
     "question_number": 26,
-    "question_text": "500g 의 식빵을 2개 만들려고 한다. 총 배합율은 180%이 고 발효 손실은 1% , 굽기손실은 12%라고 가정할 때 사용 할 밀가루 무게는 약 얼마인가? (단, 계산의 답은 소수점 첫 째 자리에서 반올림한다.)",
+    "question_text": "500g의 식빵을 2개 만들려고 한다. 총 배합율은 180%이고 발효 손실은 1%, 굽기손실은 12%라고 가정할 때 사용할 밀가루 무게는 약 얼마인가? (단, 계산의 답은 소수점 첫 째 자리에서 반올림한다.)",
     "question_image_url": null,
     "choices": [
       {
@@ -1153,7 +1153,7 @@
     "exam_session": "2010-07-11",
     "subject": "재료과학",
     "question_number": 29,
-    "question_text": "식빵반죽을 혼합할 때 반죽의 온도 조절에 가장 크게 영향 을 미치는 원료는?",
+    "question_text": "식빵반죽을 혼합할 때 반죽의 온도 조절에 가장 크게 영향을 미치는 원료는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1891,7 +1891,7 @@
     "exam_session": "2010-07-11",
     "subject": "영양학",
     "question_number": 47,
-    "question_text": "밀가루가 75% 의 탄수화물, 10% 의 단백질, 1% 의 지방을 함유하고 있다면 100g 의 밀가루를 섭취하였을 때 얻을 수 있는 열량(kcal)은?",
+    "question_text": "밀가루가 75%의 탄수화물, 10%의 단백질, 1%의 지방을 함유하고 있다면 100g의 밀가루를 섭취하였을 때 얻을 수 있는 열량(kcal)은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2219,7 +2219,7 @@
     "exam_session": "2010-07-11",
     "subject": "식품위생학",
     "question_number": 55,
-    "question_text": "제품의 유통기간 연장을 위해서 포장에 이용되는 불활성 가 스는?",
+    "question_text": "제품의 유통기간 연장을 위해서 포장에 이용되는 불활성가스는?",
     "question_image_url": null,
     "choices": [
       {
@@ -2342,7 +2342,7 @@
     "exam_session": "2010-07-11",
     "subject": "식품위생학",
     "question_number": 58,
-    "question_text": "장염 비브리오(Vibrio)균에 의한 식중독 유형은?",
+    "question_text": "장염 비브리오(Vibrio) 균에 의한 식중독 유형은?",
     "question_image_url": null,
     "choices": [
       {

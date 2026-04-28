@@ -661,7 +661,7 @@
     "exam_session": "2009-01-18",
     "subject": "제조이론",
     "question_number": 17,
-    "question_text": "600g짜리 빵 10개를 만들려 할 때 발효 손실 2%, 굽기 및 냉각손실이 12%이면 반죽해야 할 반죽의 총 무게는 약 얼 마인가?",
+    "question_text": "600g짜리 빵 10개를 만들려 할 때 발효 손실 2%, 굽기 및 냉각손실이 12%이면 반죽해야할 반죽의 총 무게는 약 얼 마인가?",
     "question_image_url": null,
     "choices": [
       {
@@ -825,7 +825,7 @@
     "exam_session": "2009-01-18",
     "subject": "재료과학",
     "question_number": 21,
-    "question_text": "건포도 식빵을 구울 때 건포도에 함유된 당의 영향을 고려 하여 주의 할 점은?",
+    "question_text": "건포도 식빵을 구울 때 건포도에 함유된 당의 영향을 고려 하여 주의할 점은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1358,7 +1358,7 @@
     "exam_session": "2009-01-18",
     "subject": "영양학",
     "question_number": 34,
-    "question_text": "10% 이상의 단백질 함량을 가진 밀가루로 케이크를 만들었 을 때 나타나는 결과가 아닌 것은?",
+    "question_text": "10% 이상의 단백질 함량을 가진 밀가루로 케이크를 만들었을 때 나타나는 결과가 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1645,7 +1645,7 @@
     "exam_session": "2009-01-18",
     "subject": "영양학",
     "question_number": 41,
-    "question_text": "기본적인 유화쇼트닝은 모노-디 글리세리드 역가를 기준으 로 유지에 대하여 얼마를 첨가하는 것이 가장 적당한가?",
+    "question_text": "기본적인 유화쇼트닝은 모노-디 글리세리드 역가를 기준으로 유지에 대하여 얼마를 첨가하는 것이 가장 적당한가?",
     "question_image_url": null,
     "choices": [
       {
@@ -2085,7 +2085,7 @@
     "exam_session": "2009-01-18",
     "subject": "식품위생학",
     "question_number": 52,
-    "question_text": "곰팡이의 대사생산물이 사람이나 동물에 어떤 질병이나 이 상한 생리작용을 유발하는 것은?",
+    "question_text": "곰팡이의 대사생산물이 사람이나 동물에 어떤 질병이나 이상한 생리작용을 유발하는 것은?",
     "question_image_url": null,
     "choices": [
       {

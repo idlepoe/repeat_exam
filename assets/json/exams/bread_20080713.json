@@ -209,7 +209,7 @@
     "exam_session": "2008-07-13",
     "subject": "제조이론",
     "question_number": 6,
-    "question_text": "유화 쇼트닝을 60% 사용해야 할 옐로우 레이어 케이크 배합 에 32%의 초콜릿을 넣어 초콜릿 케이크를 만든다면 원래의 쇼트닝 60%는 얼마로 조절해야 하는가?",
+    "question_text": "유화 쇼트닝을 60% 사용해야 할 옐로우 레이어 케이크 배합에 32%의 초콜릿을 넣어 초콜릿 케이크를 만든다면 원래의 쇼트닝 60%는 얼마로 조절해야 하는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -495,7 +495,7 @@
     "exam_session": "2008-07-13",
     "subject": "제조이론",
     "question_number": 13,
-    "question_text": "다음 제품 중 성형하여 패닝 할 때 반죽의 간격을 가장 충 분히 유지하여야 하는 제품은?",
+    "question_text": "다음 제품 중 성형하여 패닝할 때 반죽의 간격을 가장 충 분히 유지하여야 하는 제품은?",
     "question_image_url": null,
     "choices": [
       {
@@ -577,7 +577,7 @@
     "exam_session": "2008-07-13",
     "subject": "제조이론",
     "question_number": 15,
-    "question_text": "데커레이션케이크 100개를 1명이 아이싱 할 때 5시간이 필 요 하다면, 1400개를 7시간 안에 아이싱 하는데 필요한 인 원수는? (단, 작업의 능률은 동일하다.)",
+    "question_text": "데커레이션케이크 100개를 1명이 아이싱할 때 5시간이 필 요 하다면, 1400개를 7시간 안에 아이싱 하는데 필요한 인 원수는? (단, 작업의 능률은 동일하다.)",
     "question_image_url": null,
     "choices": [
       {
@@ -823,7 +823,7 @@
     "exam_session": "2008-07-13",
     "subject": "재료과학",
     "question_number": 21,
-    "question_text": "빵 반죽(믹싱)시 반죽 온도가 높아지는 주 이유는?",
+    "question_text": "빵 반죽(믹싱) 시 반죽 온도가 높아지는 주 이유는?",
     "question_image_url": null,
     "choices": [
       {
@@ -987,7 +987,7 @@
     "exam_session": "2008-07-13",
     "subject": "재료과학",
     "question_number": 25,
-    "question_text": "반죽의 내부 온도가 60℃에 도달하지 않은 상태에서 온도상승에 따른 이스트의 활동으로 부피의 점진적인 증가가 진행 되는 현상은?",
+    "question_text": "반죽의 내부 온도가 60℃에 도달하지 않은 상태에서 온도상승에 따른 이스트의 활동으로 부피의 점진적인 증가가 진행되는 현상은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1393,7 +1393,7 @@
     "exam_session": "2008-07-13",
     "subject": "영양학",
     "question_number": 35,
-    "question_text": "탈지분유 20g을 물 80g에 넣어 녹여 탈지분유액을 만들었 을 때 탈지분유액 중 단백질의 함량은 몇 %인가? (단, 탈지 분유 조성은 수분4%, 유당 57%, 단백질35%, 지방4%이다.)",
+    "question_text": "탈지분유 20g을 물 80g에 넣어 녹여 탈지분유액을 만들었을 때 탈지분유액 중 단백질의 함량은 몇 %인가? (단, 탈지 분유 조성은 수분4%, 유당 57%, 단백질35%, 지방4%이다.)",
     "question_image_url": null,
     "choices": [
       {
@@ -1797,7 +1797,7 @@
     "exam_session": "2008-07-13",
     "subject": "영양학",
     "question_number": 45,
-    "question_text": "전분을 가수분해 할 때 처음 생성되는 덱스트린은?",
+    "question_text": "전분을 가수분해할 때 처음 생성되는 덱스트린은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2002,7 +2002,7 @@
     "exam_session": "2008-07-13",
     "subject": "영양학",
     "question_number": 50,
-    "question_text": "음식 100g 중 질소 함량이 4g이라면 음식에는 몇 g의 단백 질이 함유된 것인가? (단, 단백질 1g에 는 16%의 질소가 함유되어 있다.)",
+    "question_text": "음식 100g 중 질소 함량이 4g이라면 음식에는 몇 g의 단백 질이 함유된 것인가? (단, 단백질 1g에는 16%의 질소가 함유되어 있다.)",
     "question_image_url": null,
     "choices": [
       {

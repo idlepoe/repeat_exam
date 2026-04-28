@@ -210,7 +210,7 @@
     "exam_session": "2011-10-09",
     "subject": "제조이론",
     "question_number": 6,
-    "question_text": "파운드 케이크를 패닝할 때 밑면의 껍질 형성을 방지하기 위 한 팬으로 가장 적합한 것은?",
+    "question_text": "파운드 케이크를 패닝할 때 밑면의 껍질 형성을 방지하기 위한 팬으로 가장 적합한 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -497,7 +497,7 @@
     "exam_session": "2011-10-09",
     "subject": "제조이론",
     "question_number": 13,
-    "question_text": "케이크 반죽이 30ℓ 용량의 그릇 10개에 가득 차있다. 이것 으로 분할 반죽 300g 짜리 600개를 만들었다.이 반죽의 비 중은?",
+    "question_text": "케이크 반죽이 30ℓ 용량의 그릇 10개에 가득 차있다. 이것으로 분할 반죽 300g 짜리 600개를 만들었다. 이 반죽의 비 중은?",
     "question_image_url": null,
     "choices": [
       {
@@ -538,7 +538,7 @@
     "exam_session": "2011-10-09",
     "subject": "제조이론",
     "question_number": 14,
-    "question_text": "퍼프 페이스트리의 휴지가 종료되었을 때 손으로 살짝 누르 게 되면 다음 중 어떤 현상이 나타나는가?",
+    "question_text": "퍼프 페이스트리의 휴지가 종료되었을 때 손으로 살짝 누르게 되면 다음 중 어떤 현상이 나타나는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -579,7 +579,7 @@
     "exam_session": "2011-10-09",
     "subject": "제조이론",
     "question_number": 15,
-    "question_text": "다음 중 제과제빵 재료로 사용되는 쇼트닝(shortening)에 대 한 설명으로 틀린 것은?",
+    "question_text": "다음 중 제과제빵 재료로 사용되는 쇼트닝(shortening)에 대한 설명으로 틀린 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -907,7 +907,7 @@
     "exam_session": "2011-10-09",
     "subject": "재료과학",
     "question_number": 23,
-    "question_text": "어린 반죽(발효가 덜 된 반죽) 으로 제조를 할 경우 중간발효시간은 어떻게 조절되는가?",
+    "question_text": "어린 반죽(발효가 덜 된 반죽)으로 제조를 할 경우 중간발효시간은 어떻게 조절되는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1030,7 +1030,7 @@
     "exam_session": "2011-10-09",
     "subject": "재료과학",
     "question_number": 26,
-    "question_text": "냉동반죽의 해동을 높은 온도에서 빨리 할 경우 반죽의 표 면에서 물이 나오는 드립(drip)현상이 발생하는데 그 원인이 아닌 것은?",
+    "question_text": "냉동반죽의 해동을 높은 온도에서 빨리할 경우 반죽의 표면에서 물이 나오는 드립(drip) 현상이 발생하는데 그 원인이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2137,7 +2137,7 @@
     "exam_session": "2011-10-09",
     "subject": "식품위생학",
     "question_number": 53,
-    "question_text": "마시는 물 또는 식품을 매개로 발생하고 집단 발생의 우려 가 커서 발생 또는 유행 즉시 방역대책을 수립하여야 하는 감염병은?",
+    "question_text": "마시는 물 또는 식품을 매개로 발생하고 집단 발생의 우려가 커서 발생 또는 유행 즉시 방역대책을 수립하여야 하는 감염병은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2424,7 +2424,7 @@
     "exam_session": "2011-10-09",
     "subject": "식품위생학",
     "question_number": 60,
-    "question_text": "보툴리누스 식중독에서 나타날 수 있는 주요 증상 및 증후 가 아닌 것은?",
+    "question_text": "보툴리누스 식중독에서 나타날 수 있는 주요 증상 및 증후가 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {

@@ -46,7 +46,7 @@
     "exam_session": "2010-10-03",
     "subject": "제조이론",
     "question_number": 2,
-    "question_text": "기포를 안정되게 하기 위해 오븐에 들어가기 직전 충격을 가 하는 제품은?",
+    "question_text": "기포를 안정되게 하기 위해 오븐에 들어가기 직전 충격을가 하는 제품은?",
     "question_image_url": null,
     "choices": [
       {
@@ -374,7 +374,7 @@
     "exam_session": "2010-10-03",
     "subject": "제조이론",
     "question_number": 10,
-    "question_text": "흰자를 사용하는 제품에 주석산 크림과 같은 산을 넣는 이 유가 아닌 것은?",
+    "question_text": "흰자를 사용하는 제품에 주석산 크림과 같은 산을 넣는 이유가 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -415,7 +415,7 @@
     "exam_session": "2010-10-03",
     "subject": "제조이론",
     "question_number": 11,
-    "question_text": "다음 제품 중 패닝 할 때 제품의 간격을 가장 충분히 유지 하여야 하는 제품은?",
+    "question_text": "다음 제품 중 패닝할 때 제품의 간격을 가장 충분히 유지 하여야 하는 제품은?",
     "question_image_url": null,
     "choices": [
       {
@@ -743,7 +743,7 @@
     "exam_session": "2010-10-03",
     "subject": "제조이론",
     "question_number": 19,
-    "question_text": "제빵 시 가수량, 믹싱 내구성, 믹싱 시간, 믹싱의 최적시기 를 판단하는데 유용한 기계는?",
+    "question_text": "제빵 시 가수량, 믹싱 내구성, 믹싱 시간, 믹싱의 최적시기를 판단하는데 유용한 기계는?",
     "question_image_url": null,
     "choices": [
       {
@@ -866,7 +866,7 @@
     "exam_session": "2010-10-03",
     "subject": "재료과학",
     "question_number": 22,
-    "question_text": "500g의 완제품 식빵 200개를 제조하려 할 때, 발효 손실이 1%, 굽기 냉각 손실이 12%, 총 배합률이 180%라면 밀가루 의 무게는 약 얼마인가?",
+    "question_text": "500g의 완제품 식빵 200개를 제조하려 할 때, 발효 손실이 1%, 굽기 냉각 손실이 12%, 총 배합률이 180%라면 밀가루의 무게는 약 얼마인가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1563,7 +1563,7 @@
     "exam_session": "2010-10-03",
     "subject": "영양학",
     "question_number": 39,
-    "question_text": "메성 옥수수 (non-waxy corn)전분의 호화 온도는?",
+    "question_text": "메성 옥수수 (non-waxy corn) 전분의 호화 온도는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1686,7 +1686,7 @@
     "exam_session": "2010-10-03",
     "subject": "영양학",
     "question_number": 42,
-    "question_text": "머랭(meringue)을 만드는데 1kg의 흰자가 필요하다면 껍질 을 포함한 평균무게가 60g인 계란은 약 몇 개가 필요한가?",
+    "question_text": "머랭(meringue)을 만드는데 1kg의 흰자가 필요하다면 껍질을 포함한 평균무게가 60g인 계란은 약 몇 개가 필요한가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1727,7 +1727,7 @@
     "exam_session": "2010-10-03",
     "subject": "영양학",
     "question_number": 43,
-    "question_text": "밀가루 속의 단백질 함량은 반주(Dough)의 흡수율에 밀접 한 관련이 있다고 한다. 일반적으로 단백질 1%에 대하여 반죽 흡수율은 얼마나 증가되는가?",
+    "question_text": "밀가루 속의 단백질 함량은 반주(Dough)의 흡수율에 밀접한 관련이 있다고 한다. 일반적으로 단백질 1%에 대하여 반죽 흡수율은 얼마나 증가되는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -2014,7 +2014,7 @@
     "exam_session": "2010-10-03",
     "subject": "영양학",
     "question_number": 50,
-    "question_text": "제품 100g에 무기질이 2g 들어있다면 이 무기질로부터 얻 을 수 있는 열량은?",
+    "question_text": "제품 100g에 무기질이 2g 들어있다면 이 무기질로부터 얻을 수 있는 열량은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2383,7 +2383,7 @@
     "exam_session": "2010-10-03",
     "subject": "식품위생학",
     "question_number": 59,
-    "question_text": "우리나라 식중독 월별 발생 상황 중 환자의 수가 92% 이상 을 차지하는 계절은?",
+    "question_text": "우리나라 식중독 월별 발생 상황 중 환자의 수가 92% 이상을 차지하는 계절은?",
     "question_image_url": null,
     "choices": [
       {

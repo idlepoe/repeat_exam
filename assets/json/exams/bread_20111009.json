@@ -46,7 +46,7 @@
     "exam_session": "2011-10-09",
     "subject": "제조이론",
     "question_number": 2,
-    "question_text": "제빵 시 완성된 빵의 부피가 비정상적으로 크다면 그 원인으 로 가장 적합한 것은?",
+    "question_text": "제빵 시 완성된 빵의 부피가 비정상적으로 크다면 그 원인으로 가장 적합한 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -251,7 +251,7 @@
     "exam_session": "2011-10-09",
     "subject": "제조이론",
     "question_number": 7,
-    "question_text": "다크 초콜릿을 템퍼링(Tempering)할 때 맨 처음 녹이는 공정 의 온도 범위로 가장 적합한 것은?",
+    "question_text": "다크 초콜릿을 템퍼링(Tempering) 할 때 맨 처음 녹이는 공정의 온도 범위로 가장 적합한 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -579,7 +579,7 @@
     "exam_session": "2011-10-09",
     "subject": "제조이론",
     "question_number": 15,
-    "question_text": "여름철(실온 30℃)에 사과파이껍질을 제조할 때 적당한 물 의 온도는?",
+    "question_text": "여름철(실온 30℃)에 사과파이껍질을 제조할 때 적당한 물의 온도는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1768,7 +1768,7 @@
     "exam_session": "2011-10-09",
     "subject": "영양학",
     "question_number": 44,
-    "question_text": "버터 초콜릿(bitter chocclate)원액 속에 포함된 코코아 버터 의 함량은?",
+    "question_text": "버터 초콜릿(bitter chocclate) 원액 속에 포함된 코코아 버터의 함량은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2055,7 +2055,7 @@
     "exam_session": "2011-10-09",
     "subject": "식품위생학",
     "question_number": 51,
-    "question_text": "식품조리 및 취급과정 중 교차오염이 발생하는 경우와 거리 가 먼 것은?",
+    "question_text": "식품조리 및 취급과정 중 교차오염이 발생하는 경우와 거리가 먼 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2424,7 +2424,7 @@
     "exam_session": "2011-10-09",
     "subject": "식품위생학",
     "question_number": 60,
-    "question_text": "살모넬라(salmonella)균 식중독에 대한 설명으로 옳은 것은?",
+    "question_text": "살모넬라(salmonella) 균 식중독에 대한 설명으로 옳은 것은?",
     "question_image_url": null,
     "choices": [
       {

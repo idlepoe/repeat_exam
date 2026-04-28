@@ -455,7 +455,7 @@
     "exam_session": "2005-01-30",
     "subject": "제조이론",
     "question_number": 12,
-    "question_text": "퍼프 페이스트리 제조시 다른 조건이 같을 때 충전용 유지 에 대한 설명으로 틀리는 것은?",
+    "question_text": "퍼프 페이스트리 제조시 다른 조건이 같을 때 충전용 유지에 대한 설명으로 틀리는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -615,7 +615,7 @@
     "exam_session": "2005-01-30",
     "subject": "제조이론",
     "question_number": 16,
-    "question_text": "대량생산 공장에서 많이 사용되는 오븐으로 반죽이 들어가 는 입구와 제품이 나오는 출구가 서로 다른 오븐은?",
+    "question_text": "대량생산 공장에서 많이 사용되는 오븐으로 반죽이 들어가는 입구와 제품이 나오는 출구가 서로 다른 오븐은?",
     "question_image_url": null,
     "choices": [
       {
@@ -775,7 +775,7 @@
     "exam_session": "2005-01-30",
     "subject": "제조이론",
     "question_number": 20,
-    "question_text": "스트레이트법을 노타임 반죽법으로 변경할 때의 조치사항으 로 맞는 것은?",
+    "question_text": "스트레이트법을 노타임 반죽법으로 변경할 때의 조치사항으로 맞는 것은?",
     "question_image_url": null,
     "choices": [
       {

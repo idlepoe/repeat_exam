@@ -1194,7 +1194,7 @@
     "exam_session": "2006-10-01",
     "subject": "재료과학",
     "question_number": 30,
-    "question_text": "보통 반죽에서 이스트를 2.5% 사용하였다면 냉동반죽에서 의 이스트 사용량은?",
+    "question_text": "보통 반죽에서 이스트를 2.5% 사용하였다면 냉동반죽에서의 이스트 사용량은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1235,7 +1235,7 @@
     "exam_session": "2006-10-01",
     "subject": "영양학",
     "question_number": 31,
-    "question_text": "소맥분의 패리노그래프를 그려보니 믹싱타임 (Mixing time) 이 매우 짧은 것으로 나타났다. 이 소맥분을 빵에 사용할 때 보완법으로 옳은 것은?",
+    "question_text": "소맥분의 패리노그래프를 그려보니 믹싱타임 (Mixing time)이 매우 짧은 것으로 나타났다. 이 소맥분을 빵에 사용할 때 보완법으로 옳은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1604,7 +1604,7 @@
     "exam_session": "2006-10-01",
     "subject": "영양학",
     "question_number": 40,
-    "question_text": "어떤 케이크 제조에 1kg의 달걀이 필요하다면 껍질을 포함 한 평균 무게가 60g인 달걀은 약 몇 개가 필요한가?",
+    "question_text": "어떤 케이크 제조에 1kg의 달걀이 필요하다면 껍질을 포함한 평균 무게가 60g인 달걀은 약 몇 개가 필요한가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1790,7 +1790,7 @@
       "영양학"
     ],
     "aiExplanation": {
-      "correctExplanation": "비터 초콜릿(Bitter Chocolate)은 코코아 매스와 코코아 버터로 구성되며, 일반적으로 코코아 함량이 5/8 (약 62.5%) 이상인 초콜릿을 의미합니다. 이는 다크 초콜릿의 한 종류입니다.",
+      "correctExplanation": "비터 초콜릿(Bitter Chocolate)은 코코아 매스와 코코아 버터로 구성되며, 일반적으로 코코아 함량이 5/8 (약 62.5%)이상인 초콜릿을 의미합니다. 이는 다크 초콜릿의 한 종류입니다.",
       "wrongAnswerNotes": [
         "1번: 3/8은 코코아 함량이 낮은 편에 속합니다.",
         "2번: 4/8은 일반적인 밀크 초콜릿의 코코아 함량 범위에 가깝습니다.",

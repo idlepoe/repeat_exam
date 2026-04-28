@@ -210,7 +210,7 @@
     "exam_session": "2007-04-01",
     "subject": "제조이론",
     "question_number": 6,
-    "question_text": "다음 쿠키 중에서 상대적으로 수분이 적어서 밀어펴는 형태 로 만드는 제품은?",
+    "question_text": "다음 쿠키 중에서 상대적으로 수분이 적어서 밀어펴는 형태로 만드는 제품은?",
     "question_image_url": null,
     "choices": [
       {
@@ -495,7 +495,7 @@
     "exam_session": "2007-04-01",
     "subject": "제조이론",
     "question_number": 13,
-    "question_text": "스펀지 케이크에서 계란사용량을 15% 감소시킬 때 고형분 과 수분량을 고려한 밀가루와 물의 사용량은?",
+    "question_text": "스펀지 케이크에서 계란사용량을 15% 감소시킬 때 고형분과 수분량을 고려한 밀가루와 물의 사용량은?",
     "question_image_url": null,
     "choices": [
       {
@@ -695,7 +695,7 @@
     "exam_session": "2007-04-01",
     "subject": "제조이론",
     "question_number": 18,
-    "question_text": "굽기 및 냉각손실이 12%이고 완제품이 500g일 때 분할량 은 약 얼마인가?",
+    "question_text": "굽기 및 냉각손실이 12%이고 완제품이 500g일 때 분할량은 약 얼마인가?",
     "question_image_url": null,
     "choices": [
       {
@@ -856,7 +856,7 @@
     "exam_session": "2007-04-01",
     "subject": "재료과학",
     "question_number": 22,
-    "question_text": "다음 중 빵 제품의 노화(staling)현상이 가장 일어나지 않는 온도는?",
+    "question_text": "다음 중 빵 제품의 노화(staling) 현상이 가장 일어나지 않는 온도는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1594,7 +1594,7 @@
     "exam_session": "2007-04-01",
     "subject": "영양학",
     "question_number": 40,
-    "question_text": "pH 가 5인 물을 증류수로 100배 희석했을 때 pH는?",
+    "question_text": "pH가 5인 물을 증류수로 100배 희석했을 때 pH는?",
     "question_image_url": null,
     "choices": [
       {
@@ -2168,7 +2168,7 @@
     "exam_session": "2007-04-01",
     "subject": "식품위생학",
     "question_number": 54,
-    "question_text": "식중독을 일으키는 세균 중 평균적으로 잠복기가 가장 짧 은 것은?",
+    "question_text": "식중독을 일으키는 세균 중 평균적으로 잠복기가 가장 짧은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2332,7 +2332,7 @@
     "exam_session": "2007-04-01",
     "subject": "식품위생학",
     "question_number": 58,
-    "question_text": "알레르기(allergy)성 식중독의 원인이 될 수 있는 기능성이 가장 높은 식품은?",
+    "question_text": "알레르기(allergy) 성 식중독의 원인이 될 수 있는 기능성이 가장 높은 식품은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2373,7 +2373,7 @@
     "exam_session": "2007-04-01",
     "subject": "식품위생학",
     "question_number": 59,
-    "question_text": "식품의 처리, 가공, 저장 과정에서의 오염에 대한 설명으 로 바르지 못한 것은?",
+    "question_text": "식품의 처리, 가공, 저장 과정에서의 오염에 대한 설명으로 바르지 못한 것은?",
     "question_image_url": null,
     "choices": [
       {

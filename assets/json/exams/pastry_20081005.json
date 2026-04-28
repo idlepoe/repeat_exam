@@ -169,7 +169,7 @@
     "exam_session": "2008-10-05",
     "subject": "제조이론",
     "question_number": 5,
-    "question_text": "스펀지 케이크에서 계란사용량을 감소시킬 때의 조치사항으 로 잘못된 것은?",
+    "question_text": "스펀지 케이크에서 계란사용량을 감소시킬 때의 조치사항으로 잘못된 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -210,7 +210,7 @@
     "exam_session": "2008-10-05",
     "subject": "제조이론",
     "question_number": 6,
-    "question_text": "밀가루 A, B ,C ,D 네 가지 제품의 수분함량과 가격이 아래 표와 같을 때 고형분에 대한 단가를 고려하여 어떤 밀가루를 사용하는 것이 가장 경제적인가?",
+    "question_text": "밀가루 A, B, C, D 네 가지 제품의 수분함량과 가격이 아래 표와 같을 때 고형분에 대한 단가를 고려하여 어떤 밀가루를 사용하는 것이 가장 경제적인가?",
     "question_image_url": null,
     "choices": [
       {
@@ -784,7 +784,7 @@
     "exam_session": "2008-10-05",
     "subject": "제조이론",
     "question_number": 20,
-    "question_text": "빵제품의 껍질색이 여리고, 부스러지기 쉬운 껍질 이 되는 경우에는 가장 크게 영향을 미치는 요인은?",
+    "question_text": "빵제품의 껍질색이 여리고, 부스러지기 쉬운 껍질이 되는 경우에는 가장 크게 영향을 미치는 요인은?",
     "question_image_url": null,
     "choices": [
       {
@@ -825,7 +825,7 @@
     "exam_session": "2008-10-05",
     "subject": "재료과학",
     "question_number": 21,
-    "question_text": "500g 의 완제품 식빵 200개를 제조하려 할 때, 발효 손실 이 1%, 굽기 냉각손실이 12%, 총 배합율이 180%라면 밀가 루의 무게는 약 얼마인가?",
+    "question_text": "500g의 완제품 식빵 200개를 제조하려 할 때, 발효 손실이 1%, 굽기 냉각손실이 12%, 총 배합율이 180%라면 밀가 루의 무게는 약 얼마인가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1440,7 +1440,7 @@
     "exam_session": "2008-10-05",
     "subject": "영양학",
     "question_number": 36,
-    "question_text": "빈 컵의 무게가 120g 이었고 , 이 컵에 물을 가득 넣었더니 250g이 되었다. 물을 빼고 우유를 넣었더니 254g 이 되었 을 때 우유의 비중은 약 얼마인가?",
+    "question_text": "빈 컵의 무게가 120g 이었고, 이 컵에 물을 가득 넣었더니 250g이 되었다. 물을 빼고 우유를 넣었더니 254g이 되었을 때 우유의 비중은 약 얼마인가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1522,7 +1522,7 @@
     "exam_session": "2008-10-05",
     "subject": "영양학",
     "question_number": 38,
-    "question_text": "케이크의 제조에서 쇼트닝의 기본적인 3가지 기능에 해당하 지 않는 것은?",
+    "question_text": "케이크의 제조에서 쇼트닝의 기본적인 3가지 기능에 해당하지 않는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1932,7 +1932,7 @@
     "exam_session": "2008-10-05",
     "subject": "영양학",
     "question_number": 48,
-    "question_text": "단백질 식품을 섭취한 결과, 음식물 중의 질소량 이 0.7g,소 변중의 질소량이 4g 으로 나타났을 때 이 식품의 생물가 (B.V)는 약 얼마인가?",
+    "question_text": "단백질 식품을 섭취한 결과, 음식물 중의 질소량이 0.7g,소 변중의 질소량이 4g으로 나타났을 때이 식품의 생물가 (B.V)는 약 얼마인가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1973,7 +1973,7 @@
     "exam_session": "2008-10-05",
     "subject": "영양학",
     "question_number": 49,
-    "question_text": "정상적인건강유지를 위해 반드시 필요한 지방산으로 체내에 서 합성되지 않아 식사로 공급해야하는 것은?",
+    "question_text": "정상적인건강유지를 위해 반드시 필요한 지방산으로 체내에서 합성되지 않아 식사로 공급해야하는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2342,7 +2342,7 @@
     "exam_session": "2008-10-05",
     "subject": "식품위생학",
     "question_number": 58,
-    "question_text": "알레르기성 식중독의 원인이 될 수 있는 가능성이 가장 높 은 식품은?",
+    "question_text": "알레르기성 식중독의 원인이 될 수 있는 가능성이 가장 높은 식품은?",
     "question_image_url": null,
     "choices": [
       {

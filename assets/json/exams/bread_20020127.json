@@ -46,7 +46,7 @@
     "exam_session": "2002-01-27",
     "subject": "제조이론",
     "question_number": 2,
-    "question_text": "케이크 팬용적 410cm³에 100g의 스펀지 케이크 반죽을 넣어 좋은 결과를 얻었다면 팬용적 1230cm³에 넣어야 할 스펀지 케이크의 반죽무게는?",
+    "question_text": "케이크 팬용적 410cm³에 100g의 스펀지 케이크 반죽을 넣어 좋은 결과를 얻었다면 팬용적 1230cm³에 넣어야할 스펀지 케이크의 반죽무게는?",
     "question_image_url": null,
     "choices": [
       {
@@ -333,7 +333,7 @@
     "exam_session": "2002-01-27",
     "subject": "제조이론",
     "question_number": 9,
-    "question_text": "다음 중 무스 제조시 젤라틴을 팽윤시키려 할 때 물사용량으로 알맞은 것은?",
+    "question_text": "다음 중 무스 제조시 젤라틴을 팽윤시키려할 때 물사용량으로 알맞은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -415,7 +415,7 @@
     "exam_session": "2002-01-27",
     "subject": "제조이론",
     "question_number": 11,
-    "question_text": "다음 제품 중찜류 제품이 아닌 것은?",
+    "question_text": "다음 제품 중 찜류 제품이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1481,7 +1481,7 @@
     "exam_session": "2002-01-27",
     "subject": "영양학",
     "question_number": 37,
-    "question_text": "우유의 성분 중제품의 껍질색을 개선시켜 주는 것은?",
+    "question_text": "우유의 성분 중 제품의 껍질색을 개선시켜 주는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2055,7 +2055,7 @@
     "exam_session": "2002-01-27",
     "subject": "식품위생학",
     "question_number": 51,
-    "question_text": "식품오염 미생물의 유래와 경로에 대한 설명이다. 토양미생 물의 특징과 관계가 가장 적은 것은?",
+    "question_text": "식품오염 미생물의 유래와 경로에 대한 설명이다. 토양미생물의 특징과 관계가 가장 적은 것은?",
     "question_image_url": null,
     "choices": [
       {

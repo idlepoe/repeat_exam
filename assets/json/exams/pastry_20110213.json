@@ -251,7 +251,7 @@
     "exam_session": "2011-02-13",
     "subject": "제조이론",
     "question_number": 7,
-    "question_text": "반죽형 케이크를 구웠더니 너무 가볍고 부서지는 현상이 나 타났다. 그 원인이 아닌 것은?",
+    "question_text": "반죽형 케이크를 구웠더니 너무 가볍고 부서지는 현상이 나타났다. 그 원인이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -661,7 +661,7 @@
     "exam_session": "2011-02-13",
     "subject": "제조이론",
     "question_number": 17,
-    "question_text": "갓 구워낸 빵을 식혀 상온으로 낮추는 냉각에 관한 설명으 로 틀린 것은?",
+    "question_text": "갓 구워낸 빵을 식혀 상온으로 낮추는 냉각에 관한 설명으로 틀린 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1153,7 +1153,7 @@
     "exam_session": "2011-02-13",
     "subject": "재료과학",
     "question_number": 29,
-    "question_text": "스펀지법(sponge &dough method)에서 가장 적합한 스펀 지 반죽의 온도는?",
+    "question_text": "스펀지법(sponge &dough method)에서 가장 적합한 스펀지 반죽의 온도는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1235,7 +1235,7 @@
     "exam_session": "2011-02-13",
     "subject": "영양학",
     "question_number": 31,
-    "question_text": "튀김기름에 스테아린(stearin)을 첨가하는 이유에 대한 설명 으로 틀린 것은?",
+    "question_text": "튀김기름에 스테아린(stearin)을 첨가하는 이유에 대한 설명으로 틀린 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1317,7 +1317,7 @@
     "exam_session": "2011-02-13",
     "subject": "영양학",
     "question_number": 33,
-    "question_text": "아이싱 크림에 많이 쓰이는 퐁당(fondant)을 만들 때 끓이 는 온도로 가장 적합한 것은?",
+    "question_text": "아이싱 크림에 많이 쓰이는 퐁당(fondant)을 만들 때 끓이는 온도로 가장 적합한 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1481,7 +1481,7 @@
     "exam_session": "2011-02-13",
     "subject": "영양학",
     "question_number": 37,
-    "question_text": "유지를 고온으로 계속 가열하였을 때 다음 중 점차 낮아지 는 것은?",
+    "question_text": "유지를 고온으로 계속 가열하였을 때 다음 중 점차 낮아지는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1686,7 +1686,7 @@
     "exam_session": "2011-02-13",
     "subject": "영양학",
     "question_number": 42,
-    "question_text": "아밀로그래프(Amylograph)에서 50℃에서의 점도(minimum viscosity)와 최종점도((final viscosity) 차이를 표시하는 것 으로 노화도를 나타내는 것은?",
+    "question_text": "아밀로그래프(Amylograph)에서 50℃에서의 점도(minimum viscosity)와 최종점도((final viscosity) 차이를 표시하는 것으로 노화도를 나타내는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1932,7 +1932,7 @@
     "exam_session": "2011-02-13",
     "subject": "영양학",
     "question_number": 48,
-    "question_text": "유용한 장내 세균의 발육을 왕성하게 하여 장에 좋은 영양 을 미치는 이당류는?",
+    "question_text": "유용한 장내 세균의 발육을 왕성하게 하여 장에 좋은 영양을 미치는 이당류는?",
     "question_image_url": null,
     "choices": [
       {
@@ -2055,7 +2055,7 @@
     "exam_session": "2011-02-13",
     "subject": "식품위생학",
     "question_number": 51,
-    "question_text": "다음 중 병원체가 바이러스(Virus)인 질병인?",
+    "question_text": "다음 중 병원체가 바이러스(Virus) 인 질병인?",
     "question_image_url": null,
     "choices": [
       {
@@ -2096,7 +2096,7 @@
     "exam_session": "2011-02-13",
     "subject": "식품위생학",
     "question_number": 52,
-    "question_text": "살모넬라(Salmonella)균의 특징이 아닌 것은?",
+    "question_text": "살모넬라(Salmonella) 균의 특징이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2260,7 +2260,7 @@
     "exam_session": "2011-02-13",
     "subject": "식품위생학",
     "question_number": 56,
-    "question_text": "식품에 식염을 첨가함으로써 미생물 증식을 억제하는 효과 와 관계가 없는 것은?",
+    "question_text": "식품에 식염을 첨가함으로써 미생물 증식을 억제하는 효과와 관계가 없는 것은?",
     "question_image_url": null,
     "choices": [
       {

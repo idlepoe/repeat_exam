@@ -5,7 +5,7 @@
     "exam_session": "2002-04-07",
     "subject": "제조이론",
     "question_number": 1,
-    "question_text": "케이크의 배합에서 고율배합이 저율배합에 비하여 높거나 많 은 항목은?",
+    "question_text": "케이크의 배합에서 고율배합이 저율배합에 비하여 높거나 많은 항목은?",
     "question_image_url": null,
     "choices": [
       {
@@ -46,7 +46,7 @@
     "exam_session": "2002-04-07",
     "subject": "제조이론",
     "question_number": 2,
-    "question_text": "과일 파이의 충전물을 만들 때 쥬스에 대한 전분의 사용량으 로 가장 적당한 것은?",
+    "question_text": "과일 파이의 충전물을 만들 때 쥬스에 대한 전분의 사용량으로 가장 적당한 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -374,7 +374,7 @@
     "exam_session": "2002-04-07",
     "subject": "제조이론",
     "question_number": 10,
-    "question_text": "과일케이크를 만들 때 과일이 가라앉는 이유에 대한 설명으 로 틀린 것은?",
+    "question_text": "과일케이크를 만들 때 과일이 가라앉는 이유에 대한 설명으로 틀린 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -620,7 +620,7 @@
     "exam_session": "2002-04-07",
     "subject": "제조이론",
     "question_number": 16,
-    "question_text": "반죽을 스펀지법으로 만들었다. 도우(Dough) 반죽에서 이스트를 소맥분량의 0.5%를 추가하고자 한다. 이때 추가 할 이스트의 양은? (반죽 총량 160㎏, 소맥분은 반죽 총량의 60%)",
+    "question_text": "반죽을 스펀지법으로 만들었다. 도우(Dough) 반죽에서 이스트를 소맥분량의 0.5%를 추가하고자 한다. 이때 추가할 이스트의 양은? (반죽 총량 160㎏, 소맥분은 반죽 총량의 60%)",
     "question_image_url": null,
     "choices": [
       {
@@ -825,7 +825,7 @@
     "exam_session": "2002-04-07",
     "subject": "재료과학",
     "question_number": 21,
-    "question_text": "빵을 구울 때 오븐스프링(오븐팽창)이 일어나는 현상과 관계 가 적은 것은?",
+    "question_text": "빵을 구울 때 오븐스프링(오븐팽창)이 일어나는 현상과 관계가 적은 것은?",
     "question_image_url": null,
     "choices": [
       {

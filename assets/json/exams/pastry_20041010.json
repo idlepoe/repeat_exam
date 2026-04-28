@@ -292,7 +292,7 @@
     "exam_session": "2004-10-10",
     "subject": "제조이론",
     "question_number": 8,
-    "question_text": "케이크 도넛은 일반적으로 실온에서 10∼15분의 휴지시간 (floor time)을 갖는다. 휴지를 잘못하였을 때 발생하는 현상 이 아닌 것은?",
+    "question_text": "케이크 도넛은 일반적으로 실온에서 10∼15분의 휴지시간 (floor time)을 갖는다. 휴지를 잘못하였을 때 발생하는 현상이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -702,7 +702,7 @@
     "exam_session": "2004-10-10",
     "subject": "제조이론",
     "question_number": 18,
-    "question_text": "제빵 배합율 작성시 베이커스 퍼센트(Baker's %)에서 기준 이 되는 재료는?",
+    "question_text": "제빵 배합율 작성시 베이커스 퍼센트(Baker's %)에서 기준이 되는 재료는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1112,7 +1112,7 @@
     "exam_session": "2004-10-10",
     "subject": "재료과학",
     "question_number": 28,
-    "question_text": "생산액이 2,000,000원, 외부가치가 1,000,000원, 생산가치 가 500,000원, 인건비가 800,000원 일 때 생산가치율은?",
+    "question_text": "생산액이 2,000,000원, 외부가치가 1,000,000원, 생산가치가 500,000원, 인건비가 800,000원 일 때 생산가치율은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1686,7 +1686,7 @@
     "exam_session": "2004-10-10",
     "subject": "영양학",
     "question_number": 42,
-    "question_text": "소맥분의 패리노그래프를 그려 보니 믹싱타임(mixing time) 이 매우 짧은 것으로 나타났다. 이 소맥분을 빵에 사용할 때 보완법으로 옳은 것은?",
+    "question_text": "소맥분의 패리노그래프를 그려 보니 믹싱타임(mixing time)이 매우 짧은 것으로 나타났다. 이 소맥분을 빵에 사용할 때 보완법으로 옳은 것은?",
     "question_image_url": null,
     "choices": [
       {

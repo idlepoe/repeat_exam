@@ -374,7 +374,7 @@
     "exam_session": "2005-07-17",
     "subject": "제조이론",
     "question_number": 10,
-    "question_text": "케이크 도넛 제품에서 반죽 온도가 직접 영향을 미치는 것 이 아닌 것은?",
+    "question_text": "케이크 도넛 제품에서 반죽 온도가 직접 영향을 미치는 것이 아닌 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -456,7 +456,7 @@
     "exam_session": "2005-07-17",
     "subject": "제조이론",
     "question_number": 12,
-    "question_text": "제품의 pH가 지나치게 산성으로 치우칠 때 나타나는 현상 으로 틀린 것은?",
+    "question_text": "제품의 pH가 지나치게 산성으로 치우칠 때 나타나는 현상으로 틀린 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -907,7 +907,7 @@
     "exam_session": "2005-07-17",
     "subject": "재료과학",
     "question_number": 23,
-    "question_text": "1회에 60g짜리 반죽을 2개씩 분할하는 분할기가 있다. 1분 에 4회 분할한다면 24kg의 반죽을 분할하는데 소요되는 시 간은?",
+    "question_text": "1회에 60g짜리 반죽을 2개씩 분할하는 분할기가 있다. 1분에 4회 분할한다면 24kg의 반죽을 분할하는데 소요되는 시 간은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2014,7 +2014,7 @@
     "exam_session": "2005-07-17",
     "subject": "영양학",
     "question_number": 50,
-    "question_text": "하루 2,400kcal를 섭취하는 사람의 이상적인 지질의 섭취량 은 얼마인가?",
+    "question_text": "하루 2,400kcal를 섭취하는 사람의 이상적인 지질의 섭취량은 얼마인가?",
     "question_image_url": null,
     "choices": [
       {

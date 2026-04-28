@@ -87,7 +87,7 @@
     "exam_session": "2009-03-29",
     "subject": "제조이론",
     "question_number": 3,
-    "question_text": "도넛에 묻힌 설탕이 녹는 현상(발한)을 감소시키기 위한 조치 로 틀린 것은?",
+    "question_text": "도넛에 묻힌 설탕이 녹는 현상(발한)을 감소시키기 위한 조치로 틀린 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -169,7 +169,7 @@
     "exam_session": "2009-03-29",
     "subject": "제조이론",
     "question_number": 5,
-    "question_text": "퍼프 페이스트리 제조 시 팽창이 부족하여 부피가 빈약해지 는 결점의 원인에 해당하지 않는 것은?",
+    "question_text": "퍼프 페이스트리 제조 시 팽창이 부족하여 부피가 빈약해지는 결점의 원인에 해당하지 않는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -415,7 +415,7 @@
     "exam_session": "2009-03-29",
     "subject": "제조이론",
     "question_number": 11,
-    "question_text": "다음의 머랭(meringue) 중에서 설탕을 끓여서 시럽으로 만 들어 제조하는 것은?",
+    "question_text": "다음의 머랭(meringue) 중에서 설탕을 끓여서 시럽으로 만들어 제조하는 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -497,7 +497,7 @@
     "exam_session": "2009-03-29",
     "subject": "제조이론",
     "question_number": 13,
-    "question_text": "머랭 (meringue) 을 만드는 주요 재료는?",
+    "question_text": "머랭 (meringue)을 만드는 주요 재료는?",
     "question_image_url": null,
     "choices": [
       {
@@ -1030,7 +1030,7 @@
     "exam_session": "2009-03-29",
     "subject": "재료과학",
     "question_number": 26,
-    "question_text": "정형하여 철판에 반죽을 놓을 때 , 일반적 사용시 흡수율의 변화로 가장 적당한 것은?",
+    "question_text": "정형하여 철판에 반죽을 놓을 때, 일반적 사용시 흡수율의 변화로 가장 적당한 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1112,7 +1112,7 @@
     "exam_session": "2009-03-29",
     "subject": "재료과학",
     "question_number": 28,
-    "question_text": "빵굽기 과정에서 오븐스프링(oven spring)에 의한 반죽부피 의 팽창 정도로 가장 적당한 것은?",
+    "question_text": "빵굽기 과정에서 오븐스프링(oven spring)에 의한 반죽부피의 팽창 정도로 가장 적당한 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1399,7 +1399,7 @@
     "exam_session": "2009-03-29",
     "subject": "영양학",
     "question_number": 35,
-    "question_text": "물 100g 에 설탕 25g을 녹이면 당도는?",
+    "question_text": "물 100g에 설탕 25g을 녹이면 당도는?",
     "question_image_url": null,
     "choices": [
       {
