@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { ExamTypeListPage } from './pages/ExamTypeListPage'
 import { ExamSessionListPage } from './pages/ExamSessionListPage'
+import { MockExamPage } from './pages/MockExamPage'
 import { OptionsPage } from './pages/OptionsPage'
 import { QuestionPage } from './pages/QuestionPage'
 
@@ -8,6 +9,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<ExamTypeListPage />} />
+      <Route path="/mock-quiz/:examKind" element={<MockExamPage />} />
       <Route path="/options" element={<OptionsPage />} />
       <Route path="/sessions/:examType" element={<ExamSessionListPage />} />
       <Route path="/quiz/:examType/:examSession" element={<QuestionPage />} />

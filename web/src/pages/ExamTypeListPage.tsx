@@ -63,6 +63,61 @@ export function ExamTypeListPage() {
         }
       />
       <main style={{ flex: 1, padding: 16 }}>
+        <section style={{ marginBottom: 24 }}>
+          <div
+            style={{
+              marginBottom: 12,
+              paddingBottom: 8,
+              fontSize: 14,
+              fontWeight: 600,
+              color: '#555',
+              borderBottom: '1px solid #ddd',
+            }}
+          >
+            모의고사
+          </div>
+          <button
+            type="button"
+            onClick={() =>
+              navigate(`/mock-quiz/${encodeURIComponent('제빵기능사')}`)
+            }
+            style={{
+              display: 'block',
+              width: '100%',
+              marginBottom: 12,
+              padding: '14px 16px',
+              fontSize: 18,
+              textAlign: 'left',
+              border: '1px solid #ccc',
+              borderRadius: 8,
+              background: '#fafafa',
+              cursor: 'pointer',
+            }}
+          >
+            제빵기능사
+          </button>
+          <button
+            type="button"
+            onClick={() =>
+              navigate(`/mock-quiz/${encodeURIComponent('제과기능사')}`)
+            }
+            style={{
+              display: 'block',
+              width: '100%',
+              marginBottom: 12,
+              padding: '14px 16px',
+              fontSize: 18,
+              textAlign: 'left',
+              border: '1px solid #ccc',
+              borderRadius: 8,
+              background: '#fafafa',
+              cursor: 'pointer',
+            }}
+          >
+            제과기능사
+          </button>
+        </section>
+
         <section>
           <div
             style={{
@@ -74,7 +129,7 @@ export function ExamTypeListPage() {
               borderBottom: '1px solid #ddd',
             }}
           >
-            기출문제 (정답&해설 표시) 
+            기출문제 (정답&해설 표시)
           </div>
         {err && <p style={{ color: 'crimson' }}>{err}</p>}
         {!data && !err && <p>불러오는 중…</p>}
