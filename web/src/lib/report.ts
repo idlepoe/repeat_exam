@@ -1,7 +1,11 @@
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 import { db } from './firebase'
 
-export type ReportType = '사진 누락' | '내용 누락' | '정답 오류'
+export type ReportType =
+  | '사진 누락'
+  | '내용 누락'
+  | '정답 오류'
+  | '띄어쓰기 오류'
 
 export interface QuestionReportPayload {
   questionId: string

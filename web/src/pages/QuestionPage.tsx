@@ -27,7 +27,12 @@ const FONT_STEPS = [
   { base: 22, title: 18 },
   { base: 24, title: 20 },
 ] as const
-const REPORT_TYPES: ReportType[] = ['사진 누락', '내용 누락', '정답 오류']
+const REPORT_TYPES: ReportType[] = [
+  '사진 누락',
+  '내용 누락',
+  '정답 오류',
+  '띄어쓰기 오류',
+]
 
 export function QuestionPage() {
   const { examType: et, examSession: es } = useParams<{

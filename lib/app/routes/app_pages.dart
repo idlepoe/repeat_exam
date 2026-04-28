@@ -6,6 +6,8 @@ import '../modules/exam_type_list/bindings/exam_type_list_binding.dart';
 import '../modules/exam_type_list/views/exam_type_list_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/options/bindings/options_binding.dart';
+import '../modules/options/views/options_view.dart';
 import '../modules/question/bindings/question_binding.dart';
 import '../modules/question/views/question_view.dart';
 
@@ -36,6 +38,11 @@ class AppPages {
       name: _Paths.QUESTION,
       page: () => const QuestionView(),
       binding: QuestionBinding(),
+    ),
+    GetPage(
+      name: _Paths.OPTIONS,
+      page: () => const OptionsView(),
+      binding: OptionsBinding(),
     ),
   ];
 }
