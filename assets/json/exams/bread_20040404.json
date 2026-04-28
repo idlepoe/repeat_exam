@@ -939,7 +939,7 @@
     "subject": "재료과학",
     "question_number": 24,
     "question_text": "다음은 어떤 공정의 목적인가?",
-    "question_image_url": null,
+    "question_image_url": "https://raw.githubusercontent.com/idlepoe/repeat_exam/main/assets/images/bread_2004040424.png",
     "choices": [
       {
         "no": 1,
