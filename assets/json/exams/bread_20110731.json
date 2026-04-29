@@ -432,7 +432,7 @@
       },
       {
         "no": 4,
-        "text": "과량의 산은 반죽의 ph를 높게, 과량의 중조는 ph를 낮"
+        "text": "과량의 산은 반죽의 ph를 높게, 과량의 중조는 ph를 낮게 만든다."
       }
     ],
     "correct_answer": 4,
@@ -596,7 +596,7 @@
       },
       {
         "no": 4,
-        "text": "오븐 온도가 높으면 지나친 수분의 손실로 최종 부피가"
+        "text": "오븐 온도가 높으면 지나친 수분의 손실로 최종 부피가 커진다."
       }
     ],
     "correct_answer": 4,
@@ -1072,7 +1072,7 @@
     "subject": "재료과학",
     "question_number": 27,
     "question_text": "안치수가 그림과 같은 식빵 철판의 용적은?",
-    "question_image_url": null,
+    "question_image_url": "https://raw.githubusercontent.com/idlepoe/repeat_exam/main/assets/images/bread_2002012725.png",
     "choices": [
       {
         "no": 1,
@@ -1170,7 +1170,7 @@
       },
       {
         "no": 4,
-        "text": "손 분할은 오븐스프링이 좋아 부피가 양호한 제품을 만"
+        "text": "손 분할은 오븐스프링이 좋아 부피가 양호한 제품을 만들 수 있다."
       }
     ],
     "correct_answer": 4,
