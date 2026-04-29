@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../data/bottom_nav_height.dart';
 import '../controllers/question_controller.dart';
 
 class QuestionView extends GetView<QuestionController> {
@@ -104,6 +105,10 @@ class QuestionView extends GetView<QuestionController> {
         final highlight = controller.answerHighlight.value;
         final answerBg = _hexToColor(highlight.bg);
         final answerFg = _hexToColor(highlight.fg);
+        final bottomPreset =
+            bottomNavHeightPresetForStep(controller.bottomNavHeightStep.value);
+        final bottomNavPad =
+            bottomNavBarEstimatedOuterHeight(bottomPreset);
 
         return Stack(
           children: [
@@ -116,7 +121,7 @@ class QuestionView extends GetView<QuestionController> {
                       16,
                       16,
                       16,
-                      8 + 56 + MediaQuery.of(context).padding.bottom,
+                      8 + bottomNavPad + MediaQuery.of(context).padding.bottom,
                     ),
                     children: [
                       Text(
@@ -277,6 +282,9 @@ class QuestionView extends GetView<QuestionController> {
                               flex: 4,
                               child: _navButton(
                                 label: '다음',
+                                verticalPadding:
+                                    bottomPreset.verticalPadding.toDouble(),
+                                fontSize: bottomPreset.fontSize.toDouble(),
                                 onTap: () async {
                                   final ask = await controller.goNextOrAsk();
                                   if (ask && context.mounted) {
@@ -289,6 +297,9 @@ class QuestionView extends GetView<QuestionController> {
                               flex: 2,
                               child: _navButton(
                                 label: '변경',
+                                verticalPadding:
+                                    bottomPreset.verticalPadding.toDouble(),
+                                fontSize: bottomPreset.fontSize.toDouble(),
                                 bgColor: const Color(0xFFF5F5F5),
                                 borderLeft: true,
                                 onTap: controller.toggleNavReversed,
@@ -298,6 +309,9 @@ class QuestionView extends GetView<QuestionController> {
                               flex: 4,
                               child: _navButton(
                                 label: '이전',
+                                verticalPadding:
+                                    bottomPreset.verticalPadding.toDouble(),
+                                fontSize: bottomPreset.fontSize.toDouble(),
                                 enabled: !controller.isFirst,
                                 bgColor: controller.isFirst
                                     ? const Color(0xFFEEEEEE)
@@ -312,6 +326,9 @@ class QuestionView extends GetView<QuestionController> {
                               flex: 4,
                               child: _navButton(
                                 label: '이전',
+                                verticalPadding:
+                                    bottomPreset.verticalPadding.toDouble(),
+                                fontSize: bottomPreset.fontSize.toDouble(),
                                 enabled: !controller.isFirst,
                                 bgColor: controller.isFirst
                                     ? const Color(0xFFEEEEEE)
@@ -323,6 +340,9 @@ class QuestionView extends GetView<QuestionController> {
                               flex: 2,
                               child: _navButton(
                                 label: '변경',
+                                verticalPadding:
+                                    bottomPreset.verticalPadding.toDouble(),
+                                fontSize: bottomPreset.fontSize.toDouble(),
                                 bgColor: const Color(0xFFF5F5F5),
                                 borderLeft: true,
                                 onTap: controller.toggleNavReversed,
@@ -332,6 +352,9 @@ class QuestionView extends GetView<QuestionController> {
                               flex: 4,
                               child: _navButton(
                                 label: '다음',
+                                verticalPadding:
+                                    bottomPreset.verticalPadding.toDouble(),
+                                fontSize: bottomPreset.fontSize.toDouble(),
                                 borderLeft: true,
                                 onTap: () async {
                                   final ask = await controller.goNextOrAsk();
@@ -355,6 +378,8 @@ class QuestionView extends GetView<QuestionController> {
   Widget _navButton({
     required String label,
     required VoidCallback onTap,
+    required double verticalPadding,
+    required double fontSize,
     bool enabled = true,
     bool borderLeft = false,
     Color bgColor = Colors.white,
@@ -362,7 +387,10 @@ class QuestionView extends GetView<QuestionController> {
     return InkWell(
       onTap: enabled ? onTap : null,
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 14),
+        padding: EdgeInsets.symmetric(
+          vertical: verticalPadding,
+          horizontal: 8,
+        ),
         decoration: BoxDecoration(
           color: bgColor,
           border: Border(
@@ -375,7 +403,10 @@ class QuestionView extends GetView<QuestionController> {
         child: Center(
           child: Text(
             label,
-            style: const TextStyle(fontSize: 16, color: Color(0xFF111111)),
+            style: TextStyle(
+              fontSize: fontSize,
+              color: const Color(0xFF111111),
+            ),
           ),
         ),
       ),

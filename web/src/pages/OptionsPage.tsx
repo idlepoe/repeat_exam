@@ -1,11 +1,14 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { AppBar } from '../components/AppBar'
+import { BOTTOM_NAV_HEIGHT_PRESETS } from '../lib/bottomNavHeight'
 import {
   clearProgress,
   clearSessionCount,
   loadAnswerHighlight,
+  loadBottomNavHeightStep,
   saveAnswerHighlight,
+  saveBottomNavHeightStep,
 } from '../lib/storage'
 
 export function OptionsPage() {
@@ -16,6 +19,9 @@ export function OptionsPage() {
   )
   const [draftBg, setDraftBg] = useState(answerHighlight.bg)
   const [draftFg, setDraftFg] = useState(answerHighlight.fg)
+  const [bottomNavHeightStep, setBottomNavHeightStep] = useState(() =>
+    loadBottomNavHeightStep()
+  )
 
   return (
     <div style={{ minHeight: '100svh', display: 'flex', flexDirection: 'column' }}>
@@ -62,28 +68,80 @@ export function OptionsPage() {
           >
             정답 하이라이트 색상 변경
           </button>
-          <button
-            type="button"
-            onClick={() => {
-              clearProgress()
-              clearSessionCount()
-              window.alert('진행상황이 초기화되었습니다.')
-            }}
+          <div style={{ marginBottom: 12 }}>
+            <div
+              style={{
+                marginBottom: 8,
+                fontSize: 14,
+                fontWeight: 600,
+                color: '#555',
+              }}
+            >
+              하단 버튼 높이
+            </div>
+            <div style={{ display: 'flex', gap: 8, alignItems: 'flex-end' }}>
+              {BOTTOM_NAV_HEIGHT_PRESETS.map((opt) => {
+                const selected = bottomNavHeightStep === opt.step
+                return (
+                  <button
+                    key={opt.step}
+                    type="button"
+                    onClick={() => {
+                      saveBottomNavHeightStep(opt.step)
+                      setBottomNavHeightStep(opt.step)
+                      window.dispatchEvent(new Event('repeat_exam:bottom_nav_height_changed'))
+                    }}
+                    aria-pressed={selected}
+                    style={{
+                      flex: 1,
+                      minWidth: 0,
+                      padding: `${opt.verticalPadding}px 8px`,
+                      fontSize: opt.fontSize,
+                      textAlign: 'center',
+                      border: selected ? '2px solid #222' : '1px solid #bbb',
+                      borderRadius: 8,
+                      background: selected ? '#f4f4f4' : '#fff',
+                      color: '#111',
+                      cursor: 'pointer',
+                      fontWeight: selected ? 700 : 500,
+                    }}
+                  >
+                    {opt.label}
+                  </button>
+                )
+              })}
+            </div>
+          </div>
+          <div
             style={{
-              display: 'block',
-              width: '100%',
-              padding: '12px 14px',
-              fontSize: 15,
-              textAlign: 'center',
-              border: '1px solid #d44',
-              borderRadius: 8,
-              background: '#fff5f5',
-              color: '#b00',
-              cursor: 'pointer',
+              marginTop: 16,
+              paddingTop: 16,
+              borderTop: '1px solid #e5e4e7',
             }}
           >
-            진행상황 초기화하기
-          </button>
+            <button
+              type="button"
+              onClick={() => {
+                clearProgress()
+                clearSessionCount()
+                window.alert('진행상황이 초기화되었습니다.')
+              }}
+              style={{
+                display: 'block',
+                width: '100%',
+                padding: '12px 14px',
+                fontSize: 15,
+                textAlign: 'center',
+                border: '1px solid #d44',
+                borderRadius: 8,
+                background: '#fff5f5',
+                color: '#b00',
+                cursor: 'pointer',
+              }}
+            >
+              진행상황 초기화하기
+            </button>
+          </div>
         </section>
       </main>
 

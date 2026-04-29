@@ -3,7 +3,7 @@ import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
 import 'package:get/get.dart';
 
-import '../../../data/services/storage_service.dart';
+import '../../../data/bottom_nav_height.dart';
 import '../controllers/options_controller.dart';
 
 class OptionsView extends GetView<OptionsController> {
@@ -144,7 +144,66 @@ class OptionsView extends GetView<OptionsController> {
                 child: const Text('정답 하이라이트 색상 변경'),
               ),
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: 16),
+            const Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                '하단 버튼 높이',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF555555),
+                ),
+              ),
+            ),
+            const SizedBox(height: 8),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                for (final opt in kBottomNavHeightPresets)
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 4),
+                      child: Obx(() {
+                        final selected =
+                            controller.bottomNavHeightStep.value == opt.step;
+                        return OutlinedButton(
+                          onPressed: () =>
+                              controller.setBottomNavHeightStep(opt.step),
+                          style: OutlinedButton.styleFrom(
+                            foregroundColor: const Color(0xFF111111),
+                            padding: EdgeInsets.symmetric(
+                              vertical: opt.verticalPadding.toDouble(),
+                              horizontal: 8,
+                            ),
+                            side: BorderSide(
+                              color: selected
+                                  ? const Color(0xFF222222)
+                                  : const Color(0xFFBBBBBB),
+                              width: selected ? 2 : 1,
+                            ),
+                            backgroundColor: selected
+                                ? const Color(0xFFF4F4F4)
+                                : Colors.white,
+                          ),
+                          child: Text(
+                            opt.label,
+                            style: TextStyle(
+                              fontSize: opt.fontSize.toDouble(),
+                              fontWeight: selected
+                                  ? FontWeight.w700
+                                  : FontWeight.w500,
+                            ),
+                          ),
+                        );
+                      }),
+                    ),
+                  ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            const Divider(height: 1, color: Color(0xFFE5E4E7)),
+            const SizedBox(height: 16),
             SizedBox(
               width: double.infinity,
               child: OutlinedButton(

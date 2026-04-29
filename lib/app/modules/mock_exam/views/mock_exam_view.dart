@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../data/bottom_nav_height.dart';
 import '../controllers/mock_exam_controller.dart';
 
 class MockExamView extends GetView<MockExamController> {
@@ -57,6 +58,10 @@ class MockExamView extends GetView<MockExamController> {
         final highlight = controller.answerHighlight.value;
         final answerBg = _hexToColor(highlight.bg);
         final answerFg = _hexToColor(highlight.fg);
+        final bottomPreset =
+            bottomNavHeightPresetForStep(controller.bottomNavHeightStep.value);
+        final bottomNavPad =
+            bottomNavBarEstimatedOuterHeight(bottomPreset);
 
         return Stack(
           children: [
@@ -105,7 +110,7 @@ class MockExamView extends GetView<MockExamController> {
                       16,
                       16,
                       16,
-                      8 + 56 + MediaQuery.of(context).padding.bottom,
+                      8 + bottomNavPad + MediaQuery.of(context).padding.bottom,
                     ),
                     children: [
                       Text(
@@ -173,12 +178,20 @@ class MockExamView extends GetView<MockExamController> {
                 child: Row(
                   children: controller.navReversed.value
                       ? [
-                          Expanded(flex: 4, child: _navButton('다음', controller.goNext)),
+                          Expanded(
+                            flex: 4,
+                            child: _navButton(
+                              '다음',
+                              controller.goNext,
+                              bottomPreset: bottomPreset,
+                            ),
+                          ),
                           Expanded(
                             flex: 2,
                             child: _navButton(
                               '변경',
                               controller.toggleNavReversed,
+                              bottomPreset: bottomPreset,
                               bg: const Color(0xFFF5F5F5),
                               borderLeft: true,
                             ),
@@ -188,6 +201,7 @@ class MockExamView extends GetView<MockExamController> {
                             child: _navButton(
                               '이전',
                               controller.goPrev,
+                              bottomPreset: bottomPreset,
                               enabled: !controller.isFirst,
                               bg: controller.isFirst ? const Color(0xFFEEEEEE) : Colors.white,
                               borderLeft: true,
@@ -200,6 +214,7 @@ class MockExamView extends GetView<MockExamController> {
                             child: _navButton(
                               '이전',
                               controller.goPrev,
+                              bottomPreset: bottomPreset,
                               enabled: !controller.isFirst,
                               bg: controller.isFirst ? const Color(0xFFEEEEEE) : Colors.white,
                             ),
@@ -209,13 +224,19 @@ class MockExamView extends GetView<MockExamController> {
                             child: _navButton(
                               '변경',
                               controller.toggleNavReversed,
+                              bottomPreset: bottomPreset,
                               bg: const Color(0xFFF5F5F5),
                               borderLeft: true,
                             ),
                           ),
                           Expanded(
                             flex: 4,
-                            child: _navButton('다음', controller.goNext, borderLeft: true),
+                            child: _navButton(
+                              '다음',
+                              controller.goNext,
+                              bottomPreset: bottomPreset,
+                              borderLeft: true,
+                            ),
                           ),
                         ],
                 ),
@@ -254,23 +275,31 @@ class MockExamView extends GetView<MockExamController> {
   Widget _navButton(
     String label,
     Future<void> Function() onTap, {
+    required BottomNavHeightPreset bottomPreset,
     bool enabled = true,
     bool borderLeft = false,
     Color bg = Colors.white,
   }) {
-    return SizedBox(
-      height: 56,
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          color: bg,
-          border: Border(
-            top: const BorderSide(color: Color(0xFFE5E4E7)),
-            left: borderLeft ? const BorderSide(color: Color(0xFFE5E4E7)) : BorderSide.none,
-          ),
+    final vp = bottomPreset.verticalPadding.toDouble();
+    final fs = bottomPreset.fontSize.toDouble();
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: bg,
+        border: Border(
+          top: const BorderSide(color: Color(0xFFE5E4E7)),
+          left: borderLeft ? const BorderSide(color: Color(0xFFE5E4E7)) : BorderSide.none,
         ),
-        child: TextButton(
-          onPressed: enabled ? onTap : null,
-          child: Text(label, style: const TextStyle(color: Color(0xFF111111))),
+      ),
+      child: TextButton(
+        style: TextButton.styleFrom(
+          padding: EdgeInsets.symmetric(vertical: vp, horizontal: 8),
+          minimumSize: Size.zero,
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        ),
+        onPressed: enabled ? onTap : null,
+        child: Text(
+          label,
+          style: TextStyle(color: const Color(0xFF111111), fontSize: fs),
         ),
       ),
     );

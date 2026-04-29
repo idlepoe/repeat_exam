@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
+import '../../../data/bottom_nav_height.dart';
 import '../../../data/models/question_model.dart';
 import '../../../data/services/exam_files_service.dart';
 import '../../../data/services/exam_meta_service.dart';
@@ -19,6 +20,7 @@ class QuestionController extends GetxController {
   final loading = true.obs;
   final error = RxnString();
   final navReversed = false.obs;
+  final bottomNavHeightStep = 0.obs;
   final fontStep = 0.obs;
   final answerHighlight = const AnswerHighlight(bg: '#c00', fg: '#fff').obs;
 
@@ -73,6 +75,11 @@ class QuestionController extends GetxController {
     String? sourcePath;
     try {
       navReversed.value = await StorageService.loadNavReversed();
+      bottomNavHeightStep.value =
+          (await StorageService.loadBottomNavHeightStep()).clamp(
+        0,
+        kBottomNavHeightMaxStep,
+      );
       fontStep.value = (await StorageService.loadQuestionFontStep()).clamp(
         0,
         fontSteps.length - 1,

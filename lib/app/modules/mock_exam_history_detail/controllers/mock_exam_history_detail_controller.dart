@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import '../../../data/bottom_nav_height.dart';
 import '../../../data/models/question_model.dart';
 import '../../../data/services/storage_service.dart';
 
@@ -7,6 +8,7 @@ class MockExamHistoryDetailController extends GetxController {
   final loading = true.obs;
   final error = RxnString();
   final navReversed = false.obs;
+  final bottomNavHeightStep = 0.obs;
   final history = Rxn<MockHistoryData>();
   final index = 0.obs;
   final showAnswerSheet = false.obs;
@@ -27,6 +29,11 @@ class MockExamHistoryDetailController extends GetxController {
     error.value = null;
     try {
       navReversed.value = await StorageService.loadNavReversed();
+      bottomNavHeightStep.value =
+          (await StorageService.loadBottomNavHeightStep()).clamp(
+        0,
+        kBottomNavHeightMaxStep,
+      );
       final list = await StorageService.loadMockHistory();
       final found = list.where((e) => e.id == historyId.value).toList();
       if (found.isEmpty) {

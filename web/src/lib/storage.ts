@@ -1,9 +1,12 @@
+import { BOTTOM_NAV_HEIGHT_MAX_STEP } from './bottomNavHeight'
+
 const KEY_PROGRESS = 'repeat_exam:progress'
 const KEY_SESSION_COUNT = 'repeat_exam:session_count'
 const KEY_NAV_REVERSED = 'repeat_exam:nav_reversed'
 const KEY_ANSWER_HIGHLIGHT = 'repeat_exam:answer_highlight'
 const KEY_QUESTION_FONT_STEP = 'repeat_exam:question_font_step'
 const KEY_REPORTED_QUESTION_IDS = 'repeat_exam:reported_question_ids'
+const KEY_BOTTOM_NAV_HEIGHT_STEP = 'repeat_exam:bottom_nav_height_step'
 
 export interface Progress {
   exam_type: string
@@ -194,6 +197,33 @@ export function loadQuestionFontStep(): number {
 export function saveQuestionFontStep(step: number): void {
   try {
     localStorage.setItem(KEY_QUESTION_FONT_STEP, String(step))
+  } catch {
+    /* ignore */
+  }
+}
+
+export function loadBottomNavHeightStep(): number {
+  try {
+    const raw = localStorage.getItem(KEY_BOTTOM_NAV_HEIGHT_STEP)
+    if (!raw) return 0
+    const parsed = Number(raw)
+    if (
+      Number.isInteger(parsed) &&
+      parsed >= 0 &&
+      parsed <= BOTTOM_NAV_HEIGHT_MAX_STEP
+    ) {
+      return parsed
+    }
+  } catch {
+    /* ignore */
+  }
+  return 0
+}
+
+export function saveBottomNavHeightStep(step: number): void {
+  const safeStep = Math.max(0, Math.min(step, BOTTOM_NAV_HEIGHT_MAX_STEP))
+  try {
+    localStorage.setItem(KEY_BOTTOM_NAV_HEIGHT_STEP, String(safeStep))
   } catch {
     /* ignore */
   }

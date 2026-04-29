@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../data/bottom_nav_height.dart';
 import '../controllers/mock_exam_history_detail_controller.dart';
 
 class MockExamHistoryDetailView
@@ -43,6 +44,10 @@ class MockExamHistoryDetailView
       final examTip = (ai?['examTip'] as String?)?.trim() ?? '';
       final hasAiExplanation =
           correctExplanation.isNotEmpty || wrongAnswerNotes.isNotEmpty || examTip.isNotEmpty;
+      final bottomPreset =
+          bottomNavHeightPresetForStep(controller.bottomNavHeightStep.value);
+      final bottomNavPad =
+          bottomNavBarEstimatedOuterHeight(bottomPreset);
 
       return Scaffold(
         body: Stack(
@@ -81,7 +86,7 @@ class MockExamHistoryDetailView
                       16,
                       16,
                       16,
-                      8 + 56 + MediaQuery.of(context).padding.bottom,
+                      8 + bottomNavPad + MediaQuery.of(context).padding.bottom,
                     ),
                     children: [
                       Text(
@@ -191,12 +196,20 @@ class MockExamHistoryDetailView
                 child: Row(
                   children: controller.navReversed.value
                       ? [
-                          Expanded(flex: 4, child: _navButton('다음', controller.goNext)),
+                          Expanded(
+                            flex: 4,
+                            child: _navButton(
+                              '다음',
+                              controller.goNext,
+                              bottomPreset: bottomPreset,
+                            ),
+                          ),
                           Expanded(
                             flex: 2,
                             child: _navButton(
                               '변경',
                               controller.toggleNavReversed,
+                              bottomPreset: bottomPreset,
                               bgColor: const Color(0xFFF5F5F5),
                               borderLeft: true,
                             ),
@@ -206,6 +219,7 @@ class MockExamHistoryDetailView
                             child: _navButton(
                               '이전',
                               controller.goPrev,
+                              bottomPreset: bottomPreset,
                               enabled: !controller.isFirst,
                               bgColor: controller.isFirst ? const Color(0xFFEEEEEE) : Colors.white,
                               borderLeft: true,
@@ -218,6 +232,7 @@ class MockExamHistoryDetailView
                             child: _navButton(
                               '이전',
                               controller.goPrev,
+                              bottomPreset: bottomPreset,
                               enabled: !controller.isFirst,
                               bgColor: controller.isFirst ? const Color(0xFFEEEEEE) : Colors.white,
                             ),
@@ -227,13 +242,19 @@ class MockExamHistoryDetailView
                             child: _navButton(
                               '변경',
                               controller.toggleNavReversed,
+                              bottomPreset: bottomPreset,
                               bgColor: const Color(0xFFF5F5F5),
                               borderLeft: true,
                             ),
                           ),
                           Expanded(
                             flex: 4,
-                            child: _navButton('다음', controller.goNext, borderLeft: true),
+                            child: _navButton(
+                              '다음',
+                              controller.goNext,
+                              bottomPreset: bottomPreset,
+                              borderLeft: true,
+                            ),
                           ),
                         ],
                 ),
@@ -280,24 +301,30 @@ class MockExamHistoryDetailView
   Widget _navButton(
     String label,
     VoidCallback onTap, {
+    required BottomNavHeightPreset bottomPreset,
     bool enabled = true,
     bool borderLeft = false,
     Color bgColor = Colors.white,
   }) {
-    return SizedBox(
-      height: 56,
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          color: bgColor,
-          border: Border(
-            top: const BorderSide(color: Color(0xFFE5E4E7)),
-            left: borderLeft ? const BorderSide(color: Color(0xFFE5E4E7)) : BorderSide.none,
-          ),
+    final vp = bottomPreset.verticalPadding.toDouble();
+    final fs = bottomPreset.fontSize.toDouble();
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: bgColor,
+        border: Border(
+          top: const BorderSide(color: Color(0xFFE5E4E7)),
+          left: borderLeft ? const BorderSide(color: Color(0xFFE5E4E7)) : BorderSide.none,
         ),
-        child: TextButton(
-          onPressed: enabled ? onTap : null,
-          child: Text(label, style: const TextStyle(color: Color(0xFF111111))),
+      ),
+      child: TextButton(
+        style: TextButton.styleFrom(
+          padding: EdgeInsets.symmetric(vertical: vp, horizontal: 8),
+          minimumSize: Size.zero,
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          foregroundColor: const Color(0xFF111111),
         ),
+        onPressed: enabled ? onTap : null,
+        child: Text(label, style: TextStyle(fontSize: fs)),
       ),
     );
   }

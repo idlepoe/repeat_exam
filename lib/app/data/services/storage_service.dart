@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../bottom_nav_height.dart';
 import '../models/question_model.dart';
 
 class ProgressData {
@@ -214,6 +215,8 @@ class StorageService {
   static const String _keyNavReversed = 'repeat_exam:nav_reversed';
   static const String _keyAnswerHighlight = 'repeat_exam:answer_highlight';
   static const String _keyQuestionFontStep = 'repeat_exam:question_font_step';
+  static const String _keyBottomNavHeightStep =
+      'repeat_exam:bottom_nav_height_step';
   static const String _keyMockSession = 'repeat_exam:mock_session';
   static const String _keyMockHistory = 'repeat_exam:mock_history';
 
@@ -373,6 +376,23 @@ class StorageService {
   static Future<void> saveQuestionFontStep(int step) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setInt(_keyQuestionFontStep, step);
+  }
+
+  static Future<int> loadBottomNavHeightStep() async {
+    final prefs = await SharedPreferences.getInstance();
+    final raw = prefs.getInt(_keyBottomNavHeightStep);
+    if (raw != null &&
+        raw >= 0 &&
+        raw <= kBottomNavHeightMaxStep) {
+      return raw;
+    }
+    return 0;
+  }
+
+  static Future<void> saveBottomNavHeightStep(int step) async {
+    final prefs = await SharedPreferences.getInstance();
+    final safe = step.clamp(0, kBottomNavHeightMaxStep);
+    await prefs.setInt(_keyBottomNavHeightStep, safe);
   }
 
   static Future<AnswerHighlight> loadAnswerHighlight() async {

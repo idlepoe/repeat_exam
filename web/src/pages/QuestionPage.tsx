@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState, type CSSProperties } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { AppBar } from '../components/AppBar'
+import { BottomNavButtons } from '../components/BottomNavButtons'
 import { examJsonUrl } from '../lib/examFiles'
 import { fetchExamSessionList, nextSession } from '../lib/examMeta'
 import {
@@ -215,18 +216,6 @@ export function QuestionPage() {
   )
   const { base: baseFont, title: titleFs } = FONT_STEPS[fontStepClamped]
 
-  const btnThird = (weight: number, extra: CSSProperties): CSSProperties => ({
-    flex: `${weight} 1 0`,
-    minWidth: 0,
-    boxSizing: 'border-box',
-    padding: '14px 8px',
-    fontSize: 16,
-    border: 'none',
-    borderRadius: 0,
-    cursor: 'pointer',
-    ...extra,
-  })
-
   return (
     <div
       style={{
@@ -399,95 +388,13 @@ export function QuestionPage() {
 
       {q ? (
         <>
-          <nav
-            style={{
-              flexShrink: 0,
-              width: '100%',
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'stretch',
-              borderTop: '1px solid #e5e4e7',
-              background: '#fff',
-              paddingBottom: 'env(safe-area-inset-bottom, 0px)',
-            }}
-            aria-label="문제 이동"
-          >
-            {navReversed ? (
-              <>
-                <button
-                  type="button"
-                  onClick={goNext}
-                  style={btnThird(4, {
-                    borderRight: '1px solid #e5e4e7',
-                    background: '#fff',
-                    color: '#111',
-                  })}
-                >
-                  다음
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setNavReversed((v) => !v)}
-                  style={btnThird(2, {
-                    borderRight: '1px solid #e5e4e7',
-                    background: '#f5f5f5',
-                    color: '#111',
-                  })}
-                >
-                  변경
-                </button>
-                <button
-                  type="button"
-                  onClick={goPrev}
-                  disabled={index <= 0}
-                  style={btnThird(4, {
-                    background: index <= 0 ? '#eee' : '#fff',
-                    color: '#111',
-                    cursor: index <= 0 ? 'not-allowed' : 'pointer',
-                  })}
-                >
-                  이전
-                </button>
-              </>
-            ) : (
-              <>
-                <button
-                  type="button"
-                  onClick={goPrev}
-                  disabled={index <= 0}
-                  style={btnThird(4, {
-                    borderRight: '1px solid #e5e4e7',
-                    background: index <= 0 ? '#eee' : '#fff',
-                    color: '#111',
-                    cursor: index <= 0 ? 'not-allowed' : 'pointer',
-                  })}
-                >
-                  이전
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setNavReversed((v) => !v)}
-                  style={btnThird(2, {
-                    borderRight: '1px solid #e5e4e7',
-                    background: '#f5f5f5',
-                    color: '#111',
-                  })}
-                >
-                  변경
-                </button>
-                <button
-                  type="button"
-                  onClick={goNext}
-                  style={btnThird(4, {
-                    background: '#fff',
-                    color: '#111',
-                  })}
-                >
-                  다음
-                </button>
-              </>
-            )}
-          </nav>
+          <BottomNavButtons
+            navReversed={navReversed}
+            prevDisabled={index <= 0}
+            onPrev={goPrev}
+            onNext={goNext}
+            onToggleOrder={() => setNavReversed((v) => !v)}
+          />
         </>
       ) : null}
 

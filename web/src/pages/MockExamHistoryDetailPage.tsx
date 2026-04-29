@@ -12,6 +12,7 @@ import {
   loadMockHistory,
   type MockHistoryRecord,
 } from '../lib/mockExamStorage'
+import { BottomNavButtons } from '../components/BottomNavButtons'
 import { loadNavReversed, saveNavReversed } from '../lib/storage'
 import type { Question } from '../types/question'
 
@@ -255,55 +256,13 @@ export function MockExamHistoryDetailPage() {
         ) : null}
       </main>
 
-      <nav
-        style={{
-          flexShrink: 0,
-          width: '100%',
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'stretch',
-          borderTop: '1px solid #e5e4e7',
-          background: '#fff',
-          paddingBottom: 'env(safe-area-inset-bottom, 0px)',
-        }}
-        aria-label="문제 이동"
-      >
-        {navReversed ? (
-          <>
-            <button type="button" onClick={goNext} style={btnThird(4, navPlain)}>
-              다음
-            </button>
-            <button type="button" onClick={toggleNavOrder} style={btnThird(2, navMid)}>
-              변경
-            </button>
-            <button
-              type="button"
-              onClick={goPrev}
-              disabled={index <= 0}
-              style={btnThird(4, index <= 0 ? navDisabled : navPlain)}
-            >
-              이전
-            </button>
-          </>
-        ) : (
-          <>
-            <button
-              type="button"
-              onClick={goPrev}
-              disabled={index <= 0}
-              style={btnThird(4, index <= 0 ? navDisabled : navPlain)}
-            >
-              이전
-            </button>
-            <button type="button" onClick={toggleNavOrder} style={btnThird(2, navMid)}>
-              변경
-            </button>
-            <button type="button" onClick={goNext} style={btnThird(4, navPlain)}>
-              다음
-            </button>
-          </>
-        )}
-      </nav>
+      <BottomNavButtons
+        navReversed={navReversed}
+        prevDisabled={index <= 0}
+        onPrev={goPrev}
+        onNext={goNext}
+        onToggleOrder={toggleNavOrder}
+      />
 
       {showAnswerSheet && (
         <ModalOverlay>
@@ -434,37 +393,6 @@ const modalSecondaryBtn: CSSProperties = {
   background: '#f5f5f5',
   cursor: 'pointer',
 }
-
-const navPlain: CSSProperties = {
-  borderRight: '1px solid #e5e4e7',
-  background: '#fff',
-  color: '#111',
-}
-
-const navMid: CSSProperties = {
-  borderRight: '1px solid #e5e4e7',
-  background: '#f5f5f5',
-  color: '#111',
-}
-
-const navDisabled: CSSProperties = {
-  borderRight: '1px solid #e5e4e7',
-  background: '#eee',
-  color: '#111',
-  cursor: 'not-allowed',
-}
-
-const btnThird = (weight: number, extra: CSSProperties): CSSProperties => ({
-  flex: `${weight} 1 0`,
-  minWidth: 0,
-  boxSizing: 'border-box',
-  padding: '14px 8px',
-  fontSize: 16,
-  border: 'none',
-  borderRadius: 0,
-  cursor: 'pointer',
-  ...extra,
-})
 
 function ModalOverlay({ children }: { children: ReactNode }) {
   return (

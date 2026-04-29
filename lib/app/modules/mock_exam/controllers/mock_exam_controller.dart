@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import '../../../data/bottom_nav_height.dart';
 import '../../../data/models/question_model.dart';
 import '../../../data/services/exam_meta_service.dart';
 import '../../../data/services/storage_service.dart';
@@ -28,6 +29,7 @@ class MockExamController extends GetxController {
   final startedAt = 0.obs;
   final remainMs = examMs.obs;
   final navReversed = false.obs;
+  final bottomNavHeightStep = 0.obs;
   final answerHighlight = const AnswerHighlight(bg: '#c00', fg: '#fff').obs;
 
   final showTimeUpDialog = false.obs;
@@ -86,6 +88,11 @@ class MockExamController extends GetxController {
     _persistEnabled = true;
     try {
       navReversed.value = await StorageService.loadNavReversed();
+      bottomNavHeightStep.value =
+          (await StorageService.loadBottomNavHeightStep()).clamp(
+        0,
+        kBottomNavHeightMaxStep,
+      );
       answerHighlight.value = await StorageService.loadAnswerHighlight();
       final stored = await StorageService.loadMockSession();
       if (stored != null &&
