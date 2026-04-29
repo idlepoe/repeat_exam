@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../data/bottom_nav_height.dart';
+import '../../../widgets/bottom_nav_buttons.dart';
 import '../controllers/mock_exam_controller.dart';
 
 class MockExamView extends GetView<MockExamController> {
@@ -9,7 +10,11 @@ class MockExamView extends GetView<MockExamController> {
   Color _hexToColor(String hex) {
     final normalized = hex.replaceFirst('#', '');
     if (normalized.length == 3) {
-      final expanded = normalized.split('').map((e) => '$e$e').join().toUpperCase();
+      final expanded = normalized
+          .split('')
+          .map((e) => '$e$e')
+          .join()
+          .toUpperCase();
       return Color(int.parse('FF$expanded', radix: 16));
     }
     if (normalized.length == 6) {
@@ -25,7 +30,10 @@ class MockExamView extends GetView<MockExamController> {
           title: const Text('모의고사 종료'),
           content: const Text('모의고사를 종료하시겠습니까?'),
           actions: [
-            TextButton(onPressed: controller.closeEndConfirm, child: const Text('취소')),
+            TextButton(
+              onPressed: controller.closeEndConfirm,
+              child: const Text('취소'),
+            ),
             FilledButton(
               onPressed: controller.confirmEndExam,
               child: const Text('확인'),
@@ -40,267 +48,195 @@ class MockExamView extends GetView<MockExamController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Obx(() {
-        if (controller.loading.value) {
-          return const Center(child: CircularProgressIndicator());
-        }
-        final err = controller.error.value;
-        if (err != null) {
-          return Center(
-            child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: Text(err, style: const TextStyle(color: Colors.red)),
-            ),
-          );
-        }
+      bottomNavigationBar: Obx(() {
         final q = controller.currentQuestion;
-        if (q == null) return const Center(child: Text('모의고사 준비 중…'));
-        final highlight = controller.answerHighlight.value;
-        final answerBg = _hexToColor(highlight.bg);
-        final answerFg = _hexToColor(highlight.fg);
-        final bottomPreset =
-            bottomNavHeightPresetForStep(controller.bottomNavHeightStep.value);
-        final bottomNavPad =
-            bottomNavBarEstimatedOuterHeight(bottomPreset);
+        if (controller.loading.value ||
+            controller.error.value != null ||
+            q == null) {
+          return const SizedBox.shrink();
+        }
+        final bottomPreset = bottomNavHeightPresetForStep(
+          controller.bottomNavHeightStep.value,
+        );
+        return BottomNavButtons(
+          navReversed: controller.navReversed.value,
+          prevDisabled: controller.isFirst,
+          onPrev: controller.goPrev,
+          onNext: controller.goNext,
+          onToggleOrder: controller.toggleNavReversed,
+          verticalPadding: bottomPreset.verticalPadding.toDouble(),
+          fontSize: bottomPreset.fontSize.toDouble(),
+        );
+      }),
+      body: SafeArea(
+        bottom: false,
+        child: Obx(() {
+          if (controller.loading.value) {
+            return const Center(child: CircularProgressIndicator());
+          }
+          final err = controller.error.value;
+          if (err != null) {
+            return Center(
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Text(err, style: const TextStyle(color: Colors.red)),
+              ),
+            );
+          }
+          final q = controller.currentQuestion;
+          if (q == null) return const Center(child: Text('모의고사 준비 중…'));
+          final highlight = controller.answerHighlight.value;
+          final answerBg = _hexToColor(highlight.bg);
+          final answerFg = _hexToColor(highlight.fg);
 
-        return Stack(
-          children: [
-            Column(
-              children: [
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-                  decoration: const BoxDecoration(
-                    border: Border(bottom: BorderSide(color: Color(0xFFE5E4E7))),
+          return Stack(
+            children: [
+              Column(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 8,
+                    ),
+                    decoration: const BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(color: Color(0xFFE5E4E7)),
+                      ),
+                    ),
+                    child: SafeArea(
+                      bottom: false,
+                      child: Row(
+                        children: [
+                          OutlinedButton(
+                            onPressed: () => Get.back(),
+                            child: const Text('뒤로가기'),
+                          ),
+                          Expanded(
+                            child: Text(
+                              controller.timeLabel,
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                          OutlinedButton(
+                            onPressed: _showEndConfirm,
+                            style: OutlinedButton.styleFrom(
+                              foregroundColor: const Color(0xFFB00020),
+                            ),
+                            child: const Text('시험종료'),
+                          ),
+                          const SizedBox(width: 6),
+                          OutlinedButton(
+                            onPressed: controller.openAnswerSheet,
+                            child: const Text('답안확인'),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-                  child: SafeArea(
-                    bottom: false,
-                    child: Row(
+                  Expanded(
+                    child: ListView(
+                      key: ValueKey('${q.id}_${controller.index.value}'),
+                      padding: EdgeInsets.fromLTRB(16, 16, 16, 8),
                       children: [
-                        OutlinedButton(
-                          onPressed: () => Get.back(),
-                          child: const Text('뒤로가기'),
-                        ),
-                        Expanded(
-                          child: Text(
-                            controller.timeLabel,
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(fontWeight: FontWeight.w600),
+                        Text(
+                          '[${q.subject}] ${controller.index.value + 1}/${MockExamController.mockTotal}',
+                          style: const TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w600,
+                            color: Color(0xFF333333),
                           ),
                         ),
-                        OutlinedButton(
-                          onPressed: _showEndConfirm,
-                          style: OutlinedButton.styleFrom(
-                            foregroundColor: const Color(0xFFB00020),
+                        const SizedBox(height: 8),
+                        RichText(
+                          text: TextSpan(
+                            style: const TextStyle(
+                              fontSize: 16,
+                              height: 1.5,
+                              color: Color(0xFF111111),
+                            ),
+                            children: [
+                              TextSpan(
+                                text: '${controller.index.value + 1}. ',
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              TextSpan(text: q.question_text),
+                            ],
                           ),
-                          child: const Text('시험종료'),
                         ),
-                        const SizedBox(width: 6),
-                        OutlinedButton(
-                          onPressed: controller.openAnswerSheet,
-                          child: const Text('답안확인'),
-                        ),
+                        const SizedBox(height: 16),
+                        if (q.question_image_url != null &&
+                            q.question_image_url!.trim().isNotEmpty)
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 16),
+                            child: Image.network(q.question_image_url!),
+                          ),
+                        ...q.choices.map((c) {
+                          final picked = controller.answers[q.id];
+                          final isSel = picked == c.no;
+                          return Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: FilledButton.tonal(
+                              onPressed: () => controller.pickChoice(c.no),
+                              style: FilledButton.styleFrom(
+                                alignment: Alignment.centerLeft,
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 12,
+                                  vertical: 10,
+                                ),
+                                backgroundColor: isSel
+                                    ? answerBg
+                                    : const Color(0xFFFAFAFA),
+                                foregroundColor: isSel
+                                    ? answerFg
+                                    : const Color(0xFF111111),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(6),
+                                ),
+                              ),
+                              child: Text(
+                                '${c.no}. ${c.text}',
+                                style: const TextStyle(fontSize: 16),
+                              ),
+                            ),
+                          );
+                        }),
                       ],
                     ),
                   ),
+                ],
+              ),
+              if (controller.showTimeUpDialog.value)
+                _simpleDialog(
+                  title: '안내',
+                  message: '시험 시간(60분)이 지났습니다.',
+                  onConfirm: controller.closeTimeUpDialog,
                 ),
-                Expanded(
-                  child: ListView(
-                    key: ValueKey('${q.id}_${controller.index.value}'),
-                    padding: EdgeInsets.fromLTRB(
-                      16,
-                      16,
-                      16,
-                      8 + bottomNavPad + MediaQuery.of(context).padding.bottom,
-                    ),
-                    children: [
-                      Text(
-                        '[${q.subject}] ${controller.index.value + 1}/${MockExamController.mockTotal}',
-                        style: const TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xFF333333),
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      RichText(
-                        text: TextSpan(
-                          style: const TextStyle(
-                            fontSize: 16,
-                            height: 1.5,
-                            color: Color(0xFF111111),
-                          ),
-                          children: [
-                            TextSpan(
-                              text: '${controller.index.value + 1}. ',
-                              style: const TextStyle(fontWeight: FontWeight.w600),
-                            ),
-                            TextSpan(text: q.question_text),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(height: 16),
-                      if (q.question_image_url != null && q.question_image_url!.trim().isNotEmpty)
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 16),
-                          child: Image.network(q.question_image_url!),
-                        ),
-                      ...q.choices.map((c) {
-                        final picked = controller.answers[q.id];
-                        final isSel = picked == c.no;
-                        return Padding(
-                          padding: const EdgeInsets.only(bottom: 10),
-                          child: FilledButton.tonal(
-                            onPressed: () => controller.pickChoice(c.no),
-                            style: FilledButton.styleFrom(
-                              alignment: Alignment.centerLeft,
-                              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-                              backgroundColor: isSel ? answerBg : const Color(0xFFFAFAFA),
-                              foregroundColor: isSel ? answerFg : const Color(0xFF111111),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(6),
-                              ),
-                            ),
-                            child: Text('${c.no}. ${c.text}', style: const TextStyle(fontSize: 16)),
-                          ),
-                        );
-                      }),
-                    ],
-                  ),
+              if (controller.showIncompleteDialog.value)
+                _dualDialog(
+                  title: '안내',
+                  message: '풀지 않은 문제가 있습니다. 이동하시겠습니까?',
+                  primaryLabel: '해당 문제로 이동',
+                  onPrimary: controller.moveToUnanswered,
+                  secondaryLabel: '닫기',
+                  onSecondary: controller.closeIncompleteDialog,
                 ),
-              ],
-            ),
-            Positioned(
-              left: 0,
-              right: 0,
-              bottom: 0,
-              child: SafeArea(
-                top: false,
-                child: Row(
-                  children: controller.navReversed.value
-                      ? [
-                          Expanded(
-                            flex: 4,
-                            child: _navButton(
-                              '다음',
-                              controller.goNext,
-                              bottomPreset: bottomPreset,
-                            ),
-                          ),
-                          Expanded(
-                            flex: 2,
-                            child: _navButton(
-                              '변경',
-                              controller.toggleNavReversed,
-                              bottomPreset: bottomPreset,
-                              bg: const Color(0xFFF5F5F5),
-                              borderLeft: true,
-                            ),
-                          ),
-                          Expanded(
-                            flex: 4,
-                            child: _navButton(
-                              '이전',
-                              controller.goPrev,
-                              bottomPreset: bottomPreset,
-                              enabled: !controller.isFirst,
-                              bg: controller.isFirst ? const Color(0xFFEEEEEE) : Colors.white,
-                              borderLeft: true,
-                            ),
-                          ),
-                        ]
-                      : [
-                          Expanded(
-                            flex: 4,
-                            child: _navButton(
-                              '이전',
-                              controller.goPrev,
-                              bottomPreset: bottomPreset,
-                              enabled: !controller.isFirst,
-                              bg: controller.isFirst ? const Color(0xFFEEEEEE) : Colors.white,
-                            ),
-                          ),
-                          Expanded(
-                            flex: 2,
-                            child: _navButton(
-                              '변경',
-                              controller.toggleNavReversed,
-                              bottomPreset: bottomPreset,
-                              bg: const Color(0xFFF5F5F5),
-                              borderLeft: true,
-                            ),
-                          ),
-                          Expanded(
-                            flex: 4,
-                            child: _navButton(
-                              '다음',
-                              controller.goNext,
-                              bottomPreset: bottomPreset,
-                              borderLeft: true,
-                            ),
-                          ),
-                        ],
+              if (controller.showResultDialog.value)
+                _simpleDialog(
+                  title: '결과',
+                  message:
+                      '${controller.resultPassed.value ? '합격' : '불합격'}하셨습니다.\n${controller.resultCorrect.value}/${MockExamController.mockTotal}\n점수 ${controller.resultScore.value}',
+                  onConfirm: controller.closeResultAndMoveList,
                 ),
-              ),
-            ),
-            if (controller.showTimeUpDialog.value)
-              _simpleDialog(
-                title: '안내',
-                message: '시험 시간(60분)이 지났습니다.',
-                onConfirm: controller.closeTimeUpDialog,
-              ),
-            if (controller.showIncompleteDialog.value)
-              _dualDialog(
-                title: '안내',
-                message: '풀지 않은 문제가 있습니다. 이동하시겠습니까?',
-                primaryLabel: '해당 문제로 이동',
-                onPrimary: controller.moveToUnanswered,
-                secondaryLabel: '닫기',
-                onSecondary: controller.closeIncompleteDialog,
-              ),
-            if (controller.showResultDialog.value)
-              _simpleDialog(
-                title: '결과',
-                message:
-                    '${controller.resultPassed.value ? '합격' : '불합격'}하셨습니다.\n${controller.resultCorrect.value}/${MockExamController.mockTotal}\n점수 ${controller.resultScore.value}',
-                onConfirm: controller.closeResultAndMoveList,
-              ),
-            if (controller.showAnswerSheet.value)
-              _AnswerSheetOverlay(controller: controller),
-          ],
-        );
-      }),
-    );
-  }
-
-  Widget _navButton(
-    String label,
-    Future<void> Function() onTap, {
-    required BottomNavHeightPreset bottomPreset,
-    bool enabled = true,
-    bool borderLeft = false,
-    Color bg = Colors.white,
-  }) {
-    final vp = bottomPreset.verticalPadding.toDouble();
-    final fs = bottomPreset.fontSize.toDouble();
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        color: bg,
-        border: Border(
-          top: const BorderSide(color: Color(0xFFE5E4E7)),
-          left: borderLeft ? const BorderSide(color: Color(0xFFE5E4E7)) : BorderSide.none,
-        ),
-      ),
-      child: TextButton(
-        style: TextButton.styleFrom(
-          padding: EdgeInsets.symmetric(vertical: vp, horizontal: 8),
-          minimumSize: Size.zero,
-          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        ),
-        onPressed: enabled ? onTap : null,
-        child: Text(
-          label,
-          style: TextStyle(color: const Color(0xFF111111), fontSize: fs),
-        ),
+              if (controller.showAnswerSheet.value)
+                _AnswerSheetOverlay(controller: controller),
+            ],
+          );
+        }),
       ),
     );
   }
@@ -315,7 +251,10 @@ class MockExamView extends GetView<MockExamController> {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(title, style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 17)),
+          Text(
+            title,
+            style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 17),
+          ),
           const SizedBox(height: 12),
           Text(message),
           const SizedBox(height: 16),
@@ -338,7 +277,10 @@ class MockExamView extends GetView<MockExamController> {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(title, style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 17)),
+          Text(
+            title,
+            style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 17),
+          ),
           const SizedBox(height: 12),
           Text(message),
           const SizedBox(height: 16),
@@ -395,7 +337,10 @@ class _AnswerSheetOverlay extends StatelessWidget {
               children: [
                 const Align(
                   alignment: Alignment.centerLeft,
-                  child: Text('답안 확인', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700)),
+                  child: Text(
+                    '답안 확인',
+                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700),
+                  ),
                 ),
                 const SizedBox(height: 12),
                 Flexible(
@@ -407,7 +352,10 @@ class _AnswerSheetOverlay extends StatelessWidget {
                       final ans = controller.answers[qq.id];
                       return TextButton(
                         style: TextButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 8,
+                            vertical: 10,
+                          ),
                           alignment: Alignment.centerLeft,
                           backgroundColor: i == controller.index.value
                               ? const Color(0xFFF0F7FF)
@@ -421,7 +369,9 @@ class _AnswerSheetOverlay extends StatelessWidget {
                               '${i + 1}. ${qq.question_text}',
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
-                              style: const TextStyle(fontWeight: FontWeight.w600),
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
                             const SizedBox(height: 4),
                             Text('답안: ${ans == null ? '—' : '$ans번'}'),
@@ -432,7 +382,10 @@ class _AnswerSheetOverlay extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 8),
-                OutlinedButton(onPressed: controller.closeAnswerSheet, child: const Text('닫기')),
+                OutlinedButton(
+                  onPressed: controller.closeAnswerSheet,
+                  child: const Text('닫기'),
+                ),
               ],
             ),
           ),

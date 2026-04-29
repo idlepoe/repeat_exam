@@ -17,20 +17,20 @@ const List<BottomNavHeightPreset> kBottomNavHeightPresets = [
   BottomNavHeightPreset(
     step: 0,
     label: '보통',
-    verticalPadding: 14,
-    fontSize: 16,
-  ),
-  BottomNavHeightPreset(
-    step: 1,
-    label: '크게',
     verticalPadding: 18,
     fontSize: 17,
   ),
   BottomNavHeightPreset(
-    step: 2,
-    label: '더 크게',
+    step: 1,
+    label: '크게',
     verticalPadding: 22,
     fontSize: 18,
+  ),
+  BottomNavHeightPreset(
+    step: 2,
+    label: '더 크게',
+    verticalPadding: 26,
+    fontSize: 19,
   ),
 ];
 
