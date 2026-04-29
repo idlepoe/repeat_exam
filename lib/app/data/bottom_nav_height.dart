@@ -34,7 +34,8 @@ const List<BottomNavHeightPreset> kBottomNavHeightPresets = [
   ),
 ];
 
-const int kBottomNavHeightMaxStep = kBottomNavHeightPresets.length - 1;
+/// [kBottomNavHeightPresets] 항목 수가 바뀌면 같이 맞출 것.
+const int kBottomNavHeightMaxStep = 2;
 
 BottomNavHeightPreset bottomNavHeightPresetForStep(int step) {
   final i = step.clamp(0, kBottomNavHeightMaxStep);

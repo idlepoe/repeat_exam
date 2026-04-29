@@ -4,6 +4,7 @@ import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:get/get.dart';
 
 import '../../../data/bottom_nav_height.dart';
+import '../../../data/services/storage_service.dart';
 import '../controllers/options_controller.dart';
 
 class OptionsView extends GetView<OptionsController> {
