@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import '../../../data/bottom_nav_height.dart';
 import '../../../data/models/question_model.dart';
+import '../../../data/question_font.dart';
 import '../../../data/services/exam_meta_service.dart';
 import '../../../data/services/storage_service.dart';
 import '../../../routes/app_pages.dart';
@@ -30,6 +31,7 @@ class MockExamController extends GetxController {
   final remainMs = examMs.obs;
   final navReversed = false.obs;
   final bottomNavHeightStep = 0.obs;
+  final fontStep = 0.obs;
   final answerHighlight = const AnswerHighlight(bg: '#c00', fg: '#fff').obs;
 
   final showTimeUpDialog = false.obs;
@@ -43,7 +45,6 @@ class MockExamController extends GetxController {
 
   Timer? _timer;
   bool _persistEnabled = true;
-  bool _timeUpDialogShownOnce = false;
   Map<String, int>? _incompleteSnapshot;
 
   QuestionModel? get currentQuestion {
@@ -70,8 +71,9 @@ class MockExamController extends GetxController {
   }
 
   bool get isFirst => index.value <= 0;
-  bool get isLast =>
-      questions.isNotEmpty && index.value >= questions.length - 1;
+  bool get isLast => questions.isNotEmpty && index.value >= questions.length - 1;
+  double get baseFont => questionFontPresetForStep(fontStep.value).base;
+  double get titleFont => questionFontPresetForStep(fontStep.value).title;
 
   String get timeLabel {
     final ms = remainMs.value;
@@ -88,14 +90,16 @@ class MockExamController extends GetxController {
     loading.value = true;
     error.value = null;
     _persistEnabled = true;
-    _timeUpDialogShownOnce = false;
     try {
       navReversed.value = await StorageService.loadNavReversed();
       bottomNavHeightStep.value =
           (await StorageService.loadBottomNavHeightStep()).clamp(
-            0,
-            kBottomNavHeightMaxStep,
-          );
+        0,
+        kBottomNavHeightMaxStep,
+      );
+      fontStep.value = clampQuestionFontStep(
+        await StorageService.loadQuestionFontStep(),
+      );
       answerHighlight.value = await StorageService.loadAnswerHighlight();
       final stored = await StorageService.loadMockSession();
       if (stored != null &&
@@ -126,9 +130,7 @@ class MockExamController extends GetxController {
 
   Future<List<QuestionModel>> _buildMockQuestions(String kind) async {
     final meta = await ExamMetaService.fetchExamSessionList();
-    final row = meta.exam_session_list
-        .where((e) => e.exam_type == kind)
-        .toList();
+    final row = meta.exam_session_list.where((e) => e.exam_type == kind).toList();
     if (row.isEmpty || row.first.sessions.isEmpty) {
       throw Exception('$kind 회차 정보가 없습니다.');
     }
@@ -143,9 +145,7 @@ class MockExamController extends GetxController {
       try {
         final ymd = session.replaceAll('-', '');
         final prefix = kind == '제빵기능사' ? 'bread' : 'pastry';
-        final raw = await rootBundle.loadString(
-          'assets/json/exams/${prefix}_$ymd.json',
-        );
+        final raw = await rootBundle.loadString('assets/json/exams/${prefix}_$ymd.json');
         final decoded = jsonDecode(raw);
         if (decoded is! List) continue;
         for (final e in decoded) {
@@ -166,8 +166,7 @@ class MockExamController extends GetxController {
 
     final selected = <QuestionModel>[];
     for (final entry in subjectQuota.entries) {
-      final pool = [...(pools[entry.key] ?? <QuestionModel>[])]
-        ..shuffle(Random());
+      final pool = [...(pools[entry.key] ?? <QuestionModel>[])]..shuffle(Random());
       if (pool.length < entry.value) {
         throw Exception('${entry.key} 문제가 부족합니다.');
       }
@@ -187,12 +186,9 @@ class MockExamController extends GetxController {
   }
 
   void _tickTime() {
-    final prev = remainMs.value;
-    final left =
-        startedAt.value + examMs - DateTime.now().millisecondsSinceEpoch;
+    final left = startedAt.value + examMs - DateTime.now().millisecondsSinceEpoch;
     remainMs.value = left;
-    if (prev > 0 && left <= 0 && !_timeUpDialogShownOnce) {
-      _timeUpDialogShownOnce = true;
+    if (left <= 0 && !showTimeUpDialog.value) {
       showTimeUpDialog.value = true;
     }
   }
@@ -245,9 +241,7 @@ class MockExamController extends GetxController {
   }
 
   void _handleLastQuestionNav(Map<String, int> currentAnswers) {
-    final unanswered = questions.indexWhere(
-      (q) => currentAnswers[q.id] == null,
-    );
+    final unanswered = questions.indexWhere((q) => currentAnswers[q.id] == null);
     if (unanswered >= 0) {
       _incompleteSnapshot = currentAnswers;
       showIncompleteDialog.value = true;
@@ -310,19 +304,10 @@ class MockExamController extends GetxController {
   }
 
   Future<void> confirmEndExam() async {
-    debugPrint(
-      '[MockExamController] confirmEndExam '
-      '(examKind=${examKind.value}, '
-      'answered=${answers.length}/${questions.length}, '
-      'remainMs=${remainMs.value})',
-    );
     _persistEnabled = false;
     await StorageService.clearMockSession();
     showEndConfirm.value = false;
-    if (Get.isDialogOpen ?? false) {
-      Get.back<void>();
-    }
-    Get.offAllNamed(Routes.EXAM_TYPE_LIST);
+    Get.back();
   }
 
   void openEndConfirm() => showEndConfirm.value = true;

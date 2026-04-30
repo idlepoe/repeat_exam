@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../data/bottom_nav_height.dart';
+import '../../../routes/app_pages.dart';
 import '../../../widgets/bottom_nav_buttons.dart';
 import '../controllers/question_controller.dart';
 
@@ -65,8 +66,11 @@ class QuestionView extends GetView<QuestionController> {
         centerTitle: true,
         actions: [
           TextButton(
-            onPressed: controller.cycleFontStep,
-            child: Text('aA', style: TextStyle(fontWeight: FontWeight.w600)),
+            onPressed: () => Get.toNamed(Routes.OPTIONS),
+            child: const Text(
+              '옵션',
+              style: TextStyle(fontWeight: FontWeight.w600),
+            ),
           ),
         ],
       ),

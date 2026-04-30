@@ -4,6 +4,7 @@ import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:get/get.dart';
 
 import '../../../data/bottom_nav_height.dart';
+import '../../../data/question_font.dart';
 import '../../../data/services/storage_service.dart';
 import '../controllers/options_controller.dart';
 
@@ -189,6 +190,64 @@ class OptionsView extends GetView<OptionsController> {
                           ),
                           child: Text(
                             opt.label,
+                            style: TextStyle(
+                              fontSize: opt.fontSize.toDouble(),
+                              fontWeight: selected
+                                  ? FontWeight.w700
+                                  : FontWeight.w500,
+                            ),
+                          ),
+                        );
+                      }),
+                    ),
+                  ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            const Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                '문제 글자 크기',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF555555),
+                ),
+              ),
+            ),
+            const SizedBox(height: 8),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                for (final opt in kQuestionFontPresets)
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 4),
+                      child: Obx(() {
+                        final selected =
+                            controller.questionFontStep.value == opt.step;
+                        return OutlinedButton(
+                          onPressed: () =>
+                              controller.setQuestionFontStep(opt.step),
+                          style: OutlinedButton.styleFrom(
+                            foregroundColor: const Color(0xFF111111),
+                            padding: EdgeInsets.symmetric(
+                              vertical: opt.verticalPadding.toDouble(),
+                              horizontal: 8,
+                            ),
+                            side: BorderSide(
+                              color: selected
+                                  ? const Color(0xFF222222)
+                                  : const Color(0xFFBBBBBB),
+                              width: selected ? 2 : 1,
+                            ),
+                            backgroundColor: selected
+                                ? const Color(0xFFF4F4F4)
+                                : Colors.white,
+                          ),
+                          child: Text(
+                            opt.label,
+                            textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: opt.fontSize.toDouble(),
                               fontWeight: selected

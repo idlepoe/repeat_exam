@@ -1,4 +1,5 @@
 import { BOTTOM_NAV_HEIGHT_MAX_STEP } from './bottomNavHeight'
+import { clampQuestionFontStep } from './questionFont'
 
 const KEY_PROGRESS = 'repeat_exam:progress'
 const KEY_SESSION_COUNT = 'repeat_exam:session_count'
@@ -186,7 +187,7 @@ export function loadQuestionFontStep(): number {
     if (!raw) return 0
     const parsed = Number(raw)
     if (Number.isInteger(parsed) && parsed >= 0) {
-      return parsed
+      return clampQuestionFontStep(parsed)
     }
   } catch {
     /* ignore */
@@ -195,8 +196,9 @@ export function loadQuestionFontStep(): number {
 }
 
 export function saveQuestionFontStep(step: number): void {
+  const safeStep = clampQuestionFontStep(step)
   try {
-    localStorage.setItem(KEY_QUESTION_FONT_STEP, String(step))
+    localStorage.setItem(KEY_QUESTION_FONT_STEP, String(safeStep))
   } catch {
     /* ignore */
   }

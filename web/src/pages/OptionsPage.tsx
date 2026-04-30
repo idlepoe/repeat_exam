@@ -2,13 +2,16 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { AppBar } from '../components/AppBar'
 import { BOTTOM_NAV_HEIGHT_PRESETS } from '../lib/bottomNavHeight'
+import { QUESTION_FONT_PRESETS } from '../lib/questionFont'
 import {
   clearProgress,
   clearSessionCount,
   loadAnswerHighlight,
   loadBottomNavHeightStep,
+  loadQuestionFontStep,
   saveAnswerHighlight,
   saveBottomNavHeightStep,
+  saveQuestionFontStep,
 } from '../lib/storage'
 
 export function OptionsPage() {
@@ -21,6 +24,9 @@ export function OptionsPage() {
   const [draftFg, setDraftFg] = useState(answerHighlight.fg)
   const [bottomNavHeightStep, setBottomNavHeightStep] = useState(() =>
     loadBottomNavHeightStep()
+  )
+  const [questionFontStep, setQuestionFontStep] = useState(() =>
+    loadQuestionFontStep()
   )
 
   return (
@@ -90,6 +96,49 @@ export function OptionsPage() {
                       saveBottomNavHeightStep(opt.step)
                       setBottomNavHeightStep(opt.step)
                       window.dispatchEvent(new Event('repeat_exam:bottom_nav_height_changed'))
+                    }}
+                    aria-pressed={selected}
+                    style={{
+                      flex: 1,
+                      minWidth: 0,
+                      padding: `${opt.verticalPadding}px 8px`,
+                      fontSize: opt.fontSize,
+                      textAlign: 'center',
+                      border: selected ? '2px solid #222' : '1px solid #bbb',
+                      borderRadius: 8,
+                      background: selected ? '#f4f4f4' : '#fff',
+                      color: '#111',
+                      cursor: 'pointer',
+                      fontWeight: selected ? 700 : 500,
+                    }}
+                  >
+                    {opt.label}
+                  </button>
+                )
+              })}
+            </div>
+          </div>
+          <div style={{ marginBottom: 12 }}>
+            <div
+              style={{
+                marginBottom: 8,
+                fontSize: 14,
+                fontWeight: 600,
+                color: '#555',
+              }}
+            >
+              문제 글자 크기
+            </div>
+            <div style={{ display: 'flex', gap: 8, alignItems: 'flex-end' }}>
+              {QUESTION_FONT_PRESETS.map((opt) => {
+                const selected = questionFontStep === opt.step
+                return (
+                  <button
+                    key={opt.step}
+                    type="button"
+                    onClick={() => {
+                      saveQuestionFontStep(opt.step)
+                      setQuestionFontStep(opt.step)
                     }}
                     aria-pressed={selected}
                     style={{

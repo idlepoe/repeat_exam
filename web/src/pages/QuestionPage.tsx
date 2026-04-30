@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { AppBar } from '../components/AppBar'
 import { BottomNavButtons } from '../components/BottomNavButtons'
+import { questionFontByStep } from '../lib/questionFont'
 import { examJsonUrl } from '../lib/examFiles'
 import { fetchExamSessionList, nextSession } from '../lib/examMeta'
 import {
@@ -14,20 +15,11 @@ import {
   loadProgress,
   saveReportedQuestion,
   saveNavReversed,
-  saveQuestionFontStep,
   saveProgress,
 } from '../lib/storage'
 import { submitQuestionReport, type ReportType } from '../lib/report'
 import type { Question } from '../types/question'
 
-/** 본문 / 과목 라벨 글자 크기 단계 (버튼 클릭 시 순환) */
-const FONT_STEPS = [
-  { base: 16, title: 15 },
-  { base: 18, title: 16 },
-  { base: 20, title: 17 },
-  { base: 22, title: 18 },
-  { base: 24, title: 20 },
-] as const
 const REPORT_TYPES: ReportType[] = [
   '사진 누락',
   '내용 누락',
@@ -48,7 +40,7 @@ export function QuestionPage() {
   const [loadErr, setLoadErr] = useState<string | null>(null)
   const [index, setIndex] = useState(0)
   const [navReversed, setNavReversed] = useState(() => loadNavReversed())
-  const [fontStep, setFontStep] = useState(() => loadQuestionFontStep())
+  const [fontStep] = useState(() => loadQuestionFontStep())
   const [showNextSessionDialog, setShowNextSessionDialog] = useState(false)
   const [showReportDialog, setShowReportDialog] = useState(false)
   const [reportSubmitting, setReportSubmitting] = useState(false)
@@ -137,10 +129,6 @@ export function QuestionPage() {
   }, [navReversed])
 
   useEffect(() => {
-    saveQuestionFontStep(fontStep)
-  }, [fontStep])
-
-  useEffect(() => {
     if (!reportToastVisible) return
     const timer = window.setTimeout(() => {
       setReportToastVisible(false)
@@ -210,11 +198,7 @@ export function QuestionPage() {
     }
   }
 
-  const fontStepClamped = Math.max(
-    0,
-    Math.min(fontStep, FONT_STEPS.length - 1)
-  )
-  const { base: baseFont, title: titleFs } = FONT_STEPS[fontStepClamped]
+  const { base: baseFont, title: titleFs } = questionFontByStep(fontStep)
 
   return (
     <div
@@ -235,9 +219,7 @@ export function QuestionPage() {
         right={
           <button
             type="button"
-            onClick={() =>
-              setFontStep((s) => (s + 1) % FONT_STEPS.length)
-            }
+            onClick={() => navigate('/options')}
             style={{
               padding: '6px 10px',
               fontSize: 14,
@@ -246,9 +228,8 @@ export function QuestionPage() {
               background: '#fff',
               cursor: 'pointer',
             }}
-            title={`글자 크기 (${fontStepClamped + 1}/${FONT_STEPS.length})`}
           >
-            aA
+            옵션
           </button>
         }
       />

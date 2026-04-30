@@ -13,7 +13,12 @@ import {
   type MockHistoryRecord,
 } from '../lib/mockExamStorage'
 import { BottomNavButtons } from '../components/BottomNavButtons'
-import { loadNavReversed, saveNavReversed } from '../lib/storage'
+import {
+  loadNavReversed,
+  loadQuestionFontStep,
+  saveNavReversed,
+} from '../lib/storage'
+import { questionFontByStep } from '../lib/questionFont'
 import type { Question } from '../types/question'
 
 function formatMockStartedAt(ts: number): string {
@@ -34,6 +39,7 @@ export function MockExamHistoryDetailPage() {
   const [showAnswerSheet, setShowAnswerSheet] = useState(false)
   const [showMoveListConfirm, setShowMoveListConfirm] = useState(false)
   const [navReversed, setNavReversed] = useState(() => loadNavReversed())
+  const [fontStep] = useState(() => loadQuestionFontStep())
   const mainRef = useRef<HTMLDivElement>(null)
 
   const record = useMemo<MockHistoryRecord | null>(() => {
@@ -72,6 +78,7 @@ export function MockExamHistoryDetailPage() {
   const answers = record.answers
   const total = questions.length
   const q = questions[index]
+  const { base: baseFont, title: titleFs } = questionFontByStep(fontStep)
 
   const goPrev = () => {
     if (index > 0) setIndex((v) => v - 1)
@@ -145,6 +152,13 @@ export function MockExamHistoryDetailPage() {
         >
           답안확인
         </button>
+        <button
+          type="button"
+          onClick={() => navigate('/options')}
+          style={headerBtnStyle}
+        >
+          옵션
+        </button>
       </header>
 
       <main
@@ -156,14 +170,14 @@ export function MockExamHistoryDetailPage() {
           WebkitOverflowScrolling: 'touch',
           padding: 16,
           paddingBottom: 8,
-          fontSize: 16,
+          fontSize: baseFont,
           lineHeight: 1.5,
           textAlign: 'left',
         }}
       >
         <div
           style={{
-            fontSize: 15,
+            fontSize: titleFs,
             fontWeight: 600,
             marginBottom: 8,
             color: '#333',

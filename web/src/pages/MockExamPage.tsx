@@ -17,8 +17,10 @@ import {
 import {
   loadAnswerHighlight,
   loadNavReversed,
+  loadQuestionFontStep,
   saveNavReversed,
 } from '../lib/storage'
+import { questionFontByStep } from '../lib/questionFont'
 import { BottomNavButtons } from '../components/BottomNavButtons'
 import type { Question } from '../types/question'
 
@@ -54,6 +56,7 @@ export function MockExamPage() {
   const [remainMs, setRemainMs] = useState(EXAM_MS)
   const [navReversed, setNavReversed] = useState(() => loadNavReversed())
   const [answerHighlight] = useState(() => loadAnswerHighlight())
+  const [fontStep] = useState(() => loadQuestionFontStep())
 
   const [showTimeUpDialog, setShowTimeUpDialog] = useState(false)
   const [showEndConfirm, setShowEndConfirm] = useState(false)
@@ -177,6 +180,7 @@ export function MockExamPage() {
   }, [answers, examKind, index, questions, ready, startedAt])
 
   const q = questions[index]
+  const { base: baseFont, title: titleFs } = questionFontByStep(fontStep)
 
   const pickChoice = (choiceNo: number) => {
     if (!q) return
@@ -356,6 +360,20 @@ export function MockExamPage() {
         >
           답안확인
         </button>
+        <button
+          type="button"
+          onClick={() => navigate('/options')}
+          style={{
+            padding: '6px 10px',
+            border: '1px solid #ccc',
+            borderRadius: 6,
+            background: '#fff',
+            cursor: 'pointer',
+            fontSize: 13,
+          }}
+        >
+          옵션
+        </button>
       </header>
 
       <main
@@ -367,14 +385,14 @@ export function MockExamPage() {
           WebkitOverflowScrolling: 'touch',
           padding: 16,
           paddingBottom: 8,
-          fontSize: 16,
+          fontSize: baseFont,
           lineHeight: 1.5,
           textAlign: 'left',
         }}
       >
         <div
           style={{
-            fontSize: 15,
+            fontSize: titleFs,
             fontWeight: 600,
             marginBottom: 8,
             color: '#333',
@@ -420,7 +438,7 @@ export function MockExamPage() {
                     background: isSel ? answerHighlight.bg : '#fafafa',
                     color: isSel ? answerHighlight.fg : '#111',
                     cursor: 'pointer',
-                    fontSize: 16,
+                    fontSize: baseFont,
                   }}
                 >
                   {c.no}. {c.text}

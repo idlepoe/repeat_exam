@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../bottom_nav_height.dart';
+import '../question_font.dart';
 import '../models/question_model.dart';
 
 class ProgressData {
@@ -370,12 +371,14 @@ class StorageService {
 
   static Future<int> loadQuestionFontStep() async {
     final prefs = await SharedPreferences.getInstance();
-    return prefs.getInt(_keyQuestionFontStep) ?? 0;
+    final raw = prefs.getInt(_keyQuestionFontStep);
+    if (raw == null) return 0;
+    return clampQuestionFontStep(raw);
   }
 
   static Future<void> saveQuestionFontStep(int step) async {
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setInt(_keyQuestionFontStep, step);
+    await prefs.setInt(_keyQuestionFontStep, clampQuestionFontStep(step));
   }
 
   static Future<int> loadBottomNavHeightStep() async {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../data/bottom_nav_height.dart';
+import '../../../routes/app_pages.dart';
 import '../../../widgets/bottom_nav_buttons.dart';
 import '../controllers/mock_exam_controller.dart';
 
@@ -130,6 +131,11 @@ class MockExamView extends GetView<MockExamController> {
                             onPressed: controller.openAnswerSheet,
                             child: const Text('답안확인'),
                           ),
+                          const SizedBox(width: 6),
+                          OutlinedButton(
+                            onPressed: () => Get.toNamed(Routes.OPTIONS),
+                            child: const Text('옵션'),
+                          ),
                         ],
                       ),
                     ),
@@ -141,8 +147,8 @@ class MockExamView extends GetView<MockExamController> {
                       children: [
                         Text(
                           '[${q.subject}] ${controller.index.value + 1}/${MockExamController.mockTotal}',
-                          style: const TextStyle(
-                            fontSize: 15,
+                          style: TextStyle(
+                            fontSize: controller.titleFont,
                             fontWeight: FontWeight.w600,
                             color: Color(0xFF333333),
                           ),
@@ -150,10 +156,10 @@ class MockExamView extends GetView<MockExamController> {
                         const SizedBox(height: 8),
                         RichText(
                           text: TextSpan(
-                            style: const TextStyle(
-                              fontSize: 16,
+                            style: TextStyle(
+                              fontSize: controller.baseFont,
                               height: 1.5,
-                              color: Color(0xFF111111),
+                              color: const Color(0xFF111111),
                             ),
                             children: [
                               TextSpan(
@@ -198,7 +204,7 @@ class MockExamView extends GetView<MockExamController> {
                               ),
                               child: Text(
                                 '${c.no}. ${c.text}',
-                                style: const TextStyle(fontSize: 16),
+                                style: TextStyle(fontSize: controller.baseFont),
                               ),
                             ),
                           );

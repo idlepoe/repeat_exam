@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 
 import '../../../data/bottom_nav_height.dart';
 import '../../../data/models/question_model.dart';
+import '../../../data/question_font.dart';
 import '../../../data/services/exam_files_service.dart';
 import '../../../data/services/exam_meta_service.dart';
 import '../../../data/services/storage_service.dart';
@@ -23,14 +24,6 @@ class QuestionController extends GetxController {
   final bottomNavHeightStep = 0.obs;
   final fontStep = 0.obs;
   final answerHighlight = const AnswerHighlight(bg: '#c00', fg: '#fff').obs;
-
-  static const fontSteps = <Map<String, double>>[
-    {'base': 16, 'title': 15},
-    {'base': 18, 'title': 16},
-    {'base': 20, 'title': 17},
-    {'base': 22, 'title': 18},
-    {'base': 24, 'title': 20},
-  ];
 
   @override
   void onInit() {
@@ -59,10 +52,10 @@ class QuestionController extends GetxController {
       questions.isNotEmpty && index.value >= questions.length - 1;
 
   double get baseFont =>
-      fontSteps[fontStep.value.clamp(0, fontSteps.length - 1)]['base']!;
+      questionFontPresetForStep(fontStep.value).base;
 
   double get titleFont =>
-      fontSteps[fontStep.value.clamp(0, fontSteps.length - 1)]['title']!;
+      questionFontPresetForStep(fontStep.value).title;
 
   String get appBarTitle =>
       examSession.value.isEmpty
@@ -80,9 +73,8 @@ class QuestionController extends GetxController {
         0,
         kBottomNavHeightMaxStep,
       );
-      fontStep.value = (await StorageService.loadQuestionFontStep()).clamp(
-        0,
-        fontSteps.length - 1,
+      fontStep.value = clampQuestionFontStep(
+        await StorageService.loadQuestionFontStep(),
       );
       answerHighlight.value = await StorageService.loadAnswerHighlight();
 
@@ -190,8 +182,8 @@ class QuestionController extends GetxController {
     return true;
   }
 
-  Future<void> cycleFontStep() async {
-    fontStep.value = (fontStep.value + 1) % fontSteps.length;
+  Future<void> setFontStep(int step) async {
+    fontStep.value = clampQuestionFontStep(step);
     await StorageService.saveQuestionFontStep(fontStep.value);
   }
 

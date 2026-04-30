@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../data/bottom_nav_height.dart';
+import '../../../routes/app_pages.dart';
 import '../../../widgets/bottom_nav_buttons.dart';
 import '../controllers/mock_exam_history_detail_controller.dart';
 
@@ -113,6 +114,11 @@ class MockExamHistoryDetailView
                             onPressed: controller.openAnswerSheet,
                             child: const Text('답안확인'),
                           ),
+                          const SizedBox(width: 6),
+                          OutlinedButton(
+                            onPressed: () => Get.toNamed(Routes.OPTIONS),
+                            child: const Text('옵션'),
+                          ),
                         ],
                       ),
                     ),
@@ -124,7 +130,8 @@ class MockExamHistoryDetailView
                       children: [
                         Text(
                           '[${q.subject}] ${controller.index.value + 1}/${controller.questions.length}',
-                          style: const TextStyle(
+                          style: TextStyle(
+                            fontSize: controller.titleFont,
                             fontWeight: FontWeight.w600,
                             color: Color(0xFF333333),
                           ),
@@ -132,9 +139,9 @@ class MockExamHistoryDetailView
                         const SizedBox(height: 8),
                         RichText(
                           text: TextSpan(
-                            style: const TextStyle(
-                              color: Color(0xFF111111),
-                              fontSize: 16,
+                            style: TextStyle(
+                              color: const Color(0xFF111111),
+                              fontSize: controller.baseFont,
                               height: 1.5,
                             ),
                             children: [
@@ -184,6 +191,7 @@ class MockExamHistoryDetailView
                             child: Text(
                               '${c.no}. ${c.text}${isPicked ? ' (선택)' : ''}',
                               style: TextStyle(
+                                fontSize: controller.baseFont,
                                 color: isCorrect
                                     ? const Color(0xFF1B5E20)
                                     : isWrongPick

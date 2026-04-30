@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import '../../../data/bottom_nav_height.dart';
 import '../../../data/models/question_model.dart';
+import '../../../data/question_font.dart';
 import '../../../data/services/storage_service.dart';
 
 class MockExamHistoryDetailController extends GetxController {
@@ -9,6 +10,7 @@ class MockExamHistoryDetailController extends GetxController {
   final error = RxnString();
   final navReversed = false.obs;
   final bottomNavHeightStep = 0.obs;
+  final fontStep = 0.obs;
   final history = Rxn<MockHistoryData>();
   final index = 0.obs;
   final showAnswerSheet = false.obs;
@@ -33,6 +35,9 @@ class MockExamHistoryDetailController extends GetxController {
           (await StorageService.loadBottomNavHeightStep()).clamp(
         0,
         kBottomNavHeightMaxStep,
+      );
+      fontStep.value = clampQuestionFontStep(
+        await StorageService.loadQuestionFontStep(),
       );
       final list = await StorageService.loadMockHistory();
       final found = list.where((e) => e.id == historyId.value).toList();
@@ -61,6 +66,8 @@ class MockExamHistoryDetailController extends GetxController {
 
   bool get isFirst => index.value <= 0;
   bool get isLast => questions.isNotEmpty && index.value >= questions.length - 1;
+  double get baseFont => questionFontPresetForStep(fontStep.value).base;
+  double get titleFont => questionFontPresetForStep(fontStep.value).title;
 
   Future<void> toggleNavReversed() async {
     navReversed.value = !navReversed.value;
