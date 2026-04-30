@@ -249,7 +249,7 @@ export function MockExamPage() {
     sessionPersistEnabledRef.current = false
     clearMockSession('confirmEndExam')
     setShowEndConfirm(false)
-    navigate(-1)
+    navigateToExamTypeListAfterMockExamComplete(navigate)
   }
 
   if (!isMockKind(examKind)) {

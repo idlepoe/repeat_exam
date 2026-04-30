@@ -25,21 +25,19 @@ class MockExamView extends GetView<MockExamController> {
 
   Future<void> _showEndConfirm() async {
     await Get.dialog<void>(
-      Obx(
-        () => AlertDialog(
-          title: const Text('모의고사 종료'),
-          content: const Text('모의고사를 종료하시겠습니까?'),
-          actions: [
-            TextButton(
-              onPressed: controller.closeEndConfirm,
-              child: const Text('취소'),
-            ),
-            FilledButton(
-              onPressed: controller.confirmEndExam,
-              child: const Text('확인'),
-            ),
-          ],
-        ),
+      AlertDialog(
+        title: const Text('모의고사 종료'),
+        content: const Text('모의고사를 종료하시겠습니까?'),
+        actions: [
+          TextButton(
+            onPressed: controller.closeEndConfirm,
+            child: const Text('취소'),
+          ),
+          FilledButton(
+            onPressed: controller.confirmEndExam,
+            child: const Text('확인'),
+          ),
+        ],
       ),
       barrierDismissible: true,
     );
