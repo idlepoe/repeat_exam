@@ -34,7 +34,7 @@ export function OptionsPage() {
       <AppBar
         title="옵션"
         showBack
-        onBack={() => navigate('/')}
+        onBack={() => navigate(-1)}
       />
       <main style={{ flex: 1, padding: 16 }}>
         <section style={{ marginBottom: 16 }}>
