@@ -249,6 +249,61 @@ export function MockExamPage() {
     if (index > 0) setIndex((i) => i - 1)
   }
 
+  const pickChoiceRef = useRef(pickChoice)
+  pickChoiceRef.current = pickChoice
+
+  useEffect(() => {
+    if (!ready || !q) return
+
+    const ignoreWhenTyping = (t: HTMLElement | null) => {
+      if (!t) return false
+      const tag = t.tagName
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return true
+      if (t.isContentEditable) return true
+      return false
+    }
+
+    const parseDigit14 = (e: KeyboardEvent): number | null => {
+      const d = /^Digit([1-4])$/.exec(e.code)
+      if (d) return Number(d[1])
+      const n = /^Numpad([1-4])$/.exec(e.code)
+      if (n) return Number(n[1])
+      if (['1', '2', '3', '4'].includes(e.key)) return Number(e.key)
+      return null
+    }
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (
+        showTimeUpDialog ||
+        showEndConfirm ||
+        showAnswerSheet ||
+        showIncompleteDialog ||
+        showResultDialog
+      ) {
+        return
+      }
+      if (ignoreWhenTyping(e.target as HTMLElement | null)) return
+
+      const digit = parseDigit14(e)
+      if (digit === null) return
+      if (!q.choices.some((c) => c.no === digit)) return
+
+      e.preventDefault()
+      pickChoiceRef.current(digit)
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [
+    ready,
+    q,
+    showTimeUpDialog,
+    showEndConfirm,
+    showAnswerSheet,
+    showIncompleteDialog,
+    showResultDialog,
+  ])
+
   const confirmEndExam = () => {
     sessionPersistEnabledRef.current = false
     clearMockSession('confirmEndExam')

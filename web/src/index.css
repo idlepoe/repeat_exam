@@ -89,6 +89,43 @@ body {
   margin-top: 0.35em;
 }
 
+.app-shell__hint {
+  width: 100%;
+  max-width: 16rem;
+  margin: 0 0 20px;
+  padding: 12px 10px;
+  background: #f4f4f4;
+  border: 1px solid #dedede;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.app-shell__hintTitle {
+  margin: 0 0 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.app-shell__hintText {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.55;
+  color: #444;
+  text-align: left;
+}
+
+.app-shell__kbd {
+  display: inline-block;
+  padding: 2px 6px;
+  font-size: 0.72rem;
+  font-family: inherit;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 1px 0 #ddd;
+}
+
 .app-shell__qrBlock {
   display: flex;
   flex-direction: column;

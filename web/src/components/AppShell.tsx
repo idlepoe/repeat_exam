@@ -69,7 +69,31 @@ export function AppShell({ children }: Props) {
 
       <div className="app-shell__center">{children}</div>
 
-      <aside className="app-shell__rail app-shell__rail--right" aria-label="앱 다운로드">
+      <aside
+        className="app-shell__rail app-shell__rail--right"
+        aria-label="앱 다운로드 및 단축키 안내"
+      >
+        <div className="app-shell__hint">
+          <p className="app-shell__hintTitle">PC 단축키</p>
+          <p className="app-shell__hintText">
+            문제 회독 화면에서 키보드{' '}
+            <kbd className="app-shell__kbd">←</kbd> <kbd className="app-shell__kbd">→</kbd> 는
+            하단 좌·우 끝 버튼과 같고, <kbd className="app-shell__kbd">Space</kbd> 는
+            「다음」과 같습니다. 입력란에 포커스가 있을 때는 동작하지 않습니다.
+          </p>
+        </div>
+        <div className="app-shell__hint">
+          <p className="app-shell__hintTitle">모의고사</p>
+          <p className="app-shell__hintText">
+            모의고사 풀이 화면에서 키{' '}
+            <kbd className="app-shell__kbd">1</kbd>{' '}
+            <kbd className="app-shell__kbd">2</kbd>{' '}
+            <kbd className="app-shell__kbd">3</kbd>{' '}
+            <kbd className="app-shell__kbd">4</kbd> 는 각각 보기 1~4번 선택과
+            동일합니다. (숫자 패드 포함) 다이얼로그가 열려 있을 때는 적용되지
+            않습니다.
+          </p>
+        </div>
         <div className="app-shell__qrBlock">
           <p className="app-shell__qrLabel">Android</p>
           <p className="app-shell__qrSub">GitHub Releases</p>
