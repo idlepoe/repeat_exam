@@ -128,54 +128,110 @@ class MockExamController extends GetxController {
     }
   }
 
+  /// 같은 회차(PDF)에 치우치지 않도록 [exam_session]별로 한 문항씩 돌아가며 고른다.
+  List<QuestionModel> _pickSpreadAcrossSessions(
+    List<QuestionModel> pool,
+    int need,
+    Random rng,
+  ) {
+    if (pool.length < need) {
+      throw Exception('문항이 부족합니다 (풀 ${pool.length}개 / 필요 $need개).');
+    }
+
+    final bySession = <String, List<QuestionModel>>{};
+    for (final q in pool) {
+      bySession.putIfAbsent(q.exam_session, () => []).add(q);
+    }
+    for (final list in bySession.values) {
+      list.shuffle(rng);
+    }
+
+    final sessionKeys = bySession.keys.toList()..shuffle(rng);
+    final selected = <QuestionModel>[];
+    var round = 0;
+
+    while (selected.length < need) {
+      var tookThisRound = false;
+      for (final key in sessionKeys) {
+        if (selected.length >= need) break;
+        final bucket = bySession[key]!;
+        if (round < bucket.length) {
+          selected.add(bucket[round]);
+          tookThisRound = true;
+        }
+      }
+      if (!tookThisRound) break;
+      round++;
+    }
+
+    if (selected.length < need) {
+      final used = selected.map((q) => q.id).toSet();
+      final rest = pool.where((q) => !used.contains(q.id)).toList()..shuffle(rng);
+      selected.addAll(rest.take(need - selected.length));
+    }
+
+    return selected;
+  }
+
   Future<List<QuestionModel>> _buildMockQuestions(String kind) async {
     final meta = await ExamMetaService.fetchExamSessionList();
     final row = meta.exam_session_list.where((e) => e.exam_type == kind).toList();
     if (row.isEmpty || row.first.sessions.isEmpty) {
       throw Exception('$kind 회차 정보가 없습니다.');
     }
-    final sessions = [...row.first.sessions]..shuffle(Random());
+    final rng = Random();
+    final sessions = [...row.first.sessions]..shuffle(rng);
+    final prefix = kind == '제빵기능사' ? 'bread' : 'pastry';
+
+    Future<List<QuestionModel>> loadSession(String session) async {
+      try {
+        final ymd = session.replaceAll('-', '');
+        final raw = await rootBundle.loadString(
+          'assets/json/exams/${prefix}_$ymd.json',
+        );
+        final decoded = jsonDecode(raw);
+        if (decoded is! List) return [];
+        final out = <QuestionModel>[];
+        for (final e in decoded) {
+          if (e is! Map) continue;
+          out.add(QuestionModel.fromJson(Map<String, dynamic>.from(e)));
+        }
+        return out;
+      } catch (_) {
+        return [];
+      }
+    }
+
+    final loaded = await Future.wait(sessions.map(loadSession));
+
     final pools = <String, List<QuestionModel>>{
       '제조이론': [],
       '재료과학': [],
       '식품위생학': [],
       '영양학': [],
     };
-    for (final session in sessions) {
-      try {
-        final ymd = session.replaceAll('-', '');
-        final prefix = kind == '제빵기능사' ? 'bread' : 'pastry';
-        final raw = await rootBundle.loadString('assets/json/exams/${prefix}_$ymd.json');
-        final decoded = jsonDecode(raw);
-        if (decoded is! List) continue;
-        for (final e in decoded) {
-          if (e is! Map) continue;
-          final q = QuestionModel.fromJson(Map<String, dynamic>.from(e));
-          if (pools.containsKey(q.subject)) {
-            pools[q.subject]!.add(q);
-          }
+    for (final list in loaded) {
+      for (final q in list) {
+        if (pools.containsKey(q.subject)) {
+          pools[q.subject]!.add(q);
         }
-      } catch (_) {
-        // ignore broken session
       }
-      final enough = subjectQuota.entries.every(
-        (entry) => (pools[entry.key]?.length ?? 0) >= entry.value,
-      );
-      if (enough) break;
     }
 
     final selected = <QuestionModel>[];
     for (final entry in subjectQuota.entries) {
-      final pool = [...(pools[entry.key] ?? <QuestionModel>[])]..shuffle(Random());
+      final pool = pools[entry.key] ?? <QuestionModel>[];
       if (pool.length < entry.value) {
-        throw Exception('${entry.key} 문제가 부족합니다.');
+        throw Exception(
+          '${entry.key} 문제가 부족합니다 (풀 ${pool.length}개 / 필요 ${entry.value}개).',
+        );
       }
-      selected.addAll(pool.take(entry.value));
+      selected.addAll(_pickSpreadAcrossSessions(pool, entry.value, rng));
     }
     if (selected.length != mockTotal) {
-      throw Exception('출제 문항 수가 60이 아닙니다.');
+      throw Exception('출제 문항 수가 60이 아닙니다 (${selected.length}).');
     }
-    selected.shuffle(Random());
+    selected.shuffle(rng);
     return selected;
   }
 
