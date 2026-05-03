@@ -65,9 +65,20 @@ export function ExamSessionListPage() {
         onBack={() => navigate('/')}
       />
       <main style={{ flex: 1, padding: 16 }}>
-        <p style={{ fontWeight: 600, marginBottom: 12, fontSize: 16 }}>{examType}</p>
-        {err && <p style={{ color: 'crimson' }}>{err}</p>}
-        {!meta && !err && <p>불러오는 중…</p>}
+        <p
+          style={{
+            fontWeight: 600,
+            marginBottom: 12,
+            fontSize: 16,
+            color: 'var(--text-primary)',
+          }}
+        >
+          {examType}
+        </p>
+        {err && <p style={{ color: 'var(--color-danger)' }}>{err}</p>}
+        {!meta && !err && (
+          <p style={{ color: 'var(--text-secondary)' }}>불러오는 중…</p>
+        )}
         {sessions.map((session) => {
           const count = getSessionCount(sessionCountMap, examType, session)
           const pct = sessionProgressMap[session] ?? 0
@@ -89,9 +100,9 @@ export function ExamSessionListPage() {
                 padding: '14px 16px',
                 fontSize: 17,
                 textAlign: 'left',
-                border: '1px solid #ccc',
+                border: '1px solid var(--border-subtle)',
                 borderRadius: 8,
-                backgroundColor: '#fafafa',
+                backgroundColor: 'var(--bg-muted)',
                 backgroundImage: `linear-gradient(to right, ${answerHighlight.bg} ${pct}%, transparent ${pct}%)`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: '100% 5px',
@@ -99,8 +110,8 @@ export function ExamSessionListPage() {
                 cursor: 'pointer',
               }}
             >
-              <span style={{ color: '#111' }}>{session}</span>
-              <span style={{ fontSize: 14, color: '#666' }}>
+              <span style={{ color: 'var(--text-primary)' }}>{session}</span>
+              <span style={{ fontSize: 14, color: 'var(--text-subtle)' }}>
                 {pct}% · 회독 {count}
               </span>
             </button>

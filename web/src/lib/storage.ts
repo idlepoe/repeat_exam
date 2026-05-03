@@ -8,6 +8,10 @@ const KEY_ANSWER_HIGHLIGHT = 'repeat_exam:answer_highlight'
 const KEY_QUESTION_FONT_STEP = 'repeat_exam:question_font_step'
 const KEY_REPORTED_QUESTION_IDS = 'repeat_exam:reported_question_ids'
 const KEY_BOTTOM_NAV_HEIGHT_STEP = 'repeat_exam:bottom_nav_height_step'
+/** FOUC 인라인 스크립트와 반드시 동일한 값 유지 */
+export const KEY_THEME = 'repeat_exam:theme'
+
+export type ThemePreference = 'light' | 'dark' | 'system'
 
 export interface Progress {
   exam_type: string
@@ -226,6 +230,24 @@ export function saveBottomNavHeightStep(step: number): void {
   const safeStep = Math.max(0, Math.min(step, BOTTOM_NAV_HEIGHT_MAX_STEP))
   try {
     localStorage.setItem(KEY_BOTTOM_NAV_HEIGHT_STEP, String(safeStep))
+  } catch {
+    /* ignore */
+  }
+}
+
+export function loadThemePreference(): ThemePreference {
+  try {
+    const raw = localStorage.getItem(KEY_THEME)
+    if (raw === 'light' || raw === 'dark' || raw === 'system') return raw
+  } catch {
+    /* ignore */
+  }
+  return 'system'
+}
+
+export function saveThemePreference(pref: ThemePreference): void {
+  try {
+    localStorage.setItem(KEY_THEME, pref)
   } catch {
     /* ignore */
   }

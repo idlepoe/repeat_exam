@@ -22,8 +22,8 @@ const navContainerStyle: CSSProperties = {
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'stretch',
-  borderTop: '1px solid #e5e4e7',
-  background: '#fff',
+  borderTop: '1px solid var(--border-app-bar)',
+  background: 'var(--bg-surface)',
   paddingBottom: 'env(safe-area-inset-bottom, 0px)',
 }
 
@@ -59,7 +59,7 @@ function btnThird(
 const kbdHintStyle = (fontSize: number): CSSProperties => ({
   fontSize,
   fontWeight: 500,
-  color: '#5a5a5a',
+  color: 'var(--text-kbd-hint)',
   letterSpacing: 0.02,
   fontFamily: 'system-ui, sans-serif',
 })
@@ -83,22 +83,22 @@ function keyHintsFor(
 function styleByKind(kind: NavButtonKind, prevDisabled: boolean): CSSProperties {
   if (kind === 'toggle') {
     return {
-      background: '#f5f5f5',
-      color: '#111',
+      background: 'var(--bg-toggle)',
+      color: 'var(--text-primary)',
     }
   }
 
   if (kind === 'prev' && prevDisabled) {
     return {
-      background: '#eee',
-      color: '#111',
+      background: 'var(--bg-nav-disabled)',
+      color: 'var(--text-primary)',
       cursor: 'not-allowed',
     }
   }
 
   return {
-    background: '#fff',
-    color: '#111',
+    background: 'var(--bg-surface)',
+    color: 'var(--text-primary)',
   }
 }
 
@@ -178,7 +178,9 @@ export function BottomNavButtons({
         const style = btnThird(
           weight,
           heightStep,
-          idx < 2 ? { borderRight: '1px solid #e5e4e7', ...base } : base
+          idx < 2
+            ? { borderRight: '1px solid var(--border-app-bar)', ...base }
+            : base
         )
         const onClick = isPrev ? onPrev : isToggle ? onToggleOrder : onNext
         const label = isPrev ? '이전' : isToggle ? '변경' : '다음'

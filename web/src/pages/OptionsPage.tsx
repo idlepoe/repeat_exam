@@ -9,10 +9,14 @@ import {
   loadAnswerHighlight,
   loadBottomNavHeightStep,
   loadQuestionFontStep,
+  loadThemePreference,
   saveAnswerHighlight,
   saveBottomNavHeightStep,
   saveQuestionFontStep,
+  saveThemePreference,
+  type ThemePreference,
 } from '../lib/storage'
+import { applyThemeToDocument, resolveEffectiveTheme } from '../lib/theme'
 
 export function OptionsPage() {
   const navigate = useNavigate()
@@ -28,6 +32,23 @@ export function OptionsPage() {
   const [questionFontStep, setQuestionFontStep] = useState(() =>
     loadQuestionFontStep()
   )
+  const [themePref, setThemePref] = useState<ThemePreference>(() =>
+    loadThemePreference()
+  )
+
+  const applyThemePref = (pref: ThemePreference) => {
+    saveThemePreference(pref)
+    setThemePref(pref)
+    applyThemeToDocument(resolveEffectiveTheme(pref))
+    window.dispatchEvent(new Event('repeat_exam:theme_changed'))
+  }
+
+  const sectionLabelStyle = {
+    marginBottom: 8,
+    fontSize: 14,
+    fontWeight: 600,
+    color: 'var(--text-muted)',
+  } as const
 
   return (
     <div style={{ minHeight: '100svh', display: 'flex', flexDirection: 'column' }}>
@@ -44,11 +65,53 @@ export function OptionsPage() {
               paddingBottom: 8,
               fontSize: 14,
               fontWeight: 600,
-              color: '#555',
-              borderBottom: '1px solid #ddd',
+              color: 'var(--text-muted)',
+              borderBottom: '1px solid var(--border-muted)',
             }}
           >
             옵션
+          </div>
+
+          <div style={{ marginBottom: 12 }}>
+            <div style={sectionLabelStyle}>화면 테마</div>
+            <div style={{ display: 'flex', gap: 8, alignItems: 'flex-end' }}>
+              {(
+                [
+                  { pref: 'system' as const, label: '시스템' },
+                  { pref: 'light' as const, label: '라이트' },
+                  { pref: 'dark' as const, label: '다크' },
+                ] as const
+              ).map(({ pref, label }) => {
+                const selected = themePref === pref
+                return (
+                  <button
+                    key={pref}
+                    type="button"
+                    onClick={() => applyThemePref(pref)}
+                    aria-pressed={selected}
+                    style={{
+                      flex: 1,
+                      minWidth: 0,
+                      padding: '10px 8px',
+                      fontSize: 14,
+                      textAlign: 'center',
+                      border: selected
+                        ? '2px solid var(--border-segment-selected)'
+                        : '1px solid var(--border-strong)',
+                      borderRadius: 8,
+                      background: selected
+                        ? 'var(--bg-segment-selected)'
+                        : 'var(--bg-surface)',
+                      color: 'var(--text-primary)',
+                      cursor: 'pointer',
+                      fontWeight: selected ? 700 : 500,
+                    }}
+                  >
+                    {label}
+                  </button>
+                )
+              })}
+            </div>
           </div>
 
           <button
@@ -65,7 +128,7 @@ export function OptionsPage() {
               padding: '12px 14px',
               fontSize: 15,
               textAlign: 'center',
-              border: '1px solid #bbb',
+              border: '1px solid var(--border-strong)',
               borderRadius: 8,
               background: answerHighlight.bg,
               color: answerHighlight.fg,
@@ -75,16 +138,7 @@ export function OptionsPage() {
             정답 하이라이트 색상 변경
           </button>
           <div style={{ marginBottom: 12 }}>
-            <div
-              style={{
-                marginBottom: 8,
-                fontSize: 14,
-                fontWeight: 600,
-                color: '#555',
-              }}
-            >
-              하단 버튼 높이
-            </div>
+            <div style={sectionLabelStyle}>하단 버튼 높이</div>
             <div style={{ display: 'flex', gap: 8, alignItems: 'flex-end' }}>
               {BOTTOM_NAV_HEIGHT_PRESETS.map((opt) => {
                 const selected = bottomNavHeightStep === opt.step
@@ -104,10 +158,14 @@ export function OptionsPage() {
                       padding: `${opt.verticalPadding}px 8px`,
                       fontSize: opt.fontSize,
                       textAlign: 'center',
-                      border: selected ? '2px solid #222' : '1px solid #bbb',
+                      border: selected
+                        ? '2px solid var(--border-segment-selected)'
+                        : '1px solid var(--border-strong)',
                       borderRadius: 8,
-                      background: selected ? '#f4f4f4' : '#fff',
-                      color: '#111',
+                      background: selected
+                        ? 'var(--bg-segment-selected)'
+                        : 'var(--bg-surface)',
+                      color: 'var(--text-primary)',
                       cursor: 'pointer',
                       fontWeight: selected ? 700 : 500,
                     }}
@@ -119,16 +177,7 @@ export function OptionsPage() {
             </div>
           </div>
           <div style={{ marginBottom: 12 }}>
-            <div
-              style={{
-                marginBottom: 8,
-                fontSize: 14,
-                fontWeight: 600,
-                color: '#555',
-              }}
-            >
-              문제 글자 크기
-            </div>
+            <div style={sectionLabelStyle}>문제 글자 크기</div>
             <div style={{ display: 'flex', gap: 8, alignItems: 'flex-end' }}>
               {QUESTION_FONT_PRESETS.map((opt) => {
                 const selected = questionFontStep === opt.step
@@ -147,10 +196,14 @@ export function OptionsPage() {
                       padding: `${opt.verticalPadding}px 8px`,
                       fontSize: opt.fontSize,
                       textAlign: 'center',
-                      border: selected ? '2px solid #222' : '1px solid #bbb',
+                      border: selected
+                        ? '2px solid var(--border-segment-selected)'
+                        : '1px solid var(--border-strong)',
                       borderRadius: 8,
-                      background: selected ? '#f4f4f4' : '#fff',
-                      color: '#111',
+                      background: selected
+                        ? 'var(--bg-segment-selected)'
+                        : 'var(--bg-surface)',
+                      color: 'var(--text-primary)',
                       cursor: 'pointer',
                       fontWeight: selected ? 700 : 500,
                     }}
@@ -165,7 +218,7 @@ export function OptionsPage() {
             style={{
               marginTop: 16,
               paddingTop: 16,
-              borderTop: '1px solid #e5e4e7',
+              borderTop: '1px solid var(--border-app-bar)',
             }}
           >
             <button
@@ -181,10 +234,10 @@ export function OptionsPage() {
                 padding: '12px 14px',
                 fontSize: 15,
                 textAlign: 'center',
-                border: '1px solid #d44',
+                border: '1px solid var(--border-danger)',
                 borderRadius: 8,
-                background: '#fff5f5',
-                color: '#b00',
+                background: 'var(--bg-danger)',
+                color: 'var(--color-danger)',
                 cursor: 'pointer',
               }}
             >
@@ -201,7 +254,7 @@ export function OptionsPage() {
           style={{
             position: 'fixed',
             inset: 0,
-            background: 'rgba(0,0,0,0.45)',
+            background: 'var(--overlay-scrim)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -211,15 +264,22 @@ export function OptionsPage() {
         >
           <div
             style={{
-              background: '#fff',
+              background: 'var(--bg-surface)',
               borderRadius: 12,
               padding: 20,
               width: '100%',
               maxWidth: 360,
-              boxShadow: '0 8px 24px rgba(0,0,0,0.2)',
+              boxShadow: 'var(--shadow-dialog)',
             }}
           >
-            <p style={{ margin: '0 0 12px', fontSize: 17, fontWeight: 600 }}>
+            <p
+              style={{
+                margin: '0 0 12px',
+                fontSize: 17,
+                fontWeight: 600,
+                color: 'var(--text-primary)',
+              }}
+            >
               정답 하이라이트 색상
             </p>
 
@@ -230,6 +290,7 @@ export function OptionsPage() {
                 justifyContent: 'space-between',
                 marginBottom: 8,
                 fontSize: 14,
+                color: 'var(--text-primary)',
               }}
             >
               <span>배경 색상</span>
@@ -247,6 +308,7 @@ export function OptionsPage() {
                 justifyContent: 'space-between',
                 marginBottom: 14,
                 fontSize: 14,
+                color: 'var(--text-primary)',
               }}
             >
               <span>글자 색상</span>
@@ -262,7 +324,7 @@ export function OptionsPage() {
                 marginBottom: 14,
                 padding: '10px 12px',
                 borderRadius: 8,
-                border: '1px solid #ddd',
+                border: '1px solid var(--border-muted)',
                 background: draftBg,
                 color: draftFg,
                 fontSize: 14,
@@ -279,9 +341,10 @@ export function OptionsPage() {
                 style={{
                   flex: 1,
                   padding: '10px 12px',
-                  border: '1px solid #ccc',
+                  border: '1px solid var(--border-subtle)',
                   borderRadius: 8,
-                  background: '#f5f5f5',
+                  background: 'var(--bg-subtle)',
+                  color: 'var(--text-primary)',
                   cursor: 'pointer',
                 }}
               >
@@ -298,10 +361,10 @@ export function OptionsPage() {
                 style={{
                   flex: 1,
                   padding: '10px 12px',
-                  border: '1px solid #333',
+                  border: '1px solid var(--dialog-primary-border)',
                   borderRadius: 8,
-                  background: '#222',
-                  color: '#fff',
+                  background: 'var(--dialog-primary-bg)',
+                  color: 'var(--text-inverse)',
                   cursor: 'pointer',
                 }}
               >

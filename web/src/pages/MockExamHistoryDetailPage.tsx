@@ -53,7 +53,7 @@ export function MockExamHistoryDetailPage() {
 
   if (!record || !hasHistoryDetailPayload(record)) {
     return (
-      <div style={{ padding: 16 }}>
+      <div style={{ padding: 16, color: 'var(--text-primary)' }}>
         <p style={{ marginTop: 0, marginBottom: 14 }}>
           상세 데이터를 찾을 수 없습니다.
         </p>
@@ -62,9 +62,10 @@ export function MockExamHistoryDetailPage() {
           onClick={() => navigate('/')}
           style={{
             padding: '10px 12px',
-            border: '1px solid #ccc',
+            border: '1px solid var(--border-subtle)',
             borderRadius: 8,
-            background: '#fff',
+            background: 'var(--bg-surface)',
+            color: 'var(--text-primary)',
             cursor: 'pointer',
           }}
         >
@@ -123,8 +124,8 @@ export function MockExamHistoryDetailPage() {
           gap: 8,
           minHeight: 48,
           padding: '8px 10px',
-          borderBottom: '1px solid #e5e4e7',
-          background: '#fff',
+          borderBottom: '1px solid var(--border-app-bar)',
+          background: 'var(--bg-surface)',
           boxSizing: 'border-box',
         }}
       >
@@ -141,6 +142,7 @@ export function MockExamHistoryDetailPage() {
             fontWeight: 600,
             fontSize: 14,
             textAlign: 'center',
+            color: 'var(--text-primary)',
           }}
         >
           {appTitle}
@@ -173,6 +175,7 @@ export function MockExamHistoryDetailPage() {
           fontSize: baseFont,
           lineHeight: 1.5,
           textAlign: 'left',
+          color: 'var(--text-primary)',
         }}
       >
         <div
@@ -180,7 +183,7 @@ export function MockExamHistoryDetailPage() {
             fontSize: titleFs,
             fontWeight: 600,
             marginBottom: 8,
-            color: '#333',
+            color: 'var(--text-secondary)',
           }}
         >
           [{q.subject}] {index + 1}/{total}
@@ -205,9 +208,21 @@ export function MockExamHistoryDetailPage() {
             const isCorrect = c.no === q.correct_answer
             const isPicked = picked === c.no
             const isWrongPick = isPicked && !isCorrect
-            const bg = isCorrect ? '#eaf6ea' : isWrongPick ? '#fdeaea' : '#fafafa'
-            const border = isCorrect ? '#7cb67c' : isWrongPick ? '#e28e8e' : '#ddd'
-            const fg = isCorrect ? '#1b5e20' : isWrongPick ? '#b71c1c' : '#111'
+            const bg = isCorrect
+              ? 'var(--feedback-correct-bg)'
+              : isWrongPick
+                ? 'var(--feedback-wrong-bg)'
+                : 'var(--bg-choice)'
+            const border = isCorrect
+              ? 'var(--feedback-correct-border)'
+              : isWrongPick
+                ? 'var(--feedback-wrong-border)'
+                : 'var(--border-muted)'
+            const fg = isCorrect
+              ? 'var(--feedback-correct-text)'
+              : isWrongPick
+                ? 'var(--feedback-wrong-text)'
+                : 'var(--text-primary)'
             return (
               <li
                 key={c.no}
@@ -236,9 +251,10 @@ export function MockExamHistoryDetailPage() {
             style={{
               marginTop: 18,
               padding: 12,
-              border: '1px solid #e5e4e7',
+              border: '1px solid var(--border-default)',
               borderRadius: 8,
-              background: '#fff',
+              background: 'var(--bg-surface)',
+              color: 'var(--text-primary)',
             }}
             aria-label="AI 해설"
           >
@@ -294,10 +310,10 @@ export function MockExamHistoryDetailPage() {
                       : '오답'
                 const statusColor =
                   picked === undefined
-                    ? '#777'
+                    ? 'var(--text-tertiary)'
                     : isCorrectPick
-                      ? '#1b5e20'
-                      : '#b71c1c'
+                      ? 'var(--feedback-correct-text)'
+                      : 'var(--feedback-wrong-text)'
 
                 return (
                   <button
@@ -313,15 +329,25 @@ export function MockExamHistoryDetailPage() {
                       textAlign: 'left',
                       padding: '10px 8px',
                       border: 'none',
-                      borderBottom: '1px solid #eee',
-                      background: i === index ? '#f0f7ff' : '#fff',
+                      borderBottom: '1px solid var(--border-row)',
+                      background:
+                        i === index
+                          ? 'var(--bg-row-current)'
+                          : 'var(--bg-surface)',
                       cursor: 'pointer',
                     }}
                   >
-                    <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 4 }}>
+                    <div
+                      style={{
+                        fontWeight: 600,
+                        fontSize: 13,
+                        marginBottom: 4,
+                        color: 'var(--text-primary)',
+                      }}
+                    >
                       {i + 1}. {qq.question_text}
                     </div>
-                    <div style={{ fontSize: 13, color: '#444' }}>
+                    <div style={{ fontSize: 13, color: 'var(--text-body)' }}>
                       선택: {picked === undefined ? '—' : `${picked}번`} / 정답:{' '}
                       {qq.correct_answer}번
                     </div>
@@ -380,9 +406,10 @@ export function MockExamHistoryDetailPage() {
 
 const headerBtnStyle: CSSProperties = {
   padding: '6px 10px',
-  border: '1px solid #ccc',
+  border: '1px solid var(--border-subtle)',
   borderRadius: 6,
-  background: '#f8f8f8',
+  background: 'var(--bg-button-secondary)',
+  color: 'var(--text-primary)',
   cursor: 'pointer',
   fontSize: 13,
 }
@@ -391,10 +418,10 @@ const modalPrimaryBtn: CSSProperties = {
   width: '100%',
   padding: '12px',
   fontSize: 16,
-  border: '1px solid #333',
+  border: '1px solid var(--dialog-primary-border)',
   borderRadius: 8,
-  background: '#222',
-  color: '#fff',
+  background: 'var(--dialog-primary-bg)',
+  color: 'var(--text-inverse)',
   cursor: 'pointer',
 }
 
@@ -402,9 +429,10 @@ const modalSecondaryBtn: CSSProperties = {
   width: '100%',
   padding: '12px',
   fontSize: 16,
-  border: '1px solid #ccc',
+  border: '1px solid var(--border-subtle)',
   borderRadius: 8,
-  background: '#f5f5f5',
+  background: 'var(--bg-subtle)',
+  color: 'var(--text-primary)',
   cursor: 'pointer',
 }
 
@@ -415,7 +443,7 @@ function ModalOverlay({ children }: { children: ReactNode }) {
       style={{
         position: 'fixed',
         inset: 0,
-        background: 'rgba(0,0,0,0.45)',
+        background: 'var(--overlay-scrim)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -440,12 +468,13 @@ function ModalCard({
       role="dialog"
       aria-modal="true"
       style={{
-        background: '#fff',
+        background: 'var(--bg-surface)',
         borderRadius: 12,
         padding: 20,
         maxWidth: 420,
         width: '100%',
-        boxShadow: '0 8px 24px rgba(0,0,0,0.2)',
+        boxShadow: 'var(--shadow-dialog)',
+        color: 'var(--text-primary)',
       }}
     >
       <p style={{ margin: '0 0 14px', fontSize: 17, fontWeight: 600 }}>{title}</p>

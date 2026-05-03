@@ -160,10 +160,10 @@ export function ExamTypeListPage() {
               width: 40,
               height: 40,
               padding: 0,
-              border: '1px solid #ccc',
+              border: '1px solid var(--border-subtle)',
               borderRadius: 8,
-              background: '#fff',
-              color: '#333',
+              background: 'var(--bg-surface)',
+              color: 'var(--text-secondary)',
               cursor: 'pointer',
             }}
           >
@@ -179,14 +179,16 @@ export function ExamTypeListPage() {
               paddingBottom: 8,
               fontSize: 14,
               fontWeight: 600,
-              color: '#555',
-              borderBottom: '1px solid #ddd',
+              color: 'var(--text-muted)',
+              borderBottom: '1px solid var(--border-muted)',
             }}
           >
             기출문제 (정답&해설 표시)
           </div>
-          {err && <p style={{ color: 'crimson' }}>{err}</p>}
-          {!data && !err && <p>불러오는 중…</p>}
+          {err && <p style={{ color: 'var(--color-danger)' }}>{err}</p>}
+          {!data && !err && (
+            <p style={{ color: 'var(--text-secondary)' }}>불러오는 중…</p>
+          )}
           {data?.exam_type_list.map((name) => (
             <button
               key={name}
@@ -201,9 +203,10 @@ export function ExamTypeListPage() {
                 padding: '14px 16px',
                 fontSize: 18,
                 textAlign: 'left',
-                border: '1px solid #ccc',
+                border: '1px solid var(--border-subtle)',
                 borderRadius: 8,
-                background: '#fafafa',
+                background: 'var(--bg-muted)',
+                color: 'var(--text-primary)',
                 cursor: 'pointer',
               }}
             >
@@ -218,27 +221,45 @@ export function ExamTypeListPage() {
               marginBottom: 20,
               padding: 14,
               borderRadius: 10,
-              border: '1px solid #1976d2',
-              background: '#f5f9ff',
+              border: '1px solid var(--color-primary)',
+              background: 'var(--bg-primary-soft)',
             }}
           >
             <div
               style={{
                 fontSize: 14,
                 fontWeight: 700,
-                color: '#0d47a1',
+                color: 'var(--text-primary-accent)',
                 marginBottom: 8,
               }}
             >
               모의고사 진행 중
             </div>
-            <div style={{ fontSize: 14, marginBottom: 6, color: '#333' }}>
+            <div
+              style={{
+                fontSize: 14,
+                marginBottom: 6,
+                color: 'var(--text-secondary)',
+              }}
+            >
               {ongoingMock.examKind}
             </div>
-            <div style={{ fontSize: 14, marginBottom: 4, color: '#444' }}>
+            <div
+              style={{
+                fontSize: 14,
+                marginBottom: 4,
+                color: 'var(--text-body)',
+              }}
+            >
               현재 문제: {ongoingMock.currentIndex + 1} / {MOCK_TOTAL}
             </div>
-            <div style={{ fontSize: 14, marginBottom: 12, color: '#444' }}>
+            <div
+              style={{
+                fontSize: 14,
+                marginBottom: 12,
+                color: 'var(--text-body)',
+              }}
+            >
               남은 시간:{' '}
               {formatRemainMs(
                 ongoingMock.startedAt + EXAM_MS - Date.now()
@@ -259,8 +280,8 @@ export function ExamTypeListPage() {
                 fontWeight: 600,
                 border: 'none',
                 borderRadius: 8,
-                background: '#1976d2',
-                color: '#fff',
+                background: 'var(--color-primary)',
+                color: 'var(--text-inverse)',
                 cursor: 'pointer',
               }}
             >
@@ -275,10 +296,10 @@ export function ExamTypeListPage() {
                 padding: '12px 14px',
                 fontSize: 15,
                 fontWeight: 600,
-                border: '1px solid #c44',
+                border: '1px solid var(--border-mock-warning)',
                 borderRadius: 8,
-                background: '#fff',
-                color: '#b00',
+                background: 'var(--bg-surface)',
+                color: 'var(--color-danger)',
                 cursor: 'pointer',
               }}
             >
@@ -294,8 +315,8 @@ export function ExamTypeListPage() {
               paddingBottom: 8,
               fontSize: 14,
               fontWeight: 600,
-              color: '#555',
-              borderBottom: '1px solid #ddd',
+              color: 'var(--text-muted)',
+              borderBottom: '1px solid var(--border-muted)',
             }}
           >
             모의고사
@@ -312,9 +333,10 @@ export function ExamTypeListPage() {
               padding: '14px 16px',
               fontSize: 18,
               textAlign: 'left',
-              border: '1px solid #ccc',
+              border: '1px solid var(--border-subtle)',
               borderRadius: 8,
-              background: '#fafafa',
+              background: 'var(--bg-muted)',
+              color: 'var(--text-primary)',
               cursor: 'pointer',
             }}
           >
@@ -332,9 +354,10 @@ export function ExamTypeListPage() {
               padding: '14px 16px',
               fontSize: 18,
               textAlign: 'left',
-              border: '1px solid #ccc',
+              border: '1px solid var(--border-subtle)',
               borderRadius: 8,
-              background: '#fafafa',
+              background: 'var(--bg-muted)',
+              color: 'var(--text-primary)',
               cursor: 'pointer',
             }}
           >
@@ -351,10 +374,12 @@ export function ExamTypeListPage() {
               gap: 8,
               marginBottom: 12,
               paddingBottom: 8,
-              borderBottom: '1px solid #ddd',
+              borderBottom: '1px solid var(--border-muted)',
             }}
           >
-            <span style={{ fontSize: 14, fontWeight: 600, color: '#555' }}>
+            <span
+              style={{ fontSize: 14, fontWeight: 600, color: 'var(--text-muted)' }}
+            >
               모의고사 이력
             </span>
             <button
@@ -370,10 +395,10 @@ export function ExamTypeListPage() {
                 width: 36,
                 height: 36,
                 padding: 0,
-                border: '1px solid #ddd',
+                border: '1px solid var(--border-muted)',
                 borderRadius: 8,
-                background: '#fff',
-                color: '#666',
+                background: 'var(--bg-surface)',
+                color: 'var(--text-subtle)',
                 cursor: 'pointer',
               }}
             >
@@ -381,7 +406,7 @@ export function ExamTypeListPage() {
             </button>
           </div>
           {detailedMockHistory.length === 0 ? (
-            <p style={{ margin: 0, fontSize: 14, color: '#888' }}>
+            <p style={{ margin: 0, fontSize: 14, color: 'var(--text-disabled)' }}>
               아직 기록된 이력이 없습니다.
             </p>
           ) : (
@@ -408,11 +433,11 @@ export function ExamTypeListPage() {
                       width: '100%',
                       textAlign: 'left',
                       padding: 12,
-                      border: '1px solid #e0e0e0',
+                      border: '1px solid var(--border-card)',
                       borderRadius: 8,
-                      background: '#fafafa',
+                      background: 'var(--bg-muted)',
                       fontSize: 14,
-                      color: '#333',
+                      color: 'var(--text-secondary)',
                       cursor: 'pointer',
                     }}
                   >
@@ -431,16 +456,28 @@ export function ExamTypeListPage() {
                           flexShrink: 0,
                           fontWeight: 700,
                           fontSize: 13,
-                          color: row.passed ? '#1565c0' : '#c62828',
+                          color: row.passed
+                            ? 'var(--color-pass)'
+                            : 'var(--color-fail)',
                         }}
                       >
                         {row.passed ? '합격' : '불합격'}
                       </span>
                     </div>
-                    <div style={{ marginBottom: 4, color: '#444' }}>
+                    <div
+                      style={{
+                        marginBottom: 4,
+                        color: 'var(--text-body)',
+                      }}
+                    >
                       시작: {formatMockStartedAt(row.startedAt)}
                     </div>
-                    <div style={{ marginBottom: 4, color: '#444' }}>
+                    <div
+                      style={{
+                        marginBottom: 4,
+                        color: 'var(--text-body)',
+                      }}
+                    >
                       경과: {formatMockElapsedMs(row.endedAt - row.startedAt)}
                     </div>
                     <div
@@ -449,7 +486,7 @@ export function ExamTypeListPage() {
                         justifyContent: 'space-between',
                         alignItems: 'baseline',
                         gap: 8,
-                        color: '#444',
+                        color: 'var(--text-body)',
                       }}
                     >
                       <span>
@@ -459,7 +496,7 @@ export function ExamTypeListPage() {
                         style={{
                           flexShrink: 0,
                           fontWeight: 600,
-                          color: '#333',
+                          color: 'var(--text-secondary)',
                         }}
                       >
                         {row.scoreFloored}점

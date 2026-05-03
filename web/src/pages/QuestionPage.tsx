@@ -223,9 +223,10 @@ export function QuestionPage() {
             style={{
               padding: '6px 10px',
               fontSize: 14,
-              border: '1px solid #ccc',
+              border: '1px solid var(--border-subtle)',
               borderRadius: 6,
-              background: '#fff',
+              background: 'var(--bg-surface)',
+              color: 'var(--text-primary)',
               cursor: 'pointer',
             }}
           >
@@ -246,12 +247,17 @@ export function QuestionPage() {
           fontSize: baseFont,
           lineHeight: 1.5,
           textAlign: 'left',
+          color: 'var(--text-primary)',
         }}
       >
         {loadErr && (
-          <p style={{ color: 'crimson', marginBottom: 12 }}>{loadErr}</p>
+          <p style={{ color: 'var(--color-danger)', marginBottom: 12 }}>
+            {loadErr}
+          </p>
         )}
-        {!q && !loadErr && <p>불러오는 중…</p>}
+        {!q && !loadErr && (
+          <p style={{ color: 'var(--text-secondary)' }}>불러오는 중…</p>
+        )}
 
         {q && (
           <>
@@ -260,7 +266,7 @@ export function QuestionPage() {
                 fontSize: titleFs,
                 fontWeight: 600,
                 marginBottom: 8,
-                color: '#333',
+                color: 'var(--text-secondary)',
               }}
             >
               [{q.subject}]
@@ -295,10 +301,10 @@ export function QuestionPage() {
                     style={{
                       marginBottom: 10,
                       padding: '10px 12px',
-                      border: '1px solid #ddd',
+                      border: '1px solid var(--border-muted)',
                       borderRadius: 6,
-                      background: isAnswer ? answerHighlight.bg : '#fafafa',
-                      color: isAnswer ? answerHighlight.fg : '#111',
+                      background: isAnswer ? answerHighlight.bg : 'var(--bg-choice)',
+                      color: isAnswer ? answerHighlight.fg : 'var(--text-primary)',
                     }}
                   >
                     {c.no}. {c.text}
@@ -312,9 +318,10 @@ export function QuestionPage() {
                 style={{
                   marginTop: 18,
                   padding: 12,
-                  border: '1px solid #e5e4e7',
+                  border: '1px solid var(--border-default)',
                   borderRadius: 8,
-                  background: '#fff',
+                  background: 'var(--bg-surface)',
+                  color: 'var(--text-primary)',
                 }}
                 aria-label="AI 해설"
               >
@@ -353,10 +360,12 @@ export function QuestionPage() {
                   width: '100%',
                   padding: '10px 12px',
                   fontSize: 14,
-                  border: '1px solid #999',
+                  border: '1px solid var(--border-report)',
                   borderRadius: 8,
-                  background: '#fff',
-                  color: isAlreadyReported ? '#888' : '#333',
+                  background: 'var(--bg-surface)',
+                  color: isAlreadyReported
+                    ? 'var(--text-disabled)'
+                    : 'var(--text-secondary)',
                   cursor: isAlreadyReported ? 'not-allowed' : 'pointer',
                 }}
               >
@@ -386,7 +395,7 @@ export function QuestionPage() {
           style={{
             position: 'fixed',
             inset: 0,
-            background: 'rgba(0,0,0,0.45)',
+            background: 'var(--overlay-scrim)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -396,12 +405,13 @@ export function QuestionPage() {
         >
           <div
             style={{
-              background: '#fff',
+              background: 'var(--bg-surface)',
               borderRadius: 12,
               padding: 20,
               maxWidth: 360,
               width: '100%',
-              boxShadow: '0 8px 24px rgba(0,0,0,0.2)',
+              boxShadow: 'var(--shadow-dialog)',
+              color: 'var(--text-primary)',
             }}
           >
             <p style={{ margin: '0 0 16px', fontSize: 17, fontWeight: 600 }}>
@@ -420,9 +430,10 @@ export function QuestionPage() {
                 style={{
                   padding: '12px',
                   fontSize: 16,
-                  border: '1px solid #ccc',
+                  border: '1px solid var(--border-subtle)',
                   borderRadius: 8,
-                  background: '#f5f5f5',
+                  background: 'var(--bg-subtle)',
+                  color: 'var(--text-primary)',
                   cursor: 'pointer',
                 }}
               >
@@ -441,9 +452,10 @@ export function QuestionPage() {
                 style={{
                   padding: '12px',
                   fontSize: 16,
-                  border: '1px solid #ccc',
+                  border: '1px solid var(--border-subtle)',
                   borderRadius: 8,
-                  background: '#fff',
+                  background: 'var(--bg-surface)',
+                  color: 'var(--text-primary)',
                   cursor: 'pointer',
                 }}
               >
@@ -455,10 +467,10 @@ export function QuestionPage() {
                 style={{
                   padding: '12px',
                   fontSize: 16,
-                  border: '1px solid #333',
+                  border: '1px solid var(--dialog-primary-border)',
                   borderRadius: 8,
-                  background: '#222',
-                  color: '#fff',
+                  background: 'var(--dialog-primary-bg)',
+                  color: 'var(--text-inverse)',
                   cursor: 'pointer',
                 }}
               >
@@ -475,7 +487,7 @@ export function QuestionPage() {
           style={{
             position: 'fixed',
             inset: 0,
-            background: 'rgba(0,0,0,0.45)',
+            background: 'var(--overlay-scrim)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -485,12 +497,13 @@ export function QuestionPage() {
         >
           <div
             style={{
-              background: '#fff',
+              background: 'var(--bg-surface)',
               borderRadius: 12,
               padding: 20,
               maxWidth: 360,
               width: '100%',
-              boxShadow: '0 8px 24px rgba(0,0,0,0.2)',
+              boxShadow: 'var(--shadow-dialog)',
+              color: 'var(--text-primary)',
             }}
           >
             <p style={{ margin: '0 0 14px', fontSize: 17, fontWeight: 600 }}>
@@ -515,14 +528,14 @@ export function QuestionPage() {
                   style={{
                     padding: '12px',
                     fontSize: 16,
-                    border: '1px solid #ccc',
+                    border: '1px solid var(--border-subtle)',
                     borderRadius: 8,
-                    background: '#fff',
+                    background: 'var(--bg-surface)',
                     cursor:
                       reportSubmitting || isAlreadyReported
                         ? 'not-allowed'
                         : 'pointer',
-                    color: '#222',
+                    color: 'var(--text-primary)',
                   }}
                 >
                   {type}
@@ -537,9 +550,10 @@ export function QuestionPage() {
                 width: '100%',
                 padding: '12px',
                 fontSize: 16,
-                border: '1px solid #ccc',
+                border: '1px solid var(--border-subtle)',
                 borderRadius: 8,
-                background: '#f5f5f5',
+                background: 'var(--bg-subtle)',
+                color: 'var(--text-primary)',
                 cursor: reportSubmitting ? 'not-allowed' : 'pointer',
               }}
             >
@@ -558,12 +572,12 @@ export function QuestionPage() {
             bottom: 'calc(env(safe-area-inset-bottom, 0px) + 78px)',
             transform: 'translateX(-50%)',
             zIndex: 120,
-            background: 'rgba(34,34,34,0.95)',
-            color: '#fff',
+            background: 'var(--bg-toast)',
+            color: 'var(--toast-text)',
             padding: '10px 14px',
             borderRadius: 999,
             fontSize: 14,
-            boxShadow: '0 6px 20px rgba(0,0,0,0.2)',
+            boxShadow: 'var(--shadow-toast)',
             maxWidth: 'calc(100% - 32px)',
             textAlign: 'center',
           }}

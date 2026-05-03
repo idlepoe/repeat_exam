@@ -19,8 +19,8 @@ export function AppBar({ title, showBack, onBack, right }: Props) {
         gap: 8,
         minHeight: 48,
         padding: '8px 12px',
-        borderBottom: '1px solid #e5e4e7',
-        background: '#fff',
+        borderBottom: '1px solid var(--border-app-bar)',
+        background: 'var(--bg-surface)',
         boxSizing: 'border-box',
       }}
     >
@@ -30,9 +30,9 @@ export function AppBar({ title, showBack, onBack, right }: Props) {
           onClick={onBack}
           style={{
             padding: '6px 10px',
-            border: '1px solid #ccc',
+            border: '1px solid var(--border-subtle)',
             borderRadius: 6,
-            background: '#f8f8f8',
+            background: 'var(--bg-button-secondary)',
             cursor: 'pointer',
             fontSize: 14,
           }}
@@ -50,6 +50,7 @@ export function AppBar({ title, showBack, onBack, right }: Props) {
           textAlign: 'center',
           whiteSpace: 'pre-line',
           lineHeight: 1.2,
+          color: 'var(--text-primary)',
         }}
       >
         {title ?? ''}
