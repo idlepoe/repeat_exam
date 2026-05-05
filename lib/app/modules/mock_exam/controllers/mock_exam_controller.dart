@@ -128,8 +128,8 @@ class MockExamController extends GetxController {
     }
   }
 
-  /// 같은 회차(PDF)에 치우치지 않도록 [exam_session]별로 한 문항씩 돌아가며 고른다.
-  List<QuestionModel> _pickSpreadAcrossSessions(
+  /// 과목 풀에서 [need]개를 중복 없이 균등 무작위로 고른다.
+  List<QuestionModel> _pickRandomFromPool(
     List<QuestionModel> pool,
     int need,
     Random rng,
@@ -137,40 +137,8 @@ class MockExamController extends GetxController {
     if (pool.length < need) {
       throw Exception('문항이 부족합니다 (풀 ${pool.length}개 / 필요 $need개).');
     }
-
-    final bySession = <String, List<QuestionModel>>{};
-    for (final q in pool) {
-      bySession.putIfAbsent(q.exam_session, () => []).add(q);
-    }
-    for (final list in bySession.values) {
-      list.shuffle(rng);
-    }
-
-    final sessionKeys = bySession.keys.toList()..shuffle(rng);
-    final selected = <QuestionModel>[];
-    var round = 0;
-
-    while (selected.length < need) {
-      var tookThisRound = false;
-      for (final key in sessionKeys) {
-        if (selected.length >= need) break;
-        final bucket = bySession[key]!;
-        if (round < bucket.length) {
-          selected.add(bucket[round]);
-          tookThisRound = true;
-        }
-      }
-      if (!tookThisRound) break;
-      round++;
-    }
-
-    if (selected.length < need) {
-      final used = selected.map((q) => q.id).toSet();
-      final rest = pool.where((q) => !used.contains(q.id)).toList()..shuffle(rng);
-      selected.addAll(rest.take(need - selected.length));
-    }
-
-    return selected;
+    final copy = List<QuestionModel>.from(pool)..shuffle(rng);
+    return copy.sublist(0, need);
   }
 
   Future<List<QuestionModel>> _buildMockQuestions(String kind) async {
@@ -226,7 +194,7 @@ class MockExamController extends GetxController {
           '${entry.key} 문제가 부족합니다 (풀 ${pool.length}개 / 필요 ${entry.value}개).',
         );
       }
-      selected.addAll(_pickSpreadAcrossSessions(pool, entry.value, rng));
+      selected.addAll(_pickRandomFromPool(pool, entry.value, rng));
     }
     if (selected.length != mockTotal) {
       throw Exception('출제 문항 수가 60이 아닙니다 (${selected.length}).');

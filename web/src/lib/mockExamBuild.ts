@@ -22,57 +22,19 @@ function shuffle<T>(items: T[]): T[] {
   return arr
 }
 
-/**
- * 같은 exam_session(회차/PDF)에서만 과도하게 뽑히지 않도록,
- * 회차마다 한 문항씩 돌아가며 need개를 고른다.
- */
-function pickSpreadAcrossSessions(pool: Question[], need: number): Question[] {
+/** 과목 풀에서 need개를 중복 없이 균등 무작위로 고른다. */
+function pickRandomFromPool(pool: Question[], need: number): Question[] {
   if (pool.length < need) {
     throw new Error(
       `문항이 부족합니다 (풀 ${pool.length}개 / 필요 ${need}개).`
     )
   }
-
-  const bySession = new Map<string, Question[]>()
-  for (const q of pool) {
-    const k = q.exam_session
-    if (!bySession.has(k)) bySession.set(k, [])
-    bySession.get(k)!.push(q)
-  }
-  for (const arr of bySession.values()) {
-    shuffle(arr)
-  }
-
-  const sessionKeys = shuffle([...bySession.keys()])
-  const selected: Question[] = []
-  let round = 0
-
-  while (selected.length < need) {
-    let tookThisRound = false
-    for (const key of sessionKeys) {
-      if (selected.length >= need) break
-      const bucket = bySession.get(key)!
-      if (round < bucket.length) {
-        selected.push(bucket[round])
-        tookThisRound = true
-      }
-    }
-    if (!tookThisRound) break
-    round += 1
-  }
-
-  if (selected.length < need) {
-    const used = new Set(selected.map((q) => q.id))
-    const rest = shuffle(pool.filter((q) => !used.has(q.id)))
-    selected.push(...rest.slice(0, need - selected.length))
-  }
-
-  return selected
+  return shuffle(pool).slice(0, need)
 }
 
 /**
  * 모든 회차 JSON을 합쳐 과목별 풀을 만든 뒤,
- * 과목별 할당량만큼 회차를 고르게 섞어 추출하여 총 60문항을 만든다.
+ * 과목별 할당량만큼 무작위로 추출하여 총 60문항을 만든다.
  */
 export async function buildMockExamQuestions(
   examKind: MockExamKind
@@ -126,7 +88,7 @@ export async function buildMockExamQuestions(
         `${sub} 문제가 부족합니다 (풀 ${pool.length}개 / 필요 ${need}개).`
       )
     }
-    selected.push(...pickSpreadAcrossSessions(pool, need))
+    selected.push(...pickRandomFromPool(pool, need))
   }
 
   if (selected.length !== TOTAL_MOCK) {
