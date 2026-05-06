@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../data/bottom_nav_height.dart';
 import '../../../routes/app_pages.dart';
+import '../../../theme/app_colors.dart';
 import '../../../widgets/bottom_nav_buttons.dart';
 import '../controllers/mock_exam_history_detail_controller.dart';
 
@@ -11,6 +12,9 @@ class MockExamHistoryDetailView
 
   @override
   Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+    final app = context.appColors;
+
     return Obx(() {
       if (controller.loading.value) {
         return Scaffold(
@@ -29,7 +33,7 @@ class MockExamHistoryDetailView
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(err),
+                    Text(err, style: TextStyle(color: cs.error)),
                     const SizedBox(height: 12),
                     OutlinedButton(
                       onPressed: () => Get.offAllNamed('/exam-type-list'),
@@ -88,9 +92,9 @@ class MockExamHistoryDetailView
                       horizontal: 10,
                       vertical: 8,
                     ),
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       border: Border(
-                        bottom: BorderSide(color: Color(0xFFE5E4E7)),
+                        bottom: BorderSide(color: cs.outlineVariant),
                       ),
                     ),
                     child: SafeArea(
@@ -115,9 +119,10 @@ class MockExamHistoryDetailView
                             child: const Text('답안확인'),
                           ),
                           const SizedBox(width: 6),
-                          OutlinedButton(
+                          IconButton(
+                            icon: const Icon(Icons.settings_outlined),
+                            tooltip: '옵션',
                             onPressed: () => Get.toNamed(Routes.OPTIONS),
-                            child: const Text('옵션'),
                           ),
                         ],
                       ),
@@ -133,14 +138,14 @@ class MockExamHistoryDetailView
                           style: TextStyle(
                             fontSize: controller.titleFont,
                             fontWeight: FontWeight.w600,
-                            color: Color(0xFF333333),
+                            color: cs.onSurface,
                           ),
                         ),
                         const SizedBox(height: 8),
                         RichText(
                           text: TextSpan(
                             style: TextStyle(
-                              color: const Color(0xFF111111),
+                              color: cs.onSurface,
                               fontSize: controller.baseFont,
                               height: 1.5,
                             ),
@@ -176,27 +181,27 @@ class MockExamHistoryDetailView
                             decoration: BoxDecoration(
                               border: Border.all(
                                 color: isCorrect
-                                    ? const Color(0xFF7CB67C)
+                                    ? app.successMuted
                                     : isWrongPick
-                                    ? const Color(0xFFE28E8E)
-                                    : const Color(0xFFDDDDDD),
+                                    ? app.errorMuted
+                                    : cs.outlineVariant,
                               ),
                               borderRadius: BorderRadius.circular(6),
                               color: isCorrect
-                                  ? const Color(0xFFEAF6EA)
+                                  ? app.successContainer
                                   : isWrongPick
-                                  ? const Color(0xFFFDEAEA)
-                                  : const Color(0xFFFAFAFA),
+                                  ? cs.errorContainer
+                                  : cs.surface,
                             ),
                             child: Text(
                               '${c.no}. ${c.text}${isPicked ? ' (선택)' : ''}',
                               style: TextStyle(
                                 fontSize: controller.baseFont,
                                 color: isCorrect
-                                    ? const Color(0xFF1B5E20)
+                                    ? app.onSuccessContainer
                                     : isWrongPick
-                                    ? const Color(0xFFB71C1C)
-                                    : const Color(0xFF111111),
+                                    ? cs.onErrorContainer
+                                    : cs.onSurface,
                               ),
                             ),
                           );
@@ -207,10 +212,10 @@ class MockExamHistoryDetailView
                             padding: const EdgeInsets.all(12),
                             decoration: BoxDecoration(
                               border: Border.all(
-                                color: const Color(0xFFE5E4E7),
+                                color: cs.outlineVariant,
                               ),
                               borderRadius: BorderRadius.circular(8),
-                              color: Colors.white,
+                              color: cs.surface,
                             ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -274,14 +279,14 @@ class MockExamHistoryDetailView
               if (controller.showMoveListConfirm.value)
                 Positioned.fill(
                   child: ColoredBox(
-                    color: const Color(0x73000000),
+                    color: app.scrim,
                     child: Center(
                       child: Container(
                         margin: const EdgeInsets.all(16),
                         padding: const EdgeInsets.all(20),
                         constraints: const BoxConstraints(maxWidth: 400),
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: cs.surface,
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: Column(
@@ -328,16 +333,19 @@ class _AnswerSheetOverlay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+    final app = context.appColors;
+
     return Positioned.fill(
       child: ColoredBox(
-        color: const Color(0x73000000),
+        color: app.scrim,
         child: Center(
           child: Container(
             margin: const EdgeInsets.all(16),
             padding: const EdgeInsets.all(20),
             constraints: const BoxConstraints(maxWidth: 420),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: cs.surface,
               borderRadius: BorderRadius.circular(12),
             ),
             child: Column(
@@ -365,10 +373,10 @@ class _AnswerSheetOverlay extends StatelessWidget {
                           ? '정답'
                           : '오답';
                       final statusColor = ans == null
-                          ? const Color(0xFF777777)
+                          ? cs.onSurfaceVariant
                           : isCorrect
-                          ? const Color(0xFF1B5E20)
-                          : const Color(0xFFB71C1C);
+                          ? app.onSuccessContainer
+                          : cs.error;
                       return TextButton(
                         style: TextButton.styleFrom(
                           alignment: Alignment.centerLeft,
@@ -377,8 +385,8 @@ class _AnswerSheetOverlay extends StatelessWidget {
                             vertical: 10,
                           ),
                           backgroundColor: i == controller.index.value
-                              ? const Color(0xFFF0F7FF)
-                              : Colors.white,
+                              ? cs.primaryContainer
+                              : cs.surface,
                         ),
                         onPressed: () => controller.jumpToQuestion(i),
                         child: Column(

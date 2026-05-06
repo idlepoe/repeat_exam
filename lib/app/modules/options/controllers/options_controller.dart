@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../data/question_font.dart';
@@ -10,6 +11,7 @@ class OptionsController extends GetxController {
   final answerHighlight = const AnswerHighlight(bg: '#c00', fg: '#fff').obs;
   final bottomNavHeightStep = 0.obs;
   final questionFontStep = 0.obs;
+  final themeMode = ThemeMode.system.obs;
 
   @override
   void onInit() {
@@ -17,6 +19,7 @@ class OptionsController extends GetxController {
     _loadHighlight();
     _loadBottomNavHeight();
     _loadQuestionFontStep();
+    _loadThemeMode();
   }
 
   Future<void> _loadHighlight() async {
@@ -32,6 +35,16 @@ class OptionsController extends GetxController {
     questionFontStep.value = clampQuestionFontStep(
       await StorageService.loadQuestionFontStep(),
     );
+  }
+
+  Future<void> _loadThemeMode() async {
+    themeMode.value = await StorageService.loadThemeMode();
+  }
+
+  Future<void> setThemeMode(ThemeMode mode) async {
+    await StorageService.saveThemeMode(mode);
+    themeMode.value = mode;
+    Get.changeThemeMode(mode);
   }
 
   Future<void> saveAnswerHighlight(AnswerHighlight value) async {

@@ -1,7 +1,7 @@
 name: repeat_exam
 description: "A new Flutter project."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-version: 1.0.4+8
+version: 1.0.5+9
 environment:
   sdk: ^3.10.4
 dependencies:
@@ -15,7 +15,6 @@ dependencies:
   flutter_colorpicker: ^1.1.0
   flex_seed_scheme: 4.0.1
   http: ^1.5.0
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -38,5 +37,4 @@ flutter:
     - assets/json/
     - assets/json/exams/
     - assets/icons/
-    - shorebird.yaml
 

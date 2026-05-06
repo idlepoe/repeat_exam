@@ -8,6 +8,8 @@ class ExamSessionListView extends GetView<ExamSessionListController> {
   const ExamSessionListView({super.key});
   @override
   Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+
     Color parseHex(String hex) {
       final normalized = hex.replaceFirst('#', '');
       if (normalized.length == 3) {
@@ -37,7 +39,10 @@ class ExamSessionListView extends GetView<ExamSessionListController> {
           return Center(
             child: Padding(
               padding: const EdgeInsets.all(16),
-              child: Text(err, style: const TextStyle(color: Colors.red)),
+              child: Text(
+                err,
+                style: TextStyle(color: cs.error),
+              ),
             ),
           );
         }
@@ -66,9 +71,9 @@ class ExamSessionListView extends GetView<ExamSessionListController> {
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                      border: Border.all(color: const Color(0xFFCCCCCC)),
+                      border: Border.all(color: cs.outline),
                       borderRadius: BorderRadius.circular(8),
-                      color: const Color(0xFFFAFAFA),
+                      color: cs.surface,
                     ),
                     child: Stack(
                       children: [
@@ -97,15 +102,15 @@ class ExamSessionListView extends GetView<ExamSessionListController> {
                             children: [
                               Text(
                                 session,
-                                style: const TextStyle(
-                                  color: Color(0xFF111111),
+                                style: TextStyle(
+                                  color: cs.onSurface,
                                   fontSize: 17,
                                 ),
                               ),
                               Text(
                                 '$pct% · 회독 $count',
-                                style: const TextStyle(
-                                  color: Color(0xFF666666),
+                                style: TextStyle(
+                                  color: cs.onSurfaceVariant,
                                   fontSize: 14,
                                 ),
                               ),

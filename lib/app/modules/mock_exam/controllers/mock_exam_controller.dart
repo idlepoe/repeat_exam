@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import '../../../data/bottom_nav_height.dart';
 import '../../../data/models/question_model.dart';
@@ -71,7 +71,8 @@ class MockExamController extends GetxController {
   }
 
   bool get isFirst => index.value <= 0;
-  bool get isLast => questions.isNotEmpty && index.value >= questions.length - 1;
+  bool get isLast =>
+      questions.isNotEmpty && index.value >= questions.length - 1;
   double get baseFont => questionFontPresetForStep(fontStep.value).base;
   double get titleFont => questionFontPresetForStep(fontStep.value).title;
 
@@ -94,9 +95,9 @@ class MockExamController extends GetxController {
       navReversed.value = await StorageService.loadNavReversed();
       bottomNavHeightStep.value =
           (await StorageService.loadBottomNavHeightStep()).clamp(
-        0,
-        kBottomNavHeightMaxStep,
-      );
+            0,
+            kBottomNavHeightMaxStep,
+          );
       fontStep.value = clampQuestionFontStep(
         await StorageService.loadQuestionFontStep(),
       );
@@ -143,7 +144,9 @@ class MockExamController extends GetxController {
 
   Future<List<QuestionModel>> _buildMockQuestions(String kind) async {
     final meta = await ExamMetaService.fetchExamSessionList();
-    final row = meta.exam_session_list.where((e) => e.exam_type == kind).toList();
+    final row = meta.exam_session_list
+        .where((e) => e.exam_type == kind)
+        .toList();
     if (row.isEmpty || row.first.sessions.isEmpty) {
       throw Exception('$kind 회차 정보가 없습니다.');
     }
@@ -210,7 +213,8 @@ class MockExamController extends GetxController {
   }
 
   void _tickTime() {
-    final left = startedAt.value + examMs - DateTime.now().millisecondsSinceEpoch;
+    final left =
+        startedAt.value + examMs - DateTime.now().millisecondsSinceEpoch;
     remainMs.value = left;
     if (left <= 0 && !showTimeUpDialog.value) {
       showTimeUpDialog.value = true;
@@ -265,7 +269,9 @@ class MockExamController extends GetxController {
   }
 
   void _handleLastQuestionNav(Map<String, int> currentAnswers) {
-    final unanswered = questions.indexWhere((q) => currentAnswers[q.id] == null);
+    final unanswered = questions.indexWhere(
+      (q) => currentAnswers[q.id] == null,
+    );
     if (unanswered >= 0) {
       _incompleteSnapshot = currentAnswers;
       showIncompleteDialog.value = true;
@@ -331,7 +337,10 @@ class MockExamController extends GetxController {
     _persistEnabled = false;
     await StorageService.clearMockSession();
     showEndConfirm.value = false;
-    Get.back();
+    Get.back(); // 종료 확인 다이얼로그 닫기
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Get.back(); // 모의고사 화면에서 나가기
+    });
   }
 
   void openEndConfirm() => showEndConfirm.value = true;

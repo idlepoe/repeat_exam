@@ -13,7 +13,9 @@ import 'package:repeat_exam/main.dart';
 
 void main() {
   testWidgets('앱 기본 화면 스모크 테스트', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(
+      const MyApp(initialThemeMode: ThemeMode.light),
+    );
     await tester.pump(const Duration(milliseconds: 300));
     expect(find.byType(GetMaterialApp), findsOneWidget);
     expect(find.byType(Scaffold), findsOneWidget);

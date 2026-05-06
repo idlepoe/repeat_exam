@@ -54,6 +54,8 @@ class QuestionView extends GetView<QuestionController> {
 
   @override
   Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+
     return Scaffold(
       appBar: AppBar(
         title: Obx(
@@ -65,12 +67,10 @@ class QuestionView extends GetView<QuestionController> {
         ),
         centerTitle: true,
         actions: [
-          TextButton(
+          IconButton(
+            icon: const Icon(Icons.settings_outlined),
+            tooltip: '옵션',
             onPressed: () => Get.toNamed(Routes.OPTIONS),
-            child: const Text(
-              '옵션',
-              style: TextStyle(fontWeight: FontWeight.w600),
-            ),
           ),
         ],
       ),
@@ -109,7 +109,7 @@ class QuestionView extends GetView<QuestionController> {
             return Center(
               child: Padding(
                 padding: const EdgeInsets.all(16),
-                child: Text(err, style: const TextStyle(color: Colors.red)),
+                child: Text(err, style: TextStyle(color: cs.error)),
               ),
             );
           }
@@ -148,7 +148,7 @@ class QuestionView extends GetView<QuestionController> {
                       style: TextStyle(
                         fontSize: controller.titleFont,
                         fontWeight: FontWeight.w600,
-                        color: const Color(0xFF333333),
+                        color: cs.onSurface,
                       ),
                     ),
                     const SizedBox(height: 8),
@@ -157,7 +157,7 @@ class QuestionView extends GetView<QuestionController> {
                         style: TextStyle(
                           fontSize: controller.baseFont,
                           height: 1.5,
-                          color: const Color(0xFF111111),
+                          color: cs.onSurface,
                         ),
                         children: [
                           TextSpan(
@@ -184,16 +184,14 @@ class QuestionView extends GetView<QuestionController> {
                           vertical: 10,
                         ),
                         decoration: BoxDecoration(
-                          border: Border.all(color: const Color(0xFFDDDDDD)),
+                          border: Border.all(color: cs.outlineVariant),
                           borderRadius: BorderRadius.circular(6),
-                          color: isAnswer ? answerBg : const Color(0xFFFAFAFA),
+                          color: isAnswer ? answerBg : cs.surface,
                         ),
                         child: Text(
                           '${c.no}. ${c.text}',
                           style: TextStyle(
-                            color: isAnswer
-                                ? answerFg
-                                : const Color(0xFF111111),
+                            color: isAnswer ? answerFg : cs.onSurface,
                             fontSize: controller.baseFont,
                           ),
                         ),
@@ -204,9 +202,9 @@ class QuestionView extends GetView<QuestionController> {
                       Container(
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                          border: Border.all(color: const Color(0xFFE5E4E7)),
+                          border: Border.all(color: cs.outlineVariant),
                           borderRadius: BorderRadius.circular(8),
-                          color: Colors.white,
+                          color: cs.surface,
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,

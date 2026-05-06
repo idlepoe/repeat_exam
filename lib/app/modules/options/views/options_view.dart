@@ -37,6 +37,7 @@ class OptionsView extends GetView<OptionsController> {
     final current = controller.answerHighlight.value;
     Color bg = _hexToColor(current.bg);
     Color fg = _hexToColor(current.fg);
+    final outlineVariant = Theme.of(context).colorScheme.outlineVariant;
 
     await Get.dialog<void>(
       AlertDialog(
@@ -77,7 +78,7 @@ class OptionsView extends GetView<OptionsController> {
                     decoration: BoxDecoration(
                       color: bg,
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: const Color(0xFFDDDDDD)),
+                      border: Border.all(color: outlineVariant),
                     ),
                     child: Text(
                       '미리보기: 정답 보기',
@@ -106,8 +107,25 @@ class OptionsView extends GetView<OptionsController> {
     );
   }
 
+  Widget _sectionTitle(BuildContext context, String text) {
+    final cs = Theme.of(context).colorScheme;
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Text(
+        text,
+        style: TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.w600,
+          color: cs.onSurfaceVariant,
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -124,15 +142,8 @@ class OptionsView extends GetView<OptionsController> {
         return ListView(
           padding: const EdgeInsets.all(16),
           children: [
-            const Text(
-              '옵션',
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w600,
-                color: Color(0xFF555555),
-              ),
-            ),
-            const Divider(color: Color(0xFFDDDDDD)),
+            _sectionTitle(context, '옵션'),
+            Divider(color: cs.outlineVariant),
             const SizedBox(height: 12),
             SizedBox(
               width: double.infinity,
@@ -147,17 +158,56 @@ class OptionsView extends GetView<OptionsController> {
               ),
             ),
             const SizedBox(height: 16),
-            const Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                '하단 버튼 높이',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                  color: Color(0xFF555555),
-                ),
-              ),
+            _sectionTitle(context, '테마'),
+            const SizedBox(height: 8),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                for (final entry in const [
+                  (ThemeMode.light, '라이트'),
+                  (ThemeMode.dark, '다크'),
+                  (ThemeMode.system, '시스템'),
+                ])
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 4),
+                      child: Obx(() {
+                        final selected = controller.themeMode.value == entry.$1;
+                        return OutlinedButton(
+                          onPressed: () =>
+                              controller.setThemeMode(entry.$1),
+                          style: OutlinedButton.styleFrom(
+                            foregroundColor: cs.onSurface,
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 12,
+                              horizontal: 8,
+                            ),
+                            side: BorderSide(
+                              color: selected ? cs.primary : cs.outline,
+                              width: selected ? 2 : 1,
+                            ),
+                            backgroundColor: selected
+                                ? cs.secondaryContainer
+                                : cs.surface,
+                          ),
+                          child: Text(
+                            entry.$2,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: selected
+                                  ? FontWeight.w700
+                                  : FontWeight.w500,
+                            ),
+                          ),
+                        );
+                      }),
+                    ),
+                  ),
+              ],
             ),
+            const SizedBox(height: 16),
+            _sectionTitle(context, '하단 버튼 높이'),
             const SizedBox(height: 8),
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -173,20 +223,18 @@ class OptionsView extends GetView<OptionsController> {
                           onPressed: () =>
                               controller.setBottomNavHeightStep(opt.step),
                           style: OutlinedButton.styleFrom(
-                            foregroundColor: const Color(0xFF111111),
+                            foregroundColor: cs.onSurface,
                             padding: EdgeInsets.symmetric(
                               vertical: opt.verticalPadding.toDouble(),
                               horizontal: 8,
                             ),
                             side: BorderSide(
-                              color: selected
-                                  ? const Color(0xFF222222)
-                                  : const Color(0xFFBBBBBB),
+                              color: selected ? cs.primary : cs.outline,
                               width: selected ? 2 : 1,
                             ),
                             backgroundColor: selected
-                                ? const Color(0xFFF4F4F4)
-                                : Colors.white,
+                                ? cs.secondaryContainer
+                                : cs.surface,
                           ),
                           child: Text(
                             opt.label,
@@ -204,17 +252,7 @@ class OptionsView extends GetView<OptionsController> {
               ],
             ),
             const SizedBox(height: 16),
-            const Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                '문제 글자 크기',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                  color: Color(0xFF555555),
-                ),
-              ),
-            ),
+            _sectionTitle(context, '문제 글자 크기'),
             const SizedBox(height: 8),
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -230,20 +268,18 @@ class OptionsView extends GetView<OptionsController> {
                           onPressed: () =>
                               controller.setQuestionFontStep(opt.step),
                           style: OutlinedButton.styleFrom(
-                            foregroundColor: const Color(0xFF111111),
+                            foregroundColor: cs.onSurface,
                             padding: EdgeInsets.symmetric(
                               vertical: opt.verticalPadding.toDouble(),
                               horizontal: 8,
                             ),
                             side: BorderSide(
-                              color: selected
-                                  ? const Color(0xFF222222)
-                                  : const Color(0xFFBBBBBB),
+                              color: selected ? cs.primary : cs.outline,
                               width: selected ? 2 : 1,
                             ),
                             backgroundColor: selected
-                                ? const Color(0xFFF4F4F4)
-                                : Colors.white,
+                                ? cs.secondaryContainer
+                                : cs.surface,
                           ),
                           child: Text(
                             opt.label,
@@ -262,7 +298,7 @@ class OptionsView extends GetView<OptionsController> {
               ],
             ),
             const SizedBox(height: 16),
-            const Divider(height: 1, color: Color(0xFFE5E4E7)),
+            Divider(height: 1, color: cs.outlineVariant),
             const SizedBox(height: 16),
             SizedBox(
               width: double.infinity,
@@ -276,8 +312,8 @@ class OptionsView extends GetView<OptionsController> {
                   }
                 },
                 style: OutlinedButton.styleFrom(
-                  foregroundColor: const Color(0xFFB00000),
-                  side: const BorderSide(color: Color(0xFFDD4444)),
+                  foregroundColor: cs.error,
+                  side: BorderSide(color: cs.error),
                   padding: const EdgeInsets.symmetric(vertical: 12),
                 ),
                 child: const Text('진행상황 초기화하기'),

@@ -7,16 +7,17 @@ import '../controllers/exam_type_list_controller.dart';
 class ExamTypeListView extends GetView<ExamTypeListController> {
   const ExamTypeListView({super.key});
 
-  Widget _sectionTitle(String text, {Widget? trailing}) {
+  Widget _sectionTitle(BuildContext context, String text, {Widget? trailing}) {
+    final cs = Theme.of(context).colorScheme;
     return Row(
       children: [
         Expanded(
           child: Text(
             text,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w600,
-              color: Color(0xFF555555),
+              color: cs.onSurfaceVariant,
             ),
           ),
         ),
@@ -27,6 +28,8 @@ class ExamTypeListView extends GetView<ExamTypeListController> {
 
   @override
   Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+
     return Scaffold(
       appBar: AppBar(
         title: Obx(() => Text(controller.data.value?.title ?? '시험 리스트')),
@@ -48,7 +51,7 @@ class ExamTypeListView extends GetView<ExamTypeListController> {
           return Center(
             child: Padding(
               padding: const EdgeInsets.all(16),
-              child: Text(err, style: const TextStyle(color: Colors.red)),
+              child: Text(err, style: TextStyle(color: cs.error)),
             ),
           );
         }
@@ -61,8 +64,8 @@ class ExamTypeListView extends GetView<ExamTypeListController> {
         return ListView(
           padding: const EdgeInsets.all(16),
           children: [
-            _sectionTitle('기출문제 (정답&해설 표시)'),
-            const Divider(color: Color(0xFFDDDDDD)),
+            _sectionTitle(context, '기출문제 (정답&해설 표시)'),
+            Divider(color: cs.outlineVariant),
             const SizedBox(height: 4),
             ...data.exam_type_list.map(
               (name) => Padding(
@@ -75,7 +78,7 @@ class ExamTypeListView extends GetView<ExamTypeListController> {
                       horizontal: 16,
                       vertical: 14,
                     ),
-                    side: const BorderSide(color: Color(0xFFCCCCCC)),
+                    side: BorderSide(color: cs.outline),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
@@ -85,8 +88,8 @@ class ExamTypeListView extends GetView<ExamTypeListController> {
               ),
             ),
             const SizedBox(height: 12),
-            _sectionTitle('모의고사'),
-            const Divider(color: Color(0xFFDDDDDD)),
+            _sectionTitle(context, '모의고사'),
+            Divider(color: cs.outlineVariant),
             const SizedBox(height: 4),
             Padding(
               padding: const EdgeInsets.only(bottom: 12),
@@ -98,7 +101,7 @@ class ExamTypeListView extends GetView<ExamTypeListController> {
                     horizontal: 16,
                     vertical: 14,
                   ),
-                  side: const BorderSide(color: Color(0xFFCCCCCC)),
+                  side: BorderSide(color: cs.outline),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -116,7 +119,7 @@ class ExamTypeListView extends GetView<ExamTypeListController> {
                     horizontal: 16,
                     vertical: 14,
                   ),
-                  side: const BorderSide(color: Color(0xFFCCCCCC)),
+                  side: BorderSide(color: cs.outline),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -132,17 +135,17 @@ class ExamTypeListView extends GetView<ExamTypeListController> {
                 padding: const EdgeInsets.all(14),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: const Color(0xFF1976D2)),
-                  color: const Color(0xFFF5F9FF),
+                  border: Border.all(color: cs.primary),
+                  color: cs.primaryContainer,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
+                    Text(
                       '모의고사 진행 중',
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
-                        color: Color(0xFF0D47A1),
+                        color: cs.onPrimaryContainer,
                       ),
                     ),
                     const SizedBox(height: 8),
@@ -188,6 +191,7 @@ class ExamTypeListView extends GetView<ExamTypeListController> {
             }),
             const SizedBox(height: 4),
             _sectionTitle(
+              context,
               '모의고사 이력',
               trailing: IconButton(
                 icon: const Icon(Icons.delete_outline),
@@ -212,16 +216,16 @@ class ExamTypeListView extends GetView<ExamTypeListController> {
                 },
               ),
             ),
-            const Divider(color: Color(0xFFDDDDDD)),
+            Divider(color: cs.outlineVariant),
             const SizedBox(height: 4),
             Obx(() {
               final rows = controller.mockHistory;
               if (rows.isEmpty) {
-                return const Padding(
-                  padding: EdgeInsets.only(bottom: 8),
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 8),
                   child: Text(
                     '아직 기록된 이력이 없습니다.',
-                    style: TextStyle(color: Color(0xFF888888)),
+                    style: TextStyle(color: cs.onSurfaceVariant),
                   ),
                 );
               }
@@ -235,7 +239,7 @@ class ExamTypeListView extends GetView<ExamTypeListController> {
                               controller.goMockHistoryDetail(row.id),
                           style: OutlinedButton.styleFrom(
                             padding: const EdgeInsets.all(12),
-                            side: const BorderSide(color: Color(0xFFE0E0E0)),
+                            side: BorderSide(color: cs.outlineVariant),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8),
                             ),
@@ -249,9 +253,9 @@ class ExamTypeListView extends GetView<ExamTypeListController> {
                                   Expanded(
                                     child: Text(
                                       row.examKind,
-                                      style: const TextStyle(
+                                      style: TextStyle(
                                         fontWeight: FontWeight.w600,
-                                        color: Color(0xFF333333),
+                                        color: cs.onSurface,
                                       ),
                                     ),
                                   ),
@@ -259,9 +263,7 @@ class ExamTypeListView extends GetView<ExamTypeListController> {
                                     row.passed ? '합격' : '불합격',
                                     style: TextStyle(
                                       fontWeight: FontWeight.w700,
-                                      color: row.passed
-                                          ? const Color(0xFF1565C0)
-                                          : const Color(0xFFC62828),
+                                      color: row.passed ? cs.primary : cs.error,
                                     ),
                                   ),
                                 ],

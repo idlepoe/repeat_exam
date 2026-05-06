@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../bottom_nav_height.dart';
 import '../question_font.dart';
@@ -220,6 +221,7 @@ class StorageService {
       'repeat_exam:bottom_nav_height_step';
   static const String _keyMockSession = 'repeat_exam:mock_session';
   static const String _keyMockHistory = 'repeat_exam:mock_history';
+  static const String _keyThemeMode = 'repeat_exam:theme_mode';
 
   const StorageService._();
 
@@ -396,6 +398,30 @@ class StorageService {
     final prefs = await SharedPreferences.getInstance();
     final safe = step.clamp(0, kBottomNavHeightMaxStep);
     await prefs.setInt(_keyBottomNavHeightStep, safe);
+  }
+
+  static Future<ThemeMode> loadThemeMode() async {
+    final prefs = await SharedPreferences.getInstance();
+    final raw = prefs.getString(_keyThemeMode);
+    switch (raw) {
+      case 'light':
+        return ThemeMode.light;
+      case 'dark':
+        return ThemeMode.dark;
+      case 'system':
+      default:
+        return ThemeMode.system;
+    }
+  }
+
+  static Future<void> saveThemeMode(ThemeMode mode) async {
+    final prefs = await SharedPreferences.getInstance();
+    final value = switch (mode) {
+      ThemeMode.light => 'light',
+      ThemeMode.dark => 'dark',
+      ThemeMode.system => 'system',
+    };
+    await prefs.setString(_keyThemeMode, value);
   }
 
   static Future<AnswerHighlight> loadAnswerHighlight() async {

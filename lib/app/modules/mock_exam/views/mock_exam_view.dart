@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../data/bottom_nav_height.dart';
+import '../../../theme/app_colors.dart';
 import '../../../routes/app_pages.dart';
 import '../../../widgets/bottom_nav_buttons.dart';
 import '../controllers/mock_exam_controller.dart';
@@ -46,6 +47,8 @@ class MockExamView extends GetView<MockExamController> {
 
   @override
   Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+
     return Scaffold(
       bottomNavigationBar: Obx(() {
         final q = controller.currentQuestion;
@@ -78,7 +81,7 @@ class MockExamView extends GetView<MockExamController> {
             return Center(
               child: Padding(
                 padding: const EdgeInsets.all(16),
-                child: Text(err, style: const TextStyle(color: Colors.red)),
+                child: Text(err, style: TextStyle(color: cs.error)),
               ),
             );
           }
@@ -97,18 +100,19 @@ class MockExamView extends GetView<MockExamController> {
                       horizontal: 10,
                       vertical: 8,
                     ),
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       border: Border(
-                        bottom: BorderSide(color: Color(0xFFE5E4E7)),
+                        bottom: BorderSide(color: cs.outlineVariant),
                       ),
                     ),
                     child: SafeArea(
                       bottom: false,
                       child: Row(
                         children: [
-                          OutlinedButton(
+                          IconButton(
+                            icon: const Icon(Icons.arrow_back),
+                            tooltip: '뒤로가기',
                             onPressed: () => Get.back(),
-                            child: const Text('뒤로가기'),
                           ),
                           Expanded(
                             child: Text(
@@ -119,22 +123,23 @@ class MockExamView extends GetView<MockExamController> {
                               ),
                             ),
                           ),
-                          OutlinedButton(
-                            onPressed: _showEndConfirm,
-                            style: OutlinedButton.styleFrom(
-                              foregroundColor: const Color(0xFFB00020),
+                          IconButton(
+                            icon: const Icon(Icons.stop_circle_outlined),
+                            tooltip: '시험종료',
+                            style: IconButton.styleFrom(
+                              foregroundColor: cs.error,
                             ),
-                            child: const Text('시험종료'),
+                            onPressed: _showEndConfirm,
                           ),
-                          const SizedBox(width: 6),
-                          OutlinedButton(
+                          IconButton(
+                            icon: const Icon(Icons.fact_check_outlined),
+                            tooltip: '답안확인',
                             onPressed: controller.openAnswerSheet,
-                            child: const Text('답안확인'),
                           ),
-                          const SizedBox(width: 6),
-                          OutlinedButton(
+                          IconButton(
+                            icon: const Icon(Icons.settings_outlined),
+                            tooltip: '옵션',
                             onPressed: () => Get.toNamed(Routes.OPTIONS),
-                            child: const Text('옵션'),
                           ),
                         ],
                       ),
@@ -150,7 +155,7 @@ class MockExamView extends GetView<MockExamController> {
                           style: TextStyle(
                             fontSize: controller.titleFont,
                             fontWeight: FontWeight.w600,
-                            color: Color(0xFF333333),
+                            color: cs.onSurface,
                           ),
                         ),
                         const SizedBox(height: 8),
@@ -159,7 +164,7 @@ class MockExamView extends GetView<MockExamController> {
                             style: TextStyle(
                               fontSize: controller.baseFont,
                               height: 1.5,
-                              color: const Color(0xFF111111),
+                              color: cs.onSurface,
                             ),
                             children: [
                               TextSpan(
@@ -182,29 +187,26 @@ class MockExamView extends GetView<MockExamController> {
                         ...q.choices.map((c) {
                           final picked = controller.answers[q.id];
                           final isSel = picked == c.no;
-                          return Padding(
-                            padding: const EdgeInsets.only(bottom: 10),
-                            child: FilledButton.tonal(
-                              onPressed: () => controller.pickChoice(c.no),
-                              style: FilledButton.styleFrom(
-                                alignment: Alignment.centerLeft,
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 12,
-                                  vertical: 10,
-                                ),
-                                backgroundColor: isSel
-                                    ? answerBg
-                                    : const Color(0xFFFAFAFA),
-                                foregroundColor: isSel
-                                    ? answerFg
-                                    : const Color(0xFF111111),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(6),
-                                ),
+                          return GestureDetector(
+                            onTap: () => controller.pickChoice(c.no),
+                            behavior: HitTestBehavior.opaque,
+                            child: Container(
+                              margin: const EdgeInsets.only(bottom: 10),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 12,
+                                vertical: 10,
+                              ),
+                              decoration: BoxDecoration(
+                                border: Border.all(color: cs.outlineVariant),
+                                borderRadius: BorderRadius.circular(6),
+                                color: isSel ? answerBg : cs.surface,
                               ),
                               child: Text(
                                 '${c.no}. ${c.text}',
-                                style: TextStyle(fontSize: controller.baseFont),
+                                style: TextStyle(
+                                  color: isSel ? answerFg : cs.onSurface,
+                                  fontSize: controller.baseFont,
+                                ),
                               ),
                             ),
                           );
@@ -216,12 +218,14 @@ class MockExamView extends GetView<MockExamController> {
               ),
               if (controller.showTimeUpDialog.value)
                 _simpleDialog(
+                  context: context,
                   title: '안내',
                   message: '시험 시간(60분)이 지났습니다.',
                   onConfirm: controller.closeTimeUpDialog,
                 ),
               if (controller.showIncompleteDialog.value)
                 _dualDialog(
+                  context: context,
                   title: '안내',
                   message: '풀지 않은 문제가 있습니다. 이동하시겠습니까?',
                   primaryLabel: '해당 문제로 이동',
@@ -231,6 +235,7 @@ class MockExamView extends GetView<MockExamController> {
                 ),
               if (controller.showResultDialog.value)
                 _simpleDialog(
+                  context: context,
                   title: '결과',
                   message:
                       '${controller.resultPassed.value ? '합격' : '불합격'}하셨습니다.\n${controller.resultCorrect.value}/${MockExamController.mockTotal}\n점수 ${controller.resultScore.value}',
@@ -246,11 +251,13 @@ class MockExamView extends GetView<MockExamController> {
   }
 
   Widget _simpleDialog({
+    required BuildContext context,
     required String title,
     required String message,
     required VoidCallback onConfirm,
   }) {
     return _dialogShell(
+      context: context,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -269,6 +276,7 @@ class MockExamView extends GetView<MockExamController> {
   }
 
   Widget _dualDialog({
+    required BuildContext context,
     required String title,
     required String message,
     required String primaryLabel,
@@ -277,6 +285,7 @@ class MockExamView extends GetView<MockExamController> {
     required VoidCallback onSecondary,
   }) {
     return _dialogShell(
+      context: context,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -296,17 +305,19 @@ class MockExamView extends GetView<MockExamController> {
     );
   }
 
-  Widget _dialogShell({required Widget child}) {
+  Widget _dialogShell({required BuildContext context, required Widget child}) {
+    final cs = Theme.of(context).colorScheme;
+    final scrim = context.appColors.scrim;
     return Positioned.fill(
       child: ColoredBox(
-        color: const Color(0x73000000),
+        color: scrim,
         child: Center(
           child: Container(
             margin: const EdgeInsets.all(16),
             padding: const EdgeInsets.all(20),
             constraints: const BoxConstraints(maxWidth: 400),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: cs.surface,
               borderRadius: BorderRadius.circular(12),
             ),
             child: child,
@@ -324,16 +335,19 @@ class _AnswerSheetOverlay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+    final scrim = context.appColors.scrim;
+
     return Positioned.fill(
       child: ColoredBox(
-        color: const Color(0x73000000),
+        color: scrim,
         child: Center(
           child: Container(
             margin: const EdgeInsets.all(16),
             padding: const EdgeInsets.all(20),
             constraints: const BoxConstraints(maxWidth: 420),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: cs.surface,
               borderRadius: BorderRadius.circular(12),
             ),
             child: Column(
@@ -362,8 +376,8 @@ class _AnswerSheetOverlay extends StatelessWidget {
                           ),
                           alignment: Alignment.centerLeft,
                           backgroundColor: i == controller.index.value
-                              ? const Color(0xFFF0F7FF)
-                              : Colors.white,
+                              ? cs.primaryContainer
+                              : cs.surface,
                         ),
                         onPressed: () => controller.jumpToQuestion(i),
                         child: Column(
