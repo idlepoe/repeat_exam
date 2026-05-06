@@ -12,6 +12,7 @@ class BottomNavButtons extends StatelessWidget {
     required this.onToggleOrder,
     required this.verticalPadding,
     required this.fontSize,
+    this.showKeyboardShortcutHints = false,
   });
 
   final bool navReversed;
@@ -21,6 +22,9 @@ class BottomNavButtons extends StatelessWidget {
   final FutureOr<void> Function() onToggleOrder;
   final double verticalPadding;
   final double fontSize;
+
+  /// Windows 회독 등 ← / → / Space 단축키 사용 시 버튼에 힌트 아이콘 표시.
+  final bool showKeyboardShortcutHints;
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +54,47 @@ class BottomNavButtons extends StatelessWidget {
               ? (prevDisabled ? null : onPrev)
               : (isToggle ? onToggleOrder : onNext);
           final label = isPrev ? '이전' : (isToggle ? '변경' : '다음');
+          final hintColor = cs.onSurface.withValues(alpha: 0.55);
+          final hintSize = (fontSize * 0.72).clamp(14.0, 20.0);
+
+          Widget labelChild = Text(label, style: TextStyle(fontSize: fontSize));
+          if (showKeyboardShortcutHints) {
+            final parts = <Widget>[];
+            if (idx == 0) {
+              parts.add(
+                Icon(
+                  Icons.keyboard_arrow_left,
+                  size: hintSize,
+                  color: hintColor,
+                ),
+              );
+            }
+            parts.add(Text(label, style: TextStyle(fontSize: fontSize)));
+            if (kind == 'next') {
+              parts.add(
+                Icon(Icons.space_bar, size: hintSize, color: hintColor),
+              );
+            }
+            if (idx == 2) {
+              parts.add(
+                Icon(
+                  Icons.keyboard_arrow_right,
+                  size: hintSize,
+                  color: hintColor,
+                ),
+              );
+            }
+            labelChild = Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                for (var i = 0; i < parts.length; i++) ...[
+                  if (i > 0) SizedBox(width: fontSize * 0.35),
+                  parts[i],
+                ],
+              ],
+            );
+          }
 
           return Expanded(
             flex: weight,
@@ -73,7 +118,7 @@ class BottomNavButtons extends StatelessWidget {
                   foregroundColor: cs.onSurface,
                 ),
                 onPressed: onTap == null ? null : () => onTap.call(),
-                child: Text(label, style: TextStyle(fontSize: fontSize)),
+                child: labelChild,
               ),
             ),
           );

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import '../../../data/bottom_nav_height.dart';
 import '../../../theme/app_colors.dart';
 import '../../../routes/app_pages.dart';
+import '../../../utils/keyboard_shortcuts.dart';
 import '../../../widgets/bottom_nav_buttons.dart';
 import '../controllers/mock_exam_controller.dart';
 
@@ -49,7 +50,18 @@ class MockExamView extends GetView<MockExamController> {
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
 
-    return Scaffold(
+    return Obx(() {
+      final blocked =
+          controller.showTimeUpDialog.value ||
+          controller.showIncompleteDialog.value ||
+          controller.showResultDialog.value ||
+          controller.showAnswerSheet.value ||
+          (Get.isDialogOpen == true);
+
+      return MockExamShortcuts(
+        isBlocked: blocked,
+        onDigit: controller.pickChoice,
+        child: Scaffold(
       bottomNavigationBar: Obx(() {
         final q = controller.currentQuestion;
         if (controller.loading.value ||
@@ -187,6 +199,17 @@ class MockExamView extends GetView<MockExamController> {
                         ...q.choices.map((c) {
                           final picked = controller.answers[q.id];
                           final isSel = picked == c.no;
+                          final digitHints =
+                              isDesktopShortcutsPlatform &&
+                              !(controller.showTimeUpDialog.value ||
+                                  controller.showIncompleteDialog.value ||
+                                  controller.showResultDialog.value ||
+                                  controller.showAnswerSheet.value ||
+                                  (Get.isDialogOpen == true));
+                          final hintColor =
+                              cs.onSurface.withValues(alpha: 0.5);
+                          final hintSize =
+                              (controller.baseFont * 0.85).clamp(14.0, 22.0);
                           return GestureDetector(
                             onTap: () => controller.pickChoice(c.no),
                             behavior: HitTestBehavior.opaque,
@@ -201,12 +224,30 @@ class MockExamView extends GetView<MockExamController> {
                                 borderRadius: BorderRadius.circular(6),
                                 color: isSel ? answerBg : cs.surface,
                               ),
-                              child: Text(
-                                '${c.no}. ${c.text}',
-                                style: TextStyle(
-                                  color: isSel ? answerFg : cs.onSurface,
-                                  fontSize: controller.baseFont,
-                                ),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Expanded(
+                                    child: Text(
+                                      '${c.no}. ${c.text}',
+                                      style: TextStyle(
+                                        color:
+                                            isSel ? answerFg : cs.onSurface,
+                                        fontSize: controller.baseFont,
+                                      ),
+                                    ),
+                                  ),
+                                  if (digitHints &&
+                                      c.no >= 1 &&
+                                      c.no <= 4) ...[
+                                    SizedBox(width: controller.baseFont * 0.35),
+                                    Icon(
+                                      choiceDigitShortcutIcon(c.no),
+                                      size: hintSize,
+                                      color: hintColor,
+                                    ),
+                                  ],
+                                ],
                               ),
                             ),
                           );
@@ -247,7 +288,9 @@ class MockExamView extends GetView<MockExamController> {
           );
         }),
       ),
+    ),
     );
+    });
   }
 
   Widget _simpleDialog({

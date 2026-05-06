@@ -101,9 +101,10 @@ class MockExamHistoryDetailView
                       bottom: false,
                       child: Row(
                         children: [
-                          OutlinedButton(
+                          IconButton(
+                            icon: const Icon(Icons.arrow_back),
+                            tooltip: '뒤로가기',
                             onPressed: () => Get.back(),
-                            child: const Text('뒤로가기'),
                           ),
                           Expanded(
                             child: Text(
@@ -114,11 +115,11 @@ class MockExamHistoryDetailView
                               ),
                             ),
                           ),
-                          OutlinedButton(
+                          IconButton(
+                            icon: const Icon(Icons.fact_check_outlined),
+                            tooltip: '답안확인',
                             onPressed: controller.openAnswerSheet,
-                            child: const Text('답안확인'),
                           ),
-                          const SizedBox(width: 6),
                           IconButton(
                             icon: const Icon(Icons.settings_outlined),
                             tooltip: '옵션',

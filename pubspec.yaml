@@ -1,7 +1,7 @@
 name: repeat_exam
 description: "A new Flutter project."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-version: 1.0.5+9
+version: 1.0.6+10
 environment:
   sdk: ^3.10.4
 dependencies:
@@ -23,6 +23,7 @@ dev_dependencies:
   freezed: ^2.5.7
   json_serializable: ^6.9.0
   flutter_launcher_icons: 0.14.4
+  msix: ^3.16.13
 
 flutter_launcher_icons:
   android: true
@@ -33,11 +34,23 @@ flutter_launcher_icons:
     generate: true
     image_path: "assets/icons/icon.png"
     icon_size: 256
+
+msix_config:
+  display_name: 광고없는제과제빵필기기출회독
+  publisher_display_name: 이제영
+  identity_name: 8C13C29F.2947363B5328E
+  publisher: CN=E6E0CA64-5693-4B23-9A95-DF94678405F8
+  # Microsoft Store: 마지막 자리(revision)는 0만 허용되는 경우가 많음.
+  msix_version: 1.0.6.0
+  logo_path: assets/icons/icon.png
+  capabilities: internetClient
+  store: true
+
 flutter:
   uses-material-design: true
-
   assets:
     - assets/json/
     - assets/json/exams/
     - assets/icons/
+
 

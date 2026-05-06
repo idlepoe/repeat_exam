@@ -8,6 +8,8 @@ export const ANDROID_DOWNLOAD_URL =
 export const IOS_APP_STORE_URL =
   'https://apps.apple.com/us/app/%EA%B4%91%EA%B3%A0%EC%97%86%EB%8A%94%EC%A0%9C%EA%B3%BC%EC%A0%9C%EB%B9%B5%ED%95%84%EA%B8%B0%EA%B8%B0%EC%B6%9C%ED%9A%8C%EB%8F%85/id6762967536'
 
+const CONTACT_EMAIL = 'idlepoe@gmail.com'
+
 const QR_SIZE = 120
 
 type Props = {
@@ -64,6 +66,33 @@ export function AppShell({ children }: Props) {
             <li>문제를 확인하면서 정답을 바로 함께 학습합니다.</li>
             <li>반복 회독을 통해 문제와 정답을 자연스럽게 암기합니다.</li>
           </ol>
+
+          <h2 className="app-shell__h2">문의</h2>
+          <p className="app-shell__introContactNote">
+            문제·오류 신고나 개선 건의는 아래 메일로 보내 주세요.
+          </p>
+          <a
+            className="app-shell__contact"
+            href={`mailto:${CONTACT_EMAIL}`}
+            aria-label={`이메일: ${CONTACT_EMAIL}`}
+          >
+            <svg
+              className="app-shell__mailIcon"
+              width={20}
+              height={20}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden={true}
+            >
+              <rect width={20} height={16} x={2} y={4} rx={2} />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+            <span>{CONTACT_EMAIL}</span>
+          </a>
         </div>
       </aside>
 

@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import '../../../data/bottom_nav_height.dart';
 import '../../../routes/app_pages.dart';
+import '../../../utils/keyboard_shortcuts.dart';
 import '../../../widgets/bottom_nav_buttons.dart';
 import '../controllers/question_controller.dart';
 
@@ -52,11 +53,38 @@ class QuestionView extends GetView<QuestionController> {
     );
   }
 
+  Future<void> _goNextOrDialog(BuildContext context) async {
+    final ask = await controller.goNextOrAsk();
+    if (ask && context.mounted) {
+      await _showNextSessionDialog(context);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
 
-    return Scaffold(
+    return Obx(() {
+      final reversed = controller.navReversed.value;
+      return QuestionShortcuts(
+        onLeft: reversed
+            ? () {
+                _goNextOrDialog(context);
+              }
+            : () {
+                controller.goPrev();
+              },
+        onRight: reversed
+            ? () {
+                controller.goPrev();
+              }
+            : () {
+                _goNextOrDialog(context);
+              },
+        onSpace: () {
+          _goNextOrDialog(context);
+        },
+        child: Scaffold(
       appBar: AppBar(
         title: Obx(
           () => Text(
@@ -88,14 +116,10 @@ class QuestionView extends GetView<QuestionController> {
           prevDisabled: controller.isFirst,
           verticalPadding: bottomPreset.verticalPadding.toDouble(),
           fontSize: bottomPreset.fontSize.toDouble(),
+          showKeyboardShortcutHints: isDesktopShortcutsPlatform,
           onPrev: controller.goPrev,
           onToggleOrder: controller.toggleNavReversed,
-          onNext: () async {
-            final ask = await controller.goNextOrAsk();
-            if (ask && context.mounted) {
-              await _showNextSessionDialog(context);
-            }
-          },
+          onNext: () => _goNextOrDialog(context),
         );
       }),
       body: SafeArea(
@@ -279,6 +303,8 @@ class QuestionView extends GetView<QuestionController> {
           );
         }),
       ),
+    ),
     );
+    });
   }
 }
