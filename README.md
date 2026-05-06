@@ -1,5 +1,9 @@
 # 광고없는제과제빵필기기출회독
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/idlepoe/repeat_exam/main/assets/icons/icon.png" alt="앱 아이콘" width="32%" />
+</p>
+
 제과/제빵 필기 기출문제를 반복해서 학습할 수 있도록 만든 회독형 학습 앱입니다.
 
 ## 앱 소개
