@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.jylee" "\0"
-            VALUE "FileDescription", "repeat_exam" "\0"
+            VALUE "FileDescription", "광고없는제과제빵필기기출회독" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "repeat_exam" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2026 com.jylee. All rights reserved." "\0"
             VALUE "OriginalFilename", "repeat_exam.exe" "\0"
-            VALUE "ProductName", "repeat_exam" "\0"
+            VALUE "ProductName", "광고없는제과제빵필기기출회독" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

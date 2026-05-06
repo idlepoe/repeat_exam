@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
     );
 
     return GetMaterialApp(
-      title: "광고없는제과제빵기출회독",
+      title: "광고없는제과제빵필기기출회독",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
       debugShowCheckedModeBanner: false,
