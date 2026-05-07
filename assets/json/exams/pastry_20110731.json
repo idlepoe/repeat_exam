@@ -86,7 +86,7 @@
     "subject": "제조이론",
     "question_number": 3,
     "question_text": "다음의 조건에서 물 온도를 계산하면?",
-    "question_image_url": null,
+    "question_image_url": "https://raw.githubusercontent.com/idlepoe/repeat_exam/main/assets/images/pastry_201107313.png",
     "choices": [
       {
         "no": 1,
@@ -130,19 +130,19 @@
     "choices": [
       {
         "no": 1,
-        "text": "넓은 의미의 개념으로 제분이란 곡류를 가루로 만드는 것 이 지만 일반적으로 밀을 사용하여 밀가루를 제조하는 것 을 제 분이라고 한다."
+        "text": "넓은 의미의 개념으로 제분이란 곡류를 가루로 만드는 것이지만 일반적으로 밀을 사용하여 밀가루를 제조하는 것을 제분이라고 한다."
       },
       {
         "no": 2,
-        "text": "밀은 배유부가 치밀하거나 단단하지 못하여 도정 할 경우 싸라기가 많이 나오기 때문에 처음부터 분말화하여 활용 하는 것을 제분이라고 한다."
+        "text": "밀은 배유부가 치밀하거나 단단하지 못하여 도정할 경우 싸라기가 많이 나오기 때문에 처음부터 분말화하여 활용 하는 것을 제분이라고 한다."
       },
       {
         "no": 3,
-        "text": "제분 시 밀기울이 많이 들어가면 밀가루의 회분함량이 낮 아진다."
+        "text": "제분 시 밀기울이 많이 들어가면 밀가루의 회분함량이 낮아진다."
       },
       {
         "no": 4,
-        "text": "제분율이란 밀을 제분하여 밀가루를 만들 때 밀에 대한"
+        "text": "제분율이란 밀을 제분하여 밀가루를 만들 때 밀에 대한 밀가루의 백분율을 말한다."
       }
     ],
     "correct_answer": 3,
@@ -1349,7 +1349,7 @@
     "subject": "영양학",
     "question_number": 34,
     "question_text": "다음의 초콜릿 성분이 설명하는 것은?",
-    "question_image_url": null,
+    "question_image_url": "https://raw.githubusercontent.com/idlepoe/repeat_exam/main/assets/images/pastry_2011073134.png",
     "choices": [
       {
         "no": 1,
@@ -2209,7 +2209,7 @@
     "exam_session": "2011-07-31",
     "subject": "식품위생학",
     "question_number": 55,
-    "question_text": "경구감염병의 예방대책 중 전염원에 대한 대책으로 바람직 하지 않은 것은?",
+    "question_text": "경구감염병의 예방대책 중 전염원에 대한 대책으로 바람직하지 않은 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -2218,15 +2218,15 @@
       },
       {
         "no": 2,
-        "text": "환자가 발생하면 접촉자의 대변을 검사하고 보균자를 관 리한 다."
+        "text": "환자가 발생하면 접촉자의 대변을 검사하고 보균자를 관리한다."
       },
       {
         "no": 3,
-        "text": "일반 및 유흥음식점에서 일하는 사람들은 정기적인 건강 진단 이 필요하다."
+        "text": "일반 및 유흥음식점에서 일하는 사람들은 정기적인 건강 진단이 필요하다."
       },
       {
         "no": 4,
-        "text": "오염이 의심되는 물건은 어둡고 손이 닿지 않는 곳에 모"
+        "text": "오염이 의심되는 물건은 어둡고 손이 닿지 않는 곳에 모아둔다."
       }
     ],
     "correct_answer": 4,

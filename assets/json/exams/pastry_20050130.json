@@ -128,7 +128,7 @@
     "exam_session": "2005-01-30",
     "subject": "제조이론",
     "question_number": 4,
-    "question_text": "과일 케이크(fruit cake)을 구울 때 오븐에 증기를 넣고 굽 기를 했다. 다음 설명 중 틀린 것은?",
+    "question_text": "과일 케이크(fruit cake)을 구울 때 오븐에 증기를 넣고 굽기를 했다. 다음 설명 중 틀린 것은?",
     "question_image_url": null,
     "choices": [
       {
@@ -465,7 +465,7 @@
       },
       {
         "no": 2,
-        "text": "굽는 동안 부풀어 올랐다가 가라앉는다. - 설탕과 팽창 제 사용량이 많았다."
+        "text": "굽는 동안 부풀어 올랐다가 가라앉는다. - 설탕과 팽창제 사용량이 많았다."
       },
       {
         "no": 3,
@@ -473,7 +473,7 @@
       },
       {
         "no": 4,
-        "text": "케이크가 단단하고 질기다. - 고율배합 케이크에 맞지"
+        "text": "케이크가 단단하고 질기다. - 고율배합 케이크에 맞지않은 밀가루를 사용했다."
       }
     ],
     "correct_answer": 1,
@@ -1153,7 +1153,7 @@
     "exam_session": "2005-01-30",
     "subject": "재료과학",
     "question_number": 29,
-    "question_text": "제빵시 소금 첨가량이 적정량보다 증가하였을 때 빵의 껍 질색은?",
+    "question_text": "제빵시 소금 첨가량이 적정량보다 증가하였을 때 빵의 껍질색은?",
     "question_image_url": null,
     "choices": [
       {
