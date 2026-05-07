@@ -825,7 +825,7 @@
     "exam_session": "2006-01-22",
     "subject": "재료과학",
     "question_number": 21,
-    "question_text": "적당한 2차 발효점은 여러 여건에 따라 차이가 있다. 일반 적으로 완제품의 몇 %까지 팽창시키는가?",
+    "question_text": "적당한 2차 발효점은 여러 여건에 따라 차이가 있다. 일반적으로 완제품의 몇 %까지 팽창시키는가?",
     "question_image_url": null,
     "choices": [
       {
@@ -1030,7 +1030,7 @@
     "exam_session": "2006-01-22",
     "subject": "재료과학",
     "question_number": 26,
-    "question_text": "산화제와 환원제를 함께 사용하여 믹싱시간과 발효시간을 감소하는 제빵 법은?",
+    "question_text": "산화제와 환원제를 함께 사용하여 믹싱시간과 발효시간을 감소하는 제빵법은?",
     "question_image_url": null,
     "choices": [
       {
@@ -1276,7 +1276,7 @@
     "exam_session": "2006-01-22",
     "subject": "영양학",
     "question_number": 32,
-    "question_text": "맥아당(maltose)은 말타아제에 의하여 무엇으로 분해되는 가?",
+    "question_text": "맥아당(maltose)은 말타아제에 의하여 무엇으로 분해되는가?",
     "question_image_url": null,
     "choices": [
       {
