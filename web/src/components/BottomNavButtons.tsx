@@ -10,11 +10,10 @@ type BottomNavButtonsProps = {
   prevDisabled: boolean
   onPrev: () => void
   onNext: () => void
-  onToggleOrder: () => void
   ariaLabel?: string
 }
 
-type NavButtonKind = 'prev' | 'toggle' | 'next'
+type NavButtonKind = 'prev' | 'next'
 
 const navContainerStyle: CSSProperties = {
   flexShrink: 0,
@@ -32,14 +31,11 @@ function loadHeightStepSafe(): number {
   return Math.max(0, Math.min(step, BOTTOM_NAV_HEIGHT_MAX_STEP))
 }
 
-function btnThird(
-  weight: number,
-  heightStep: number,
-  extra: CSSProperties
-): CSSProperties {
+/** 두 버튼 1:1 — 가중치 동일 */
+function btnNavSlot(heightStep: number, extra: CSSProperties): CSSProperties {
   const preset = BOTTOM_NAV_HEIGHT_PRESETS[heightStep]
   return {
-    flex: `${weight} 1 0`,
+    flex: '1 1 0',
     minWidth: 0,
     boxSizing: 'border-box',
     padding: `${Math.max(10, preset.verticalPadding - 4)}px 6px`,
@@ -68,9 +64,6 @@ function keyHintsFor(
   kind: NavButtonKind,
   navReversed: boolean
 ): { primary: string; secondary?: string } {
-  if (kind === 'toggle') {
-    return { primary: '—' }
-  }
   if (kind === 'prev') {
     return { primary: navReversed ? '→' : '←' }
   }
@@ -81,13 +74,6 @@ function keyHintsFor(
 }
 
 function styleByKind(kind: NavButtonKind, prevDisabled: boolean): CSSProperties {
-  if (kind === 'toggle') {
-    return {
-      background: 'var(--bg-toggle)',
-      color: 'var(--text-primary)',
-    }
-  }
-
   if (kind === 'prev' && prevDisabled) {
     return {
       background: 'var(--bg-nav-disabled)',
@@ -107,7 +93,6 @@ export function BottomNavButtons({
   prevDisabled,
   onPrev,
   onNext,
-  onToggleOrder,
   ariaLabel = '문제 이동',
 }: BottomNavButtonsProps) {
   const [heightStep, setHeightStep] = useState(() => loadHeightStepSafe())
@@ -165,25 +150,22 @@ export function BottomNavButtons({
   }, [navReversed, prevDisabled, onPrev, onNext])
 
   const order: NavButtonKind[] = navReversed
-    ? ['next', 'toggle', 'prev']
-    : ['prev', 'toggle', 'next']
+    ? ['next', 'prev']
+    : ['prev', 'next']
 
   return (
     <nav style={navContainerStyle} aria-label={ariaLabel}>
       {order.map((kind, idx) => {
         const isPrev = kind === 'prev'
-        const isToggle = kind === 'toggle'
-        const weight = isToggle ? 2 : 4
         const base = styleByKind(kind, prevDisabled)
-        const style = btnThird(
-          weight,
+        const style = btnNavSlot(
           heightStep,
-          idx < 2
+          idx === 0
             ? { borderRight: '1px solid var(--border-app-bar)', ...base }
             : base
         )
-        const onClick = isPrev ? onPrev : isToggle ? onToggleOrder : onNext
-        const label = isPrev ? '이전' : isToggle ? '변경' : '다음'
+        const onClick = isPrev ? onPrev : onNext
+        const label = isPrev ? '이전' : '다음'
         const preset = BOTTOM_NAV_HEIGHT_PRESETS[heightStep]
         const hintFont = Math.max(10, preset.fontSize - 6)
         const hints = keyHintsFor(kind, navReversed)

@@ -8,10 +8,12 @@ import {
   clearSessionCount,
   loadAnswerHighlight,
   loadBottomNavHeightStep,
+  loadNavReversed,
   loadQuestionFontStep,
   loadThemePreference,
   saveAnswerHighlight,
   saveBottomNavHeightStep,
+  saveNavReversed,
   saveQuestionFontStep,
   saveThemePreference,
   type ThemePreference,
@@ -35,6 +37,7 @@ export function OptionsPage() {
   const [themePref, setThemePref] = useState<ThemePreference>(() =>
     loadThemePreference()
   )
+  const [navReversed, setNavReversed] = useState(() => loadNavReversed())
 
   const applyThemePref = (pref: ThemePreference) => {
     saveThemePreference(pref)
@@ -209,6 +212,52 @@ export function OptionsPage() {
                     }}
                   >
                     {opt.label}
+                  </button>
+                )
+              })}
+            </div>
+          </div>
+          <div style={{ marginBottom: 12 }}>
+            <div style={sectionLabelStyle}>하단 버튼 위치</div>
+            <div style={{ display: 'flex', gap: 8, alignItems: 'flex-end' }}>
+              {(
+                [
+                  { value: false as const, label: '이전 ←  |  → 다음' },
+                  { value: true as const, label: '다음 ←  |  → 이전' },
+                ] as const
+              ).map(({ value, label }) => {
+                const selected = navReversed === value
+                return (
+                  <button
+                    key={String(value)}
+                    type="button"
+                    onClick={() => {
+                      saveNavReversed(value)
+                      setNavReversed(value)
+                      window.dispatchEvent(
+                        new Event('repeat_exam:nav_reversed_changed')
+                      )
+                    }}
+                    aria-pressed={selected}
+                    style={{
+                      flex: 1,
+                      minWidth: 0,
+                      padding: '10px 8px',
+                      fontSize: 14,
+                      textAlign: 'center',
+                      border: selected
+                        ? '2px solid var(--border-segment-selected)'
+                        : '1px solid var(--border-strong)',
+                      borderRadius: 8,
+                      background: selected
+                        ? 'var(--bg-segment-selected)'
+                        : 'var(--bg-surface)',
+                      color: 'var(--text-primary)',
+                      cursor: 'pointer',
+                      fontWeight: selected ? 700 : 500,
+                    }}
+                  >
+                    {label}
                   </button>
                 )
               })}

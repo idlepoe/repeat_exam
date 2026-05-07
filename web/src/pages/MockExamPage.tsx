@@ -86,6 +86,13 @@ export function MockExamPage() {
   }, [navReversed])
 
   useEffect(() => {
+    const sync = () => setNavReversed(loadNavReversed())
+    window.addEventListener('repeat_exam:nav_reversed_changed', sync)
+    return () =>
+      window.removeEventListener('repeat_exam:nav_reversed_changed', sync)
+  }, [])
+
+  useEffect(() => {
     if (!isMockKind(examKind)) {
       navigate('/', { replace: true })
       return
@@ -514,7 +521,6 @@ export function MockExamPage() {
         prevDisabled={index <= 0}
         onPrev={goPrev}
         onNext={goNext}
-        onToggleOrder={() => setNavReversed((v) => !v)}
       />
 
       {showTimeUpDialog && (

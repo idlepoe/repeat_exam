@@ -77,7 +77,6 @@ class MockExamView extends GetView<MockExamController> {
           prevDisabled: controller.isFirst,
           onPrev: controller.goPrev,
           onNext: controller.goNext,
-          onToggleOrder: controller.toggleNavReversed,
           verticalPadding: bottomPreset.verticalPadding.toDouble(),
           fontSize: bottomPreset.fontSize.toDouble(),
         );

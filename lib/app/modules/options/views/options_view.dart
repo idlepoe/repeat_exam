@@ -298,6 +298,55 @@ class OptionsView extends GetView<OptionsController> {
               ],
             ),
             const SizedBox(height: 16),
+            _sectionTitle(context, '하단 버튼 위치'),
+            const SizedBox(height: 8),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                for (final entry in const [
+                  (false, '이전 ←  |  → 다음'),
+                  (true, '다음 ←  |  → 이전'),
+                ])
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 4),
+                      child: Obx(() {
+                        final selected =
+                            controller.navReversed.value == entry.$1;
+                        return OutlinedButton(
+                          onPressed: () =>
+                              controller.setNavReversed(entry.$1),
+                          style: OutlinedButton.styleFrom(
+                            foregroundColor: cs.onSurface,
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 12,
+                              horizontal: 8,
+                            ),
+                            side: BorderSide(
+                              color: selected ? cs.primary : cs.outline,
+                              width: selected ? 2 : 1,
+                            ),
+                            backgroundColor: selected
+                                ? cs.secondaryContainer
+                                : cs.surface,
+                          ),
+                          child: Text(
+                            entry.$2,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: selected
+                                  ? FontWeight.w700
+                                  : FontWeight.w500,
+                            ),
+                          ),
+                        );
+                      }),
+                    ),
+                  ),
+              ],
+            ),
+            const SizedBox(height: 16),
             Divider(height: 1, color: cs.outlineVariant),
             const SizedBox(height: 16),
             SizedBox(

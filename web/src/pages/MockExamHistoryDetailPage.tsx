@@ -51,6 +51,17 @@ export function MockExamHistoryDetailPage() {
     mainRef.current?.scrollTo(0, 0)
   }, [index])
 
+  useEffect(() => {
+    saveNavReversed(navReversed)
+  }, [navReversed])
+
+  useEffect(() => {
+    const sync = () => setNavReversed(loadNavReversed())
+    window.addEventListener('repeat_exam:nav_reversed_changed', sync)
+    return () =>
+      window.removeEventListener('repeat_exam:nav_reversed_changed', sync)
+  }, [])
+
   if (!record || !hasHistoryDetailPayload(record)) {
     return (
       <div style={{ padding: 16, color: 'var(--text-primary)' }}>
@@ -91,14 +102,6 @@ export function MockExamHistoryDetailPage() {
       return
     }
     setShowMoveListConfirm(true)
-  }
-
-  const toggleNavOrder = () => {
-    setNavReversed((prev) => {
-      const next = !prev
-      saveNavReversed(next)
-      return next
-    })
   }
 
   const appTitle = `모의고사 (${formatMockStartedAt(record.startedAt)})`
@@ -291,7 +294,6 @@ export function MockExamHistoryDetailPage() {
         prevDisabled={index <= 0}
         onPrev={goPrev}
         onNext={goNext}
-        onToggleOrder={toggleNavOrder}
       />
 
       {showAnswerSheet && (

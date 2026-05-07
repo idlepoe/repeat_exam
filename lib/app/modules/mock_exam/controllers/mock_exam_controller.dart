@@ -235,11 +235,6 @@ class MockExamController extends GetxController {
     );
   }
 
-  Future<void> toggleNavReversed() async {
-    navReversed.value = !navReversed.value;
-    await StorageService.saveNavReversed(navReversed.value);
-  }
-
   Future<void> goPrev() async {
     if (isFirst) return;
     index.value -= 1;
