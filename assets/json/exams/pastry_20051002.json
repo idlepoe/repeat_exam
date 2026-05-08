@@ -2260,8 +2260,8 @@
     "exam_session": "2005-10-02",
     "subject": "식품위생학",
     "question_number": 56,
-    "question_text": "다음 보기에서 설명하는 전염병의 가장 적절한 예방방법 은?",
-    "question_image_url": null,
+    "question_text": "다음 보기에서 설명하는 전염병의 가장 적절한 예방방법은?",
+    "question_image_url": "https://raw.githubusercontent.com/idlepoe/repeat_exam/main/assets/images/pastry_2005100256.png",
     "choices": [
       {
         "no": 1,
