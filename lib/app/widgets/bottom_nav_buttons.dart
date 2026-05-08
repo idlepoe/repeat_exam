@@ -9,7 +9,6 @@ class BottomNavButtons extends StatelessWidget {
     required this.prevDisabled,
     required this.onPrev,
     required this.onNext,
-    required this.onToggleOrder,
     required this.verticalPadding,
     required this.fontSize,
     this.showKeyboardShortcutHints = false,
@@ -19,7 +18,6 @@ class BottomNavButtons extends StatelessWidget {
   final bool prevDisabled;
   final FutureOr<void> Function() onPrev;
   final FutureOr<void> Function() onNext;
-  final FutureOr<void> Function() onToggleOrder;
   final double verticalPadding;
   final double fontSize;
 
@@ -29,9 +27,7 @@ class BottomNavButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
-    final order = navReversed
-        ? const ['next', 'toggle', 'prev']
-        : const ['prev', 'toggle', 'next'];
+    final order = navReversed ? const ['next', 'prev'] : const ['prev', 'next'];
 
     return DecoratedBox(
       decoration: BoxDecoration(
@@ -42,46 +38,44 @@ class BottomNavButtons extends StatelessWidget {
         children: List.generate(order.length, (idx) {
           final kind = order[idx];
           final isPrev = kind == 'prev';
-          final isToggle = kind == 'toggle';
-          final weight = isToggle ? 2 : 4;
 
-          final bgColor = isToggle
-              ? cs.surfaceContainerHigh
-              : (isPrev && prevDisabled
-                    ? cs.surfaceContainerHighest
-                    : cs.surface);
-          final onTap = isPrev
-              ? (prevDisabled ? null : onPrev)
-              : (isToggle ? onToggleOrder : onNext);
-          final label = isPrev ? '이전' : (isToggle ? '변경' : '다음');
+          final bgColor = isPrev && prevDisabled
+              ? cs.surfaceContainerHighest
+              : cs.surface;
+          final onTap =
+              isPrev ? (prevDisabled ? null : onPrev) : onNext;
+          final label = isPrev ? '이전' : '다음';
           final hintColor = cs.onSurface.withValues(alpha: 0.55);
           final hintSize = (fontSize * 0.72).clamp(14.0, 20.0);
 
           Widget labelChild = Text(label, style: TextStyle(fontSize: fontSize));
           if (showKeyboardShortcutHints) {
             final parts = <Widget>[];
-            if (idx == 0) {
+            if (isPrev) {
               parts.add(
                 Icon(
-                  Icons.keyboard_arrow_left,
+                  navReversed
+                      ? Icons.keyboard_arrow_right
+                      : Icons.keyboard_arrow_left,
+                  size: hintSize,
+                  color: hintColor,
+                ),
+              );
+            } else {
+              parts.add(
+                Icon(
+                  navReversed
+                      ? Icons.keyboard_arrow_left
+                      : Icons.keyboard_arrow_right,
                   size: hintSize,
                   color: hintColor,
                 ),
               );
             }
             parts.add(Text(label, style: TextStyle(fontSize: fontSize)));
-            if (kind == 'next') {
+            if (!isPrev) {
               parts.add(
                 Icon(Icons.space_bar, size: hintSize, color: hintColor),
-              );
-            }
-            if (idx == 2) {
-              parts.add(
-                Icon(
-                  Icons.keyboard_arrow_right,
-                  size: hintSize,
-                  color: hintColor,
-                ),
               );
             }
             labelChild = Row(
@@ -97,12 +91,11 @@ class BottomNavButtons extends StatelessWidget {
           }
 
           return Expanded(
-            flex: weight,
             child: DecoratedBox(
               decoration: BoxDecoration(
                 color: bgColor,
                 border: Border(
-                  right: idx < order.length - 1
+                  right: idx == 0
                       ? BorderSide(color: cs.outlineVariant)
                       : BorderSide.none,
                 ),

@@ -69,11 +69,6 @@ class MockExamHistoryDetailController extends GetxController {
   double get baseFont => questionFontPresetForStep(fontStep.value).base;
   double get titleFont => questionFontPresetForStep(fontStep.value).title;
 
-  Future<void> toggleNavReversed() async {
-    navReversed.value = !navReversed.value;
-    await StorageService.saveNavReversed(navReversed.value);
-  }
-
   void goPrev() {
     if (isFirst) return;
     index.value -= 1;

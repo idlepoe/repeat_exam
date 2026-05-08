@@ -12,6 +12,7 @@ class OptionsController extends GetxController {
   final bottomNavHeightStep = 0.obs;
   final questionFontStep = 0.obs;
   final themeMode = ThemeMode.system.obs;
+  final navReversed = false.obs;
 
   @override
   void onInit() {
@@ -20,6 +21,7 @@ class OptionsController extends GetxController {
     _loadBottomNavHeight();
     _loadQuestionFontStep();
     _loadThemeMode();
+    _loadNavReversed();
   }
 
   Future<void> _loadHighlight() async {
@@ -39,6 +41,10 @@ class OptionsController extends GetxController {
 
   Future<void> _loadThemeMode() async {
     themeMode.value = await StorageService.loadThemeMode();
+  }
+
+  Future<void> _loadNavReversed() async {
+    navReversed.value = await StorageService.loadNavReversed();
   }
 
   Future<void> setThemeMode(ThemeMode mode) async {
@@ -67,6 +73,12 @@ class OptionsController extends GetxController {
     _syncQuestionFontStepToOpenScreens(questionFontStep.value);
   }
 
+  Future<void> setNavReversed(bool value) async {
+    await StorageService.saveNavReversed(value);
+    navReversed.value = await StorageService.loadNavReversed();
+    _syncNavReversedToOpenScreens(navReversed.value);
+  }
+
   void _syncBottomNavHeightToOpenScreens(int step) {
     if (Get.isRegistered<QuestionController>()) {
       Get.find<QuestionController>().bottomNavHeightStep.value = step;
@@ -90,6 +102,18 @@ class OptionsController extends GetxController {
     }
     if (Get.isRegistered<MockExamHistoryDetailController>()) {
       Get.find<MockExamHistoryDetailController>().fontStep.value = step;
+    }
+  }
+
+  void _syncNavReversedToOpenScreens(bool value) {
+    if (Get.isRegistered<QuestionController>()) {
+      Get.find<QuestionController>().navReversed.value = value;
+    }
+    if (Get.isRegistered<MockExamController>()) {
+      Get.find<MockExamController>().navReversed.value = value;
+    }
+    if (Get.isRegistered<MockExamHistoryDetailController>()) {
+      Get.find<MockExamHistoryDetailController>().navReversed.value = value;
     }
   }
 

@@ -187,11 +187,6 @@ class QuestionController extends GetxController {
     await StorageService.saveQuestionFontStep(fontStep.value);
   }
 
-  Future<void> toggleNavReversed() async {
-    navReversed.value = !navReversed.value;
-    await StorageService.saveNavReversed(navReversed.value);
-  }
-
   Future<void> moveToListAfterCountIncrement() async {
     await StorageService.incrementSessionCountAndClearProgress(
       examType.value,

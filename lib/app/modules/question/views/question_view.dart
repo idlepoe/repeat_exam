@@ -118,7 +118,6 @@ class QuestionView extends GetView<QuestionController> {
           fontSize: bottomPreset.fontSize.toDouble(),
           showKeyboardShortcutHints: isDesktopShortcutsPlatform,
           onPrev: controller.goPrev,
-          onToggleOrder: controller.toggleNavReversed,
           onNext: () => _goNextOrDialog(context),
         );
       }),

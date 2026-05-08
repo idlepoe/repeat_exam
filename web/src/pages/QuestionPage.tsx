@@ -129,6 +129,13 @@ export function QuestionPage() {
   }, [navReversed])
 
   useEffect(() => {
+    const sync = () => setNavReversed(loadNavReversed())
+    window.addEventListener('repeat_exam:nav_reversed_changed', sync)
+    return () =>
+      window.removeEventListener('repeat_exam:nav_reversed_changed', sync)
+  }, [])
+
+  useEffect(() => {
     if (!reportToastVisible) return
     const timer = window.setTimeout(() => {
       setReportToastVisible(false)
@@ -383,7 +390,6 @@ export function QuestionPage() {
             prevDisabled={index <= 0}
             onPrev={goPrev}
             onNext={goNext}
-            onToggleOrder={() => setNavReversed((v) => !v)}
           />
         </>
       ) : null}
