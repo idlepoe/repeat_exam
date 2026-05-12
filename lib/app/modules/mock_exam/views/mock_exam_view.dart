@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../data/bottom_nav_height.dart';
+import '../../../data/question_image_url.dart';
 import '../../../theme/app_colors.dart';
 import '../../../routes/app_pages.dart';
 import '../../../utils/keyboard_shortcuts.dart';
@@ -101,6 +102,7 @@ class MockExamView extends GetView<MockExamController> {
           final highlight = controller.answerHighlight.value;
           final answerBg = _hexToColor(highlight.bg);
           final answerFg = _hexToColor(highlight.fg);
+          final questionImageSrc = resolveQuestionImageSrc(q);
 
           return Stack(
             children: [
@@ -189,11 +191,10 @@ class MockExamView extends GetView<MockExamController> {
                           ),
                         ),
                         const SizedBox(height: 16),
-                        if (q.question_image_url != null &&
-                            q.question_image_url!.trim().isNotEmpty)
+                        if (questionImageSrc != null)
                           Padding(
                             padding: const EdgeInsets.only(bottom: 16),
-                            child: Image.network(q.question_image_url!),
+                            child: Image.network(questionImageSrc),
                           ),
                         ...q.choices.map((c) {
                           final picked = controller.answers[q.id];
