@@ -19,6 +19,7 @@ import {
   saveNavReversed,
 } from '../lib/storage'
 import { questionFontByStep } from '../lib/questionFont'
+import { resolveQuestionImageSrc } from '../lib/questionImageUrl'
 import type { Question } from '../types/question'
 
 function formatMockStartedAt(ts: number): string {
@@ -195,15 +196,18 @@ export function MockExamHistoryDetailPage() {
           <span style={{ fontWeight: 600 }}>{index + 1}.</span> {q.question_text}
         </p>
 
-        {q.question_image_url ? (
-          <div style={{ marginBottom: 16 }}>
-            <img
-              src={q.question_image_url}
-              alt=""
-              style={{ maxWidth: '100%', height: 'auto' }}
-            />
-          </div>
-        ) : null}
+        {(() => {
+          const imageSrc = resolveQuestionImageSrc(q)
+          return imageSrc ? (
+            <div style={{ marginBottom: 16 }}>
+              <img
+                src={imageSrc}
+                alt=""
+                style={{ maxWidth: '100%', height: 'auto' }}
+              />
+            </div>
+          ) : null
+        })()}
 
         <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
           {q.choices.map((c) => {
