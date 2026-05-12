@@ -12,7 +12,10 @@ import {
   loadMockHistory,
   type MockHistoryRecord,
 } from '../lib/mockExamStorage'
+import { BackIconButton } from '../components/BackIconButton'
 import { BottomNavButtons } from '../components/BottomNavButtons'
+import { OptionsIconButton } from '../components/OptionsIconButton'
+import { AnswerSheetIconButton } from '../components/AnswerSheetIconButton'
 import {
   loadNavReversed,
   loadQuestionFontStep,
@@ -133,13 +136,7 @@ export function MockExamHistoryDetailPage() {
           boxSizing: 'border-box',
         }}
       >
-        <button
-          type="button"
-          onClick={() => navigate(-1)}
-          style={headerBtnStyle}
-        >
-          뒤로가기
-        </button>
+        <BackIconButton onClick={() => navigate(-1)} />
         <div
           style={{
             flex: '1 1 120px',
@@ -151,20 +148,8 @@ export function MockExamHistoryDetailPage() {
         >
           {appTitle}
         </div>
-        <button
-          type="button"
-          onClick={() => setShowAnswerSheet(true)}
-          style={headerBtnStyle}
-        >
-          답안확인
-        </button>
-        <button
-          type="button"
-          onClick={() => navigate('/options')}
-          style={headerBtnStyle}
-        >
-          옵션
-        </button>
+        <AnswerSheetIconButton onClick={() => setShowAnswerSheet(true)} />
+        <OptionsIconButton onClick={() => navigate('/options')} />
       </header>
 
       <main
@@ -408,16 +393,6 @@ export function MockExamHistoryDetailPage() {
       )}
     </div>
   )
-}
-
-const headerBtnStyle: CSSProperties = {
-  padding: '6px 10px',
-  border: '1px solid var(--border-subtle)',
-  borderRadius: 6,
-  background: 'var(--bg-button-secondary)',
-  color: 'var(--text-primary)',
-  cursor: 'pointer',
-  fontSize: 13,
 }
 
 const modalPrimaryBtn: CSSProperties = {

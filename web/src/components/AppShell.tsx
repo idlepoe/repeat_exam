@@ -93,6 +93,9 @@ export function AppShell({ children }: Props) {
             </svg>
             <span>{CONTACT_EMAIL}</span>
           </a>
+          <p className="app-shell__introFootnote">
+            *개발자는 3주 공부하여 제과, 제빵 기능사 필기 시험을 합격했습니다.
+          </p>
         </div>
       </aside>
 

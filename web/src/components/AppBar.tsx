@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { BackIconButton } from './BackIconButton'
 
 type Props = {
   title?: string
@@ -25,22 +26,9 @@ export function AppBar({ title, showBack, onBack, right }: Props) {
       }}
     >
       {showBack ? (
-        <button
-          type="button"
-          onClick={onBack}
-          style={{
-            padding: '6px 10px',
-            border: '1px solid var(--border-subtle)',
-            borderRadius: 6,
-            background: 'var(--bg-button-secondary)',
-            cursor: 'pointer',
-            fontSize: 14,
-          }}
-        >
-          뒤로가기
-        </button>
+        <BackIconButton onClick={onBack} />
       ) : (
-        <span style={{ width: 72 }} />
+        <span style={{ width: 40, flexShrink: 0 }} aria-hidden />
       )}
       <div
         style={{

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { AppBar } from '../components/AppBar'
+import { OptionsIconButton } from '../components/OptionsIconButton'
 import { BottomNavButtons } from '../components/BottomNavButtons'
 import { questionFontByStep } from '../lib/questionFont'
 import { examJsonUrl } from '../lib/examFiles'
@@ -225,21 +226,7 @@ export function QuestionPage() {
           navigate(`/sessions/${encodeURIComponent(examType)}`)
         }
         right={
-          <button
-            type="button"
-            onClick={() => navigate('/options')}
-            style={{
-              padding: '6px 10px',
-              fontSize: 14,
-              border: '1px solid var(--border-subtle)',
-              borderRadius: 6,
-              background: 'var(--bg-surface)',
-              color: 'var(--text-primary)',
-              cursor: 'pointer',
-            }}
-          >
-            옵션
-          </button>
+          <OptionsIconButton onClick={() => navigate('/options')} />
         }
       />
 

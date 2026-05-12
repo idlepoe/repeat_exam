@@ -22,7 +22,11 @@ import {
 } from '../lib/storage'
 import { questionFontByStep } from '../lib/questionFont'
 import { resolveQuestionImageSrc } from '../lib/questionImageUrl'
+import { BackIconButton } from '../components/BackIconButton'
 import { BottomNavButtons } from '../components/BottomNavButtons'
+import { OptionsIconButton } from '../components/OptionsIconButton'
+import { AnswerSheetIconButton } from '../components/AnswerSheetIconButton'
+import { StopExamIconButton } from '../components/StopExamIconButton'
 import type { Question } from '../types/question'
 
 const MOCK_TOTAL = 60
@@ -370,21 +374,7 @@ export function MockExamPage() {
           boxSizing: 'border-box',
         }}
       >
-        <button
-          type="button"
-          onClick={() => navigate(-1)}
-          style={{
-            padding: '6px 10px',
-            border: '1px solid var(--border-subtle)',
-            borderRadius: 6,
-            background: 'var(--bg-button-secondary)',
-            color: 'var(--text-primary)',
-            cursor: 'pointer',
-            fontSize: 13,
-          }}
-        >
-          뒤로가기
-        </button>
+        <BackIconButton onClick={() => navigate(-1)} />
         <div
           style={{
             flex: '1 1 120px',
@@ -396,51 +386,9 @@ export function MockExamPage() {
         >
           {timeLabel}
         </div>
-        <button
-          type="button"
-          onClick={() => setShowEndConfirm(true)}
-          style={{
-            padding: '6px 10px',
-            border: '1px solid var(--border-mock-warning)',
-            borderRadius: 6,
-            background: 'var(--bg-danger)',
-            color: 'var(--color-danger)',
-            cursor: 'pointer',
-            fontSize: 13,
-          }}
-        >
-          시험종료
-        </button>
-        <button
-          type="button"
-          onClick={() => setShowAnswerSheet(true)}
-          style={{
-            padding: '6px 10px',
-            border: '1px solid var(--border-subtle)',
-            borderRadius: 6,
-            background: 'var(--bg-surface)',
-            color: 'var(--text-primary)',
-            cursor: 'pointer',
-            fontSize: 13,
-          }}
-        >
-          답안확인
-        </button>
-        <button
-          type="button"
-          onClick={() => navigate('/options')}
-          style={{
-            padding: '6px 10px',
-            border: '1px solid var(--border-subtle)',
-            borderRadius: 6,
-            background: 'var(--bg-surface)',
-            color: 'var(--text-primary)',
-            cursor: 'pointer',
-            fontSize: 13,
-          }}
-        >
-          옵션
-        </button>
+        <StopExamIconButton onClick={() => setShowEndConfirm(true)} />
+        <AnswerSheetIconButton onClick={() => setShowAnswerSheet(true)} />
+        <OptionsIconButton onClick={() => navigate('/options')} />
       </header>
 
       <main

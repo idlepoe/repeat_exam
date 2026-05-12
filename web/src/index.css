@@ -350,6 +350,13 @@ body {
   flex-shrink: 0;
 }
 
+.app-shell__introFootnote {
+  margin: 12px 0 0;
+  font-size: 0.75rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
 @media (min-width: 1180px) {
   .app-shell {
     grid-template-columns: minmax(200px, 1fr) minmax(0, 720px) minmax(200px, 1fr);
