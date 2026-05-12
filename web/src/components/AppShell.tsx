@@ -8,6 +8,10 @@ export const ANDROID_DOWNLOAD_URL =
 export const IOS_APP_STORE_URL =
   'https://apps.apple.com/us/app/%EA%B4%91%EA%B3%A0%EC%97%86%EB%8A%94%EC%A0%9C%EA%B3%BC%EC%A0%9C%EB%B9%B5%ED%95%84%EA%B8%B0%EA%B8%B0%EC%B6%9C%ED%9A%8C%EB%8F%85/id6762967536'
 
+/** Windows 앱 — Microsoft Store 제품 페이지 */
+export const WINDOWS_MICROSOFT_STORE_URL =
+  'https://apps.microsoft.com/detail/9N6VSZF1962Q?hl=ko-kr&gl=KR&ocid=pdpshareqr'
+
 const CONTACT_EMAIL = 'idlepoe@gmail.com'
 
 const QR_SIZE = 120
@@ -93,9 +97,26 @@ export function AppShell({ children }: Props) {
             </svg>
             <span>{CONTACT_EMAIL}</span>
           </a>
-          <p className="app-shell__introFootnote">
-            *개발자는 3주 공부하여 제과, 제빵 기능사 필기 시험을 합격했습니다.
-          </p>
+          <section
+            className="app-shell__updateBlock"
+            aria-labelledby="app-shell-update-note-title"
+          >
+            <h2
+              id="app-shell-update-note-title"
+              className="app-shell__updateBlockTitle"
+            >
+              업데이트 내용
+            </h2>
+            <p className="app-shell__updateBlockDate">2026/05/12</p>
+            <div className="app-shell__introNoteBlock">
+              <p>
+                * 개발자는 3주 공부하여 제과, 제빵 기능시 필기 시험에 합격했습니다.
+              </p>
+              <p>• 문제에 보기가 누락되는 오류를 대폭 수정했습니다.</p>
+              <p>• 문제에 이미지가 누락되는 오류를 대폭 수정했습니다.</p>
+              <p>• 하단 버튼과 겹쳐지지 않도록 수정했습니다.</p>
+            </div>
+          </section>
         </div>
       </aside>
 
@@ -160,6 +181,19 @@ export function AppShell({ children }: Props) {
               level="M"
               className="app-shell__qrSvg"
             />
+          </a>
+        </div>
+        <div className="app-shell__qrBlock">
+          <p className="app-shell__qrLabel">Windows</p>
+          <p className="app-shell__qrSub">Microsoft Store</p>
+          <a
+            className="app-shell__storeTextLink"
+            href={WINDOWS_MICROSOFT_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Windows 앱: Microsoft Store에서 열기"
+          >
+            Microsoft Store에서 받기
           </a>
         </div>
       </aside>

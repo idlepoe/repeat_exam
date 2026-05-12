@@ -41,7 +41,7 @@ msix_config:
   identity_name: 8C13C29F.2947363B5328E
   publisher: CN=E6E0CA64-5693-4B23-9A95-DF94678405F8
   # Microsoft Store: 마지막 자리(revision)는 0만 허용되는 경우가 많음.
-  msix_version: 1.0.6.0
+  msix_version: 2.0.0.0
   logo_path: assets/icons/icon.png
   capabilities: internetClient
   store: true

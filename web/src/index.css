@@ -319,6 +319,25 @@ body {
   vertical-align: top;
 }
 
+.app-shell__storeTextLink {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.app-shell__storeTextLink:hover {
+  color: var(--text-primary);
+}
+
+.app-shell__storeTextLink:focus-visible {
+  outline: 2px solid var(--outline-focus);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 .app-shell__introContactNote {
   margin: 0 0 8px;
   font-size: 0.8125rem;
@@ -350,11 +369,42 @@ body {
   flex-shrink: 0;
 }
 
-.app-shell__introFootnote {
-  margin: 12px 0 0;
+.app-shell__updateBlock {
+  margin-top: 12px;
+  padding: 12px 12px 10px;
+  border: 1px solid var(--hint-panel-border);
+  border-radius: 8px;
+  background: var(--hint-panel-bg);
+  box-sizing: border-box;
+}
+
+.app-shell__updateBlockTitle {
+  margin: 0 0 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.app-shell__updateBlockDate {
+  margin: 0 0 10px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.app-shell__introNoteBlock {
+  margin-top: 0;
+}
+
+.app-shell__introNoteBlock p {
+  margin: 0 0 10px;
   font-size: 0.75rem;
   line-height: 1.55;
   color: var(--text-muted);
+}
+
+.app-shell__introNoteBlock p:last-child {
+  margin-bottom: 0;
 }
 
 @media (min-width: 1180px) {
