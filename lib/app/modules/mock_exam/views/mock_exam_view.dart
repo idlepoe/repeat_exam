@@ -192,10 +192,7 @@ class MockExamView extends GetView<MockExamController> {
                         ),
                         const SizedBox(height: 16),
                         if (questionImageSrc != null)
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 16),
-                            child: Image.network(questionImageSrc),
-                          ),
+                          QuestionNetworkImage(url: questionImageSrc),
                         ...q.choices.map((c) {
                           final picked = controller.answers[q.id];
                           final isSel = picked == c.no;

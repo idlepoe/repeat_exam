@@ -86,225 +86,228 @@ class QuestionView extends GetView<QuestionController> {
           _goNextOrDialog(context);
         },
         child: Scaffold(
-      appBar: AppBar(
-        title: Obx(
-          () => Text(
-            controller.appBarTitle,
-            textAlign: TextAlign.center,
-            style: const TextStyle(height: 1.2),
-          ),
-        ),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings_outlined),
-            tooltip: '옵션',
-            onPressed: () => Get.toNamed(Routes.OPTIONS),
-          ),
-        ],
-      ),
-      bottomNavigationBar: Obx(() {
-        if (controller.loading.value ||
-            controller.error.value != null ||
-            controller.currentQuestion == null) {
-          return const SizedBox.shrink();
-        }
-        final bottomPreset = bottomNavHeightPresetForStep(
-          controller.bottomNavHeightStep.value,
-        );
-        return BottomNavButtons(
-          navReversed: controller.navReversed.value,
-          prevDisabled: controller.isFirst,
-          verticalPadding: bottomPreset.verticalPadding.toDouble(),
-          fontSize: bottomPreset.fontSize.toDouble(),
-          showKeyboardShortcutHints: isDesktopShortcutsPlatform,
-          onPrev: controller.goPrev,
-          onNext: () => _goNextOrDialog(context),
-        );
-      }),
-      body: SafeArea(
-        bottom: false,
-        child: Obx(() {
-          if (controller.loading.value) {
-            return const Center(child: CircularProgressIndicator());
-          }
-          final err = controller.error.value;
-          if (err != null) {
-            return Center(
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: Text(err, style: TextStyle(color: cs.error)),
+          appBar: AppBar(
+            title: Obx(
+              () => Text(
+                controller.appBarTitle,
+                textAlign: TextAlign.center,
+                style: const TextStyle(height: 1.2),
               ),
+            ),
+            centerTitle: true,
+            actions: [
+              IconButton(
+                icon: const Icon(Icons.settings_outlined),
+                tooltip: '옵션',
+                onPressed: () => Get.toNamed(Routes.OPTIONS),
+              ),
+            ],
+          ),
+          bottomNavigationBar: Obx(() {
+            if (controller.loading.value ||
+                controller.error.value != null ||
+                controller.currentQuestion == null) {
+              return const SizedBox.shrink();
+            }
+            final bottomPreset = bottomNavHeightPresetForStep(
+              controller.bottomNavHeightStep.value,
             );
-          }
-          final q = controller.currentQuestion;
-          if (q == null) {
-            return const Center(child: Text('불러오는 중…'));
-          }
-          final ai = q.aiExplanation;
-          final correctExplanation =
-              (ai?['correctExplanation'] as String?)?.trim() ?? '';
-          final wrongAnswerNotesRaw = ai?['wrongAnswerNotes'];
-          final wrongAnswerNotes = wrongAnswerNotesRaw is List
-              ? wrongAnswerNotesRaw
-                    .whereType<dynamic>()
-                    .map((e) => e.toString())
-                    .where((e) => e.trim().isNotEmpty)
-                    .toList()
-              : <String>[];
-          final examTip = (ai?['examTip'] as String?)?.trim() ?? '';
-          final hasAiExplanation =
-              correctExplanation.isNotEmpty ||
-              wrongAnswerNotes.isNotEmpty ||
-              examTip.isNotEmpty;
-          final highlight = controller.answerHighlight.value;
-          final answerBg = _hexToColor(highlight.bg);
-          final answerFg = _hexToColor(highlight.fg);
-          final questionImageSrc = resolveQuestionImageSrc(q);
-          return Column(
-            children: [
-              Expanded(
-                child: ListView(
-                  key: ValueKey(q.question_number),
-                  padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
-                  children: [
-                    Text(
-                      '[${q.subject}]',
-                      style: TextStyle(
-                        fontSize: controller.titleFont,
-                        fontWeight: FontWeight.w600,
-                        color: cs.onSurface,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    RichText(
-                      text: TextSpan(
-                        style: TextStyle(
-                          fontSize: controller.baseFont,
-                          height: 1.5,
-                          color: cs.onSurface,
-                        ),
-                        children: [
-                          TextSpan(
-                            text: '${q.question_number}. ',
-                            style: const TextStyle(fontWeight: FontWeight.w600),
-                          ),
-                          TextSpan(text: q.question_text),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 16),
-                    if (questionImageSrc != null)
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 16),
-                        child: Image.network(questionImageSrc),
-                      ),
-                    ...q.choices.map((c) {
-                      final isAnswer = c.no == q.correct_answer;
-                      return Container(
-                        margin: const EdgeInsets.only(bottom: 10),
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 12,
-                          vertical: 10,
-                        ),
-                        decoration: BoxDecoration(
-                          border: Border.all(color: cs.outlineVariant),
-                          borderRadius: BorderRadius.circular(6),
-                          color: isAnswer ? answerBg : cs.surface,
-                        ),
-                        child: Text(
-                          '${c.no}. ${c.text}',
+            return BottomNavButtons(
+              navReversed: controller.navReversed.value,
+              prevDisabled: controller.isFirst,
+              verticalPadding: bottomPreset.verticalPadding.toDouble(),
+              fontSize: bottomPreset.fontSize.toDouble(),
+              showKeyboardShortcutHints: isDesktopShortcutsPlatform,
+              onPrev: controller.goPrev,
+              onNext: () => _goNextOrDialog(context),
+            );
+          }),
+          body: SafeArea(
+            bottom: false,
+            child: Obx(() {
+              if (controller.loading.value) {
+                return const Center(child: CircularProgressIndicator());
+              }
+              final err = controller.error.value;
+              if (err != null) {
+                return Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Text(err, style: TextStyle(color: cs.error)),
+                  ),
+                );
+              }
+              final q = controller.currentQuestion;
+              if (q == null) {
+                return const Center(child: Text('불러오는 중…'));
+              }
+              final ai = q.aiExplanation;
+              final correctExplanation =
+                  (ai?['correctExplanation'] as String?)?.trim() ?? '';
+              final wrongAnswerNotesRaw = ai?['wrongAnswerNotes'];
+              final wrongAnswerNotes = wrongAnswerNotesRaw is List
+                  ? wrongAnswerNotesRaw
+                        .whereType<dynamic>()
+                        .map((e) => e.toString())
+                        .where((e) => e.trim().isNotEmpty)
+                        .toList()
+                  : <String>[];
+              final examTip = (ai?['examTip'] as String?)?.trim() ?? '';
+              final hasAiExplanation =
+                  correctExplanation.isNotEmpty ||
+                  wrongAnswerNotes.isNotEmpty ||
+                  examTip.isNotEmpty;
+              final highlight = controller.answerHighlight.value;
+              final answerBg = _hexToColor(highlight.bg);
+              final answerFg = _hexToColor(highlight.fg);
+              final questionImageSrc = resolveQuestionImageSrc(q);
+              return Column(
+                children: [
+                  Expanded(
+                    child: ListView(
+                      key: ValueKey(q.question_number),
+                      padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
+                      children: [
+                        Text(
+                          '[${q.subject}]',
                           style: TextStyle(
-                            color: isAnswer ? answerFg : cs.onSurface,
-                            fontSize: controller.baseFont,
+                            fontSize: controller.titleFont,
+                            fontWeight: FontWeight.w600,
+                            color: cs.onSurface,
                           ),
                         ),
-                      );
-                    }),
-                    if (hasAiExplanation) ...[
-                      const SizedBox(height: 8),
-                      Container(
-                        padding: const EdgeInsets.all(12),
-                        decoration: BoxDecoration(
-                          border: Border.all(color: cs.outlineVariant),
-                          borderRadius: BorderRadius.circular(8),
-                          color: cs.surface,
+                        const SizedBox(height: 8),
+                        RichText(
+                          text: TextSpan(
+                            style: TextStyle(
+                              fontSize: controller.baseFont,
+                              height: 1.5,
+                              color: cs.onSurface,
+                            ),
+                            children: [
+                              TextSpan(
+                                text: '${q.question_number}. ',
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              TextSpan(text: q.question_text),
+                            ],
+                          ),
                         ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'AI 해설',
+                        const SizedBox(height: 16),
+                        if (questionImageSrc != null)
+                          QuestionNetworkImage(url: questionImageSrc),
+                        ...q.choices.map((c) {
+                          final isAnswer = c.no == q.correct_answer;
+                          return Container(
+                            margin: const EdgeInsets.only(bottom: 10),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12,
+                              vertical: 10,
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(color: cs.outlineVariant),
+                              borderRadius: BorderRadius.circular(6),
+                              color: isAnswer ? answerBg : cs.surface,
+                            ),
+                            child: Text(
+                              '${c.no}. ${c.text}',
                               style: TextStyle(
+                                color: isAnswer ? answerFg : cs.onSurface,
                                 fontSize: controller.baseFont,
-                                fontWeight: FontWeight.w700,
                               ),
                             ),
-                            if (correctExplanation.isNotEmpty) ...[
-                              const SizedBox(height: 8),
-                              Text(
-                                '정답 해설',
-                                style: TextStyle(
-                                  fontSize: controller.baseFont,
-                                  fontWeight: FontWeight.w600,
+                          );
+                        }),
+                        if (hasAiExplanation) ...[
+                          const SizedBox(height: 8),
+                          Container(
+                            padding: const EdgeInsets.all(12),
+                            decoration: BoxDecoration(
+                              border: Border.all(color: cs.outlineVariant),
+                              borderRadius: BorderRadius.circular(8),
+                              color: cs.surface,
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'AI 해설',
+                                  style: TextStyle(
+                                    fontSize: controller.baseFont,
+                                    fontWeight: FontWeight.w700,
+                                  ),
                                 ),
-                              ),
-                              const SizedBox(height: 4),
-                              Text(
-                                correctExplanation,
-                                style: TextStyle(fontSize: controller.baseFont),
-                              ),
-                            ],
-                            if (wrongAnswerNotes.isNotEmpty) ...[
-                              const SizedBox(height: 10),
-                              Text(
-                                '오답 노트',
-                                style: TextStyle(
-                                  fontSize: controller.baseFont,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              const SizedBox(height: 4),
-                              ...wrongAnswerNotes.map(
-                                (note) => Padding(
-                                  padding: const EdgeInsets.only(bottom: 3),
-                                  child: Text(
-                                    '• $note',
+                                if (correctExplanation.isNotEmpty) ...[
+                                  const SizedBox(height: 8),
+                                  Text(
+                                    '정답 해설',
+                                    style: TextStyle(
+                                      fontSize: controller.baseFont,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 4),
+                                  Text(
+                                    correctExplanation,
                                     style: TextStyle(
                                       fontSize: controller.baseFont,
                                     ),
                                   ),
-                                ),
-                              ),
-                            ],
-                            if (examTip.isNotEmpty) ...[
-                              const SizedBox(height: 10),
-                              Text(
-                                '쪽집게',
-                                style: TextStyle(
-                                  fontSize: controller.baseFont,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              const SizedBox(height: 4),
-                              Text(
-                                examTip,
-                                style: TextStyle(fontSize: controller.baseFont),
-                              ),
-                            ],
-                          ],
-                        ),
-                      ),
-                    ],
-                  ],
-                ),
-              ),
-            ],
-          );
-        }),
-      ),
-    ),
-    );
+                                ],
+                                if (wrongAnswerNotes.isNotEmpty) ...[
+                                  const SizedBox(height: 10),
+                                  Text(
+                                    '오답 노트',
+                                    style: TextStyle(
+                                      fontSize: controller.baseFont,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 4),
+                                  ...wrongAnswerNotes.map(
+                                    (note) => Padding(
+                                      padding: const EdgeInsets.only(bottom: 3),
+                                      child: Text(
+                                        '• $note',
+                                        style: TextStyle(
+                                          fontSize: controller.baseFont,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                                if (examTip.isNotEmpty) ...[
+                                  const SizedBox(height: 10),
+                                  Text(
+                                    '쪽집게',
+                                    style: TextStyle(
+                                      fontSize: controller.baseFont,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 4),
+                                  Text(
+                                    examTip,
+                                    style: TextStyle(
+                                      fontSize: controller.baseFont,
+                                    ),
+                                  ),
+                                ],
+                              ],
+                            ),
+                          ),
+                        ],
+                      ],
+                    ),
+                  ),
+                ],
+              );
+            }),
+          ),
+        ),
+      );
     });
   }
 }
