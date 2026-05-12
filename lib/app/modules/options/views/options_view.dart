@@ -136,7 +136,8 @@ class OptionsView extends GetView<OptionsController> {
         title: const Text('옵션'),
         centerTitle: true,
       ),
-      body: Obx(() {
+      body: SafeArea(
+        child: Obx(() {
         final highlight = controller.answerHighlight.value;
 
         return ListView(
@@ -370,7 +371,8 @@ class OptionsView extends GetView<OptionsController> {
             ),
           ],
         );
-      }),
+        }),
+      ),
     );
   }
 }

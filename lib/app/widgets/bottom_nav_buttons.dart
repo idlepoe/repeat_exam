@@ -29,93 +29,98 @@ class BottomNavButtons extends StatelessWidget {
     final cs = Theme.of(context).colorScheme;
     final order = navReversed ? const ['next', 'prev'] : const ['prev', 'next'];
 
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        border: Border(top: BorderSide(color: cs.outlineVariant)),
-        color: cs.surface,
-      ),
-      child: Row(
-        children: List.generate(order.length, (idx) {
-          final kind = order[idx];
-          final isPrev = kind == 'prev';
+    return SafeArea(
+      top: false,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          border: Border(top: BorderSide(color: cs.outlineVariant)),
+          color: cs.surface,
+        ),
+        child: Row(
+          children: List.generate(order.length, (idx) {
+            final kind = order[idx];
+            final isPrev = kind == 'prev';
 
-          final bgColor = isPrev && prevDisabled
-              ? cs.surfaceContainerHighest
-              : cs.surface;
-          final onTap =
-              isPrev ? (prevDisabled ? null : onPrev) : onNext;
-          final label = isPrev ? '이전' : '다음';
-          final hintColor = cs.onSurface.withValues(alpha: 0.55);
-          final hintSize = (fontSize * 0.72).clamp(14.0, 20.0);
+            final bgColor = isPrev && prevDisabled
+                ? cs.surfaceContainerHighest
+                : cs.surface;
+            final onTap = isPrev ? (prevDisabled ? null : onPrev) : onNext;
+            final label = isPrev ? '이전' : '다음';
+            final hintColor = cs.onSurface.withValues(alpha: 0.55);
+            final hintSize = (fontSize * 0.72).clamp(14.0, 20.0);
 
-          Widget labelChild = Text(label, style: TextStyle(fontSize: fontSize));
-          if (showKeyboardShortcutHints) {
-            final parts = <Widget>[];
-            if (isPrev) {
-              parts.add(
-                Icon(
-                  navReversed
-                      ? Icons.keyboard_arrow_right
-                      : Icons.keyboard_arrow_left,
-                  size: hintSize,
-                  color: hintColor,
-                ),
-              );
-            } else {
-              parts.add(
-                Icon(
-                  navReversed
-                      ? Icons.keyboard_arrow_left
-                      : Icons.keyboard_arrow_right,
-                  size: hintSize,
-                  color: hintColor,
-                ),
-              );
-            }
-            parts.add(Text(label, style: TextStyle(fontSize: fontSize)));
-            if (!isPrev) {
-              parts.add(
-                Icon(Icons.space_bar, size: hintSize, color: hintColor),
-              );
-            }
-            labelChild = Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                for (var i = 0; i < parts.length; i++) ...[
-                  if (i > 0) SizedBox(width: fontSize * 0.35),
-                  parts[i],
-                ],
-              ],
+            Widget labelChild = Text(
+              label,
+              style: TextStyle(fontSize: fontSize),
             );
-          }
-
-          return Expanded(
-            child: DecoratedBox(
-              decoration: BoxDecoration(
-                color: bgColor,
-                border: Border(
-                  right: idx == 0
-                      ? BorderSide(color: cs.outlineVariant)
-                      : BorderSide.none,
-                ),
-              ),
-              child: TextButton(
-                style: TextButton.styleFrom(
-                  padding: EdgeInsets.symmetric(
-                    vertical: verticalPadding,
-                    horizontal: 8,
+            if (showKeyboardShortcutHints) {
+              final parts = <Widget>[];
+              if (isPrev) {
+                parts.add(
+                  Icon(
+                    navReversed
+                        ? Icons.keyboard_arrow_right
+                        : Icons.keyboard_arrow_left,
+                    size: hintSize,
+                    color: hintColor,
                   ),
-                  minimumSize: Size.zero,
-                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                  foregroundColor: cs.onSurface,
+                );
+              } else {
+                parts.add(
+                  Icon(
+                    navReversed
+                        ? Icons.keyboard_arrow_left
+                        : Icons.keyboard_arrow_right,
+                    size: hintSize,
+                    color: hintColor,
+                  ),
+                );
+              }
+              parts.add(Text(label, style: TextStyle(fontSize: fontSize)));
+              if (!isPrev) {
+                parts.add(
+                  Icon(Icons.space_bar, size: hintSize, color: hintColor),
+                );
+              }
+              labelChild = Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  for (var i = 0; i < parts.length; i++) ...[
+                    if (i > 0) SizedBox(width: fontSize * 0.35),
+                    parts[i],
+                  ],
+                ],
+              );
+            }
+
+            return Expanded(
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  color: bgColor,
+                  border: Border(
+                    right: idx == 0
+                        ? BorderSide(color: cs.outlineVariant)
+                        : BorderSide.none,
+                  ),
                 ),
-                onPressed: onTap == null ? null : () => onTap.call(),
-                child: labelChild,
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    padding: EdgeInsets.symmetric(
+                      vertical: verticalPadding,
+                      horizontal: 8,
+                    ),
+                    minimumSize: Size.zero,
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    foregroundColor: cs.onSurface,
+                  ),
+                  onPressed: onTap == null ? null : () => onTap.call(),
+                  child: labelChild,
+                ),
               ),
-            ),
-          );
-        }),
+            );
+          }),
+        ),
       ),
     );
   }

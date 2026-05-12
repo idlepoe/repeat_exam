@@ -41,7 +41,8 @@ class ExamTypeListView extends GetView<ExamTypeListController> {
           ),
         ],
       ),
-      body: Obx(() {
+      body: SafeArea(
+        child: Obx(() {
         if (controller.loading.value) {
           return const Center(child: CircularProgressIndicator());
         }
@@ -302,7 +303,8 @@ class ExamTypeListView extends GetView<ExamTypeListController> {
             }),
           ],
         );
-      }),
+        }),
+      ),
     );
   }
 }

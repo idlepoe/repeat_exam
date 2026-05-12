@@ -30,7 +30,8 @@ class ExamSessionListView extends GetView<ExamSessionListController> {
       appBar: AppBar(
         title: Obx(() => Text(controller.data.value?.title ?? '출시회차')),
       ),
-      body: Obx(() {
+      body: SafeArea(
+        child: Obx(() {
         if (controller.loading.value) {
           return const Center(child: CircularProgressIndicator());
         }
@@ -125,7 +126,8 @@ class ExamSessionListView extends GetView<ExamSessionListController> {
             }),
           ],
         );
-      }),
+        }),
+      ),
     );
   }
 }
